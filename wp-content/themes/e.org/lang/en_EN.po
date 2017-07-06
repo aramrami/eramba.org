@@ -1,0 +1,785 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Eramba.org\n"
+"POT-Creation-Date: 2015-02-18 00:07+0100\n"
+"PO-Revision-Date: 2015-02-18 00:08+0100\n"
+"Last-Translator: dev@eramba.org <dev@eramba.org>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+msgid "It looks like nothing was found at this location."
+msgstr ""
+
+#: ../404.php:14 ../header.php:39
+msgid "Home"
+msgstr ""
+
+#: ../404.php:15
+msgid "Go back"
+msgstr ""
+
+#: ../content-blog.php:17 ../single.php:21
+msgid "Posted by"
+msgstr ""
+
+#: ../content-blog.php:22 ../single.php:26
+msgid "in"
+msgstr ""
+
+#: ../content-blog.php:26 ../single.php:30
+msgid "tagged"
+msgstr ""
+
+#: ../content-blog.php:40 ../content-search.php:25
+msgid "Read More"
+msgstr ""
+
+#: ../element-page-heading.php:15
+msgid "News"
+msgstr ""
+
+#: ../element-page-heading.php:18
+msgid "Archive"
+msgstr ""
+
+#: ../element-page-heading.php:29
+msgid "The page you are looking for cannot be found."
+msgstr ""
+
+#: ../footer.php:40
+msgid "Get in touch"
+msgstr ""
+
+#: ../functions.php:81
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:128
+msgctxt "post type general name"
+msgid "Features"
+msgstr ""
+
+#: ../functions.php:129
+msgctxt "post type singular name"
+msgid "Feature"
+msgstr ""
+
+#: ../functions.php:130
+msgctxt "Feature"
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:131
+msgid "Add New Feature"
+msgstr ""
+
+#: ../functions.php:132
+msgid "Edit Feature"
+msgstr ""
+
+#: ../functions.php:133
+msgid "New Feature"
+msgstr ""
+
+#: ../functions.php:134
+msgid "View Feature"
+msgstr ""
+
+#: ../functions.php:135
+msgid "Search Feature"
+msgstr ""
+
+#: ../functions.php:136 ../functions.php:160 ../functions.php:184
+#: ../functions.php:231
+msgid "Nothing found"
+msgstr ""
+
+#: ../functions.php:137 ../functions.php:161 ../functions.php:185
+#: ../functions.php:232
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: ../functions.php:152
+msgctxt "post type general name"
+msgid "Benefits"
+msgstr ""
+
+#: ../functions.php:153
+msgctxt "post type singular name"
+msgid "Benefit"
+msgstr ""
+
+#: ../functions.php:154
+msgctxt "Benefit"
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:155
+msgid "Add New Benefit"
+msgstr ""
+
+#: ../functions.php:156
+msgid "Edit Benefit"
+msgstr ""
+
+#: ../functions.php:157
+msgid "New Benefit"
+msgstr ""
+
+#: ../functions.php:158
+msgid "View Benefit"
+msgstr ""
+
+#: ../functions.php:159
+msgid "Search Benefit"
+msgstr ""
+
+#: ../functions.php:176
+msgctxt "post type general name"
+msgid "Documentation"
+msgstr ""
+
+#: ../functions.php:177
+msgctxt "post type singular name"
+msgid "Documentation"
+msgstr ""
+
+#: ../functions.php:178
+msgctxt "Documentation"
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:179
+msgid "Add New Documentation"
+msgstr ""
+
+#: ../functions.php:180
+msgid "Edit Documentation"
+msgstr ""
+
+#: ../functions.php:181
+msgid "New Documentation"
+msgstr ""
+
+#: ../functions.php:182
+msgid "View Documentation"
+msgstr ""
+
+#: ../functions.php:183
+msgid "Search Documentation"
+msgstr ""
+
+#: ../functions.php:199
+msgctxt "taxonomy general name"
+msgid "Sections"
+msgstr ""
+
+#: ../functions.php:200
+msgctxt "taxonomy singular name"
+msgid "Section"
+msgstr ""
+
+#: ../functions.php:201
+msgid "Search Sections"
+msgstr ""
+
+#: ../functions.php:202
+msgid "All Sections"
+msgstr ""
+
+#: ../functions.php:203
+msgid "Parent Section"
+msgstr ""
+
+#: ../functions.php:204
+msgid "Parent Section:"
+msgstr ""
+
+#: ../functions.php:205
+msgid "Edit Section"
+msgstr ""
+
+#: ../functions.php:206
+msgid "Update Section"
+msgstr ""
+
+#: ../functions.php:207
+msgid "Add New Section"
+msgstr ""
+
+#: ../functions.php:208
+msgid "New Section Name"
+msgstr ""
+
+#: ../functions.php:209
+msgid "Section"
+msgstr ""
+
+#: ../functions.php:223
+msgctxt "post type general name"
+msgid "Downloads"
+msgstr ""
+
+#: ../functions.php:224
+msgctxt "post type singular name"
+msgid "Download"
+msgstr ""
+
+#: ../functions.php:225
+msgctxt "Download"
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:226
+msgid "Add New Download"
+msgstr ""
+
+#: ../functions.php:227
+msgid "Edit Download"
+msgstr ""
+
+#: ../functions.php:228
+msgid "New Download"
+msgstr ""
+
+#: ../functions.php:229
+msgid "View Download"
+msgstr ""
+
+#: ../functions.php:230
+msgid "Search Download"
+msgstr ""
+
+#: ../functions.php:246
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: ../functions.php:247
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: ../functions.php:248
+msgid "Search Categories"
+msgstr ""
+
+#: ../functions.php:249
+msgid "All Categories"
+msgstr ""
+
+#: ../functions.php:250
+msgid "Parent Category"
+msgstr ""
+
+#: ../functions.php:251
+msgid "Parent Category:"
+msgstr ""
+
+#: ../functions.php:252
+msgid "Edit Category"
+msgstr ""
+
+#: ../functions.php:253
+msgid "Update Category"
+msgstr ""
+
+#: ../functions.php:254
+msgid "Add New Category"
+msgstr ""
+
+#: ../functions.php:255
+msgid "New Category Name"
+msgstr ""
+
+#: ../functions.php:256
+msgid "Categories"
+msgstr ""
+
+#: ../functions.php:275
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../functions.php:277
+msgid "Appears in the sidebar section of the site."
+msgstr ""
+
+#: ../functions.php:285
+msgid "Bugs & Features Sidebar"
+msgstr ""
+
+#: ../functions.php:287
+msgid "Bugs features sidebar."
+msgstr ""
+
+#: ../functions.php:295
+msgid "Documentation Sidebar"
+msgstr ""
+
+#: ../functions.php:297
+msgid "Appears in the Documentation sidebar."
+msgstr ""
+
+#: ../functions.php:306
+#, php-format
+msgid "Footer Sidebar %s"
+msgstr ""
+
+#: ../functions.php:308
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: ../functions.php:361
+msgid "Pingback:"
+msgstr ""
+
+#: ../functions.php:361
+msgid "(Edit)"
+msgstr ""
+
+#: ../functions.php:381
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../functions.php:388
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:426
+msgid "First Page"
+msgstr ""
+
+#: ../functions.php:429
+msgid "Previous Page"
+msgstr ""
+
+#: ../functions.php:434
+msgid "Next Page"
+msgstr ""
+
+#: ../functions.php:437
+msgid "Last Page"
+msgstr ""
+
+#: ../functions.php:464
+msgid "Newsletter Form Submission"
+msgstr ""
+
+#: ../functions.php:465
+#, php-format
+msgid "A user wants to subscribe to %1$s newsletter."
+msgstr ""
+
+#: ../functions.php:466
+msgid "E-mail:"
+msgstr ""
+
+#: ../functions.php:467
+msgid "IP:"
+msgstr ""
+
+#: ../functions.php:573
+msgid "Select from list"
+msgstr ""
+
+#: ../inc/customizer.php:8
+msgid "SEO"
+msgstr ""
+
+#: ../inc/customizer.php:9
+msgid ""
+"If you are not using custom plugin for SEO, you can set your basic SEO "
+"settings here."
+msgstr ""
+
+#: ../inc/customizer.php:25
+msgid "Meta Author"
+msgstr ""
+
+#: ../inc/customizer.php:44
+msgid "Meta Description"
+msgstr ""
+
+#: ../inc/customizer.php:63
+msgid "Meta Keywords"
+msgstr ""
+
+#: ../inc/customizer.php:77
+msgid "Other"
+msgstr ""
+
+#: ../inc/customizer.php:78
+msgid "This section is used for un-categorized settings for the theme."
+msgstr ""
+
+#: ../inc/customizer.php:96
+msgid "Tracking Code"
+msgstr ""
+
+#: ../inc/customizer.php:116
+msgid "Custom JavaScript"
+msgstr ""
+
+#: ../inc/customizer.php:136
+msgid "Custom CSS"
+msgstr ""
+
+#: ../inc/customizer.php:150
+msgid "Widgets"
+msgstr ""
+
+#: ../inc/meta-boxes.php:33
+msgid "Custom Settings"
+msgstr ""
+
+#: ../inc/meta-boxes.php:49
+msgid "Subtitle"
+msgstr ""
+
+#: ../inc/meta-boxes.php:50
+msgid "Choose custom subtitle for this post."
+msgstr ""
+
+#: ../inc/meta-boxes.php:57
+msgid "Disable content top padding"
+msgstr ""
+
+#: ../inc/meta-boxes.php:71
+msgid "Additional Settings"
+msgstr ""
+
+#: ../inc/meta-boxes.php:88
+msgid "Version"
+msgstr ""
+
+#: ../inc/meta-boxes.php:94
+msgid "Release date"
+msgstr ""
+
+#: ../inc/meta-boxes.php:107
+msgid "Fixes"
+msgstr ""
+
+#: ../inc/meta-boxes.php:120 ../page-templates/home.php:51
+msgid "Features"
+msgstr ""
+
+#: ../inc/meta-boxes.php:133
+msgid "File Upload"
+msgstr ""
+
+#: ../inc/meta-boxes.php:140
+msgid "File URL"
+msgstr ""
+
+#: ../inc/meta-boxes.php:142
+msgid "(Optional) In case the file is hosted somewhere"
+msgstr ""
+
+#: ../inc/meta-boxes.php:147
+msgid "Contact Form 7 ID"
+msgstr ""
+
+#: ../inc/meta-boxes.php:149
+msgid "(Optional) If a form submission is required before download"
+msgstr ""
+
+#: ../inc/widgets.php:10 ../inc/widgets.php:102
+msgid "Latest News"
+msgstr ""
+
+#: ../inc/widgets.php:11
+msgid "Display latest news with thumbnails."
+msgstr ""
+
+#: ../inc/widgets.php:82
+msgid "No posts found."
+msgstr ""
+
+#: ../inc/widgets.php:107 ../inc/widgets.php:200
+msgid "Title:"
+msgstr ""
+
+#: ../inc/widgets.php:111
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../inc/widgets.php:115
+msgid "Show image thumbnail"
+msgstr ""
+
+#: ../inc/widgets.php:150
+msgid "Table Of Contents"
+msgstr ""
+
+#: ../inc/widgets.php:151
+msgid "Generate page overview."
+msgstr ""
+
+#: ../inc/widgets.php:175
+msgid "Go to Documentation"
+msgstr ""
+
+#: ../inc/widgets.php:196
+msgid "Contents"
+msgstr ""
+
+#: ../inc/meta-box/inc/meta-box.php:244
+msgid "Please correct the errors highlighted below and try again."
+msgstr ""
+
+#: ../inc/meta-box/inc/meta-box.php:418
+msgid "+"
+msgstr ""
+
+#: ../inc/meta-box/inc/meta-box.php:440
+msgid "&#8211;"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/button.php:36
+msgid "Click me"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file-advanced.php:23
+msgid "Select Files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file-advanced.php:66
+msgctxt "file upload"
+msgid "Select or Upload Files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file-advanced.php:102
+#: ../inc/meta-box/inc/fields/file.php:138
+msgctxt "file upload"
+msgid "Delete"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file-advanced.php:103
+#: ../inc/meta-box/inc/fields/file.php:139
+msgctxt "file upload"
+msgid "Edit"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file.php:19
+#, php-format
+msgid "You may only upload maximum %d file"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file.php:20
+#, php-format
+msgid "You may only upload maximum %d files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file.php:70
+msgid "Error: Cannot delete file"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file.php:84
+msgctxt "file upload"
+msgid "Upload Files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/file.php:85
+msgctxt "file upload"
+msgid "+ Add new file"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image-advanced.php:22
+msgid "Select Images"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image-advanced.php:71
+msgctxt "image upload"
+msgid "Select or Upload Images"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image-advanced.php:107
+#: ../inc/meta-box/inc/fields/image.php:137
+msgctxt "image upload"
+msgid "Delete"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image-advanced.php:108
+#: ../inc/meta-box/inc/fields/image.php:138
+msgctxt "image upload"
+msgid "Edit"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image.php:71
+#: ../inc/meta-box/inc/fields/thickbox-image.php:35
+msgctxt "image upload"
+msgid "Upload Images"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/image.php:72
+msgctxt "image upload"
+msgid "+ Add new image"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/map.php:49
+msgid "Find Address"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/oembed.php:54
+msgid "Embed HTML not available."
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/oembed.php:77
+msgid "Preview"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/plupload-image.php:103
+msgctxt "image upload"
+msgid "Drop images here"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/plupload-image.php:104
+msgctxt "image upload"
+msgid "or"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/plupload-image.php:105
+msgctxt "image upload"
+msgid "Select Files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/plupload-image.php:180
+msgctxt "image upload"
+msgid "Allowed Image Files"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/post.php:54
+msgid "Post"
+msgstr ""
+
+#: ../inc/meta-box/inc/fields/post.php:68
+#: ../inc/meta-box/inc/fields/taxonomy.php:40
+#, php-format
+msgid "Select a %s"
+msgstr ""
+
+#: ../page-templates/benefits.php:45 ../page-templates/features.php:45
+msgid "We are currently working on the content."
+msgstr ""
+
+#: ../page-templates/bugs-features.php:12
+msgid "Registering Bugs & Features"
+msgstr ""
+
+#: ../page-templates/documentation.php:49
+msgid "No articles in this section yet."
+msgstr ""
+
+#: ../page-templates/documentation.php:55
+msgid "Documentation is missing."
+msgstr ""
+
+#: ../page-templates/downloads.php:52
+msgid "Release version:"
+msgstr ""
+
+#: ../page-templates/downloads.php:59
+msgid "Release date:"
+msgstr ""
+
+#: ../page-templates/downloads.php:66
+msgid "Fixes:"
+msgstr ""
+
+#: ../page-templates/downloads.php:73
+msgid "Features:"
+msgstr ""
+
+#: ../page-templates/downloads.php:99
+msgid "Download"
+msgstr ""
+
+#: ../page-templates/downloads.php:115
+msgid "There are no files in this section."
+msgstr ""
+
+#: ../page-templates/downloads.php:120
+msgid "We have nothing for you to download yet."
+msgstr ""
+
+#: ../page-templates/home.php:9
+msgid "Welcome to Open-Source Security Governance"
+msgstr ""
+
+#: ../page-templates/home.php:10
+msgid ""
+"Eramba is leading, open-source enterprise class Security Governance "
+"application & framework."
+msgstr ""
+
+#: ../page-templates/home.php:16
+msgid "Stop spreadsheeting"
+msgstr ""
+
+#: ../page-templates/home.php:20
+msgid "Work with facts<br>& dashboards"
+msgstr ""
+
+#: ../page-templates/home.php:24
+msgid "Increase<br>collaboration"
+msgstr ""
+
+#: ../page-templates/home.php:30
+msgid "Simplify & centralize<br>security governance"
+msgstr ""
+
+#: ../page-templates/home.php:34
+msgid "Save time"
+msgstr ""
+
+#: ../page-templates/home.php:38
+msgid "Open & affordable<br>GRC"
+msgstr ""
+
+#: ../page-templates/home.php:45
+msgid "friendly"
+msgstr ""
+
+#: ../page-templates/home.php:54
+msgid "Try online demo now!"
+msgstr ""
+
+#: ../page-templates/home.php:57
+msgid "Benefits"
+msgstr ""
+
+#: ../page-templates/home.php:65
+msgid "These group of people are enjoying eramba"
+msgstr ""
+
+#: ../page-templates/home.php:70
+msgid "Security Professionals"
+msgstr ""
+
+#: ../page-templates/home.php:75
+msgid "Auditors"
+msgstr ""
+
+#: ../page-templates/home.php:80
+msgid "Compliance Managers"
+msgstr ""
+
+#: ../page-templates/home.php:85
+msgid "NIST & ISO Professionals"
+msgstr ""
+
+#: ../page-templates/home.php:91
+msgid "Find out why"
+msgstr ""
