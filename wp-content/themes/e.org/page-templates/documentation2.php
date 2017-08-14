@@ -474,6 +474,51 @@ get_header();
 	</div>
 </div>
 
+<hr>
+
+<div class="container ">
+	<h3 class="text-center margin-top-20">
+		<strong>Resources</strong>
+	</h3>
+	<h4 class="doc-subtitle text-center margin-bottom-40">
+		<span>These documents will help you understand how eramba works in certain use cases</span>
+	</h4>
+
+	<div class="row align-row">
+		<div class="col-sm-4 col-sm-offset-2">
+			<div class="doc-box align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>ISO 27001</h4>
+					<p>aaa.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1ktGs1MasrS7FL9GUOV6TpxiLfLlQgOxe4hSKkbFMqWE/edit">Doc</a> </li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/POuSzuFxa_w?enablejsapi=1&wmode=opaque">Videos</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="doc-box align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>pci.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>PCI-DSS</h4>
+					<p>aaa.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/7Ro9-QQTMCU?enablejsapi=1&wmode=opaque">Videos</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script src="http://www.youtube.com/player_api"></script>
 <style>
 .fancybox-wrap {
