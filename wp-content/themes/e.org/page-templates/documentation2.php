@@ -485,7 +485,7 @@ get_header();
 	</h4>
 
 	<div class="row align-row">
-		<div class="col-sm-4 col-sm-offset-2">
+		<div class="col-sm-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
@@ -508,6 +508,22 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>PCI-DSS</h4>
+					<p>aaa.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/7Ro9-QQTMCU?enablejsapi=1&wmode=opaque">Videos</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="doc-box align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>sox.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Sarbanes Oxley</h4>
 					<p>aaa.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
