@@ -492,11 +492,11 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>ISO 27001</h4>
-					<p>aaa.</p>
+					<!-- <p></p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1ktGs1MasrS7FL9GUOV6TpxiLfLlQgOxe4hSKkbFMqWE/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/POuSzuFxa_w?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+						<li><a href="#"></a> </li>
+						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
+					</ul> -->
 				</div>
 			</div>
 		</div>
@@ -508,11 +508,11 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>PCI-DSS</h4>
-					<p>aaa.</p>
+					<!-- <p></p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/7Ro9-QQTMCU?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+						<li><a href="#"></a> </li>
+						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
+					</ul> -->
 				</div>
 			</div>
 		</div>
@@ -524,11 +524,11 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Sarbanes Oxley</h4>
-					<p>aaa.</p>
+					<!-- <p></p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/7Ro9-QQTMCU?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+						<li><a href="#"></a> </li>
+						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
+					</ul> -->
 				</div>
 			</div>
 		</div>
