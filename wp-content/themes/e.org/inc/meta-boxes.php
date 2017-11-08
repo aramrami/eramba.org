@@ -343,6 +343,65 @@ $meta_boxes[] = array(
 	)
 );
 
+$meta_boxes[] = array(
+	// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+	'id' => 'custom_partners',
+
+	// Meta box title - Will appear at the drag and drop handle bar. Required.
+	'title' => __( 'Additional Settings', 'eramba' ),
+
+	// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+	'pages' => array( 'eramba_partners' ),
+
+	// Where the meta box appear: normal (default), advanced, side. Optional.
+	'context' => 'normal',
+
+	// Order of meta box: high (default), low. Optional.
+	'priority' => 'high',
+
+	// Auto save: true, false (default). Optional.
+	'autosave' => false,
+
+	'fields' => array(
+		array(
+			'name' => __( 'Description', 'eramba' ),
+			'id'   => "{$prefix}description",
+			'type' => 'wysiwyg',
+			// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+			'raw'  => false,
+			// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+			'options' => array(
+				'textarea_rows' => 4,
+				'teeny'         => true,
+				'media_buttons' => false,
+			),
+		),
+		array(
+			// Field name - Will be used as label
+			'name'  => __( 'URL', 'eramba' ),
+			// Field ID, i.e. the meta key
+			'id'    => "{$prefix}url",
+			'type'  => 'text'
+		),
+		array(
+			'name' => __( 'Logo', 'eramba' ),
+			'id'   => "{$prefix}logo",
+			'type' => 'file',
+			'max_file_uploads' => 1,
+			'mime_type' => 'image/jpg, image/jpeg, image/png' // Leave blank for all file types
+		),
+		array(
+			'name'     => __( 'Countries', 'eramba'),
+			'id'       => "{$prefix}countries",
+			'type'     => 'select_advanced',
+			'desc'  => __('Select partner\'s country', 'eramba'),
+			'options'  => getListOfCountries(),
+			'multiple'    => true,
+			'placeholder' => __('Select a country', 'eramba'),
+		),
+	)
+);
+
 
 // 1st meta box
 /*$meta_boxes[] = array(
