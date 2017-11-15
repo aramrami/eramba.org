@@ -117,9 +117,9 @@ get_header();
 			<div class="form-group">
 				<span class="wpcf7-form-control-wrap">
 					<select name="search-partners" class="form-control" id="search-partners" aria-required="true" aria-invalid="false">
+						<option value="">Select a country</option>
 						<?php
 							$countries = getListOfPartnersCountries();
-							var_dump($countries);
 						?>
 						<?php foreach ($countries as $key => $value): ?>
 							<option value="<?= $key ?>"><?= $value ?></option>
@@ -196,6 +196,8 @@ get_header();
 
 <script type="text/javascript">
 	$(function(){
+		var partners = $('#partners-list .partner');
+
 		function alignCols() {
 			var r = $.Deferred();
 
@@ -213,6 +215,7 @@ get_header();
 
 		$(window).on("load", function() {
 			alignCols();
+			partners.hide();
 		});
 
 		$('#search-partners-button').on('click', function() {
@@ -221,12 +224,12 @@ get_header();
 				jQuery('#contact-redirect')[0].click();
 				return;
 			}
-			var partners = $('#partners-list .partner');
+			// var partners = $('#partners-list .partner');
 			partners.fadeOut(350);
 			partners.promise().done(function() {
 				$.each(partners, function () {
 					countries = $(this).data('countries');
-					if (countries.indexOf(selectedCountry) != -1) {
+					if (selectedCountry.length > 0 && countries.toString().indexOf(selectedCountry) != -1) {
 						$(this).fadeIn(350);
 					}
 				});

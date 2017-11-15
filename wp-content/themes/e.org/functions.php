@@ -434,7 +434,10 @@ function getListOfPartnersCountries() {
 	global $wpdb;
 	$result = [];
 	$metaTag = 'ERAMBA_countries';
-	$countriesIds = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", $metaTag ) );
+	$countriesIds = $wpdb->get_col($wpdb->prepare("SELECT meta_value, post_id FROM $wpdb->postmeta INNER JOIN $wpdb->posts ON $wpdb->posts.id = $wpdb->postmeta.post_id WHERE $wpdb->postmeta.meta_key = %s AND $wpdb->posts.post_type = 'eramba_partners' AND $wpdb->posts.post_status != 'trash 'ORDER BY meta_value ASC", $metaTag ) );
+
+	$countriesIds = array_unique($countriesIds);
+
 	$countriesIds = array_map('intval', $countriesIds);
 	$select = "SELECT id, country_name FROM countries WHERE id IN (" . implode(',', $countriesIds) . ") ORDER BY country_name ASC";
 	$countries = $wpdb->get_results($select);
