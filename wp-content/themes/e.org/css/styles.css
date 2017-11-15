@@ -2432,6 +2432,7 @@ a.no-text-effect:focus {
 	transition: all 200ms;
 	font-size: 14px;
 	line-height: 20px;
+	text-shadow: none;
 }
 
 #cookie-notice .button.wp-default:hover,
