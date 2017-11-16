@@ -111,10 +111,10 @@ get_header();
 </div>
 
 <hr>
-<div class="container ">
-	<div class="row margin-top-10">
-		<div class="col-sm-8">
-			<div class="form-group">
+<div class="container text-center">
+	<div class="partnerships-select-wrapper margin-top-10 clearfix">
+		<!-- <div class="col-sm-8"> -->
+			<div class="form-group pull-left">
 				<span class="wpcf7-form-control-wrap">
 					<select name="search-partners" class="form-control" id="search-partners" aria-required="true" aria-invalid="false">
 						<option value="">Select a country</option>
@@ -128,10 +128,10 @@ get_header();
 					</select>
 				</span>
 			</div>
-		</div>
-		<div class="col-sm-4">
-			<button id="search-partners-button" type="button" name="button" class="btn btn-lg btn-wide btn-default">Search Partners</button>
-		</div>
+		<!-- </div> -->
+		<!-- <div class="col-sm-4"> -->
+			<button id="search-partners-button" type="button" name="button" class="btn btn-lg btn-wide btn-default pull-left">Search Partners</button>
+		<!-- </div> -->
 	</div>
 
 	<div id="partners-list" class="margin-top-40">

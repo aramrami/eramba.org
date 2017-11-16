@@ -2389,6 +2389,15 @@ a.no-text-effect:focus {
 	text-decoration: none !important;
 }
 
+.partnerships-select-wrapper {
+	display: inline-block;
+}
+
+.partnerships-select-wrapper .form-group {
+    width: 530px;
+    margin-right: 25px;
+}
+
 #search-partners {
 	background-color: #fff;
 	border: 2px solid #798595;
