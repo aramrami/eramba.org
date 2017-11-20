@@ -386,7 +386,7 @@ $meta_boxes[] = array(
 		array(
 			'name' => __( 'Logo', 'eramba' ),
 			'id'   => "{$prefix}logo",
-			'type' => 'file',
+			'type' => 'file_advanced',
 			'max_file_uploads' => 1,
 			'mime_type' => 'image/jpg, image/jpeg, image/png' // Leave blank for all file types
 		),
