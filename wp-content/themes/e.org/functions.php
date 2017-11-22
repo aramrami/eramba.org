@@ -116,7 +116,8 @@ function eramba_scripts_styles() {
 	wp_enqueue_style( 'fontawesome', THEME_CSS . 'font-awesome.min.css');
 	wp_enqueue_style( 'jquery-fancybox', THEME_CSS . 'jquery.fancybox.css');
 	wp_enqueue_style( 'jquery-nanoscroller', THEME_CSS . 'nanoscroller.css');
-	wp_enqueue_style( 'eramba-main', THEME_CSS . 'styles.css', array(), '20112016' );
+	//moved to header
+	// wp_enqueue_style( 'eramba-main', THEME_CSS . 'styles.css', array(), '20112017' );
 
 	wp_deregister_script( 'jquery' );
 	wp_register_script('jquery', THEME_JS . 'jquery-1.11.2.min.js');
