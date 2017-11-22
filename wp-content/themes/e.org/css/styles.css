@@ -297,7 +297,7 @@ div.wpcf7-mail-sent-ok {
 }
 #menu-primary.nav>li>a {
 	color: #97a8b9;
-	padding: 10px 17px;
+	padding: 10px 14px;
 	font-size: 1.05em;
 	/* originalne 300ms */
 	-webkit-transition: color 218ms;
@@ -312,15 +312,15 @@ div.wpcf7-mail-sent-ok {
 	color: #e3e8ed;
 	background-color: transparent;
 }
-#menu-primary.nav>li:last-child>a {
+#menu-primary.nav>li:nth-child(5)>a {
 	/*color: #e85a5a;*/
 	color: #FBEAEA;
 	background-color: #e85a5a;
 	border-radius: 2px;
 }
-#menu-primary.nav>li:last-child>a:focus,
-#menu-primary.nav>li:last-child>a:hover,
-#menu-primary.nav>li:last-child.active>a {
+#menu-primary.nav>li:nth-child(5)>a:focus,
+#menu-primary.nav>li:nth-child(5)>a:hover,
+#menu-primary.nav>li:nth-child(5).active>a {
 	/*color: #E26666;*/
 	color: #ffffff;
 }
@@ -2304,6 +2304,7 @@ ul.doc-list ul {
 }
 .doc-box-partnerships {
 	background: transparent;
+	margin-bottom: 0;
 }
 .doc-box-partnerships .doc-box-img {
 	height: 55px;
@@ -2379,6 +2380,14 @@ ul.doc-list ul {
 	margin-bottom: 0;
 }
 
+.jumbo-box .img-wrapper {
+	padding: 20px 0;
+}
+
+.jumbo-box .img-wrapper img {
+	max-width: 70%;
+}
+
 a.no-text-effect p {
 	text-decoration: none;
 	color: #616a71;
@@ -2449,4 +2458,9 @@ a.no-text-effect:focus {
 	background: none;
 	background-color: #2fdc68;
 	color: #fff;
+}
+
+.vertical-align-row {
+	display: flex;
+	align-items: center;
 }

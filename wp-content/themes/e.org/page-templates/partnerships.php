@@ -8,26 +8,18 @@ get_header();
 
 <div class="jumbo-box">
 	<div class="container">
-		<div class="row align-row">
+		<div class="row align-row vertical-align-row">
 			<div class="col-sm-7">
 				<h3 class="margin-top-10">
-					<strong>Get help from the core team</strong>
+					<strong>Lets help each other!</strong>
 				</h3>
 				<p class="partnerships-text">
-					We offer a packaged yearly support service that includes installation, training,
-					immediate patch resolutions and features not necessarily published on the community
-					version at extremely affordable prices. With the help of our global partners, we also
-					provide customisation and consulting services.
+					No matter how good a GRC tool is - organisations need time and knowledge to mature and run a GRC department. eramba works with a network of consulting business that can help you succeed in the monumental task of running GRC.
 				</p>
-
 				<p class="partnerships-text">
-					<strong>
-						The income generated from these services is what keeps this project alive. We re-invest
-						%100 into the project and we have no intention to become  yet another GRC company.
-					</strong>
 				</p>
 			</div>
-			<div class="col-sm-5 text-center">
+			<div class="col-sm-5 text-center img-wrapper">
 				<img src="<?php echo do_shortcode('[img]'); ?>hand-shake.png" alt="">
 			</div>
 		</div>
@@ -43,7 +35,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Discounts</h4>
-					<p>As partner you’ll access to discounts for new and renewed licenses.</p>
+					<p>Partners access to %35 discount on new licenses and %5 on renewals.</p>
 				</div>
 			</div>
 		</div>
@@ -55,7 +47,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Trainings</h4>
-					<p>You and your colleagues can access our enterprise trainings at no cost.</p>
+					<p>Partners are invited to all our enterprise trainings for free.</p>
 				</div>
 			</div>
 		</div>
@@ -67,7 +59,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Sales Support</h4>
-					<p>We can remotely help you at your sales meetings with product demos and insights.</p>
+					<p>We can support partners on their sales engagements with product demos and insights.</p>
 				</div>
 			</div>
 		</div>
@@ -79,7 +71,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Publicity</h4>
-					<p>Over 35 thousand people visits eramba every year - a partner portal will show your company logo and website.</p>
+					<p>Over 35 thousand people visits this page, we are glad to publicly display our cooperation!</p>
 				</div>
 			</div>
 		</div>
@@ -91,7 +83,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Demo Sites</h4>
-					<p>At a discounted fee - you’ll have your own eramba instance in the cloud so you can always demo and test eramba.</p>
+					<p>For product demos and skills development, partners can access a cloud environemnt running our latest enterprise release for €500 / Year.</p>
 				</div>
 			</div>
 		</div>
@@ -103,7 +95,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Tech Support</h4>
-					<p>We’ll support you with our standard enterprise technical support all along.</p>
+					<p>For those partners that purchase licenses for themselves, enterprise support is also available.</p>
 				</div>
 			</div>
 		</div>
