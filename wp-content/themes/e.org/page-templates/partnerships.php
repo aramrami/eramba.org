@@ -161,7 +161,7 @@ get_header();
 							<a class="no-text-effect" href="<?php echo rwmb_meta('ERAMBA_url', array(), get_the_ID()); ?>" target="_blank">
 						<?php endif; ?>
 							<div class="doc-box doc-box-alt doc-box-partnerships align-col">
-								<div class="doc-box-img">
+								<div class="doc-box-img partner-image">
 
 									<?php if (!empty($logoUrl)): ?>
 										<img src="<?php echo $logoUrl ?>" alt="<?php echo $post->post_name ?>">

@@ -2464,3 +2464,7 @@ a.no-text-effect:focus {
 	display: flex;
 	align-items: center;
 }
+
+.partner-image {
+	height: 90px !important;
+}
