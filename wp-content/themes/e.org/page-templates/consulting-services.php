@@ -169,7 +169,7 @@ get_header();
 	</div>
 
     <div class="text-center margin-top-30 margin-bottom-60">
-		<a id="contact-redirect" href="#" class="btn btn-success btn-lg btn-wide">More information</a>
+		<a id="contact-redirect" href="<?php echo get_page_link(BUGS_PAGE_ID); ?>" class="btn btn-success btn-lg btn-wide">More information</a>
 	</div>
 </div>
 
