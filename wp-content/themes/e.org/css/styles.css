@@ -2225,7 +2225,7 @@ ul.doc-list ul {
 	padding: 15px 10px 35px 70px;
 }
 .doc-box-content.equal {
-	padding: 15px 20px 15px 70px;
+	padding: 15px 20px 35px 70px;
 }
 .doc-box-alt .doc-box-content {
 	text-align: center;
@@ -2482,45 +2482,49 @@ a.no-text-effect:focus {
 	height: 90px !important;
 }
 
-.consulting-services-line {
+.consulting-services-row {
 	position: relative;
 	padding-top: 20px;
-	padding-bottom: 20px;
 }
-.consulting-services-line:before,
-.consulting-services-line:after,
-.consulting-services-top-line:before,
-.consulting-services-top-line:after {
+.consulting-services-top-box,
+.consulting-services-bottom-box {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.consulting-services-top-box:before,
+.consulting-services-top-box:after,
+.consulting-services-bottom-box:before,
+.consulting-services-bottom-box:after {
 	content: "";
     position: absolute;
 	display: block;
 	background-color: #7c8dc2;
 	margin-left: -1px;
 }
-.consulting-services-line:before {
-    top: 0;
-    left: 25%;
+.consulting-services-bottom-box:before {
+	top: -20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+.consulting-services-bottom-box:after {
+	top: -20px;
+    left: 50%;
     width: 2px;
-    height: 100%;
+    height: 20px;
 }
-.consulting-services-line:after {
-	top: 50%;
-    left: 23.6%;
-    width: 15px;
-    height: 2px;
-}
-.consulting-services-top-line:before {
-    top: -20px;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-}
-.consulting-services-top-line:after {
-    left: 0;
+.consulting-services-top-box:before {
+	left: 0;
     bottom: -20px;
-    width: 40px;
-    height: 2px;
+    width: 2px;
+    height: 30px;
+}
+.consulting-services-top-box:after {
+    right: 1px;
+    bottom: -20px;
+    width: 2px;
+    height: 30px;
 }
 
 .no-bottom-margin .doc-box {
