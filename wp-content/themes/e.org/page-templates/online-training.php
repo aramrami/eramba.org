@@ -3,10 +3,10 @@
 get_header();
 ?>
 
-<div class="jumbo-box light-blue">
+<div class="jumbo-box full-size light-blue">
 	<div class="container">
 		<div class="row align-row vertical-align-row">
-			<div class="col-sm-7">
+			<div class="col-sm-7 text-wrapper">
                 <h3 class="margin-top-10">
                     <strong>
                         Get help from the core team
@@ -24,204 +24,339 @@ get_header();
                     GRC company.
                 </p>
 			</div>
-			<div class="col-sm-5 text-center img-wrapper">
+			<div class="col-sm-5 text-center img-wrapper full-size">
 				<img src="<?php echo do_shortcode('[img]'); ?>blackboard.png" alt="">
 			</div>
 		</div>
 	</div>
 </div>
+<div class="container">
+    <h2 class="margin-top-40">
+        <strong>Online Training</strong>
+    </h2>
+    <p style="font-size: 14px; line-height: 26px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel sagittis nibh, feugiat
+        dictum mauris. Cras volutpat lorem eu nisi aliquam tristique. Praesent sagittis tristique
+        magna posuere egestas. Morbi sit amet tincidunt lacus, at condimentum dui.
+    </p>
 
-<div class="container padding-top-30">
-	<div class="row consulting-services-row">
-        <div class="col-sm-12 consulting-services-top-box">
-            <div class="row align-row">
-                <div class="col-sm-12">
-                    <div class="doc-box align-col">
-        				<div class="doc-box-img">
-        					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/install.png" alt="" style="margin-top:5px;">
-        				</div>
-        				<div class="doc-box-content equal">
-        					<h4><a href="">Install Services (Community Users)</a></h4>
-        					<p>For our community users we help you install eramba on your company or at the cloud for a fix price.</p>
-							<ul>
-								<li>Starting at $500</li>
-								<li>Onsite</li>
-								<li>Remote</li>
-							</ul>
-        				</div>
-        			</div>
-                </div>
-            </div>
+    <h3 class="margin-top-30 margin-bottom-20">
+        <strong>Schedule of trainings</strong>
+    </h3>
 
-            <div class="row align-row">
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/training.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>On site trainings</h4>
-                            <p>If your team is larger than a couple of people we can travel onsite and deliver a in deep three day training.</p>
-							<ul>
-								<li>Onsite</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+    <?php
+    $args = array(
+        'post_type' => 'eramba_trainings',
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'post_status' => 'publish',
+        'posts_per_page' => -1
+    );
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/training.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Remote trainings (Community Users)</h4>
-                            <p>Our community users can access our enterprise trainings for a fix price. Review our training schedulle here.</p>
-							<ul>
-								<li>Starting at $500</li>
-								<li>Remote</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+    $wp_query = new WP_Query($args);
+    $index = 1;
+    if ($wp_query->have_posts()) : ?>
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/import.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Import Data</h4>
-                            <p>We take your spreadsheets and do whatever is necesary to get them uploaded into eramba using CSV, APIs or crude SQL.</p>
-							<ul>
-								<li>Remote</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <table id="trainings-table" class="table margin-bottom-40">
+            <thead>
+                <th style="width: 30%"><?php echo __('Course', 'eramba') ?></th>
+                <th style="width: 40%"><?php echo __('Description', 'eramba') ?></th>
+                <th style="width: 10%"><?php echo __('Date', 'eramba') ?></th>
+                <th style="width: 10%"><?php echo __('Price', 'eramba') ?></th>
+                <th style="width: 10%"><?php echo __('Slots', 'eramba') ?></th>
+            </thead>
+            <tbody>
 
-            <div class="row align-row">
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>doc/calendar.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Complience Management</h4>
-                            <p>We help you assess and upload your controls and policies to eramba and map them with PCI, ISO or any other compliance requirement.</p>
-							<ul>
-								<li>Starting at $500</li>
-								<li>Remote</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+            <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>doc/risk.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Risk Management</h4>
-                            <p>We train your team on risk and help you assess organisational risks, policies and controls to upload them to eramba.</p>
-							<ul>
-								<li>Starting at $500</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+                <tr id="<?php echo rwmb_meta('ERAMBA_url'); ?>">
+                    <td><?php the_title(); ?></td>
+                    <td><?php the_content(); ?></td>
+                    <td><?php echo rwmb_meta('ERAMBA_date'); ?></td>
+                    <td><b><?php echo rwmb_meta('ERAMBA_price') ?>&nbsp;&euro;</b></td>
+                    <td><?php echo rwmb_meta('ERAMBA_slots') ?></td>
+                </tr>
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/data-flow.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Data Flow Analisis (GDPR)</h4>
-                            <p>We help you assess your key assets, document how they flow, who touches them, what policies and controls exist (or not) and upload all to eramba.</p>
-							<ul>
-								<li>Onsite</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row align-row no-bottom-margin">
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>doc/document.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Policy Reviews</h4>
-                            <p>Forget about reviewing policies, we do it for you remotely and at a fix price. Never again miss a policy review! (Download)</p>
-							<ul>
-								<li>Onsite</li>
-								<li>Remote</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+                <?php $index++; ?>
+            <?php endwhile; ?>
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/box.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Control Testing</h4>
-                            <p>Forget about control testing, at a fix price we help you ensure you never miss testing again.</p>
-							<ul>
-								<li>Starting at $500</li>
-								<li>Onsite</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
+            </tbody>
+        </table>
 
-                <div class="col-sm-4">
-                    <div class="doc-box align-col">
-                        <div class="doc-box-img">
-                            <img src="<?php echo do_shortcode('[img]'); ?>doc/suitcase.png" alt="" style="margin-top:5px;">
-                        </div>
-                        <div class="doc-box-content equal">
-                            <h4>Vendor Assesments</h4>
-                            <p>We'll run all your suppliers and business partners trough a Risk assessment and report you their compliance maturity.</p>
-							<ul>
-								<li>Starting at $500</li>
-								<li>Remote</li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<div class="col-sm-12 consulting-services-bottom-box margin-top-40">
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4">
-					<div class="doc-box">
-						<div class="doc-box-img">
-							<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/upgrades.png" alt="" style="margin-top:5px;">
-						</div>
-						<div class="doc-box-content equal">
-							<h4>Remote CISO</h4>
-							<p>We understand startups, we are one. We help you build and operate a professional GRC department remotely and at a fix price.</p>
-							<ul>
-								<li>Remote</li>
-							</ul>
-						</div>
-					</div>
+    <?php else : ?>
+
+        <?php echo e_alert(__('We are currently working on the content.', 'eramba')); ?>
+
+    <?php endif; ?>
+</div>
+
+<div class="text-center margin-bottom-40">
+    <a id="contact-redirect" href="<?php echo get_page_link(BUGS_PAGE_ID); ?>" class="btn btn-danger btn-lg btn-wide">Contact us</a>
+</div>
+<hr>
+<div class="container">
+    <h3 class="text-center margin-top-20">
+        <strong>Controls, Policies & Risk</strong>
+    </h3>
+    <h4 class="doc-subtitle text-center margin-bottom-40">
+		<span>Follow these guides to install and configure eramba</span>
+	</h4>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-4">
+			<div class="doc-box doc-box-alt doc-box-partnerships align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>/doc/controls.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Controls & Audits</h4>
+					<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus.
+                    </p>
 				</div>
 			</div>
 		</div>
-	</div>
 
-    <div class="text-center margin-top-30 margin-bottom-60">
-		<a id="contact-redirect" href="<?php echo get_page_link(BUGS_PAGE_ID); ?>" class="btn btn-success btn-lg btn-wide">More information</a>
-	</div>
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/doc/document.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Policy Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/doc/risk.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Risk Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Controls, Policies & Compliance</strong>
+    </h3>
+
+    <h4 class="doc-subtitle text-center margin-bottom-40">
+        <span>Read this guide to understand how to get going with eramba</span>
+    </h4>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-4">
+			<div class="doc-box doc-box-alt doc-box-partnerships align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>/doc/controls.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Controls & Audits</h4>
+					<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient.
+                    </p>
+				</div>
+			</div>
+		</div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/doc/document.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Policy Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/doc/calendar.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Compliance Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Controls, Policies & Data Flows</strong>
+    </h3>
+
+    <h4 class="doc-subtitle text-center">
+        <span>Automate email notifications, reports, reminders and more</span>
+    </h4>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-4">
+			<div class="doc-box doc-box-alt doc-box-partnerships align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>/doc/controls.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Controls & Audits</h4>
+					<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
+                    </p>
+				</div>
+			</div>
+		</div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/doc/document.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Policy Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>/enterprise-icons/data-flow.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Compliance Management</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Awareness Trainings</strong>
+    </h3>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+			<div class="doc-box doc-box-alt doc-box-partnerships align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>/doc/shield.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Security Awareness</h4>
+					<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
+                    </p>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Third Party Audits</strong>
+    </h3>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+			<div class="doc-box doc-box-alt doc-box-partnerships align-col">
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>/doc/suitcase.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Vendor Assessments</h4>
+					<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus.
+                    </p>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Eramba & ISO</strong>
+    </h3>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>ISO 27001 Guide</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes
+                        sociis natoque penatibus et magnis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center margin-top-20">
+        <strong>Eramba & PCI</strong>
+    </h3>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>pci.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>PCI-DSS Guide</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">

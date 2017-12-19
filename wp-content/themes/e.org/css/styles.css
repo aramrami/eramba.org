@@ -2395,6 +2395,23 @@ ul.doc-list ul {
 	max-width: 70%;
 }
 
+.jumbo-box.full-size {
+	padding: 0;
+}
+
+.jumbo-box.full-size .text-wrapper {
+	padding: 30px 0;
+}
+
+.jumbo-box.full-size .img-wrapper {
+	padding: 0;
+	align-self: flex-end;
+}
+
+.jumbo-box.full-size .img-wrapper img {
+	max-width: 100%;
+}
+
 a.no-text-effect p {
 	text-decoration: none;
 	color: #616a71;
@@ -2415,8 +2432,8 @@ a.no-text-effect:focus {
 }
 
 .partnerships-text.small {
-	font-size: 13px;
-	line-height: 16px;
+	font-size: 14px;
+	line-height: 24px;
 	font-weight: 700;
 }
 
@@ -2529,4 +2546,24 @@ a.no-text-effect:focus {
 
 .no-bottom-margin .doc-box {
 	margin-bottom: 0;
+}
+
+#trainings-table {
+	font-size: 14px;
+	border-collapse: collapse;
+}
+
+#trainings-table th,
+#trainings-table td {
+	padding: 15px 20px;
+	vertical-align: top;
+}
+
+#trainings-table th {
+	font-weight: 700;
+	background-color: #d6e3f1;
+}
+
+#trainings-table td {
+	background-color: #f2f2f2;
 }

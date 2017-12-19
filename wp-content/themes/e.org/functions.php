@@ -250,9 +250,9 @@ function eramba_custom_post_types() {
 	);
 
 	$documentation_section_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'documentation-section' ),
 		'show_admin_column' => true
 	);
@@ -297,9 +297,9 @@ function eramba_custom_post_types() {
 	);
 
 	$download_section_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'download-section' ),
 		'show_admin_column' => true
 	);
@@ -353,6 +353,30 @@ function eramba_custom_post_types() {
 	);
 	register_post_type('eramba_lists_ahead', $args);
 
+	//trainings
+	$labels = array(
+		'name' => _x('Trainings', 'post type general name', 'eramba'),
+		'singular_name' => _x('Training', 'post type singular name', 'eramba'),
+		'add_new' => _x('Add Training', 'Timeline item', 'eramba'),
+		'add_new_item' => __('Add New Training', 'eramba'),
+		'edit_item' => __('Edit Training', 'eramba'),
+		'new_item' => __('New Training item', 'eramba'),
+		'view_item' => __('View Training item', 'eramba'),
+		'search_items' => __('Search Training', 'eramba'),
+		'not_found' =>  __('Nothing found', 'eramba'),
+		'not_found_in_trash' => __('Nothing found in Trash', 'eramba')
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'hierarchical' => false,
+		'capability_type' => 'post',
+		'has_archive' => 'true',
+		'rewrite' => array('slug' => 'training'),
+		'supports' => array('title', 'editor'),
+	);
+	register_post_type('eramba_trainings', $args);
+
 /*	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'eramba' ),
 		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'eramba' ),
@@ -368,9 +392,9 @@ function eramba_custom_post_types() {
 	);
 
 	$list_ahead_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'list-ahead-category' ),
 		'show_admin_column' => true
 	);
@@ -563,7 +587,7 @@ function twentyfifteen_comment_nav() {
 	endif;
 }
 
-function eramba_pagination( $pages = '', $range = 2 ) {  
+function eramba_pagination( $pages = '', $range = 2 ) {
 	$showitems = ($range * 2) + 1;
 
 	global $paged;
@@ -592,7 +616,7 @@ function eramba_pagination( $pages = '', $range = 2 ) {
 				echo ($paged == $i) ? "<span class='current ' disabled>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
 			}
 
-		
+
 		}
 
 		/*if ( $paged < $pages && $showitems < $pages ) {
@@ -601,7 +625,7 @@ function eramba_pagination( $pages = '', $range = 2 ) {
 		if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) {
 			echo "<a href='".get_pagenum_link($pages)."' title='" . __( 'Last Page', 'eramba' ) . "' class=''><i class='fa fa-angle-double-right'></i></a>";
 		}
-		
+
 	} else {
 		echo "<span class='current'>".$pages."</span>";
 	}
@@ -632,11 +656,11 @@ function ajax_newsletter_form_handler() {
 
 	$subject  = __( 'Newsletter Form Submission', 'eramba' );
 	$body     = sprintf( __( 'A user wants to subscribe to %1$s newsletter.', 'eramba' ), get_bloginfo( 'name' ) ) . "\n\n" .
-	            __( 'E-mail:', 'eramba' ) . ' ' . $email . "\n" . 
+	            __( 'E-mail:', 'eramba' ) . ' ' . $email . "\n" .
 	            __( 'IP:', 'eramba' ) . ' ' . $ip_addr . "\n";
 
 	$headers  = 'From: ' . $email . "\r\n";
-	
+
 	// send mail via wp mail function
 	$mail = wp_mail( $email_to, $subject, $body, $headers );
 
@@ -685,7 +709,7 @@ function seo_meta_tags() { ?>
 	<?php if ( get_theme_mod( 'meta-description', false ) ) : ?>
 		<meta name="description" content="<?php echo get_theme_mod( 'meta-description' ); ?>" />
 	<?php endif; ?>
-	
+
 	<?php if ( get_theme_mod( 'meta-keywords', false ) ) : ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'meta-keywords' ); ?>" />
 	<?php endif; ?>
@@ -838,7 +862,7 @@ function handle_download_routes() {
 			}
 		}
 	}
-	
+
 }
 add_action('after_setup_theme', 'handle_download_routes');
 

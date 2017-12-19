@@ -343,7 +343,58 @@ $meta_boxes[] = array(
 	)
 );
 
+$meta_boxes[] = array(
+	// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+	'id' => 'custom_training',
 
+	// Meta box title - Will appear at the drag and drop handle bar. Required.
+	'title' => __( 'Additional Settings', 'eramba' ),
+
+	// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+	'pages' => array( 'eramba_trainings' ),
+
+	// Where the meta box appear: normal (default), advanced, side. Optional.
+	'context' => 'normal',
+
+	// Order of meta box: high (default), low. Optional.
+	'priority' => 'high',
+
+	// Auto save: true, false (default). Optional.
+	'autosave' => false,
+
+	'fields' => array(
+		array(
+			'name'  => __( 'URL', 'eramba' ),
+			'id'    => "{$prefix}url",
+			'desc'  => __('ID for training without #, etc. "training-1"'),
+			'type'  => 'text'
+		),
+		array(
+			'name'  => __( 'Price', 'eramba' ),
+			'id'    => "{$prefix}price",
+			'type'  => 'text'
+		),
+		array(
+			'name' => __( 'Date', 'eramba' ),
+			'id'   => "{$prefix}date",
+			'type' => 'date',
+
+			// jQuery date picker options. See here http://api.jqueryui.com/datepicker
+			'js_options' => array(
+				'dateFormat'      => 'dd/mm/yy',
+				'changeMonth'     => true,
+				'changeYear'      => true,
+				'showButtonPanel' => true,
+			),
+		),
+		array(
+			'name'  => __( 'Slots', 'eramba' ),
+			'id'    => "{$prefix}slots",
+			'desc'  => __('Number of remaining slots'),
+			'type'  => 'number'
+		),
+	)
+);
 // 1st meta box
 /*$meta_boxes[] = array(
 	// Meta box id, UNIQUE per meta box. Optional since 4.1.5
