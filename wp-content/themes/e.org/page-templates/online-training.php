@@ -69,14 +69,13 @@ get_header();
 
             <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-                <tr id="<?php echo rwmb_meta('ERAMBA_url'); ?>">
-                    <td><?php the_title(); ?></td>
+                <tr>
+                    <td><a href="#<?php echo rwmb_meta('ERAMBA_url');?>"><?php the_title(); ?></a></td>
                     <td><?php the_content(); ?></td>
                     <td><?php echo rwmb_meta('ERAMBA_slots') ?></td>
                     <td><?php echo rwmb_meta('ERAMBA_date'); ?></td>
                     <td><b><?php echo rwmb_meta('ERAMBA_price') ?>&nbsp;&euro;</b></td>
                 </tr>
-
 
                 <?php $index++; ?>
             <?php endwhile; ?>
@@ -96,7 +95,7 @@ get_header();
 </div>
 <hr>
 <div class="container">
-    <h3 class="text-center margin-top-20">
+    <h3 id="controls-policies-risk" class="text-center margin-top-20">
         <strong>Controls, Policies & Risk</strong>
     </h3>
     <h4 class="doc-subtitle text-center margin-bottom-40">
@@ -153,7 +152,7 @@ get_header();
         </div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="controls-policies-compliance" class="text-center margin-top-20">
         <strong>Controls, Policies & Compliance</strong>
     </h3>
 
@@ -211,7 +210,7 @@ get_header();
         </div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="controls-policies-data-flows" class="text-center margin-top-20">
         <strong>Controls, Policies & Data Flows</strong>
     </h3>
 
@@ -269,7 +268,7 @@ get_header();
         </div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="awareness-trainings" class="text-center margin-top-20">
         <strong>Awareness Trainings</strong>
     </h3>
 
@@ -291,7 +290,7 @@ get_header();
 		</div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="third-party-audits" class="text-center margin-top-20">
         <strong>Third Party Audits</strong>
     </h3>
 
@@ -313,7 +312,7 @@ get_header();
 		</div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="eramba-iso" class="text-center margin-top-20">
         <strong>Eramba & ISO</strong>
     </h3>
 
@@ -336,7 +335,7 @@ get_header();
         </div>
     </div>
 
-    <h3 class="text-center margin-top-20">
+    <h3 id="eramba-pci" class="text-center margin-top-20">
         <strong>Eramba & PCI</strong>
     </h3>
 
