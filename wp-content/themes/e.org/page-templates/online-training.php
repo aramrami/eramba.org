@@ -61,9 +61,9 @@ get_header();
             <thead>
                 <th style="width: 30%"><?php echo __('Course', 'eramba') ?></th>
                 <th style="width: 40%"><?php echo __('Description', 'eramba') ?></th>
+                <th style="width: 10%"><?php echo __('Slots', 'eramba') ?></th>
                 <th style="width: 10%"><?php echo __('Date', 'eramba') ?></th>
                 <th style="width: 10%"><?php echo __('Price', 'eramba') ?></th>
-                <th style="width: 10%"><?php echo __('Slots', 'eramba') ?></th>
             </thead>
             <tbody>
 
@@ -72,9 +72,9 @@ get_header();
                 <tr id="<?php echo rwmb_meta('ERAMBA_url'); ?>">
                     <td><?php the_title(); ?></td>
                     <td><?php the_content(); ?></td>
+                    <td><?php echo rwmb_meta('ERAMBA_slots') ?></td>
                     <td><?php echo rwmb_meta('ERAMBA_date'); ?></td>
                     <td><b><?php echo rwmb_meta('ERAMBA_price') ?>&nbsp;&euro;</b></td>
-                    <td><?php echo rwmb_meta('ERAMBA_slots') ?></td>
                 </tr>
 
 
