@@ -85,7 +85,7 @@ get_header();
 
     <?php else : ?>
 
-        <?php echo e_alert(__('We are currently working on the content.', 'eramba')); ?>
+        <?php echo e_alert(__('Currently there is no available training', 'eramba')); ?>
 
     <?php endif; ?>
 </div>
