@@ -2567,3 +2567,7 @@ a.no-text-effect:focus {
 #trainings-table td {
 	background-color: #f2f2f2;
 }
+
+#trainings-table tr td {
+	border-bottom: 1px solid #fff;
+}
