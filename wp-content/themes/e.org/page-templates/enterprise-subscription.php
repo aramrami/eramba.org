@@ -128,64 +128,6 @@ get_header();
     </div>
 </div>
 
-<hr>
-
-<div class="container">
-    <h2 class="margin-top-20 margin-bottom-40">
-        <strong>Community services</strong>
-    </h2>
-    <div class="row align-row">
-        <div class="col-sm-4">
-            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
-                <div class="doc-box-img">
-                    <img src="<?php echo do_shortcode('[img]'); ?>community.png" alt="">
-                </div>
-                <div class="doc-box-content">
-                    <h4>Enterprise Release</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus ociis natoque penatibus et
-                        magnis dis parturient montes.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
-                <div class="doc-box-img">
-                    <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/installation.png" alt="">
-                </div>
-                <div class="doc-box-content">
-                    <h4>Help to Install</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus.
-                    </p>
-                    <a href="#" class="btn btn-default width-80 margin-top-10">Tell me more</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
-                <div class="doc-box-img">
-                    <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/training.png" alt="">
-                </div>
-                <div class="doc-box-content">
-                    <h4>Online trainings</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque.
-                    </p>
-                    <a href="#" class="btn btn-default width-80 margin-top-10">Tell me more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script type="text/javascript">
     $(function(){
         function alignCols() {
