@@ -11,10 +11,15 @@ get_header();
 		<strong>Start Here</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Not sure how to start? Read this introductory guide</span>
+		<span>Not sure how to start? Watch this introductory guide</span>
 	</h4>
 
-	<div class="row align-row">
+	<div class="text-center">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/rblNnWnp_YM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</div>
+	<br>
+
+	<!-- <div class="row align-row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<div class="doc-box doc-box-alt align-col">
 				<div class="doc-box-img">
@@ -30,7 +35,7 @@ get_header();
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <hr>
