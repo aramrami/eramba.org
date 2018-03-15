@@ -930,7 +930,8 @@ function custom_url_redirects() {
 		'license' => 'https://docs.google.com/document/d/1-3vbjQx9h2yupox3FVMbWuS7W07GE5CC1wa70hI-sJM/',
 		'tc' => 'https://docs.google.com/document/d/1DzJWu9kH5gllFlFV9LLstuI4eGbhBwhXHhZ4KqGAI70/',
 		'payments' => 'https://docs.google.com/document/d/1VkTCCD2hh3l9sgk-5VIrbuAbCEtl3BSXSG2uiJEgeP8/',
-		'tc_saas_enterprise' => 'https://docs.google.com/document/d/1OwimW4_coRaFMQFmYU2Xy23uZ4qlwHdVMCg8Dpl7zws/'
+		'tc_saas_enterprise' => 'https://docs.google.com/document/d/1OwimW4_coRaFMQFmYU2Xy23uZ4qlwHdVMCg8Dpl7zws/',
+		'community_tc' => 'https://docs.google.com/document/d/1GM4YHOio0jOnaoESyZRl3Jt6S2nSB9ztLIi9b4cWlvQ/'
 	);
 
 	$params = explode('/', $_SERVER["REQUEST_URI"]);
