@@ -378,6 +378,30 @@ function eramba_custom_post_types() {
 	);
 	register_post_type('eramba_lists_ahead', $args);
 
+	//trainings
+	$labels = array(
+		'name' => _x('Trainings', 'post type general name', 'eramba'),
+		'singular_name' => _x('Training', 'post type singular name', 'eramba'),
+		'add_new' => _x('Add Training', 'Timeline item', 'eramba'),
+		'add_new_item' => __('Add New Training', 'eramba'),
+		'edit_item' => __('Edit Training', 'eramba'),
+		'new_item' => __('New Training item', 'eramba'),
+		'view_item' => __('View Training item', 'eramba'),
+		'search_items' => __('Search Training', 'eramba'),
+		'not_found' =>  __('Nothing found', 'eramba'),
+		'not_found_in_trash' => __('Nothing found in Trash', 'eramba')
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'hierarchical' => false,
+		'capability_type' => 'post',
+		'has_archive' => 'true',
+		'rewrite' => array('slug' => 'training'),
+		'supports' => array('title', 'editor'),
+	);
+	register_post_type('eramba_trainings', $args);
+
 /*	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'eramba' ),
 		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'eramba' ),

@@ -28,7 +28,7 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" id="eramba-main-css" href="http://www.eramba.org/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
+	<link rel="stylesheet" id="eramba-main-css" href="<?php echo home_url( '/' ); ?>/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
 </head>
 
 <body <?php body_class(); ?>>
