@@ -116,7 +116,8 @@ function eramba_scripts_styles() {
 	wp_enqueue_style( 'fontawesome', THEME_CSS . 'font-awesome.min.css');
 	wp_enqueue_style( 'jquery-fancybox', THEME_CSS . 'jquery.fancybox.css');
 	wp_enqueue_style( 'jquery-nanoscroller', THEME_CSS . 'nanoscroller.css');
-	wp_enqueue_style( 'eramba-main', THEME_CSS . 'styles.css', array(), '20112016' );
+	//moved to header
+	// wp_enqueue_style( 'eramba-main', THEME_CSS . 'styles.css', array(), '20112017' );
 
 	wp_deregister_script( 'jquery' );
 	wp_register_script('jquery', THEME_JS . 'jquery-1.11.2.min.js');
@@ -250,9 +251,9 @@ function eramba_custom_post_types() {
 	);
 
 	$documentation_section_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'documentation-section' ),
 		'show_admin_column' => true
 	);
@@ -282,6 +283,30 @@ function eramba_custom_post_types() {
 	);
 	register_post_type('eramba_downloads', $args);
 
+	//partners
+	$labels = array(
+		'name' => _x('Partners', 'post type general name', 'eramba'),
+		'singular_name' => _x('Partner', 'post type singular name', 'eramba'),
+		'add_new' => _x('Add New', 'Download', 'eramba'),
+		'add_new_item' => __('Add New Partner', 'eramba'),
+		'edit_item' => __('Edit Partner', 'eramba'),
+		'new_item' => __('New Partner', 'eramba'),
+		'view_item' => __('View Partner', 'eramba'),
+		'search_items' => __('Search Partner', 'eramba'),
+		'not_found' =>  __('Nothing found', 'eramba'),
+		'not_found_in_trash' => __('Nothing found in Trash', 'eramba')
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'hierarchical' => false,
+		'capability_type' => 'post',
+		'has_archive' => 'false',
+		'rewrite' => array('slug' => 'partners'),
+		'supports' => array('title'),
+	);
+	register_post_type('eramba_partners', $args);
+
 	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'eramba' ),
 		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'eramba' ),
@@ -297,9 +322,9 @@ function eramba_custom_post_types() {
 	);
 
 	$download_section_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'download-section' ),
 		'show_admin_column' => true
 	);
@@ -368,9 +393,9 @@ function eramba_custom_post_types() {
 	);
 
 	$list_ahead_args = array(
-		'hierarchical' => true, 
+		'hierarchical' => true,
 		'labels' => $labels,
-		'query_var' => true, 
+		'query_var' => true,
 		'rewrite' => array( 'slug' => 'list-ahead-category' ),
 		'show_admin_column' => true
 	);
@@ -392,6 +417,37 @@ function getListsAheadType() {
 		'patch' => __('Patch', 'eramba'),
 		'feature' => __('Feature', 'eramba')
 	);
+}
+
+function getListOfCountries() {
+	global $wpdb;
+	$countries = $wpdb->get_results("SELECT id, country_name FROM countries ORDER BY country_name ASC");
+	$result = [];
+
+	foreach ($countries as $country) {
+		$result[$country->id] = $country->country_name;
+	}
+
+	return $result;
+}
+
+function getListOfPartnersCountries() {
+	global $wpdb;
+	$result = [];
+	$metaTag = 'ERAMBA_countries';
+	$countriesIds = $wpdb->get_col($wpdb->prepare("SELECT meta_value, post_id FROM $wpdb->postmeta INNER JOIN $wpdb->posts ON $wpdb->posts.id = $wpdb->postmeta.post_id WHERE $wpdb->postmeta.meta_key = %s AND $wpdb->posts.post_type = 'eramba_partners' AND $wpdb->posts.post_status != 'trash 'ORDER BY meta_value ASC", $metaTag ) );
+
+	$countriesIds = array_unique($countriesIds);
+
+	$countriesIds = array_map('intval', $countriesIds);
+	$select = "SELECT id, country_name FROM countries WHERE id IN (" . implode(',', $countriesIds) . ") ORDER BY country_name ASC";
+	$countries = $wpdb->get_results($select);
+
+	foreach ($countries as $country) {
+		$result[$country->id] = $country->country_name;
+	}
+
+	return $result;
 }
 
 /**
@@ -563,7 +619,7 @@ function twentyfifteen_comment_nav() {
 	endif;
 }
 
-function eramba_pagination( $pages = '', $range = 2 ) {  
+function eramba_pagination( $pages = '', $range = 2 ) {
 	$showitems = ($range * 2) + 1;
 
 	global $paged;
@@ -592,7 +648,7 @@ function eramba_pagination( $pages = '', $range = 2 ) {
 				echo ($paged == $i) ? "<span class='current ' disabled>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
 			}
 
-		
+
 		}
 
 		/*if ( $paged < $pages && $showitems < $pages ) {
@@ -601,7 +657,7 @@ function eramba_pagination( $pages = '', $range = 2 ) {
 		if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) {
 			echo "<a href='".get_pagenum_link($pages)."' title='" . __( 'Last Page', 'eramba' ) . "' class=''><i class='fa fa-angle-double-right'></i></a>";
 		}
-		
+
 	} else {
 		echo "<span class='current'>".$pages."</span>";
 	}
@@ -632,11 +688,11 @@ function ajax_newsletter_form_handler() {
 
 	$subject  = __( 'Newsletter Form Submission', 'eramba' );
 	$body     = sprintf( __( 'A user wants to subscribe to %1$s newsletter.', 'eramba' ), get_bloginfo( 'name' ) ) . "\n\n" .
-	            __( 'E-mail:', 'eramba' ) . ' ' . $email . "\n" . 
+	            __( 'E-mail:', 'eramba' ) . ' ' . $email . "\n" .
 	            __( 'IP:', 'eramba' ) . ' ' . $ip_addr . "\n";
 
 	$headers  = 'From: ' . $email . "\r\n";
-	
+
 	// send mail via wp mail function
 	$mail = wp_mail( $email_to, $subject, $body, $headers );
 
@@ -685,7 +741,7 @@ function seo_meta_tags() { ?>
 	<?php if ( get_theme_mod( 'meta-description', false ) ) : ?>
 		<meta name="description" content="<?php echo get_theme_mod( 'meta-description' ); ?>" />
 	<?php endif; ?>
-	
+
 	<?php if ( get_theme_mod( 'meta-keywords', false ) ) : ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'meta-keywords' ); ?>" />
 	<?php endif; ?>
@@ -838,7 +894,7 @@ function handle_download_routes() {
 			}
 		}
 	}
-	
+
 }
 add_action('after_setup_theme', 'handle_download_routes');
 
