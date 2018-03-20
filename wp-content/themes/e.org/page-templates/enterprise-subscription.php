@@ -7,21 +7,14 @@ get_header();
 	<div class="container">
 		<div class="row align-row vertical-align-row">
 			<div class="col-sm-7 text-wrapper">
-                <h3 class="margin-top-10">
-                    <strong>
-                        Get help from the core team
-                    </strong>
-                </h3>
+
 				<p class="partnerships-text">
-                    We offer a packaged yearly support service that includes installation,
-                    training, immediate patch resolutions and features not necessarily published
-                    on the community version at extremely affordable prices. With the help of
-                    our global partners, we also provide customisation and consulting services.
+		Eramba comes in two versions, our community which you can download for free but includes no support other than our public documentation 
+		and our enterprise version, which
+		includes additional features, monthly updates and support from the core team.
 				</p>
                 <p class="partnerships-text small">
-                    The income generated from these services is what keeps this project alive.
-                    We re-invest %100 into the project and we have no intention to become yet another
-                    GRC company.
+		The income generated from these services is what keeps this project alive. We re-invest %100 back into this project, we have no intention to become yet another GRC company.
                 </p>
 			</div>
 			<div class="col-sm-5 text-center img-wrapper full-size">
@@ -32,7 +25,7 @@ get_header();
 </div>
 <div class="container">
     <h2 class="margin-top-40 margin-bottom-40">
-        <strong>Enterprise services</strong>
+        <strong>Enterprise Subscription Package</strong>
     </h2>
     <div class="row align-row">
         <div class="col-sm-4">
@@ -43,9 +36,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Enterprise Release</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
+			Includes our latest features and patches. In open-code format which you can deploy on-premises or cloud.
                     </p>
                 </div>
             </div>
@@ -59,9 +50,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Help to Install</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
+			If Linux is not your thing - as an enterprise customer you will get remote assistance to install and update eramba.
                     </p>
                 </div>
             </div>
@@ -75,9 +64,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Online Trainings</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
+			On top of our documentation, every month or so we run online, instructor led training that will help you and/or your team(s) understand the system in detail.
                     </p>
                 </div>
             </div>
@@ -91,9 +78,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Support</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
+			Questions? Bug Reports? Feature Requests? We offer unlimited email support to help you get going with eramba.
                     </p>
                 </div>
             </div>
@@ -107,9 +92,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Software Updates</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
+			While community users get one update a year, as an enterprise customer you will get monthly updates with features and bug resolutions.
                     </p>
                 </div>
             </div>
@@ -119,9 +102,9 @@ get_header();
             <div class="doc-box doc-box-alt align-col">
                 <div class="doc-box-content">
                     <div class="box-jumbo margin-top-40 margin-bottom-40">
-                        <strong>1800 &euro;</strong> / Year
+                        <strong>2500 EUR</strong> / Year
                     </div>
-                    <a href="#" class="btn btn-blue width-90">Get a Quote</a>
+                    <a href="http://www.eramba.org/resources/bugs-features/" class="btn btn-blue width-90">Get a Quote</a>
                 </div>
             </div>
         </div>

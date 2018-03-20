@@ -35,7 +35,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Discounts</h4>
-					<p>Partners access to %35 discount on new licenses and %5 on renewals.</p>
+					<p>As partner you’ll have access to discounts for new (%40) and renewed licenses (%5)</p>
 				</div>
 			</div>
 		</div>
@@ -47,7 +47,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Trainings</h4>
-					<p>Partners are invited to all our enterprise trainings for free.</p>
+					<p>You and your colleagues can access our enterprise trainings at no cost</p>
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Sales Support</h4>
-					<p>We can support partners on their sales engagements with product demos and insights.</p>
+					<p>We can remotely help you at your sales meetings with product demos and insights</p>
 				</div>
 			</div>
 		</div>
@@ -71,7 +71,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Publicity</h4>
-					<p>Over 35 thousand people visits this page, we are glad to publicly display our cooperation!</p>
+					<p>Over 35 thousand people visits eramba every year - a partner portal will show your company logo and website</p>
 				</div>
 			</div>
 		</div>
@@ -83,7 +83,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Demo Sites</h4>
-					<p>For product demos and skills development, partners can access a cloud environemnt running our latest enterprise release for €500 / Year.</p>
+					<p>At a discounted fee (EUR 500 / Year)  - you’ll have your own eramba instance in the cloud so you can always demo and test eramba</p>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Tech Support</h4>
-					<p>For those partners that purchase licenses for themselves, enterprise support is also available.</p>
+					<p>We’ll support you with our standard enterprise technical support</p>
 				</div>
 			</div>
 		</div>
@@ -182,7 +182,7 @@ get_header();
 	</div>
 
 	<div class="text-center margin-top-10 margin-bottom-60">
-		<a id="contact-redirect" href="<?php echo get_page_link(BUGS_PAGE_ID); ?>" class="btn btn-success btn-lg btn-wide">Become a Partner</a>
+		<a id="contact-redirect" href="https://s3-eu-west-1.amazonaws.com/downloadseramba/Partners_Intro_Eramba_Export_PDF.pdf" class="btn btn-success btn-lg btn-wide">Download PDF with all details</a>
 	</div>
 </div>
 

@@ -12,7 +12,7 @@
 					</span>
 				</p>
 				<p>
-					<strong>The income generated from these services is what keeps our community alive. We re-invest %100 into the project and retain no profits in order to provide the best pricing possible. </strong>
+					<strong>The income generated from these services is what keeps our community alive. We re-invest %100 into the project and retain no profits in order to provide the best pricing possible. <br><br><a href="http://www.eramba.org/documentation/enterprise-subscription-introduction/">Read more about us</a></strong> 
 				</p>
 			</div>
 			<div class="col-xs-5 static">
@@ -35,6 +35,7 @@
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
 						<th>Community</th>
+						<th>SMB</th>
 						<th>Enterprise</th>
 					</tr>
 				</thead>
@@ -47,10 +48,11 @@
 						<td>
 							<h3>Engine</h3>
 							<p>
-								We manage two releases, community and enterprise. See the differences <a href="https://docs.google.com/spreadsheets/d/1v1t8Ilu-6hORS1eYDcC_1Ov78ylND7J2tK0iU1Ignos/edit">here.</a> While enterprise gets updated all the time, community gets a single update per year.
+								We manage two releases, community and enterprise. See the differences <a href="http://www.eramba.org/enterprise-vs-community/">here.</a>
 							</p>
 						</td>
 						<td>Community</td>
+						<td>Enterprise Edition</td>
 						<td>Enterprise Edition</td>
 					</tr>
 
@@ -61,11 +63,12 @@
 						<td>
 							<h3>Support</h3>
 							<p>
-								You have a question, an issue, a bug, an idea, we respond you and help you. Our support is primarily over email, but we are not shy of using Webex or phone if needed.
+								A number of yearly support cases (questions you may have) included on this package. Additional can be purchased at a prefered fee. 
 							</p>
 						</td>
-						<td>None</td>
-						<td>Unlimited</td>
+						<td>Online documentation</td>
+						<td>10 support cases / Year <br> 72 hs SLA</td>
+						<td>40 support cases / Year <br> 24 hs SLA</td>
 					</tr>
 
 					<tr>
@@ -80,6 +83,7 @@
 						</td>
 						<td>Once a year</td>
 						<td>As needed</td>
+						<td>As needed</td>
 					</tr>
 
 					<tr>
@@ -92,7 +96,8 @@
 								As we develop new features, we distribute them to our customers
 							</p>
 						</td>
-						<td>Once a year</td>
+						<td>Once a year (not all)</td>
+						<td>All the time</td>
 						<td>All the time</td>
 					</tr>
 
@@ -103,18 +108,20 @@
 							<img src="<?php echo $icons; ?>consulting.png" alt="" />
 						</td>
 						<td>
-							<h3>Training</h3>
+							<h3>Consulting</h3>
 							<p>
-							 	On top of our documentation (which includes videos, etc) we deliver one to one and one to many webcasts.	
+							 Advisory, Guidance to install or update eramba on-premise, Customization, Trainings, Etc.	
 							</p>
 						</td>
-						<td>Nope</td>
-						<td>4hs dedicated + regular online trainings</td>
+						<td>Not provided</td>
+						<td>Not Included <br> On Demand <br> £55 / Hour <br> (~ $80)</td>
+						<td>4 Hs Included <br> Additional Hs <br> £34 / hour <br> (~ $50)</td>
 					</tr>
 
 					<tr>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
+						<td style="background:#ffffff;">&nbsp;</td>
 						<td style="background:#ffffff;">&nbsp;</td>
 						<td style="background:#ffffff;">&nbsp;</td>
 					</tr>
@@ -124,13 +131,14 @@
 							<img src="<?php echo $icons; ?>cost-on-premise.png" alt="" />
 						</td>
 						<td>
-							<h3>Yearly Fee</h3>
+							<h3>Yearly Fee (On Premise)</h3>
 							<p>
-								We will provide you with the source code for you to install eramba on your premises. 
+								We will provide you with the source code for you to install or a Virtual Machine with everything pre-installed. 
 							</p>
 						</td>
 						<td style="background:#e9f2f5;"><span class="price-highlight">Free</span></td>
-						<td style="background:#e9f2f5;"><span class="price-highlight">$2200</span> / Year <br></td>
+						<td style="background:#e9f2f5;"><span class="price-highlight">£1250</span> / Year <br> (∼ $1800)</td>
+						<td style="background:#e9f2f5;"><span class="price-highlight">£2300</span> / Year <br> (∼ $3200)</td>
 					</tr>
 
 					<!--<tr>
@@ -153,6 +161,7 @@
 						<td>&nbsp;</td>
 						<td style="background:#ffffff;">&nbsp;</td>
 						<td style="background:#ffffff;">&nbsp;</td>
+						<td style="background:#ffffff;">&nbsp;</td>
 					</tr>
 
 					<tr>
@@ -165,8 +174,9 @@
 								We pride for having a very open-minded custom <a href="http://www.eramba.org/documentation/license/">licensing </a>terms for our customers
 							</p>
 						</td>
-						<td><a href="http://www.eramba.org/license" target="_blank">Standard</a></td>
-						<td><a href="http://www.eramba.org/tc" target="_blank">See T&C Below</a></td>
+						<td><a href="https://docs.google.com/document/d/1-3vbjQx9h2yupox3FVMbWuS7W07GE5CC1wa70hI-sJM/edit" target="_blank">Standard</a></td>
+						<td><a href="https://docs.google.com/document/d/1-3vbjQx9h2yupox3FVMbWuS7W07GE5CC1wa70hI-sJM/edit" target="_blank">Standard</a></td>
+						<td><a href="https://docs.google.com/document/d/1-3vbjQx9h2yupox3FVMbWuS7W07GE5CC1wa70hI-sJM/edit" target="_blank">Standard</a></td>
 					</tr>
 
 					<tr>
@@ -183,7 +193,12 @@
 						<td>
 							<!--<a href="http://www.eramba.org/documentation/2626/">SaaS T&C</a>
 							 or 
-							--><a href="http://www.eramba.org/tc" target="_blank">On Premise T&C</a>
+							--><a href="https://docs.google.com/document/d/1DzJWu9kH5gllFlFV9LLstuI4eGbhBwhXHhZ4KqGAI70/edit" target="_blank">On Premise T&C</a>
+						</td>
+						<td>
+							<!--<a href="http://www.eramba.org/documentation/2626/">SaaS T&C</a>
+							 or 
+							--><a href="https://docs.google.com/document/d/1DzJWu9kH5gllFlFV9LLstuI4eGbhBwhXHhZ4KqGAI70/edit" target="_blank">On Premise T&C</a>
 						</td>
 					</tr>
 
@@ -196,9 +211,9 @@
 			<br />
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<!--<a href="https://support.eramba.org/invite" class="btn btn-success btn-lg btn-wide">
+					<a href="https://support.eramba.org/invite" class="btn btn-success btn-lg btn-wide">
 						<?php _e('Order service', 'eramba'); ?>
-					</a>-->
+					</a>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="<?php echo get_page_link(BUGS_PAGE_ID); ?>" class="btn btn-default btn-lg btn-wide">
 						<?php _e('Contact us', 'eramba'); ?>
@@ -236,15 +251,26 @@
 			<p>We have experience but we try to stay away from consulting as it's not our focus. Our idea is to deliver GRC software for free or in the worst scenario, at the best possible fee and to achieve this our focus needs to be the community, the product and its documentation.</p>
 		</div>
 		<div class="col-xs-6">
-			<p><strong>I'm using the community version, can I upgrade?</strong></p>
-			<p>Typically yes, it depends which version you are running. Contact us for to validate how we could make it work.</p>
+			<p><strong>Why support cases are limited?</strong></p>
+			<p>Because typically (in our experience) more are not needed. Besides if you need more cases than your package has you can buy them at preffered rates. We apply a business model in which if you dont take from our time we dont charge you and therefore you get a much better pricing and we get to focus on the product and documentation.</p>
 		</div>
 	</div>
 	<br />
 	<div class="row">
 		<div class="col-xs-6">
-			<p><strong>How do we pay?</strong></p>
-			<p>Credit cards or Bank Transfers, <a href="http://www.eramba.org/payments">details</a> here</p>
+			<p><strong>Can I buy one year Enterprise and then downgrade to SMB?</strong></p>
+			<p>Sure! And we will be happy to see your GRC costs are cut by almost half! Remember our goals is to provide GRC documentation and tools at the best possible price, we would be delighted t osee you saving money and staying with us year after year.</p>
+		</div>
+		<div class="col-xs-6">
+			<p><strong>What happens if I buy Enterprise or SMB on-premise and then decide to stop using it?</strong></p>
+			<p>This are support services, once you stop paying we stop delivering. You can keep the code of course.</p>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-xs-6">
+			<p><strong>I'm using the community version, can I upgrade?</strong></p>
+			<p>Typically yes, it depends which version you are running. Contact us for to validate how we could make it work.</p>
 		</div>
 		<div class="col-xs-6">
 			<p><strong>I'm interested but i still have questions...</strong></p>

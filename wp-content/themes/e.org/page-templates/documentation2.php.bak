@@ -78,8 +78,8 @@ function doc_raw($content) {
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>User Interface</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<h4>Mass Imports</h4>
+					<p>Import controls, policies and more using preformated CSV files.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -95,7 +95,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Filters</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Search, export and report over email data from eramba.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -111,7 +111,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Notifications</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Automate email notifications, reports, reminders and more.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -129,7 +129,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Workflows</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Let eramba govern your flows using approvals and conditions (this feature is being rebuilt right now).</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -145,7 +145,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Versioning</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Keep track of changes (and restore anytime) on every control, risk or object.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -161,7 +161,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Custom Fields</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Include on any form (while creating a risk, control, etc) any field you want and later use it on the system.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -185,8 +185,8 @@ function doc_raw($content) {
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Security Controls & Audits</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<h4>Controls & Audits</h4>
+					<p>Register your internal controls, their internal audits, where they are used.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -204,7 +204,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Policy Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -222,7 +222,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Exception Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -233,105 +233,8 @@ function doc_raw($content) {
 			</div>
 		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box doc-box-alt align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>CSV Imports</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
-					<ul>
-						<li><a href="#">Guide</a></li>
-						<li><a href="#">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
 	</div>
-	<div class="row align-row">
-		<div class="col-sm-3">
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Security Controls & Audits</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
-					<ul>
-						<li><a href="#">Guide</a></li>
-						<li><a href="#">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>document.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Policy Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
-					<ul>
-						<li><a href="#">Guide</a></li>
-						<li><a href="#">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Exception Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
-					<ul>
-						<li><a href="#">Guide</a></li>
-						<li><a href="#">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>CSV Imports</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
-					<ul>
-						<li><a href="#">Guide</a></li>
-						<li><a href="#">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-9 col-sm-offset-1-5">
-			<div class="row">
-				<div class="doc-box-line-h">
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="row align-row">
 		<div class="col-sm-3 col-sm-offset-3">
 			<div class="doc-box-line-v">
@@ -342,7 +245,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Compliance Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>NIST, ISO, PCI - link controls and policies to your compliance requirements.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -360,7 +263,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Risk Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation.</.p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -379,7 +282,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Incident Managment</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Record and manage your incidents and asociate them with Risks when possible.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -404,7 +307,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Security Awareness</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Create multiple, Active Directory related awareness trainings with videos, multiple choices and more.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>
@@ -420,7 +323,7 @@ function doc_raw($content) {
 				</div>
 				<div class="doc-box-content">
 					<h4>Vendor Assessments</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ultrices.</p>
+					<p>Simplify your vendor assessments with a unified portal.</p>
 					<ul>
 						<li><a href="#">Guide</a></li>
 						<li><a href="#">Videos</a></li>

@@ -87,7 +87,7 @@ if (empty($_SESSION['download-form-submitted']) || ($_SESSION['download-form-sub
 								</div>
 							</div>
 							<div class="text-wrapper">
-								<h4>Enterprise Services</h4>
+								<h4>Amazon AMI</h4>
 								<div class="text">
 									Get help (traiing, support, Etc) from the core team and enjoy our always updated enterprise release! 
 								</div>
@@ -110,13 +110,38 @@ if (empty($_SESSION['download-form-submitted']) || ($_SESSION['download-form-sub
 							</div>
 						</div>
 						<div class="text-wrapper">
-							<strong>We have tons of documentation</strong><br />
+							<strong>Check out our documentation</strong><br />
 							Install, update and get GRC tasks done with eramba!
 						</div>
 						<div class="btn-wrapper">
 							<div class="valign-wrapper">
 								<div class="valign-inner">
-									<a href="<?php echo get_page_link(DOC_PAGE_ID); ?>" class="btn custom grey"><?php _e('Check it out', 'eramba'); ?></a>
+									<a href="<?php echo get_page_link(DOC_PAGE_ID); ?>" class="btn custom grey"><?php _e('Documentation', 'eramba'); ?></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="video-documentation clearfix">
+						<div class="img-wrapper">
+							<div class="valign-wrapper">
+								<div class="valign-inner">
+									<img src="<?php echo THEME_IMG; ?>/icons/play.png" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="text-wrapper">
+							<strong>Online Trainings</strong><br />
+							Dizzy with our documentation? Try our online trainings!
+						</div>
+						<div class="btn-wrapper">
+							<div class="valign-wrapper">
+								<div class="valign-inner">
+									<a href="http://www.eramba.org/online-training/" class="btn custom grey"><?php _e('Trainings', 'eramba'); ?></a>
 								</div>
 							</div>
 						</div>
@@ -124,6 +149,31 @@ if (empty($_SESSION['download-form-submitted']) || ($_SESSION['download-form-sub
 				</div>
 			</div>
 
+			<br>	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="video-documentation clearfix">
+						<div class="img-wrapper">
+							<div class="valign-wrapper">
+								<div class="valign-inner">
+									<img src="<?php echo THEME_IMG; ?>/icons/play.png" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="text-wrapper">
+							<strong>Installing help?</strong><br />
+							Do you need help to get eramba installed in the cloud or your onprem facilities?
+						</div>
+						<div class="btn-wrapper">
+							<div class="valign-wrapper">
+								<div class="valign-inner">
+									<a href="http://www.eramba.org/consulting-services/" class="btn custom grey"><?php _e('Consulting', 'eramba'); ?></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

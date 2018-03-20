@@ -11,7 +11,7 @@ get_header();
 		<strong>Start Here</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Not sure how to start? Watch this introductory guide</span>
+		<span>Not sure how to start? Watch this introductory video</span>
 	</h4>
 
 	<div class="text-center">
@@ -58,7 +58,7 @@ get_header();
 					<h4>Install</h4>
 					<p>Once you download eramba use this guide to install eramba.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1vxh1knFcB6_ZVPUF4hy9i5XafIR3BijoZffCL_vjRVU/edit?usp=sharing">Doc</a></li>
+						<li><a href="https://docs.google.com/document/d/1vxh1knFcB6_ZVPUF4hy9i5XafIR3BijoZffCL_vjRVU/edit">Doc</a></li>
 						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rmxdBCLmk9c?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
@@ -152,7 +152,7 @@ get_header();
 		<strong>Basic features and concepts</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>These guides cover basic features and concepts used across the system, is really important you get familiarized with them before you start using eramba!</span>
+		<span>These guides cover basic features and concepts used across the system, is really important you get familiarised with them before you start using eramba!</span>
 	</h4>
 	<div class="row align-row">
 		<div class="col-sm-3">
@@ -306,7 +306,7 @@ get_header();
 					<p>Register your internal controls, their internal audits, where they are used.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/10Hq0HTCT_4NYXw3I1EJBfWI4OaWTBqlXZqDrQCg99E0/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/j-1_uffAMwE?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/zihFlcsFmPw?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -324,7 +324,7 @@ get_header();
 					<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1A4drPS0cMBPyj-eL1KuhzsA3slVnaUa3fZ7KvNMRMc4/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/LJNouOdUCyc?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/A3NptyqM3hY?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -338,10 +338,10 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Exception Managment</h4>
+					<h4>Exception Management</h4>
 					<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1GzNfjcYmxYKzJVEIw8MSduvqVCMIX2--nIt4W7HT5Bk/edit">Doc</a> </li><li><a href="https://docs.google.com/document/d/1-5vKXpm_0lW0RlC1oeB5cf-w-b7UUmfW5tmvC8bSEtg/edit">Practical</a></li>
+						<li><a href="https://docs.google.com/document/d/1GzNfjcYmxYKzJVEIw8MSduvqVCMIX2--nIt4W7HT5Bk/edit">Doc</a> </li>
 					</ul>
 				</div>
 			</div>
@@ -368,11 +368,11 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>calendar.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Compliance Managment</h4>
+					<h4>Compliance Management</h4>
 					<p>NIST, ISO, PCI - link controls and policies to your compliance requirements. Make sure you have read our controls and policies guides before you start here!</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1Rk85gMkTbkpud2LKk7jg2agBlwaSH2yOq6y9Z3KNzXo/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/d6wUx6uwSrU?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rnu9-wZQels?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -404,11 +404,11 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>risk.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Risk Managment</h4>
+					<h4>Risk Management</h4>
 					<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation. Make sure you have read our controls and policies guides before you start here!</.p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1sGaUiS6fR_oYun6mt7FktSQOdOJ0huXshMBBMOr_4N0/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/3JnMDysvD8M?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/aIaY8_h_n5g?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -423,7 +423,7 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>incident.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Incident Managment</h4>
+					<h4>Incident Management</h4>
 					<p>Record and manage your incidents and asociate them with Risks when possible.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1I9oQ2mrw65pS6OVoKMCEeC6rx5ftz8ji-RO2Ws4luMY/edit?usp=sharing">Doc</a></li>
@@ -467,11 +467,11 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>suitcase.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Vendor Assessments (Third Party Audits)</h4>
-					<p>Simplify your vendor assessments with a unified portal.</p>
+					<h4>Vendor Assessments</h4>
+					<p>Upload your questions and send them out so your suppliers can log in remotely and provide feedback.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/11KFq0Mhf7sOCxWJ7l_6iFdRCx9-z8zob14sxBKtkI1A/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/7Ro9-QQTMCU?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a href="https://docs.google.com/document/d/1pT25V1lQdc7LPjDfmal0fctT1NY72-f2pMbi7UvaSok/edit?usp=sharing">Doc</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/eB5_Eue03uw?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -496,12 +496,16 @@ get_header();
 					<img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>ISO 27001</h4>
+					<h4>ISO 27001 Guide</h4>
 					<!-- <p></p>
 					<ul>
 						<li><a href="#"></a> </li>
 						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
 					</ul> -->
+					<p>Quick introduction on how eramba can help you with the popular ISO standard</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1hAzr3KR3jqp45fzDd7f_SPWI1D2lVmUPA0cH6Sqze5E/edit?usp=sharing">Doc</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -512,7 +516,11 @@ get_header();
 					<img src="<?php echo do_shortcode('[img]'); ?>pci.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>PCI-DSS</h4>
+					<h4>PCI-DSS Guide</h4>
+					<p>Discover how eramba helps with PCI-DSS</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/15XISbYUQvx98bWNuY5CTb2guywYLjRER8sTtElwaT94/edit?usp=sharing">Doc</a></li>
+					</ul>
 					<!-- <p></p>
 					<ul>
 						<li><a href="#"></a> </li>
@@ -525,10 +533,34 @@ get_header();
 		<div class="col-sm-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img]'); ?>training.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Controls & Policies Templates</h4>
+					<p>Ready to import controls and polices for Compliance Management.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1UCA-e7_NSYEmsxdyODUOU7k5b_YGeByx0edZPpNQYJ0/edit#/edit?usp=sharing">Doc</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/v70JqOdQNg0?enablejsapi=1&wmode=opaque">Videos</a></li>
+					</ul>
+					<!-- <p></p>
+					<ul>
+						<li><a href="#"></a> </li>
+						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="doc-box align-col">
+				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>sox.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Sarbanes Oxley</h4>
+					<h4>Sarbanes Oxley Guide</h4>
+					<p>Large companies subject to SOX have successfully used eramba to mantain their compliance requirements, learn how.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1V8jkoYBjMAAqbexLuDB7ueK_RMLcW7rOY_bUd2Qn6Tg/edit?usp=sharing">Doc</a></li>
+					</ul>
 					<!-- <p></p>
 					<ul>
 						<li><a href="#"></a> </li>

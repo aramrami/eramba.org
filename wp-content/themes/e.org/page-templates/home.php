@@ -6,8 +6,8 @@
 
 		<div class="home-bg">
 			<div class="container">
-				<h1 class="home-heading"><?php echo __('Welcome to Open-Source IT GRC', 'eramba'); ?></h1>
-				<h2 class="home-subheading"><?php echo __('eramba is the leading, open-source enterprise class IT Governance, Risk & Compliance application', 'eramba'); ?></h2>
+				<h1 class="home-heading"><?php echo __('Welcome to Open IT GRC', 'eramba'); ?></h1>
+				<h2 class="home-subheading"><?php echo __('eramba is the leading, open enterprise class IT Governance, Risk & Compliance application', 'eramba'); ?></h2>
 
 				<div class="home-showcase">
 					<img src="<?php echo THEME_IMG . 'macbook-preview.png'; ?>" class="macbook-preview" />

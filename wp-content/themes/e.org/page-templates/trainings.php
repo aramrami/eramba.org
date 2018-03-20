@@ -31,7 +31,7 @@ $current_url = home_url(add_query_arg(array(),$wp->request));
         <div class="container">
             <div class="row">
                 <div class="col-xs-7">
-                    <h2>Get help from the core team</h2>
+                    <h2>Trainings for the community</h2>
                     <p>
                         <span class="larger-text">
                             We offer a packaged yearly support service that includes installation, training, immediate patch resolutions and features not necessarily published on the community version at extremely affordable prices. With the help of our global partners, we also provide customisation and consulting services.

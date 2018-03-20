@@ -8,7 +8,7 @@ get_header();
 		<div class="row align-row vertical-align-row">
 			<div class="col-sm-7 text-wrapper">
 				<p class="partnerships-text">
-		Altough our documentation explains the system in detail, sometimes you might not have the time to go through everything or you might have done it already, but still have unanswered questions. Our online sessions go through our documentation and demonstrate each bit on a demo system for you to understand how the system works.
+		Altough our documentation explains the systemin detail, sometimes you might not have the time to go through everything or you might have done it already, but still have unanswered questions. Our online sessions go through our documentation and demonstrate each bit on a demo system for you to understand how the system works.
 				</p>
                 <p class="partnerships-text">
 			Sessions are delivered by seasoned GRC professionals with intimate knowledge of eramba using top notch conferencing solutions.
@@ -94,7 +94,7 @@ get_header();
 					<img src="<?php echo do_shortcode('[img]'); ?>/doc/controls.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Day 1 - Controls & Audits <br>(120 min)</h4>
+					<h4>Controls & Audits</h4>
 					<p>
 		We start off with a 2 hour training on Controls, the key mitigation element in risk management. We'll address control design, testing methodologies, filters and reports.
                     </p>
@@ -108,7 +108,7 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>/doc/document.png" alt="">
                 </div>
                 <div class="doc-box-content">
-			<h4>Day 2 - Policy Management<br>(120 min)</h4>
+                    <h4>Policy Management</h4>
                     <p>
 		Policies are used to mitigate risk and define action plans to execute if the worst happens. We'll explain in this 2 hours training how to design, upload, review and report on policies.
                     </p>
@@ -122,7 +122,7 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>/doc/risk.png" alt="">
                 </div>
                 <div class="doc-box-content">
-			<h4>Day 3 - Risk Management<br>(120 min)</h4>
+                    <h4>Risk Management</h4>
                     <p>
 		We'll show how risk settings work (classification, thresholds, appetite, Etc) and use the different risk calculation methods available on the system. Together we'll create a risk from scratch and define reports.
                     </p>
@@ -146,7 +146,7 @@ get_header();
 					<img src="<?php echo do_shortcode('[img]'); ?>/doc/controls.png" alt="">
 				</div>
 				<div class="doc-box-content">
-			<h4>Day 1 - Controls & Audits <br>(120 min)</h4>
+					<h4>Controls & Audits</h4>
 					<p>
                        We start off with a 2 hour training on Controls, the key mitigation element in compliance. We'll address control design, testing methodologies, filters and reports.
                     </p>
@@ -160,9 +160,11 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>/doc/document.png" alt="">
                 </div>
                 <div class="doc-box-content">
-			<h4>Day 2 - Policy Management<br>(120 min)</h4>
+                    <h4>Policy Management</h4>
                     <p>
-		Policies are used to mitigate compliance requirements and provide governance to internal controls. We'll explain in this 2 hours training how to design, upload, review and report on policies.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus dis parturient montes.
                     </p>
                 </div>
             </div>
@@ -174,14 +176,61 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>/doc/calendar.png" alt="">
                 </div>
                 <div class="doc-box-content">
-			<h4>Day 3 - Compliance Management<br>(120 min)</h4>
+                    <h4>Compliance Management</h4>
                     <p>
-		We'll show you the way we address any compliance requirement, how we upload or create our own packages, design controls and policies and link them to Compliance Requirements.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        scelerisque eleifend sodales. Cum sociis natoque penatibus et magnis
+                        dis parturient montes, nascetur ridiculus mus.
                     </p>
                 </div>
             </div>
         </div>
     </div>
+
+    <h3 id="controls-policies-compliance" class="text-center margin-top-20">
+        <strong>eramba & ISO 27001</strong>
+    </h3>
+
+    <h4 class="doc-subtitle text-center margin-bottom-40">
+        <span>We'll explain how to use eramba to certify ISO 27001</span>
+    </h4>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>ISO 27001 Guide</h4>
+                    <p>
+		We'll explain how we have managed to certify companies with ISO 27001 using eramba, by going through each section of the standard. This is not a deep dive in to each feature on the system, but instead a general overview on how a certification can be managed with it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="eramba-pci" class="text-center margin-top-20">
+        <strong>Eramba & PCI</strong>
+    </h3>
+
+    <div class="row align-row margin-bottom-40">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>pci.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>PCI-DSS Guide</h4>
+                    <p>
+			We'll demonstrate how we have used eramba to manage a PCI certification process, although this wont go in deep on each feature nor the standard requirements it will demonstrate in general terms what approach we have taken to deal with PCI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
     $(function(){

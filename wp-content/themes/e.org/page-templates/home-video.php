@@ -17,10 +17,10 @@ add_filter('excerpt_length', 'new_excerpt_length');
 			<div class="container">
 				<div class="page-heading-inner">
 					<h1 class="page-title-heading">
-						Welcome to Open-Source IT GRC
+						Welcome to Open IT GRC
 					</h1>
 					<h2 class="page-subtitle">
-						eramba is the leading, open-source enterprise class IT Governance, Risk & Compliance application
+						eramba is the leading, open enterprise class IT Governance, Risk & Compliance application
 					</h2> 
 				</div>
 			</div>
@@ -254,7 +254,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 		</div>
 	</div>
 
-	<div class="gray-color-wrapper dark">
+	<!-- <div class="gray-color-wrapper dark">
 		<div class="container">
 
 			<div class="row">
@@ -267,7 +267,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 
 						<div class="form">
 							<?php
-							echo (do_shortcode('[contact-form-7 id="'.CONTACT_FORM_SUBSCRIBE_ID.'" title="asd"]'));
+							// echo (do_shortcode('[contact-form-7 id="'.CONTACT_FORM_SUBSCRIBE_ID.'" title="asd"]'));
 							?>
 
 						</div>
@@ -278,7 +278,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 			</div>
 			
 		</div>
-	</div>
+	</div> -->
 
 <?php 
 remove_filter('excerpt_length', 'new_excerpt_length');
