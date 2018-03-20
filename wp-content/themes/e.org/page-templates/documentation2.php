@@ -51,6 +51,7 @@ get_header();
 	<div class="row align-row">
 		<div class="col-sm-4">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>icons/download-circle.png" alt="">
 				</div>

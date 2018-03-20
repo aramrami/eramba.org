@@ -2208,6 +2208,11 @@ ul.doc-list ul {
 	border-radius: 3px;
 	margin-bottom: 30px;
 }
+.enterprise-ribbon {
+	position: absolute;
+	right: -16px;
+	top: -12px;
+}
 
 .doc-box.mb-0 {
 	margin-bottom: 0;
