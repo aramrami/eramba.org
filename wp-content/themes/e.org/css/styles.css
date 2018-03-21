@@ -2210,8 +2210,9 @@ ul.doc-list ul {
 }
 .enterprise-ribbon {
 	position: absolute;
-	right: -16px;
-	top: -12px;
+	width: 92px;
+	right: -11px;
+	top: -9px;
 }
 
 .doc-box.mb-0 {
