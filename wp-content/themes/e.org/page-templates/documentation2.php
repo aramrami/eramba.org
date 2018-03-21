@@ -51,7 +51,6 @@ get_header();
 	<div class="row align-row">
 		<div class="col-sm-4">
 			<div class="doc-box align-col">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>icons/download-circle.png" alt="">
 				</div>
@@ -190,6 +189,7 @@ get_header();
 
 		<div class="col-sm-3">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
 				</div>
@@ -225,6 +225,7 @@ get_header();
 	<div class="row align-row">
 		<div class="col-sm-3">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>workflows.png" alt="">
 				</div>
@@ -255,11 +256,12 @@ get_header();
 
 		<div class="col-sm-3">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Custom Fields</h4>
+					<h4>Custom<br />Fields</h4>
 					<p>Include custom fields on any of our forms (while creating a risk, control, etc).</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
@@ -271,6 +273,7 @@ get_header();
 
 		<div class="col-sm-3">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/cost-saas.png" alt="" style="margin-top:5px;">
 				</div>
@@ -383,6 +386,7 @@ get_header();
 			<div class="doc-box-line-v">
 			</div>
 			<div class="doc-box align-col mb-0">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>flow1.png" alt="">
 				</div>
@@ -448,6 +452,7 @@ get_header();
 	<div class="row align-row">
 		<div class="col-sm-4 col-sm-offset-2">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>shield.png" alt="">
 				</div>
@@ -464,6 +469,7 @@ get_header();
 
 		<div class="col-sm-4">
 			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>suitcase.png" alt="">
 				</div>
