@@ -731,7 +731,7 @@ class Cookie_Notice {
 			$options = apply_filters( 'cn_cookie_notice_args', array(
 				'position'			=> $this->options['general']['position'],
 				'css_style'			=> $this->options['general']['css_style'],
-				'button_class'		=> 'button',
+				'button_class'		=> 'button btn btn-primary btn-xs',
 				'colors'			=> $this->options['general']['colors'],
 				'message_text'		=> $this->options['general']['message_text'],
 				'accept_text'		=> $this->options['general']['accept_text'],
