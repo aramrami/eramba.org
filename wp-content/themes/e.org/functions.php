@@ -870,6 +870,10 @@ function handle_download_routes() {
 	if (empty($_SESSION['download-form-submitted']) || ($_SESSION['download-form-submitted'] !== session_id())) {
 		return false;
 	}
+	else {
+		unset($_SESSION['download-form-submitted']);
+		wp_redirect('/resources/documentation/');exit;
+	}
 
 	$path = WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'uploads'.DIRECTORY_SEPARATOR.'download-packages'.DIRECTORY_SEPARATOR;
 	$downloads = array(
