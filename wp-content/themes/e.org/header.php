@@ -28,7 +28,15 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" id="eramba-main-css" href="<?php echo home_url( '/' ); ?>/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
+	<link rel="stylesheet" id="eramba-main-css" href="http://<?= $_SERVER['HTTP_HOST'] ?>/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-8949612246244461",
+	    enable_page_level_ads: true
+	  });
+	</script>
 </head>
 
 <body <?php body_class(); ?>>

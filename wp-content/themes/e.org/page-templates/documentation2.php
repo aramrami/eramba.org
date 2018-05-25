@@ -49,7 +49,7 @@ get_header();
 	</h4>
 
 	<div class="row align-row">
-		<div class="col-sm-4">
+		<div class="col-sm-4 col-sm-offset-2">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>icons/download-circle.png" alt="">
@@ -59,7 +59,7 @@ get_header();
 					<p>Once you download eramba use this guide to install eramba.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1vxh1knFcB6_ZVPUF4hy9i5XafIR3BijoZffCL_vjRVU/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rmxdBCLmk9c?enablejsapi=1&wmode=opaque">Videos</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/0QALe2RX-yI?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -79,8 +79,21 @@ get_header();
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="col-sm-4">
+	<div class="row arrow-row arrow-row-install">
+		<div class="col-sm-12">
+			<div class="arrow-down">
+				<div class="arrow-head"></div>
+			</div>
+			<div class="arrow-down">
+				<div class="arrow-head"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row align-row">
+		<div class="col-sm-4 col-sm-offset-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/engine.png" alt="">
@@ -147,292 +160,351 @@ get_header();
 
 <hr>
 
-<div class="container">
+<div id="features" class="container">
 	<h3 class="text-center margin-top-20">
 		<strong>Basic features and concepts</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
 		<span>These guides cover basic features and concepts used across the system, is really important you get familiarised with them before you start using eramba!</span>
 	</h4>
-	<div class="row align-row">
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/downgrades.png" alt="" style="margin-top:5px;">
+
+	<div>
+		<div class="row align-row">
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>filters.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Filters</h4>
+						<p>Search, export and report over email data from eramba.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1wxeXwEz8sSm-nW9iXXx3uOR_D17tT9LgFeRBmNB4GCU/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/o52eg9b_RoU?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="doc-box-content">
-					<h4>CSV Imports</h4>
-					<p>Import controls, policies and more using preformated CSV files.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Notifications</h4>
+						<p>Automate email notifications, reports, reminders and more.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1WraftiquqtQ7csmppaZgTuptg3rHYONO5DkwbpOLFyo/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/fVBQscefrYQ?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>versioning.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Versioning</h4>
+						<p>Keep track of changes (and restore anytime) on every control, risk or object.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1N8ilqf1DwFR6cLNVogO1lsyQH1OBq_EufvSbAkeRlu4/edit#">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/-2t2IouUQQE?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>shield-blue.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Visualisations</h4>
+						<p>eramba users will only see stuff that relates to them!.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1HZrWd-OnRAE4Q7XhFwHnDF_UrycYrql3pDIdHKophik/edit#">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/ND6qkQG8bSA?enablejsapi=1&wmode=opaque">Videos</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="row arrow-row">
+			<div class="col-sm-12">
+				<div class="arrow-down">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>filters.png" alt="">
+		<div class="row align-row">
+			<!-- <div class="col-sm-3">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>workflows.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Workflows</h4>
+						<p>Soon to be implemented!</p>
+						<ul>
+						</ul>
+					</div>
 				</div>
-				<div class="doc-box-content">
-					<h4>Filters</h4>
-					<p>Search, export and report over email data from eramba.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1wxeXwEz8sSm-nW9iXXx3uOR_D17tT9LgFeRBmNB4GCU/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/o52eg9b_RoU?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			</div> -->
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/cost-saas.png" alt="" style="margin-top:5px;">
+					</div>
+					<div class="doc-box-content">
+						<h4>REST APIs</h4>
+						<p>APIs can be used to push, pull or list elements from eramba.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1AzTUqrs8RJ84VhYjLbVIbw6f2vzSQfzTNiD01JF8qbM/edit">Doc</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Notifications</h4>
-					<p>Automate email notifications, reports, reminders and more.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1WraftiquqtQ7csmppaZgTuptg3rHYONO5DkwbpOLFyo/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/fVBQscefrYQ?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			<div class="col-1-5 text-center">
+				<div class="arrow-left">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>shield-blue.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Visualisations</h4>
-					<p>eramba users will only see stuff that relates to them!.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1HZrWd-OnRAE4Q7XhFwHnDF_UrycYrql3pDIdHKophik/edit#">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/ND6qkQG8bSA?enablejsapi=1&wmode=opaque">Videos</a></li>
-
-					</ul>
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/downgrades.png" alt="" style="margin-top:5px;">
+					</div>
+					<div class="doc-box-content">
+						<h4>CSV Imports</h4>
+						<p>Import controls, policies and more using preformated CSV files.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<div class="row align-row">
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>workflows.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Workflows</h4>
-					<p>Let eramba govern your flows using approvals and conditions.</p>
-					<ul>
-					</ul>
+			<div class="col-1-5 text-center">
+				<div class="arrow-left">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>versioning.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Versioning</h4>
-					<p>Keep track of changes (and restore anytime) on every control, risk or object.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1N8ilqf1DwFR6cLNVogO1lsyQH1OBq_EufvSbAkeRlu4/edit#">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/-2t2IouUQQE?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Custom<br />Fields</h4>
+						<p>Include custom fields on any of our forms (while creating a risk, control, etc).</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Custom<br />Fields</h4>
-					<p>Include custom fields on any of our forms (while creating a risk, control, etc).</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="doc-box align-col">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/cost-saas.png" alt="" style="margin-top:5px;">
-				</div>
-				<div class="doc-box-content">
-					<h4>REST APIs</h4>
-					<p>APIs can be used to push, pull or list elements from eramba.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1AzTUqrs8RJ84VhYjLbVIbw6f2vzSQfzTNiD01JF8qbM/edit">Doc</a></li>
-					</ul>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
 
 <hr>
 
-<div class="container">
+<div id="core-functions" class="container">
 	<h3 class="text-center margin-top-20">
 		<strong>Core Functionalities</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
 		<span>Make sure you start with our controls, policies and exceptions guides before you attempt Risk or Compliance!</span>
 	</h4>
+	
+	<div>
+		<div class="row align-row">
 
-	<div class="row align-row">
-		<div class="col-sm-4">
-			<div class="doc-box doc-box-alt align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Controls & Audits</h4>
-					<p>Register your internal controls, their internal audits, where they are used.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/10Hq0HTCT_4NYXw3I1EJBfWI4OaWTBqlXZqDrQCg99E0/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/zihFlcsFmPw?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>document.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Policy Management</h4>
+						<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1A4drPS0cMBPyj-eL1KuhzsA3slVnaUa3fZ7KvNMRMc4/edit?usp=sharing">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/A3NptyqM3hY?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
 
-		<div class="col-sm-4">
-			<div class="doc-box doc-box-alt align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>document.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Policy Management</h4>
-					<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1A4drPS0cMBPyj-eL1KuhzsA3slVnaUa3fZ7KvNMRMc4/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/A3NptyqM3hY?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
 
-		<div class="col-sm-4">
-			<div class="doc-box doc-box-alt align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Exception Management</h4>
-					<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1GzNfjcYmxYKzJVEIw8MSduvqVCMIX2--nIt4W7HT5Bk/edit">Doc</a> </li>
-					</ul>
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Controls & Audits</h4>
+						<p>Register your internal controls, their internal audits, where they are used.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/10Hq0HTCT_4NYXw3I1EJBfWI4OaWTBqlXZqDrQCg99E0/edit">Doc</a> </li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/zihFlcsFmPw?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="doc-box-line-v">
-			</div>
-		</div>
-	</div>
 
-	<div class="row align-row">
-		<div class="col-sm-8 col-sm-offset-2">
-			<div class="row">
-				<div class="doc-box-line-h">
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<div class="row align-row">
-		<div class="col-sm-4 col-sm-offset-0">
-			<div class="doc-box-line-v">
-			</div>
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>calendar.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Compliance Management</h4>
-					<p>NIST, ISO, PCI - link controls and policies to your compliance requirements. Make sure you have read our controls and policies guides before you start here!</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1Rk85gMkTbkpud2LKk7jg2agBlwaSH2yOq6y9Z3KNzXo/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rnu9-wZQels?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Exception Management</h4>
+						<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1GzNfjcYmxYKzJVEIw8MSduvqVCMIX2--nIt4W7HT5Bk/edit">Doc</a> </li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-sm-4 col-sm-offset-0">
-			<div class="doc-box-line-v">
-			</div>
-			<div class="doc-box align-col mb-0">
-				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>flow1.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Data Flow Analysis<br>EU GDPR</h4>
-					<p>Identify your assets and analyse what controls, policies, Risks, owners and more apply to them on each stage of their lifecycle.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1Srt4a2vfjuEVfGONvxjd5_yO-ojoeLkLcLTsqc7v2NM/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/k0hAZ6Y8TTM?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+		<div class="row arrow-row">
+			<div class="col-sm-12">
+				<div class="arrow-down">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-sm-4">
-			<div class="doc-box-line-v">
-			</div>
-			<div class="doc-box align-col mb-0">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>risk.png" alt="">
+		<div class="row align-row">
+			<div class="col-sm-3 col-sm-offset-0">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>flow1.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Data Flow Analysis<br>EU GDPR</h4>
+						<p>Identify your assets and analyse what controls, policies, Risks, owners and more apply to them on each stage of their lifecycle.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1Srt4a2vfjuEVfGONvxjd5_yO-ojoeLkLcLTsqc7v2NM/edit">Doc</a> </li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/k0hAZ6Y8TTM?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="doc-box-content">
-					<h4>Risk Management</h4>
-					<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation. Make sure you have read our controls and policies guides before you start here!</.p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1sGaUiS6fR_oYun6mt7FktSQOdOJ0huXshMBBMOr_4N0/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/aIaY8_h_n5g?enablejsapi=1&wmode=opaque">Videos</a></li>
-					</ul>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-left">
+					<div class="arrow-head"></div>
 				</div>
 			</div>
-			<div class="doc-box-line-v">
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>risk.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Risk Management</h4>
+						<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation. Make sure you have read our controls and policies guides before you start here!</.p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1sGaUiS6fR_oYun6mt7FktSQOdOJ0huXshMBBMOr_4N0/edit?usp=sharing">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/aIaY8_h_n5g?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-left">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-3 col-sm-offset-0">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>calendar.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Compliance Management</h4>
+						<p>NIST, ISO, PCI - link controls and policies to your compliance requirements. Make sure you have read our controls and policies guides before you start here!</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1Rk85gMkTbkpud2LKk7jg2agBlwaSH2yOq6y9Z3KNzXo/edit">Doc</a> </li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rnu9-wZQels?enablejsapi=1&wmode=opaque">Videos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row arrow-row">
+			<div class="col-sm-12">
+				<div class="arrow-down">
+					<div class="arrow-head"></div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row align-row">
-		<div class="col-sm-4 col-sm-offset-8">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img_doc]'); ?>incident.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Incident Management</h4>
-					<p>Record and manage your incidents and asociate them with Risks when possible.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1I9oQ2mrw65pS6OVoKMCEeC6rx5ftz8ji-RO2Ws4luMY/edit?usp=sharing">Doc</a></li>
-					</ul>
+
+		<div class="row align-row">
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>incident.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Incident Management</h4>
+						<p>Record and manage your incidents and asociate them with Risks when possible.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1I9oQ2mrw65pS6OVoKMCEeC6rx5ftz8ji-RO2Ws4luMY/edit?usp=sharing">Doc</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -450,7 +522,7 @@ get_header();
 	</h4>
 
 	<div class="row align-row">
-		<div class="col-sm-4 col-sm-offset-2">
+		<div class="col-sm-4">
 			<div class="doc-box align-col">
 				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 				<div class="doc-box-img">
@@ -479,6 +551,22 @@ get_header();
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1pT25V1lQdc7LPjDfmal0fctT1NY72-f2pMbi7UvaSok/edit?usp=sharing">Doc</a></li>
 						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/eB5_Eue03uw?enablejsapi=1&wmode=opaque">Videos</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="doc-box align-col">
+				<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+				<div class="doc-box-img">
+					<img src="<?php echo do_shortcode('[img_doc]'); ?>news.png" alt="">
+				</div>
+				<div class="doc-box-content">
+					<h4>Automated Account Reviews</h4>
+					<p>Automate the process of reviewing user and roles accounts.</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1yqpdu631gkBuea1KDiUm4HDpYC6P8p3WiYfV1NpmTlA/edit?usp=sharing">Doc</a></li>
+						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/Z3eNMmNbGcg?enablejsapi=1&wmode=opaque">Videos</a></li>
 					</ul>
 				</div>
 			</div>

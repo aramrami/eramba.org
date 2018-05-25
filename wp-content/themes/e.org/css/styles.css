@@ -2608,6 +2608,121 @@ a.no-text-effect:focus {
 	font-family: 'Montserrat', sans-serif;
 }
 .box-jumbo strong {
-	font-size: 42px;
+	font-size: 30px;
 	color: #39414a;
 }
+
+.col-1-5 {
+	width: 12.5%;
+	float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.arrow-row.arrow-row-install {
+	height: 30px;
+}
+.arrow-row-install .arrow-down:first-child {
+	position: absolute;
+	top: -15px;
+	left: 37%;
+	transform: rotate(-40deg);
+	height: 60px;
+}
+.arrow-row-install .arrow-down:last-child {
+	position: absolute;
+	top: -15px;
+	right: 37%;
+	transform: rotate(40deg);
+	height: 60px;
+}
+
+#features .row:nth-child(1) .arrow-right,
+#features .row:nth-child(1) .arrow-left {
+	margin-top: 84px;
+}
+#features .row:nth-child(3) .arrow-right,
+#features .row:nth-child(3) .arrow-left {
+	margin-top: 92px;
+}
+#features .arrow-row .arrow-down {
+	position: absolute;
+	top: -2px;
+	right: 12.5%;
+}
+
+#core-functions .row:nth-child(1) .arrow-right,
+#core-functions .row:nth-child(1) .arrow-left {
+	margin-top: 103px;
+}
+#core-functions .row:nth-child(3) .arrow-right,
+#core-functions .row:nth-child(3) .arrow-left {
+	margin-top: 132px;
+}
+#core-functions .arrow-row:nth-child(2) .arrow-down {
+	position: absolute;
+	top: -2px;
+	right: 12.5%;
+}
+#core-functions .arrow-row:nth-child(4) .arrow-down {
+	position: absolute;
+	top: -2px;
+	left: 12.5%;
+}
+
+
+.arrow-row {
+	height: 50px;
+	margin-bottom: 30px;
+}
+
+.arrow-down,
+.arrow-top {
+	height: 50px;
+	width: 4px;
+	background: #4f5a65;
+	position: relative;
+	display: inline-block;
+}
+.arrow-down .arrow-head {
+	position: absolute;
+	bottom: -4px;
+	left: -4px;
+	width: 0; 
+	height: 0; 
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 10px solid #4f5a65;
+}
+.arrow-right,
+.arrow-left {
+	width: 50px;
+	height: 4px;
+	background: #4f5a65;
+	position: relative;
+	display: inline-block;
+}
+.arrow-right .arrow-head {
+	position: absolute;
+	right: -6px;
+	top: -4px;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 10px solid #4f5a65;
+}
+.arrow-left .arrow-head {
+	position: absolute;
+	left: -6px;
+	top: -4px;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-right: 10px solid #4f5a65;
+}
+
