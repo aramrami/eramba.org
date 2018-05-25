@@ -1,25 +1,22 @@
-﻿=== Forum - wpForo ===
+=== Forum - wpForo ===
 Contributors: gVectors Team
 Tags: forum, community, discussion, bulletin board, question and answers, qa, support, foro, forums
 Requires at least: 4.1
-Tested up to: 4.7
-Stable tag: 1.2.0
+Tested up to: 4.6
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-wpForo comes with everything you need to run an efficient and professional community. Powerful and beautiful forum plugin with unique features
+New Forum plugin. Everything you need to run an efficient and professional community. Powerful and beautiful bulletin board with unique features
 
 == Description ==
 
-Forum wpForo is a new generation of WordPress forum plugins made by [gVectors Team](http://gvectors.com/). Everything you need to run an efficient and professional community. Powerful and beautiful bulletin board with unique features.
+New Generation of WordPress forum plugins made by [gVectors Team](http://gvectors.com/). Everything you need to run an efficient and professional community. Powerful and beautiful bulletin board with unique features.
 
 <blockquote>
-Community and Demo: http://wpforo.com/community/ <br/>
-Documentation: http://wpforo.com/documentation/
+This is a new forum plugin. If you found some issue or bug please open a support topic in plugin page or in our support forum: http://wpforo.com/community/.
 <br/><br/>
 </blockquote>
-
-= Forums can be displayed with three different layouts = 
 
 1. **Extended Layout:** 
 Classic forum layout with an unique feature to show one level deeper information. You can see latest topics of each forum on Forum List and latest posts of each topic on Topic List.  
@@ -28,27 +25,6 @@ Light, modern and beautiful forum layout with topic and post author avatars on f
 3. **Question and Answer Layout:** 
 Complete Question & Answers discussion board for professional support and for communities similar to Stack Overflow. Perfect platform for users to ask and answer questions, and, through membership and active participation, to vote up or down.
 
-= Available Translations =
-
-* | Czech (cs_CZ) by Glados (The Witcher)
-* | German (de_DE) by Markus Herrmann
-* | Spanish (es_ES) Poncho Camacho
-* | Spanish (Mexico) (es_MX) Poncho Camacho
-* | Swedish (sv_SE) by Mathias Persson
-* | Persian (fa_IR) by wpforo.ir
-* | Hebrew (he_IL) Gal Zilberman
-* | Japanese (JA_ja) by Seg Way
-* | Korean (ko_KO) by Jeehwan Song
-* | Dutch (nl_NL) Ger Metselaar i.o.v. Parma multimedia BV
-* | Russian (ru_RU) by Dmitry Butkevich
-* | Polish (pl_PL) by Bogusław Górecki
-* | French (fr_FR) by Julien Coopmann | Florent Lanternier | Youri Le Cottier
-
-= wpForo Addons =
-
-* | [wpForo - Embeds](http://gvectors.com/product/wpforo-embeds/)
-* | [wpForo - Advanced Attachments](http://gvectors.com/product/wpforo-advanced-attachments/)
-* | [wpForo - Private Messages](http://gvectors.com/product/wpforo-private-messages/)
 
 = WPFORO FEATURES =
 
@@ -70,19 +46,23 @@ Complete Question & Answers discussion board for professional support and for co
 * | **EASY TO MIGRATE** | You can download [Go2wpForo](http://wpforo.com/community/migrate-to-wpforo-from-other-forum-plugins/migrate-to-wpforo-go2wpforo-tool/) free migration tool from our [support forum](http://wpforo.com/community/migrate-to-wpforo-from-other-forum-plugins/migrate-to-wpforo-go2wpforo-tool/). This tool allows you migrate from different WordPress forum plugins to wpForo.
 
 
+= WPFORO ADDONS =
+
+* | [wpForo - Embeds](http://gvectors.com/product/wpforo-embeds/)
+* | [wpForo - Advanced Attachments](http://gvectors.com/product/wpforo-advanced-attachments/)
+
+
 = Currently we're working on =
 
 * wpForo Anti-Spam...
 * Social Network Sharing Buttons...
 * [Go2wpForo](http://wpforo.com/community/migrate-to-wpforo-from-other-forum-plugins/migrate-to-wpforo-go2wpforo-tool/) Migration Tool...
-
+* wpForo Documentation...
 
 == Installation ==
 
 1. Install the plugin through the WordPress plugins screen directly or upload the plugin files to the `/wp-content/plugins/wpforo` directory 
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Getting Started Doc http://wpforo.com/docs/root/getting-started/
-
 
 == Frequently Asked Questions ==
 
@@ -91,29 +71,23 @@ Complete Question & Answers discussion board for professional support and for co
 
 1. **Forum Page:** wpForo creates a page with `/community/` slug. If this slug is used you'll have `/community-2/` or `/community-3/` slug. You can find the correct one in Forums > Settings > General Tab. Make sure you use WordPress permalinks. wpForo doesn't work with default `?p=1` URL structure.
 
-2. **Change Forum Page:** 
-http://wpforo.com/docs/root/getting-started/forum-page/change-forum-page/ 
+2. **Change Forum Page:** If you need to change forum page you should put `[wpforo]` shortcode in new page content and insert the new page URL in Dashboard > Forums > Settings > General Tab > "Forum Base URL" option field. 
 
-3. **Forum Menu:** 
-http://wpforo.com/docs/root/getting-started/forum-menu/
+3. **Forum Menu:** In Dashboard > Appearance > Menu admin page wpForo creates new navigation menu called "wpForo Navigation (wpForo Menu)" and attaches this menu to wpForo Menu location, it's the main, top forum menu. You can customize forum menu items through Appearance > Menu settings.
 
-4. **Forum Sidebar and Widgets:** 
-http://wpforo.com/docs/root/getting-started/forum-sidebar-and-widgets/
+4. **Forum Sidebar and Widgets:** In Dashboard > Appearance > Widgets wpForo creates forum specific widgets and wpForo Sidebar. if you use wpForo sidebar you should make sure the forum page has not other sidebars, the page Template should be set "Full Width" or "One Column" or "Two Column with Right Sidebar". wpForo Sidebar is a left sidebar.
 
-5. **Forum Management:** http://wpforo.com/docs/root/categories-and-forums/forum-manager/
+5. **Forum Management:** In Dashboard > Forums > Forums admin page you can manage forums, add/edit/delete/order, set parent-child relationship, manage Forum Access Roles for each Usergroup.
 
-6. **Forum Style & Colors:** 
-http://wpforo.com/docs/root/wpforo-settings/style-settings/
+6. **Forum Style & Colors:** In Dashboard > Settings > Styles admin page you can set forum Style/Colors. You can choose either "Default (Blue)", "Red", "Green", "Orange", "Grey".
 
 7. **Login and Registration** In Forums > Settings > Features admin page you can force WP to use wpForo Login and Register pages or keep default WordPress pages. For custom Login/Register/Lostpassword Pages please navigate to Members Tab and use "Custom Authorization URLs" option. 
 
 8. **Forum is loaded on website top:** In this case you should navigate to Forums > Settings > Features admin page and check "Enable Output Buffer" option.
 
-9. **Forums don't show up on the main page** Please read this FAQ topic: 
-http://wpforo.com/community/faq/forums-dont-show-up-on-the-main-page/
+9. **Forums don't show up on the main page** Please read this FAQ topic: http://wpforo.com/community/faq/forums-dont-show-up-on-the-main-page/
 
-10. **wpForo Shortcodes**
-http://wpforo.com/community/faq/wpforo-shortcodes/
+10. **wpForo Shortcodes** - http://wpforo.com/community/faq/wpforo-shortcodes/
 
 wpForo Support Forum: <http://wpforo.com/community/>
 
@@ -138,88 +112,6 @@ wpForo Support Forum: <http://wpforo.com/community/>
 
 
 == Changelog ==
-
-= 1.2.0 | 08.03.2017 =
-
-[wpForo v1.2.0 Release Summary](http://wpforo.com/community/wpforo-announcements/wpforo-1-2-0-is-released/)
-
-* Added: wpForo Spam Control - New User
-* Added: New Dashboard subMenu - Forums > Tools > Antispam
-* Antispam: Possible Spam Attachments - lists suspected files
-* Antispam: New Registered Users control and restrictions
-* Antispam: Min number of posts to be able attach files
-* Antispam: Min number of posts to be able post links
-* Antispam: Restricts New Users to attach risky file extensions
-* Antispam: Integration with [Akismet](https://wordpress.org/plugins/akismet/)
-* Added: wpForo Spam Control - Topics & Posts
-* Added: New Dashboard subMenu - Forums > Moderation
-* Antispam: Makes topics/posts unapproved if spam is suspected
-* Antispam: Topic moderation through dashboard Approve/Unapprove/Delete
-* Antispam: Bans new registered users if spam content is detected
-* Antispam: New Forum Access - "Can pass moderation"
-* Added: RTL Font-Awesome
-* Added: Swedish Translation (sv_SE) by Mathias Persson
-* Fixed Bug: Don't allow empty topics and posts
-* Fixed Bug: Post Link URL problem (pagination part in URL)
-* Fixed Bug: Notice: Undefined index: set in .../class-template.php
-
-IMPORTANT:
-
-- Once wpForo is updated, please navigate to Dashboard > Forums > Tools admin page and check the "Possible Spam Attachments" section. We detected massive spam file uploading cases in non-protected forums. Spammers delete topics and posts but uploaded spam files are still in your file system, most of those PDF files. Please delete all suspected PDF files listed in this section. [More Info](http://wpforo.com/community/wpforo-announcements/wpforo-1-2-0-is-released/)...
-- To load old customized colors please refresh forum page twice.
-- If you have a Cache Plugin, please delete all caches after wpForo update.
-- If you use CDN and found some issue please purge it. 
-
-
-= 1.1.2 | 26.02.2017 =
-
-[wpForo v1.1.2 Release Summary](http://wpforo.com/community/wpforo-announcements/wpforo-1-1-2-is-released/)
-
-* Added: New topic type - Private
-* Added: Checkbox option on Topic editor: Private Topics
-* Added: Private/Public button with other moderation tools
-* Added: Profile buttons under Member Avatar on Members and Posts list
-* Added: Member Social Network information under avatar
-* Added: Phrase Packages for addon quick translation
-* Added: Polish (pl_PL) by Bogusław Górecki
-* Added: Checking avatar size before uploading
-* Added Access: "Can set topic private" (Admins and Moderators)  
-* Added Access: "Can set own topic private" (Regular users)
-* Added Access: "Can view private topic" (Admin, Moderator and Topic Creator)
-* Performance: Huge SQL optimization and built-in caching system
-* SEO Optimization: added rel="nofollow" to links with GET variables
-* New Addon: [wpForo - Private Messages](http://gvectors.com/product/wpforo-private-messages/)
-* New Addon: wpForo - Ads Manager (comming next week...)
-* Fixed Bug: Menu problem on IE / Edge
-* Fixed Bug: SubForums problem. Title and topics atatched to wrong forum
-* Fixed Bug: Search result displays private topics to non-permitted users
-* Fixed Bug: Private Forum topics in RSS Feed
-* Fixed Bug: Topic Pagination problem (conflict with pot pagination option)
-* Fixed Bug: RTL - Font color switcher problem
-* Fixed Bug: Removed Delete and Ban buttons for current user in dashboard
-* Fixed Bug: Typo CAN titles Dahsboard > Dashboard (needs re-translation)
-* Fixed Bug: Online Users widget avatar size problem
-* Fixed Bug: Signature image oversize
-* Fixed Bug: Q&A Layout recent topics order by sticky and created date
-* Fixed Bug: Editor - Add Link pop-up window size issue on mobile
-* Fixed Bug: Undefined variable: size_da in .../dashboard.php on line 182
-* Fixed Bug: SSL Problem
-
-
-= 1.1.1 | 20.12.2016 =
-
-* Added: Compatible with WordPress 4.7
-* Added: Custom Forum Icons (font-awesome)
-* Added: Delete member with WP user and user specific forum content.
-* Added: [Add Child Forum] button on forum management list
-* Added: Persian (fa_IR) Translation by behrooz (www.wpforo.ir)
-* Added: New addon notifier
-* Cache: Update/clean cache on actions with topics, posts and members 
-* Fixed Bug: Unnecessary email with Password Reset link on user registration
-* Fixed Bug: RTL Issue with widget avatars
-* Fixed Bug: Disable banning yourself 
-* [More info...](http://wpforo.com/community/wpforo-announcements/wpforo-1-1-1-is-released/)
-
 
 = 1.1.0 | 04.12.2016 =
 
@@ -252,7 +144,13 @@ IMPORTANT:
 * Fixed Bug: Warning: Missing argument 2 for wpforo_update_last_login_date()
 * Optimization: Forum, topic and post loading speed and memory optimization
 * Security: improving post and topic creation security, two more level of checking processes before inserting data in database.
-* [More info...](http://wpforo.com/community/wpforo-announcements/wpforo-1-1-0-is-released/)
+
+IMPORTANT:
+
+- To load old customized colors please refresh forum page twice.
+- If you have a Cache Plugin, please delete all caches after wpForo update.
+- If you use CDN and found some issue please purge it. 
+
 
 = 1.0.2 | 10.09.2016 =
 
@@ -297,7 +195,6 @@ IMPORTANT:
 * Shortcode: Changed [wpforo-index] to [wpforo]
 * Shortcode: wpForo new shortcodes. [More info.](http://wpforo.com/community/faq/wpforo-shortcodes/)
 * SEO Optimization: Duplicated meta data on Member Profile pages
-* [More info...](http://wpforo.com/community/wpforo-announcements/wpforo-1-0-0-is-released/)
 
 
 = Beta-6 | 06.08.2016 =

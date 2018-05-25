@@ -13,17 +13,12 @@ $db = new wfDB();
 global $wpdb;
 $debugOn = wfConfig::get('debugOn', 0);
 $table = $wpdb->base_prefix . 'wfStatus';
-$offset = 0;
+$q = $db->querySelect("select ctime, level, type, msg from $table order by ctime desc");
 $timeOffset = 3600 * get_option('gmt_offset');
-$q = $db->querySelect("SELECT ctime, level, type, msg FROM {$table} ORDER BY ctime DESC LIMIT %d, 100", $offset);
-while (is_array($q) && count($q) > 0) {
-	foreach($q as $r){
-		if($r['level'] < 4 || $debugOn){
-			echo '<div' . ($r['type'] == 'error' ? ' class="error"' : '') . '>[' . date('M d H:i:s', $r['ctime'] + $timeOffset) . ':' . $r['ctime'] . ':' . $r['level'] . ':' . $r['type'] . ']&nbsp;' . esc_html($r['msg']) . "</div>\n";
-		}
+foreach($q as $r){
+	if($r['level'] < 4 || $debugOn){
+		echo '<div' . ($r['type'] == 'error' ? ' class="error"' : '') . '>[' . date('M d H:i:s', $r['ctime'] + $timeOffset) . ':' . $r['ctime'] . ':' . $r['level'] . ':' . $r['type'] . ']&nbsp;' . esc_html($r['msg']) . "</div>\n";
 	}
-	$offset += count($q);
-	$q = $db->querySelect("SELECT ctime, level, type, msg FROM {$table} ORDER BY ctime DESC LIMIT %d, 100", $offset);
 }
 ?>
 </body>

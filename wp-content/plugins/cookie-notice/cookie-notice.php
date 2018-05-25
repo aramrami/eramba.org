@@ -173,7 +173,7 @@ class Cookie_Notice {
 		if ( $this->options['general']['translate'] === true ) {
 			$this->options['general']['translate'] = false;
 
-			$this->options['general']['message_text'] = __( 'We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.', 'cookie-notice' );
+			$this->options['general']['message_text'] = __( 'We use cookies to ensure we deliver the best web experience. If you continue to use this site we will assume that you are happy with it.', 'cookie-notice' );
 			$this->options['general']['accept_text'] = __( 'Ok', 'cookie-notice' );
 			$this->options['general']['refuse_text'] = __( 'No', 'cookie-notice' );
 			$this->options['general']['see_more_opt']['text'] = __( 'Read more', 'cookie-notice' );

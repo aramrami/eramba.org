@@ -35,8 +35,8 @@ function do_wpforo_deactivation($network_wide){
 }
 
 function wpforo_activation(){
-	global $wpforo, $wpdb;
-	if( ! wpforo_is_admin() ) return;
+	global $wpforo;
+	if( ! is_admin() ) return;
 	if( ! current_user_can( 'activate_plugins' ) ) return;
 	add_option('wpforo_default_groupid', 3);
 	require( WPFORO_DIR . '/wpf-includes/install-sql.php' );
@@ -170,32 +170,9 @@ function wpforo_activation(){
 	      'new_post_notification_email_message' =>  "Hello [member_name]!<br>\r\n New reply has been posted on your subscribed topic - [topic].\r\n <br><br>\r\n <strong>[reply_title]</strong>\r\n <blockquote >\r\n [reply_desc]\r\n </blockquote>\r\n <br><hr>\r\n If you want to unsubscribe from this topic please use the link below.<br>\r\n [unsubscribe_link]" ,
 	      'report_email_subject' => "Forum Post Report",
 		  'report_email_message' => "<strong>Report details:</strong>\r\n Reporter: [reporter], <br>\r\n Message: [message],<br>\r\n <br>\r\n [post_url]",
-		  //'spam_notification_email_subject' => 'New Banned User',
-		  //'spam_notification_email_message' => "Hello [member_name]!<br>\r\n Please check this user's topics/posts and consider to Delete or Unban.<br>\r\n User Activity: [profile_activity_url]",
 		  'update' =>  '1' 
 	 );
 	 wpforo_update_options( 'wpforo_subscribe_options', $subscriptions_options );
-	 
-	 
-	 
-	 #################################################################
-	// Tool Options - Antispam ///////////////////////////////////////
-	$topic_level = mt_rand(60, 80);
-	$post_level = mt_rand(70, 80);
-	$wpforo_tools_antispam = array(
-		'spam_filter' => 1,
-		'spam_filter_level_topic' => $topic_level,
-		'spam_filter_level_post' => $post_level,
-		'spam_user_ban' => 0,
-		'new_user_max_posts' => 5,
-		'spam_user_ban_notification' => 1,
-		'min_number_post_to_attach' => 3,
-		'min_number_post_to_link' => 0,
-		'limited_file_ext' => 'pdf|doc|docx|txt|htm|html|rtf|xml|xls|xlsx|zip|rar|tar|gz|bzip|7z',
-	);
-	wpforo_update_options( 'wpforo_tools_antispam', $wpforo_tools_antispam);
-	
-	
 	
 	#################################################################
 	// Countries ////////////////////////////////////////////////////
@@ -336,23 +313,19 @@ function wpforo_activation(){
 	  'er' => 'Can edit replies',
 	  'dr' => 'Can delete replies',
 	  'eot' => 'Can edit own topic',
-	  'eor' => 'Can edit own reply',
+	  'eor' => 'Can edit own replay',
 	  'dot' => 'Can delete own topic',
-	  'dor' => 'Can delete own reply',
+	  'dor' => 'Can delete own replay',
 	  'l'   => 'Can like',
 	  'r'   => 'Can report',
-	  's'   => 'Can set topic sticky',
-	  'p'   => 'Can set topic private',
-	  'op'  => 'Can set own topic private',
-	  'vp'  => 'Can view private topic',
-	  'au'  => 'Can approve/unapprove content',
-	  'sv'  => 'Can set topic solved',
-	  'osv' => 'Can set own topic solved',
+	  's'   => 'Can make topic sticky',
+	  'sv'  => 'Can make topic solved',
+	  'osv' => 'Can make own topic solved',
 	  'v'   => 'Can vote',
-	  'a'   => 'Can attach file',
-	  'va'  => 'Can view attached files',
-	  'at'  => 'Can set topic answered',
-	  'oat' => 'Can set own topic answered',
+	  'a'   => 'Can Attach File',
+	  'va'   => 'Can view Attached files',
+	  'at'  => 'Can make topic answered',
+	  'oat' => 'Can make own topic answered',
 	  'cot' => 'Can close topic',
 	  'mt'  => 'Can move topic'
 	);
@@ -363,27 +336,27 @@ function wpforo_activation(){
 	$cans_n = array('vf'  => 0, 'ct'  => 0, 'vt'  => 0, 'et'  => 0, 'dt' => 0,
 					'cr'  => 0, 'vr'  => 0, 'er'  => 0, 'dr'  => 0,
 					'eot' => 0, 'eor' => 0, 'dot' => 0,	'dor' => 0,	
-					'l'   => 0, 'r'   => 0, 's'   => 0, 'au'  => 0, 'p'   => 0, 'op' => 0, 'vp' => 0, 'sv'  => 0, 'osv'  => 0, 'v'  => 0, 'a' => 0, 'va' => 0, 
+					'l'   => 0, 'r'   => 0, 's'   => 0, 'sv'  => 0, 'osv'  => 0, 'v'  => 0, 'a' => 0, 'va' => 0,
 					'at'  => 0, 'oat' => 0, 'cot' => 0, 'mt' => 0);
 	$cans_r = array('vf'  => 1, 'ct'  => 0, 'vt'  => 1, 'et'  => 0, 'dt' => 0,
 					'cr'  => 0, 'vr'  => 1, 'er'  => 0, 'dr' => 0,
 					'eot' => 0, 'eor' => 0, 'dot' => 0,	'dor' => 0,	
-					'l'   => 0, 'r'   => 0, 's'   => 0, 'au'  => 0, 'p'   => 0, 'op' => 0, 'vp' => 0, 'sv'  => 0, 'osv' => 0, 'v' => 0, 'a' => 0, 'va' => 1,
+					'l'   => 0, 'r'   => 0, 's'   => 0, 'sv'  => 0, 'osv' => 0, 'v' => 0, 'a' => 0, 'va' => 1,
 					'at'  => 0, 'oat' => 0, 'cot' => 0, 'mt' => 0);
 	$cans_s = array('vf'  => 1, 'ct'  => 1, 'vt'  => 1, 'et'  => 0, 'dt' => 0,
 					'cr'  => 1, 'vr'  => 1, 'er'  => 0, 'dr' => 0,
 					'eot' => 1, 'eor' => 1, 'dot' => 1,	'dor' => 1,	
-					'l'   => 1, 'r'   => 1, 's'   => 0, 'au'  => 0, 'p'   => 0, 'op' => 1, 'vp' => 0, 'sv'  => 0, 'osv' => 1, 'v' => 1, 'a' => 1, 'va' => 1,
+					'l'   => 1, 'r'   => 1, 's'   => 0, 'sv'  => 0, 'osv' => 1, 'v' => 1, 'a' => 1, 'va' => 1,
 					'at'  => 0, 'oat' => 1, 'cot' => 0, 'mt' => 0);
 	$cans_m =  array('vf'  => 1, 'ct'  => 1, 'vt'  => 1, 'et'  => 1, 'dt' => 1,
 					'cr'  => 1, 'vr'  => 1, 'er'  => 1, 'dr' => 1,
 					'eot' => 1, 'eor' => 1, 'dot' => 1,	'dor' => 1,	
-					'l'   => 1, 'r'   => 1, 's'   => 1, 'au'  => 1, 'p'   => 1, 'op' => 1, 'vp' => 1, 'sv'  => 1, 'osv'  => 1, 'v' => 1, 'a' => 1, 'va' => 1,
+					'l'   => 1, 'r'   => 1, 's'   => 1, 'sv'  => 1, 'osv'  => 1, 'v' => 1, 'a' => 1, 'va' => 1,
 					'at'  => 1, 'oat' => 1, 'cot' => 1, 'mt' => 1);
 	$cans_a =  array('vf'  => 1, 'ct'  => 1, 'vt'  => 1, 'et'  => 1, 'dt' => 1,
 					'cr'   => 1, 'vr'  => 1, 'er'  => 1, 'dr'  => 1,
 					'eot'  => 1, 'eor' => 1, 'dot' => 1, 'dor' => 1,	
-					'l'    => 1, 'r'   => 1, 's'   => 1, 'au'  => 1, 'p'   => 1, 'op' => 1, 'vp' => 1, 'sv'  => 1, 'osv' => 1, 'v'   => 1, 'a' => 1, 'va' => 1,
+					'l'    => 1, 'r'   => 1, 's'   => 1, 'sv'  => 1, 'osv' => 1, 'v'   => 1, 'a' => 1, 'va' => 1,
 					'at'   => 1, 'oat' => 1, 'cot' => 1, 'mt'  => 1);
 	
 	$sql = "SELECT * FROM `".$wpforo->db->prefix."wpforo_accesses`";
@@ -430,20 +403,18 @@ function wpforo_activation(){
 	#################################################################
 	// Usergroup Cans ///////////////////////////////////////////////
 	$usergroup_cans = array (
-		'cf'   => 'Dashboard - Can create forum',
-		'ef'   => 'Dashboard - Can edit forum',
-		'df'   => 'Dashboard - Can delete forum',
-		'vm'   => 'Dashboard - Members Menu',
-		'aum'  => 'Dashboard - Moderation Menu',
-		'em'   => 'Dashboard - Can edit member',
-	  	'bm'   => 'Dashboard - Can ban member',
-	  	'dm'   => 'Dashboard - Can delete member',
-		'vmg'  => 'Dashboard - Usergroup Menu',
-		'aup'  => 'Front - Can pass moderation',
+		'cf'   => 'Dahsboard - Can create forum',
+		'ef'   => 'Dahsboard - Can edit forum',
+		'df'   => 'Dahsboard - Can delete forum',
+		'vm'   => 'Dahsboard - Members Menu',
+		'em'   => 'Dahsboard - Can edit member',
+	  	'bm'   => 'Dahsboard - Can ban member',
+	  	'dm'   => 'Dahsboard - Can delete member',
+		'vmg'  => 'Dahsboard - Usergroup Menu',
 		'vmem' => 'Front - Can view members',
 		'vprf' => 'Front - Can view profiles',
 		'upa'  => 'Front - Can upload avatar',
-		'ups'  => 'Front - Can have signature', 
+		'ups'  => 'Front - Can have signatur', 
 		'va'   => 'Front - Can view avatars',
 		'vmu'  => 'Front - Can view member username',
 		'vmm'  => 'Front - Can view member email',
@@ -456,8 +427,8 @@ function wpforo_activation(){
 		'vmlad'=> 'Front - Can view member last active date',
 		'vip'  => 'Front - Can view member ip address', 
 		'vml'  => 'Front - Can view member location', 
-		'vmo'  => 'Front - Can view member occupation', 
-		'vms'  => 'Front - Can view member signature', 
+		'vmo'  => 'Front - Can view member ocumpation', 
+		'vms'  => 'Front - Can view member signatur', 
 		'vmam' => 'Front - Can view member about me', 
 		'vmpn' => 'Front - Can view member phone number',
 		'vwpm' => 'Front - Can write PM'
@@ -466,31 +437,31 @@ function wpforo_activation(){
 	
 	#################################################################
 	// Usergroup ////////////////////////////////////////////////////
-	$cans_admin = array('cf'    => '1', 'ef'   => '1', 'df'   => '1', 'vm'   => '1', 'aum'   => '1', 'em' => '1', 'vmg' => '1', 'aup' => '1', 'vmem' => '1',  'vprf' => '1',
+	$cans_admin = array('cf'    => '1', 'ef'   => '1', 'df'   => '1', 'vm'   => '1', 'em' => '1', 'vmg' => '1', 'vmem' => '1',  'vprf' => '1',
 						'bm'    => '1', 'dm'    => '1', 'upa'  => '1', 'ups'  => '1', 'va'   => '1',
 						'vmu'   => '1', 'vmm'  => '1', 'vmt'  => '1', 'vmct' => '1',
 						'vmr'   => '1', 'vmw'  => '1', 'vmsn' => '1', 'vmrd' => '1',
 						'vmlad' => '1',	'vip'  => '1', 'vml'  => '1', 'vmo'  => '1', 
 						'vms'   => '1', 'vmam' => '1', 'vmpn' => '1', 'vwpm' => '1');
-	$cans_moder = array('cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'aum'   => '1', 'em' => '0', 'vmg' => '0', 'aup' => '1', 'vmem' => '1',  'vprf' => '1',
+	$cans_moder = array('cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'em' => '0', 'vmg' => '0', 'vmem' => '1',  'vprf' => '1',
 						'bm'    => '1', 'dm'    => '1', 'upa'  => '1', 'ups'  => '1', 'va'   => '1',
 						'vmu'   => '1', 'vmm'  => '1', 'vmt'  => '1', 'vmct' => '1',
 						'vmr'   => '1', 'vmw'  => '1', 'vmsn' => '1', 'vmrd' => '1',
 						'vmlad' => '1',	'vip'  => '1', 'vml'  => '1', 'vmo'  => '1', 
 						'vms'   => '1', 'vmam' => '1', 'vmpn' => '1', 'vwpm' => '1');
-	$cans_reg = array(  'cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'aum'   => '0', 'em' => '0', 'vmg' => '0', 'aup' => '1', 'vmem' => '1',  'vprf' => '1',
+	$cans_reg = array(  'cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'em' => '0', 'vmg' => '0', 'vmem' => '1',  'vprf' => '1',
 						'bm'    => '0', 'dm'    => '0', 'upa'  => '1', 'ups'  => '1', 'va'   => '1',
 						'vmu'   => '1', 'vmm'  => '0', 'vmt'  => '1', 'vmct' => '1',
 						'vmr'   => '1', 'vmw'  => '1', 'vmsn' => '1', 'vmrd' => '1',
 						'vmlad' => '1',	'vip'  => '0', 'vml'  => '1', 'vmo'  => '1', 
 						'vms'   => '1', 'vmam' => '1', 'vmpn' => '0', 'vwpm' => '1');
-	$cans_guest = array('cf'  => '0', 'ef'     => '0', 'df'   => '0', 'vm'   => '0', 'aum'   => '0', 'em' => '0', 'vmg' => '0', 'aup' => '0', 'vmem' => '1',  'vprf' => '1',
+	$cans_guest = array('cf'  => '0', 'ef'     => '0', 'df'   => '0', 'vm'   => '0', 'em' => '0', 'vmg' => '0', 'vmem' => '1',  'vprf' => '1',
 						'bm'    => '0', 'dm'    => '0', 'upa'  => '0', 'ups'  => '0', 'va'   => '0',
 						'vmu'   => '0', 'vmm'  => '0', 'vmt'  => '0', 'vmct' => '0',
 						'vmr'   => '1', 'vmw'  => '0', 'vmsn' => '1', 'vmrd' => '0',
 						'vmlad' => '1',	'vip'  => '0', 'vml'  => '1', 'vmo'  => '1', 
 						'vms'   => '0', 'vmam' => '1', 'vmpn' => '0', 'vwpm' => '0');
-	$cans_customer = array(  'cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'aum'   => '0', 'em' => '0', 'vmg' => '0', 'aup' => '0', 'vmem' => '1',  'vprf' => '1',
+	$cans_customer = array(  'cf'    => '0', 'ef'   => '0', 'df'   => '0', 'vm'   => '0', 'em' => '0', 'vmg' => '0', 'vmem' => '1',  'vprf' => '1',
 						'bm'    => '0', 'dm'    => '0', 'upa'  => '1', 'ups'  => '1', 'va'   => '1',
 						'vmu'   => '1', 'vmm'  => '0', 'vmt'  => '1', 'vmct' => '1',
 						'vmr'   => '1', 'vmw'  => '1', 'vmsn' => '1', 'vmrd' => '1',
@@ -533,7 +504,7 @@ function wpforo_activation(){
 	$count = $wpforo->db->get_var($sql);
 	if(!$count){
 		if( $parentid = $wpforo->forum->add( array( 'title' => 'Main Category', 'description' => 'This is a simple category / section' ), FALSE ) ){
-			$wpforo->forum->add( array( 'title' => 'Main Forum', 'description' => 'This is a simple parent forum', 'parentid' => $parentid, 'icon' => 'fa-comments' ), FALSE );
+			$wpforo->forum->add( array( 'title' => 'Main Forum', 'description' => 'This is a simple parent forum', 'parentid' => $parentid ), FALSE );
 		}
 	}
 	
@@ -612,60 +583,8 @@ function wpforo_activation(){
 	
 	#################################################################
 	// RESET FUNCTIONS //////////////////////////////////////////////
-	$sql = "SHOW COLUMNS FROM `".$wpdb->prefix."wpforo_phrases` WHERE `Field` LIKE 'package'";
-	if( !$wpdb->get_row($sql, ARRAY_A) ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_phrases` ADD COLUMN `package` VARCHAR(255) NOT NULL DEFAULT 'wpforo'";
-		@$wpdb->query( $sql );
-	}
-	$wpforo->phrase->clear_cache();
-	
-	#################################################################
-	// FIX TOPIC TABLE DATE DEFAULT VALUE | ADD PRIVATE COL//////////
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_topics', 'col' => 'created', 'check' => 'default_value' );
-	$value = wpforo_db_check( $args );
-	if( $value == '0000-00-00 00:00:00' ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_topics` CHANGE `created` `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `modified` `modified` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;";
-		@$wpdb->query( $sql );
-	}
-	// ADD `private` field in TOPIC TABLE  ///////////////////////////
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_topics', 'col' => 'private', 'check' => 'col_exists' );
-	if( !wpforo_db_check( $args ) ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_topics` ADD `private` TINYINT(1) NOT NULL DEFAULT '0', ADD INDEX `is_private` (`private`);";
-		@$wpdb->query( $sql );
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_topics` ADD INDEX `own_private` ( `userid`, `private`);";
-		@$wpdb->query( $sql );
-	}
-	// ADD INDEXES in wpforo_views TABLE///////////////////////////
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_views', 'col' => 'topicid', 'check' => 'key_exists' );
-	if( !wpforo_db_check( $args ) ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_views` ADD INDEX(`userid`);";
-		@$wpdb->query( $sql );
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_views` ADD INDEX(`topicid`);";
-		@$wpdb->query( $sql );
-	}
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_views', 'col' => 'created', 'check' => 'col_type' );
-	$col_type = wpforo_db_check( $args );
-	if( $col_type != 'int(11)' ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_views` CHANGE `created` `created` INT(11) NOT NULL;";
-		@$wpdb->query( $sql );
-	}
-	
-	// ADD `status` field in TOPICS & POSTS TABLE  ///////////////////////////
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_topics', 'col' => 'status', 'check' => 'col_exists' );
-	if( !wpforo_db_check( $args ) ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_topics` ADD `status` TINYINT(1) NOT NULL DEFAULT '0', ADD INDEX `status` (`status`);";
-		@$wpdb->query( $sql );
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_topics` ADD INDEX `forumid_status` ( `forumid`, `status`);";
-		@$wpdb->query( $sql );
-	}
-	$args = array( 'table' => $wpdb->prefix . 'wpforo_posts', 'col' => 'status', 'check' => 'col_exists' );
-	if( !wpforo_db_check( $args ) ){
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_posts` ADD `status` TINYINT(1) NOT NULL DEFAULT '0', ADD INDEX `status` (`status`);";
-		@$wpdb->query( $sql );
-		$sql = "ALTER TABLE `".$wpdb->prefix."wpforo_posts` ADD INDEX `topicid_status` ( `topicid`, `status`);";
-		@$wpdb->query( $sql );
-	}
-	
+	$wpforo->db->query("DELETE FROM " . $wpforo->db->prefix . "options WHERE `option_name` LIKE '%_transient_wpforo_get_phrases_%' OR `option_name` LIKE '%_transient_timeout_wpforo_get_phrases_%'");
+
 	#################################################################
 	// UPDATE VERSION - END /////////////////////////////////////////
 	update_option('wpforo_version', WPFORO_VERSION);
@@ -706,7 +625,7 @@ function wpforo_uninstall() {
 	
 	global $wpforo, $wpdb;
 	
-	if( ! wpforo_is_admin() ) return;
+	if( ! is_admin() ) return;
 	if( ! current_user_can( 'activate_plugins' ) ) return;
 	$QUERY_STRING = trim(preg_replace('|_wpnonce=[^\&\?\=]*|is', '', $_SERVER['QUERY_STRING']), '&');
 	
@@ -754,8 +673,7 @@ function wpforo_uninstall() {
 						  'wpforo_style_options',
 						  'wpforo_permastruct',
 						  'wpforo_use_home_url',
-						  'wpforo_excld_urls',
-						  'wpforo_tools_antispam'
+						  'wpforo_excld_urls'
 		);
 		 
 		foreach($options as $option){

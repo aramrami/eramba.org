@@ -22,9 +22,6 @@
                     <?php endif; ?>
                     <div class="author-data">
                         <div class="author-name"><span><?php $wpforo->member->show_online_indicator($member['userid']) ?></span>&nbsp;<a href="<?php echo esc_url($member['profile_url']) ?>"><?php echo esc_html($member['display_name']) ?></a></div>
-                        <div class="wpf-member-profile-buttons">
-                            <?php $wpforo->tpl->member_buttons($member) ?>
-                        </div>
                         <div class="author-title">
                             <?php wpforo_member_title($member) ?>
                         </div>
@@ -36,18 +33,17 @@
                 	<div class="wpforo-post-content-top">
                     	<div class="wpf-post-actions">
 							<?php if( $post['is_first_post'] ){
-                                $buttons = array( 'solved', 'sticky', 'private', 'close', 'report', 'move', 'delete' );
-                                $wpforo->tpl->buttons( $buttons, $forum, $topic, $post, TRUE );  
+                                $buttons = array( 'solved', 'sticky', 'close', 'report', 'move', 'delete' );
+                                $wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], TRUE );  
                             }else{
                                 $buttons = array( 'report', 'delete' );
-                                $wpforo->tpl->buttons( $buttons, $forum, $topic, $post );
+                                $wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'] );
                             } ?>
                         </div>
                         <a href="<?php echo esc_url($wpforo->post->get_post_url($post['postid'])) ?>"><i class="fa fa-link fa-0x"></i></a>
                     </div>
                     <div class="wpforo-post-content">
                         <?php echo wpforo_content_filter( wpforo_kses($post['body'], 'post') ) ?>
-                        <?php do_action( 'wpforo_tpl_post_loop_after_content', $post, $member ) ?>
                         <?php wpforo_post_edited($post); ?>
                         <?php if( wpforo_feature('signature', $wpforo) ): ?>
                         	<?php if($member['signature']): ?><div class="wpforo-post-signature"><?php echo wpautop(wpforo_kses(stripslashes($member['signature']), 'user_description')) ?></div><?php endif; ?>
@@ -55,12 +51,11 @@
                         <div class="wpf-post-button-actions">
                         <?php if( $post['is_first_post'] ){
 							$buttons = array( 'reply', 'quote', 'edit',	'like' );
-							$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, TRUE );  
+							$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], TRUE );  
 						}else{
 							$buttons = array( 'reply', 'quote', 'edit', 'like' );
-							$wpforo->tpl->buttons( $buttons, $forum, $topic, $post );
+							$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'] );
 						} ?>
-                        <?php if($post['status']): ?><span class="wpf-mod-message"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php wpforo_phrase('Awaiting moderation') ?></span></span><?php endif; ?> 
                         </div>
                     </div>
                     <div class="wpforo-post-content-bottom">

@@ -21,13 +21,11 @@
 	</div><!-- wpforo-category -->
   
   	<?php foreach($forums as $forum) : 
-  		if( !$wpforo->perm->forum_can( 'vf', $forum['forumid'] ) ) continue; 
-		$forum_icon = ( isset($forum['icon']) && $forum['icon']) ? $forum['icon'] : 'fa-comments';
-		?>
+  		if( !$wpforo->perm->forum_can( 'vf', $forum['forumid'] ) ) continue; ?>
   		
 	  	<div class="forum-wrap">
 	      	<div class="wpforo-forum">
-		        <div class="wpforo-forum-icon"><i class="fa <?php echo esc_attr($forum_icon) ?> wpfcl-0"></i></div>
+		        <div class="wpforo-forum-icon"><i class="fa fa-comments wpfcl-0"></i></div>
 		        <div class="wpforo-forum-info">
 		        	<h3 class="wpforo-forum-title"><a href="<?php echo esc_url($wpforo->forum->get_forum_url($forum)) ?>"><?php echo esc_html($forum['title']); ?></a></h3>
 		        	<p class="wpforo-forum-description"><?php echo $forum['description'] ?></p>
@@ -52,10 +50,9 @@
 			                    <li class="first wpfcl-0"><?php wpforo_phrase('Subforums'); ?>: </li>
 								
 								<?php foreach($sub_forums as $sub_forum) : 
-									if( !$wpforo->perm->forum_can( 'vf', $sub_forum['forumid'] ) ) continue; 
-									$sub_forum_icon = ( isset($sub_forum['icon']) && $sub_forum['icon']) ? $sub_forum['icon'] : 'fa-comments'; ?>
+									if( !$wpforo->perm->forum_can( 'vf', $sub_forum['forumid'] ) ) continue; ?>
 			                      	
-			                      	<li><i class="fa <?php echo esc_attr($sub_forum_icon) ?> wpfcl-0"></i>&nbsp;<a href="<?php echo esc_url($wpforo->forum->get_forum_url($sub_forum)) ?>"><?php echo esc_html($sub_forum['title']); ?></a></li>
+			                      	<li><i class="fa fa-comments wpfcl-0"></i>&nbsp;<a href="<?php echo esc_url($wpforo->forum->get_forum_url($sub_forum)) ?>"><?php echo esc_html($sub_forum['title']); ?></a></li>
 									
 		                     	<?php endforeach; ?>
 								

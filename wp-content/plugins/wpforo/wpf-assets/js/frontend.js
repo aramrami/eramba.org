@@ -14,8 +14,8 @@ jQuery.fn.visibilityToggle = function() {
 
 function wpforo_notice_show(notice){
 	var cls = '';
-	if( notice === undefined || notice.text === undefined || notice.text == '' ) return;
-	if( notice.type !== undefined ) cls = notice.type;
+	if( typeof notice === "undefined" ) return;
+	if( typeof notice.type !== "undefined" ) cls = notice.type;
 	jQuery("#wpf-msg-box").hide();
 	jQuery("#wpf-msg-box p.wpf-msg-box-triangle-right").removeClass("error").removeClass("success").addClass(cls);
 	jQuery("#wpf-msg-box p.wpf-msg-box-triangle-right").html("<span>" + notice.text + "</span>");
@@ -27,13 +27,6 @@ function wpforo_notice_show(notice){
 		}
 		setTimeout(function(){ jQuery("#wpf-msg-box").hide(); }, dur);
 	}
-}
-
-function wpforo_phrase(phrase_key){
-	phrase_key = phrase_key.toLowerCase();
-	var wpfaPhrases = wpf_ajax_obj.phrases;
-	if( wpfaPhrases[phrase_key] !== undefined ) phrase_key = wpfaPhrases[phrase_key];
-	return phrase_key;
 }
 
 jQuery(document).ready(function($){
@@ -78,28 +71,12 @@ jQuery(document).ready(function($){
 		$('#wpforo-load').invisible();
 	});
 	
-	/* Home page loyouts toipcs toglle */
-	$( ".wpforo-membertoggle" ).click(function(){
-		var id = $(this).attr( 'id' );
-		id = id.replace( "wpforo-memberinfo-toggle-", "" );
-		$( "#wpforo-memberinfo-" + id ).slideToggle( "slow" );
-		if($(this).find( "i" ).attr('class') == 'fa fa-caret-down' ){
-			$(this).find( "i" ).removeClass('fa-caret-down').addClass('fa-caret-up');
-		}else{
-			$(this).find( "i" ).removeClass('fa-caret-up').addClass('fa-caret-down');
-		}
-	});
-	
 	
 //	Reply
 	$( ".wpforo-reply" ).click(function(){
 		
 		$("#wpf-msg-box").hide();  $('#wpforo-load').visible();
 		$("#wpf-reply-form-title").html(wpf_ajax_obj.phrases['leave a reply']);
-		
-		var parentpostid = $(this).attr('id');
-		parentpostid = parentpostid.replace("parentpostid", "");
-		$("#postparentid").val( parentpostid );
 		
 		tinyMCE.activeEditor.setContent('');
 		$( ".wpf-topic-sbs" ).show();

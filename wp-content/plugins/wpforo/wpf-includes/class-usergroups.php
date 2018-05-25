@@ -5,7 +5,6 @@
 class wpForoUsergroup{
 	
 	private $wpforo;
-	private static $cache = array( 'usergroup' => array(), 'user' => array() );
 	
 	function __construct( $wpForo ){
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
@@ -72,7 +71,7 @@ class wpForoUsergroup{
 		return FALSE;
 	}
 	
-	function edit( $groupid, $title, $cans, $description = '' ){
+	function edit( $groupid, $title, $cans ){
 		
 		if( $groupid == 1 ) return false;
 		if( !current_user_can('administrator') ){
@@ -138,31 +137,13 @@ class wpForoUsergroup{
 		return FALSE;
 	}
 	
-	function get_usergroup( $groupid = 4, $cache = true ){
-		// Guest UsergroupID = 4
-		if( $cache && isset(self::$cache['usergroup'][$groupid]) ){
-			return self::$cache['usergroup'][$groupid];
-		}
-		$usergroup = $this->wpforo->db->get_row("SELECT * FROM `".$this->wpforo->db->prefix."wpforo_usergroups` WHERE `groupid` = ".intval($groupid), ARRAY_A);
-		if($cache && isset($groupid)){
-			self::$cache['usergroup'][$groupid] = $usergroup;
-		}
-		return $usergroup;
+	function get_usergroup( $groupid = 4 ){
+		// 4 is a guest's id
+		return $this->wpforo->db->get_row("SELECT * FROM `".$this->wpforo->db->prefix."wpforo_usergroups` WHERE `groupid` = ".intval($groupid), ARRAY_A);
 	}
 	
 	function get_usergroups(){
 		return $this->wpforo->db->get_results("SELECT * FROM `".$this->wpforo->db->prefix."wpforo_usergroups`", ARRAY_A);
-	}
-	
-	function get_groupid_by_userid( $userid, $cache = true ){
-		if( $cache && isset(self::$cache['user'][$userid]) ){
-			return self::$cache['user'][$userid];
-		}
-		$groupid = $this->wpforo->db->get_var("SELECT `groupid` FROM `".$this->wpforo->db->prefix ."wpforo_profiles` WHERE `userid` = " . intval($userid));
-		if($cache && isset($groupid)){
-			self::$cache['user'][$userid] = $groupid;
-		}
-		return $groupid;
 	}
 	
 	function show_selectbox( $groupid = 0, $exclude = array() ){

@@ -20,7 +20,7 @@
 		                    	<div class="wpf-positive">
 		                    		<?php 
 			                       	 	$buttons = array('positivevote');
-										$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic );  
+										$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic );  
 		                       	 	?>
 		                    	</div>
 			                        <div class="wpf-vote-number">
@@ -31,28 +31,26 @@
 		                        <div class="wpf-negative">
 		                        	<?php 
 			                       	 	$buttons = array('negativevote');
-										$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic );  
+										$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic );  
 		                       	 	?>
 		                        </div>
 		                        
 		                    	<?php
 		                    		if( !$post['is_first_post'] ){
 		    	                		$buttons = array(  'isanswer' );
-										$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic );  
+										$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic );  
 									}
 		                    	?>
 		                    </div>
 		                </div><!-- left -->
 		                <div class="wpf-right">
                         	<div class="wpforo-post-content-top">
-                            	<?php if($post['status']): ?><span class="wpf-mod-message"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php wpforo_phrase('Awaiting moderation') ?></span><?php endif; ?> 
-                                <div class="wpforo-post-link"><?php $buttons = array( 'link' ); $wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic ); ?></div>
+                                <div class="wpforo-post-link"><?php $buttons = array( 'link' ); $wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic ); ?></div>
                                 <div class="wpforo-post-date"><?php wpforo_date($post['created']); ?></div>
                                 <div class="wpf-clear-right"></div>
                             </div>
 		                    <div class="wpforo-post-content">
 							 	<?php echo wpforo_content_filter( wpforo_kses($post['body'], 'post') ) ?>
-                                <?php do_action( 'wpforo_tpl_post_loop_after_content', $post, $member ) ?>
                                 <?php wpforo_post_edited($post); ?>
                                 <?php if( wpforo_feature('signature', $wpforo) ): ?>
                                 	<?php if( trim($member['signature'])): ?><div class="wpforo-post-signature"><?php echo wpautop(wpforo_kses(stripslashes($member['signature']), 'user_description')) ?></div><?php endif ?>
@@ -64,12 +62,12 @@
 											if( $post['is_first_post'] ){ 
 												$buttons = array( 'answer' ); 
 												echo '<div class="wpf-answer-button">'; 
-												$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic ); 
+												$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic ); 
 												echo '</div>'; 
 											}
 											$buttons = array( 'comment' ); 
 											echo '<div class="wpf-add-comment-button">'; 
-											$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic ); 
+											$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic ); 
 											echo '</div>'; 
 										?>
 		                            </div>
@@ -100,11 +98,11 @@
 		                    </div><!-- wpforo-post-author -->
                             <div class="wpforo-post-tool-bar">
 								<?php if( $post['is_first_post'] ){
-                                    $buttons = array( 'report', 'sticky', 'private', 'close', 'move', 'edit', 'delete' );
-                                    $wpforo->tpl->buttons( $buttons, $forum, $topic, $post, $is_topic );  
+                                    $buttons = array( 'report', 'sticky', 'close', 'move', 'edit', 'delete' );
+                                    $wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], $is_topic );  
                                 }else{
                                     $buttons = array( 'report', 'edit', 'delete' );
-                                    $wpforo->tpl->buttons( $buttons, $forum, $topic, $post );  
+                                    $wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'] );  
                                 } ?>
                             </div>
 		                </div><!-- right -->
@@ -129,13 +127,12 @@
 	                                                <span class="wpfcl-0" style="white-space:nowrap"><?php wpforo_phrase('by') ?> <a href="<?php echo esc_url($comment_member['profile_url']) ?>">
 							                        <?php echo esc_html($comment_member['display_name']) ?></a>
 							                        <?php wpforo_date($comment['created']); ?></span>
-							                        <?php do_action( 'wpforo_tpl_post_loop_after_content', $comment, $comment_member ) ?>
                                                     <?php wpforo_post_edited($comment); ?>
                                                 </div>
 						                        <div class="wpforo-comment-action-links">&nbsp;
 						                        	<?php 
 						                        		$buttons = array( 'report', 'edit', 'delete', 'link' );
-														$wpforo->tpl->buttons( $buttons, $forum, $comment, $comment );
+														$wpforo->tpl->buttons( $buttons, $forum['forumid'], $comment['topicid'], $comment['postid'] );
 													?>
 						                        </div>
 						                    </div>

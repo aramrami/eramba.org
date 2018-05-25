@@ -13,18 +13,6 @@
 	text-align: right;
 	padding: 5px;
 }
-.pdfprnt-top-left:before,
-.pdfprnt-bottom-left:before,
-.pdfprnt-top-right:before,
-.pdfprnt-bottom-right:before,
-.pdfprnt-top-bottom-left:before,
-.pdfprnt-top-bottom-right:before,
-.pdfprnt-left:before,
-.pdfprnt-right:before {
-	content: "";
-	clear: both;
-	display: table;
-}
 .pdfprnt-top-left a,
 .pdfprnt-bottom-left a,
 .pdfprnt-top-right a,
@@ -34,32 +22,46 @@
 .pdfprnt-left a,
 .pdfprnt-right a {
 	padding: 0 5px;
-	box-shadow: none !important;
-	border: none !important;
-	outline: none !important;
 }
-.pdfprnt-top-left a img,
-.pdfprnt-bottom-left a img,
-.pdfprnt-top-right a img,
-.pdfprnt-bottom-right a img,
-.pdfprnt-top-bottom-right a img,
-.pdfprnt-top-bottom-left a img,
-.pdfprnt-left a img,
-.pdfprnt-right a img {
-	display: inline !important;
+.entry-content .pdfprnt-top-left a,
+.entry-content .pdfprnt-bottom-left a,
+.entry-content .pdfprnt-top-right a,
+.entry-content .pdfprnt-bottom-right a,
+.entry-content .pdfprnt-top-bottom-right a,
+.entry-content .pdfprnt-top-bottom-left a,
+.entry-content .pdfprnt-left a,
+.entry-content .pdfprnt-right a {
+	border-bottom: none;
 }
-.pdfprnt-buttons {
-	display: inline-block;
+.entry-content .pdfprnt-top-left a img,
+.entry-content .pdfprnt-bottom-left a img,
+.entry-content .pdfprnt-top-right a img,
+.entry-content .pdfprnt-bottom-right a img,
+.entry-content .pdfprnt-top-bottom-right a img,
+.entry-content .pdfprnt-top-bottom-left a img,
+.entry-content .pdfprnt-left a img,
+.entry-content .pdfprnt-right a img {
+    display: inline;
 }
-.entry-content .pdfprnt-buttons > a > img,
-.entry-content .pdfprnt-buttons > a > span {
-	display: inline-block;
+#wp-admin-bar-pdfprnt-bar-menu-default li {
+	cursor: pointer;
 }
-.pdfprnt-button img,
-.pdfprnt-button-title {
-	display: inline-block !important;
-	vertical-align: middle;
-	padding: 5px;
+#wp-admin-bar-pdfprnt-bar-menu-default li:hover {
+	background-color: #2E9EC7 !important;
+}
+#wpadminbar #wp-admin-bar-pdfprnt-bar-menu-default li a {
+	height: auto;
+	padding: 8px 0;
+	text-align: center;
+}
+#wpadminbar li#wp-admin-bar-pdfprnt-bar-menu span.admin-bar-menu-bws-icon {
+	background: url("../bws_menu/images/icon_16_single.png") no-repeat scroll center center transparent;
+	float: left;
+	position: relative;
+	width: 16px;
+	height: 16px;
+	margin: 6px 6px 0 0;
+	opacity: 0.7;
 }
 
 /* PDF-Print settings .form-table */
@@ -71,56 +73,18 @@
 	text-align: center;
 	margin: 0 5px;
 }
+.pdfprnt_settings_table td div img {
+	border:1px solid #777;
+	display:block;
+	width: 80px;
+	height: 100px;
+}
 .pdfprnt_settings_table td {
 	vertical-align: top;
 	padding: 10px;
 }
 .pdfprnt_settings_table td select {
 	min-width: 210px;
-}
-.pdfprnt_button_layout span,
-.pdfprnt_button_layout select {
-	display: block;
-	margin-bottom: 15px;
-}
-.pdfprnt_pro_button_settings input {
-	display: block;
-	margin-bottom: 15px;
-}
-.pdfprnt_pro_button_settings input[type="file"] {
-	width: 100%;
-}
-
-.pdfprnt_pro_button_settings span,
-.pdfprnt_pro_button_settings img {
-	margin: 0;
-	display: inline-block;
-	vertical-align: middle;
-}
-#pdfprnt_settings_form .pdfprnt_settings_table td select[multiple] {
-	height: auto;
-}
-.pdfprnt_pdf_margin_settings th {
-	font-weight: normal;
-	width: auto;
-}
-.pdfprnt_pdf_margin_settings table,
-.pdfprnt_pdf_margin_settings .bws_help_box.dashicons-editor-help {
-	display: inline-block;
-}
-.pdfprnt_pdf_margin_settings .bws_help_box.dashicons-editor-help {
-	padding-top: 5px;
-}
-#pdfprnt_settings_form .pdfprnt_pdf_margin_settings th,
-#pdfprnt_settings_form .pdfprnt_pdf_margin_settings td {
-	vertical-align: middle;
-	padding: 5px;
-}
-#pdfprnt_settings_form .pdfprnt_pdf_margin_settings {
-	padding-top: 0;
-}
-.rtl #pdfprnt_custom_styles {
-	direction: ltr;
 }
 .pdfprnt_buttons {
 	width: auto !important;
@@ -134,22 +98,28 @@
 }
 /*
  * css highlighter
-*/
-.pdfprnt_custom_styles .CodeMirror {
-	max-height: 200px;
-	max-width: 500px;
-	border: 1px solid #ddd;  }
-.pdfprnt_custom_styles .CodeMirror-scroll {
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box !important;
+ */
+.pdfprnt_custom_styles .CodeMirror { 
+    max-height: 200px; 
+    max-width: 500px;
+    border: 1px solid #ddd;  }
+.pdfprnt_custom_styles .CodeMirror-scroll { 
+    height: 100%; 
+    width: 100%; 
+    box-sizing: border-box !important;
 }
 .pdfprnt_custom_styles .CodeMirror-hscrollbar {
-	left: 0 !important;
+    left: 0 !important;
+}
+.pdfprnt_custom_styles .CodeMirror-gutters {
+    width: 30px !important;
+    height: 100%;
+    box-sizing: border-box !important;
 }
 .pdfprnt_custom_styles .CodeMirror-sizer {
-	border-right: none;
+   margin-left: 30px !important;
 }
+
 .pdfprnt_pro_block .bws_pro_version_tooltip {
 	display: inline-block;
 	width: 100%;
@@ -170,7 +140,7 @@
 	.pdfprnt_label {
 		display: inline;
 	}
-	.pdfprnt_position_button .pdfprnt_label {
+	.pdfprnt_position_buttton .pdfprnt_label {
 		display: block;
 	}
 	.pdfprnt_table_head {

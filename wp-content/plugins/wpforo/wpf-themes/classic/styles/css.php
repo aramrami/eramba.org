@@ -89,9 +89,7 @@ $css = '/* wpForo Dynamic CSS Document */
 #wpforo-wrap .wpforo-post .wpf-right .wpforo-post-attachments{ border:'. $WPFCOLOR_1 .' 1px dotted; }
 #wpforo-wrap .wpforo-post .wpf-right .wpforo-post-attachments img{border:'. $WPFCOLOR_8 .' 2px solid; background:'. $WPFCOLOR_1 .'; }
 #wpforo-wrap .wpforo-post .wpf-right .wpforo-post-signature{ border-top:'. $WPFCOLOR_11 .' 1px dotted; }
-#wpforo-wrap .wpforo-post .wpf-left .wpforo-membertoggle i{ color:'. $WPFCOLOR_15 .';}
-#wpforo-wrap .wpforo-post .wpf-mod-message{color:'. $WPFCOLOR_20 .'}
-	
+
 #wpforo-wrap .wpforo-topic-badges{ background-color:'. $WPFCOLOR_9 .'; }
 
 #wpforo-wrap .wpfl-1 .wpforo-category{ background-color: '. $WPFCOLOR_12 .'; border-bottom:'. $WPFCOLOR_7 .' 1px solid; }
@@ -245,6 +243,17 @@ $css = '/* wpForo Dynamic CSS Document */
 #wpforo-wrap .wpforo-sbn-content{ border:'. $WPFCOLOR_8 .' 1px solid;  }
 #wpforo-wrap .wpforo-sbn-content .sbn-icon{ border-right:2px solid '. $WPFCOLOR_1 .'; }
 
+#wpforo-wrap .wpforo-messages-content .uml{ background: '. $WPFCOLOR_1 .'; border-bottom: 1px solid '. $WPFCOLOR_14 .'; }
+#wpforo-wrap .wpforo-messages-content .uml:hover, .uml a:hover{ color: '. $WPFCOLOR_1 .' !important; }
+#wpforo-wrap .wpforo-messages-content .umlactive{ background: '. $WPFCOLOR_14 .' !important; }
+#wpforo-wrap .wpforo-messages-content .umlactive a{ color: '. $WPFCOLOR_1 .' !important; }
+#wpforo-wrap .wpforo-messages-content .umlactive .uml_lastmsg{ color: '. $WPFCOLOR_1 .' !important; }
+#wpforo-wrap .wpforo-messages-content .uml .uml_lastmsg{ color: '. $WPFCOLOR_6 .'; }
+#wpforo-wrap .wpforo-messages-content .uml-has-message{ background: rgba(255, 163, 0, 0.22); }
+#wpforo-wrap .wpforo-messages-content .whr{ border-top: 1px solid '. $WPFCOLOR_8 .' !important; color: '. $WPFCOLOR_7 .'; }
+#wpforo-wrap .wpforo-messages-content .whr abbr{ background-color: '. $WPFCOLOR_1 .'; }
+#wpforo-wrap .wpforo-messages-content .pm_submit{ color: '. $WPFCOLOR_1 .'; }
+
 #wpforo-wrap input[type="text"], #wpforo-wrap input[type="password"], #wpforo-wrap input[type="email"], #wpforo-wrap textarea, #wpforo-wrap select { border: 1px solid '. $WPFCOLOR_10 .'; color: '. $WPFCOLOR_5 .'; box-shadow: inset 0px 1px 4px '. $WPFCOLOR_8 .'; -moz-box-shadow: inset 0px 1px 4px '. $WPFCOLOR_8 .'; -webkit-box-shadow: inset 0px 1px 4px '. $WPFCOLOR_8 .'; }
 #wpforo-wrap input[type="submit"], #wpforo-wrap input[type="button"]{ background:'. $WPFCOLOR_12 .'; color:'. $WPFCOLOR_1 .'; border: 1px solid '. $WPFCOLOR_14 .'; }
 #wpforo-wrap input[type="submit"]:hover{ background:'. $WPFCOLOR_14 .'; }
@@ -311,6 +320,11 @@ $css = '/* wpForo Dynamic CSS Document */
 
 #wpforo-wrap .widget-title { border-bottom:2px solid '. $WPFCOLOR_8 .';}
 #wpforo-wrap .wpforo-widget-wrap .wpforo-widget-content li{ border-bottom:1px dotted '. $WPFCOLOR_7 .'; }
+#wpforo-wrap .pm_content{ background-color: '. $WPFCOLOR_1 .' !important; }
+div.pm_content::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); }
+div.pm_content::-webkit-scrollbar-thumb { background: '. $WPFCOLOR_14 .'; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
+div.pm_content::-webkit-scrollbar-thumb:window-inactive { background: '. $WPFCOLOR_14 .'; }
+div.pm_content::-webkit-scrollbar-button { background-color: '. $WPFCOLOR_16 .'; }
 
 .ui-dialog { z-index: 999998 !important; }
 .wpf-video{	margin: 10px !important; }

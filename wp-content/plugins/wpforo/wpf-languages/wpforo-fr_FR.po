@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Forum - wpForo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-02 16:56+0400\n"
-"PO-Revision-Date: 2017-02-18 21:34+0100\n"
+"PO-Revision-Date: 2016-12-02 16:56+0400\n"
 "Last-Translator: julien.coopmann51@gmail.com\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wpforo.php\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
@@ -29,21 +29,16 @@ msgid ""
 "Adds an advanced file attachment system to forum topics and posts. AJAX "
 "powered media uploading and displaying system with user specific library."
 msgstr ""
-"Ajoute un système avancé de pièces jointes aux sujets et messages du forum. "
-"AJAX charge le système de chargement et d'affichage des médias avec une "
-"bibliothèque spécifique à l'utilisateur."
 
 #: wpf-admin/addons.php:8
 msgid ""
 "Allows to embed hundreds of video, social network, audio and photo content "
 "providers in forum topics and posts."
 msgstr ""
-"Permet d'intégrer des centaines de fournisseurs de contenu vidéo, social, "
-"audio et photo dans les sujets et les messages du forum."
 
 #: wpf-admin/addons.php:16 wpf-admin/addons.php:24
 msgid "wpForo Addons"
-msgstr "Addons wpForo"
+msgstr ""
 
 #: wpf-admin/addons.php:30
 msgid ""
@@ -58,38 +53,26 @@ msgid ""
 "development always stays on the first priority and wpForo is being extended "
 "with new free functions and features even faster than before."
 msgstr ""
-"Tous les addons wpForo sont développés par les développeurs de wpForo à "
-"gVectors Team. Addon prix comprennent également un petit don au travail dur "
-"wpForo développeurs faire gratuitement. Lorsque vous achetez un addon, vous "
-"donnez également le développement gratuit wpForo et le soutien. Les addons "
-"sont la seule source entrante pour les développeurs de wpForo. WpForo est un "
-"plugin premium qui sera toujours disponible gratuitement. Il n'y aura jamais "
-"de versions payantes et pro de ce forum. Nous avons une autre dizaine de "
-"fonctionnalités impressionnantes dans notre liste de choses à faire qui "
-"seront également ajoutés gratuitement dans les futures versions. Ainsi, le "
-"développement gratuit de wpForo reste toujours sur la première priorité et "
-"wpForo est étendu avec de nouvelles fonctions gratuites et des "
-"fonctionnalités encore plus rapide qu'avant."
 
 #: wpf-admin/addons.php:53
 msgid "Installed"
-msgstr "Installé"
+msgstr ""
 
 #: wpf-admin/addons.php:57
 msgid "Version"
-msgstr "Version"
+msgstr ""
 
 #: wpf-admin/addons.php:58
 msgid "at least"
-msgstr "au moins"
+msgstr ""
 
 #: wpf-admin/addons.php:60
 msgid "Details | Buy"
-msgstr "Détail | Acheter"
+msgstr ""
 
 #: wpf-admin/addons.php:66
 msgid "More information about"
-msgstr "Plus d'informations"
+msgstr ""
 
 #: wpf-admin/admin.php:15 wpf-admin/admin.php:16
 #: wpf-includes/wpf-phrases.php:597
@@ -152,22 +135,6 @@ msgid ""
 "list of issues and requirements you'd like us to fix and add in near future. "
 "We're here to help you and improve wpForo as much as possible."
 msgstr ""
-"Merci d'utiliser wpForo! WpForo est un babillard professionnel pour "
-"WorPress, et le seul logiciel de forum qui est livré avec le système de "
-"modèle de disposition multiple.\n"
-"                                     Les formats \"Extended\", \"Simplified"
-"\" et \"Question &amp Answer\" s'adaptent à presque tous les types de "
-"besoins de discussion. Vous pouvez utiliser wpForo pour les petites et très "
-"grandes communautés.\n"
-"                                     <br /> Si vous avez trouvé un problème "
-"ou un bug, ouvrez une rubrique de support dans la page de plugin ou dans "
-"notre forum de support sur gVectors.com. Si vous avez aimé wpForo s'il vous "
-"plaît laissez une bonne critique pour ce plugin. Nous avons vraiment besoin "
-"de vos bonnes critiques.\n"
-"                                     Si vous n'avez pas aimé wpForo s'il "
-"vous plaît laissez une liste de problèmes et les exigences que vous "
-"souhaitez nous fixer et ajouter dans un proche avenir. Nous sommes là pour "
-"vous aider et améliorer wpForo autant que possible."
 
 #: wpf-admin/dashboard.php:60 wpf-includes/wpf-phrases.php:130
 msgid "General Information"
@@ -221,31 +188,31 @@ msgstr "Membres en ligne"
 
 #: wpf-admin/dashboard.php:161
 msgid "Avatars Size"
-msgstr "Taille des avatars"
+msgstr ""
 
 #: wpf-admin/dashboard.php:165
 msgid "Default Attachments Size"
-msgstr "Taille par défaut des pièces jointes"
+msgstr ""
 
 #: wpf-admin/dashboard.php:171
 msgid "Advanced Attachments"
-msgstr "Pièces-jointes avancées"
+msgstr ""
 
 #: wpf-admin/dashboard.php:172
 msgid "file(s)"
-msgstr "fichier(s)"
+msgstr ""
 
 #: wpf-admin/dashboard.php:175
 msgid "Advanced Attachments Size"
-msgstr "Tailles des pièces-jointes avancées"
+msgstr ""
 
 #: wpf-admin/dashboard.php:180
 msgid "Total Size"
-msgstr "Taille totale"
+msgstr ""
 
 #: wpf-admin/dashboard.php:188 wpf-includes/wpf-phrases.php:609
 msgid "Forum Maintenance"
-msgstr "Forum en maintenance"
+msgstr ""
 
 #: wpf-admin/dashboard.php:190
 msgid ""
@@ -253,26 +220,22 @@ msgid ""
 "and don't close this page. If you got 500 Server Error please don't worry, "
 "the data updating process is still working in MySQL server."
 msgstr ""
-"Ce processus peut prendre quelques secondes ou des dizaines de minutes, s'il "
-"vous plaît soyez patient et ne fermez pas cette page. Si vous avez une "
-"erreur serveur 500 s'il vous plaît ne vous inquiétez pas, le processus de "
-"mise à jour des données fonctionne toujours dans le serveur MySQL."
 
 #: wpf-admin/dashboard.php:198 wpf-includes/wpf-phrases.php:611
 msgid "Update Forums Statistic"
-msgstr "Mettre à jour les statistiques forums"
+msgstr ""
 
 #: wpf-admin/dashboard.php:199 wpf-includes/wpf-phrases.php:612
 msgid "Update Users Statistic"
-msgstr "Mettre à jour les statistiques des utilisateurs forums"
+msgstr ""
 
 #: wpf-admin/dashboard.php:200 wpf-includes/wpf-phrases.php:613
 msgid "Delete Phrase Cache"
-msgstr "Supprimer le cache de phrases"
+msgstr ""
 
 #: wpf-admin/dashboard.php:201 wpf-includes/wpf-phrases.php:634
 msgid "Delete User Cache"
-msgstr "Supprimer le cache des utilisateurs"
+msgstr ""
 
 #: wpf-admin/forum.php:13 wpf-includes/functions.php:627
 #: wpf-includes/wpf-phrases.php:301
@@ -321,7 +284,7 @@ msgstr "Ajouter"
 
 #: wpf-admin/forum.php:55
 msgid "Important Tips"
-msgstr "Conseils importants"
+msgstr ""
 
 #: wpf-admin/forum.php:56 wpf-includes/wpf-phrases.php:225
 msgid "Please drag and drop forum panels to set parent-child hierarchy."
@@ -334,9 +297,6 @@ msgid ""
 "If a category (blue panels) does not have forums (grey panels) it will not "
 "be displayed on front-end. Each category should contain at least one forum."
 msgstr ""
-"Si une catégorie (panneaux bleus) n'a pas de forums (panneaux gris), elle ne "
-"sera pas affichée sur l'interface. Chaque catégorie doit contenir au moins "
-"un forum."
 
 #: wpf-admin/forum.php:58
 msgid ""
@@ -345,12 +305,6 @@ msgid ""
 "forums' layout depends on the top category (blue panels) layout. They cannot "
 "have a different layout."
 msgstr ""
-"Les forums peuvent être affichés avec des mises en page différentes "
-"(Extended, Simplified, Q & A), il vous suffit de modifier la catégorie "
-"supérieure (panneaux bleus) et de définir la mise en page souhaitée. La "
-"disposition des forums enfants dépend de la disposition de la catégorie "
-"supérieure (panneaux bleus). Ils ne peuvent pas avoir une disposition "
-"différente."
 
 #: wpf-admin/forum.php:74 wpf-includes/wpf-phrases.php:272
 msgid "Save forums order and hierarchy"
@@ -465,25 +419,25 @@ msgstr "Nom d'accès"
 #: wpf-admin/options-tabs/accesses.php:27
 #: wpf-admin/options-tabs/accesses.php:28
 msgid "This access is usually used for "
-msgstr "Cet accès est utilisé habituellement pour"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:26
 msgid "Guests"
-msgstr "Invités"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:26
 #: wpf-admin/options-tabs/accesses.php:27
 #: wpf-admin/options-tabs/accesses.php:28
 msgid "usergroup"
-msgstr "groupe d'utilisateur"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:27 wpf-includes/wpf-phrases.php:621
 msgid "Registered"
-msgstr "Enregistré"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:28 wpf-includes/wpf-phrases.php:619
 msgid "Admin"
-msgstr "Admin"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:32 wpf-includes/class-forums.php:549
 #: wpf-includes/functions.php:475 wpf-includes/wpf-phrases.php:381
@@ -538,16 +492,13 @@ msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:29
 msgid "Notify via email on New Topic"
-msgstr "Notifier par email sur un nouveau sujet"
+msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:30
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
 "administrators when a  new Topic is created."
 msgstr ""
-"Envoyer des e-mails de notification à toutes les adresses électroniques "
-"(séparées par des virgules) des administrateurs du forum lorsqu'une nouvelle "
-"rubrique est créée."
 
 #: wpf-admin/options-tabs/emails.php:34 wpf-admin/options-tabs/emails.php:46
 #: wpf-admin/options-tabs/features.php:55 wpf-includes/wpf-phrases.php:366
@@ -561,16 +512,13 @@ msgstr "Non"
 
 #: wpf-admin/options-tabs/emails.php:41
 msgid "Notify via email on New Post"
-msgstr "Avis par e-mail sur un nouveau message"
+msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:42
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
 "administrators when a  new Reply is created."
 msgstr ""
-"Envoyer des e-mails de notification à toutes les adresses électroniques "
-"(séparées par des virgules) des administrateurs du forum lorsqu'une nouvelle "
-"réponse est créée."
 
 #: wpf-admin/options-tabs/emails.php:53 wpf-includes/wpf-phrases.php:317
 msgid "Subscription Emails"
@@ -661,7 +609,7 @@ msgstr "Replacer l'auteur du commentaire par le lien profil du forum"
 
 #: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:631
 msgid "Enable User Registration"
-msgstr "Activer l'enregistrement des utilisateurs"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:632
 msgid ""
@@ -669,22 +617,16 @@ msgid ""
 "Dashboard > Settings > General admin page. If this option is enabled new "
 "users will always be able to register."
 msgstr ""
-"Cette option n'est pas synchronisée avec l'option \"N'importe qui peut "
-"s'inscrire\" de WordPress dans le tableau de bord> Paramètres> la page "
-"d'administration générale. Si cette option est activée, les nouveaux "
-"utilisateurs pourront toujours s'inscrire."
 
 #: wpf-admin/options-tabs/features.php:18
 msgid "Enable User Registration email confirmation"
-msgstr "Activer la confirmation de l'email d'inscription de l'utilisateur"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:18
 msgid ""
 "If you have enabled this option, after registering, user can not login "
 "without confirming the email."
 msgstr ""
-"Si vous avez activé cette option, après l'inscription, l'utilisateur ne peut "
-"pas se connecter sans confirmer l'e-mail."
 
 #: wpf-admin/options-tabs/features.php:19 wpf-includes/wpf-phrases.php:260
 msgid "Replace Registration Page URL to Forum URL"
@@ -744,9 +686,6 @@ msgid ""
 "shortcode in page content. Also it useful if forum is loaded before website "
 "header, on top of the front-end."
 msgstr ""
-"Cette fonctionnalité est utile si vous ajoutez du contenu avant ou après le "
-"code court [wpforo] dans le contenu de la page. Aussi, il est utile si forum "
-"est chargé avant l'en-tête du site, en haut de l'interface."
 
 #: wpf-admin/options-tabs/features.php:32
 msgid "Enable WordPress Date/Time Format"
@@ -762,47 +701,41 @@ msgstr ""
 
 #: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:607
 msgid "Enable Subscription Confirmation"
-msgstr "Activer la confirmation d'abonnement"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:608
 msgid "Forum and Topic subscription with double opt-in/confirmation system."
-msgstr "Abonnement Forum et Topic avec système double opt-in / confirmation."
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:34
 msgid "Topic subscription option on post editor"
-msgstr "Option d'abonnement de rubrique sur l'éditeur de messages"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:34
 msgid ""
 "This option adds topic subscription checkbox next to new topic and post "
 "submit button."
 msgstr ""
-"Cette option permet d'ajouter une souscription de rubrique à côté d'un "
-"nouveau sujet et d'envoyer un bouton de soumission."
 
 #: wpf-admin/options-tabs/features.php:35
 msgid "Topic subscription option on post editor - checked/enabled"
-msgstr "Option d'abonnement de rubrique sur l'éditeur de post"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:35
 msgid ""
 "Enable this option if you want the topic subscription checkbox to be checked "
 "by default."
 msgstr ""
-"Activez cette option si vous souhaitez que la case à cocher rubrique "
-"d'abonnement soit cochée par défaut."
 
 #: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:635
 msgid "Insert Forum Attachments to Media Library"
-msgstr "Insérer les pièces jointes du forum à la médiathèque"
+msgstr ""
 
 #: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:636
 msgid ""
 "Enable this option to be able manage forum attachments in Dashboard > Media "
 "> Library admin page."
 msgstr ""
-"Activez cette option pour pouvoir gérer les pièces jointes du forum dans "
-"Dashboard> Media> Library admin page."
 
 #: wpf-admin/options-tabs/features.php:37 wpf-includes/wpf-phrases.php:600
 msgid "Enable Debug Mode"
@@ -841,7 +774,7 @@ msgstr "Base URL du forum"
 
 #: wpf-admin/options-tabs/general.php:24 wpf-includes/wpf-phrases.php:645
 msgid "Turn WordPress to wpForo"
-msgstr "Transformez WordPress en wpForo"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:25
 msgid ""
@@ -849,36 +782,31 @@ msgid ""
 "excluded post/pages will be available. wpForo will look like as a stand-"
 "alone forum."
 msgstr ""
-"Cette option désactivera WordPress sur front-end. Seules les pages du forum "
-"et les post / pages exclus seront disponibles. WpForo ressemblera à un forum "
-"autonome."
 
 #: wpf-admin/options-tabs/general.php:28
 msgid "Exclude page URLs"
-msgstr "Exclure les URL de page"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:28
 msgid "one URL per line"
-msgstr "Une URL par ligne"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:38
 msgid "Visit Forum"
-msgstr "Voir le Forum"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:41
 msgid ""
 "wpForo PageID doesn't exist. Forums will not be loaded, please read this"
 msgstr ""
-"WpForo PageID n'existe pas. Les forums ne seront pas chargés, veuillez lire "
-"ceci"
 
 #: wpf-admin/options-tabs/general.php:41
 msgid "suppor topic"
-msgstr "Sujet d'assistance"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:43
 msgid "Forum Page ID"
-msgstr "Forum Page ID"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:48 wpf-includes/wpf-phrases.php:121
 msgid "Forum Title"
@@ -920,12 +848,6 @@ msgid ""
 "are using PO/MO translation files you should change WordPress Language in "
 "Dashboard > Settings admin page to load according translation for wpForo."
 msgstr ""
-"Cette option est uniquement liée aux fichiers de langage XML. Vous devez "
-"télécharger un fichier XML de traduction pour avoir une nouvelle option de "
-"langue dans cette liste déroulante. Si vous utilisez des fichiers de "
-"traduction PO / MO, vous devez changer le langage WordPress dans la page "
-"Dashboard> Paramètres admin pour charger la traduction correspondant à "
-"wpForo."
 
 #: wpf-admin/options-tabs/general.php:94 wpf-includes/wpf-phrases.php:144
 msgid "Language XML file"
@@ -1134,15 +1056,13 @@ msgstr "\"post_max_size\" du serveur est "
 
 #: wpf-admin/options-tabs/posts.php:56
 msgid "Attachment click - message for non permited users"
-msgstr "Message de clic d'attachement pour les utilisateurs non autorisés"
+msgstr ""
 
 #: wpf-admin/options-tabs/posts.php:57
 msgid ""
 "This message will been displayed when a non permited forum member clicks on "
 "attached file link in topic and posts."
 msgstr ""
-"Ce message s'affiche lorsqu'un membre du forum non autorisé clique sur le "
-"lien du fichier joint dans la rubrique et les messages."
 
 #: wpf-admin/options-tabs/styles.php:13
 msgid "Font Sizes"
@@ -1300,71 +1220,67 @@ msgstr "Les utilisateurs vont être transféré à ce groupe"
 
 #: wpf-includes/class-forums.php:548
 msgid "Add a new SubForum"
-msgstr "Ajouter un nouveau sous-forum"
+msgstr ""
 
 #: wpf-includes/class-forums.php:548
 msgid "Add a new Forum in this Category"
-msgstr "Ajouter un nouveau forum dans cette Catégorie"
+msgstr ""
 
 #: wpf-includes/class-members.php:149
 msgid "<strong>ERROR</strong>: Please enter a username."
-msgstr "<strong>ERREUR</strong> : Entrez un nom d'utilisateur"
+msgstr ""
 
 #: wpf-includes/class-members.php:153
 msgid ""
 "<strong>ERROR</strong>: This username is invalid because it uses illegal "
 "characters. Please enter a valid username."
 msgstr ""
-"<strong>ERREUR</strong> : Ce nom d'utilisateur est invalide car il utilise "
-"des caractères interdits. Entrez un nom d'utilisateur valide."
 
 #: wpf-includes/class-members.php:162
 msgid ""
 "<strong>ERROR</strong>: This username is already registered. Please choose "
 "another one."
 msgstr ""
-"<strong>ERREUR</strong> : Ce nom d'utilisateur est déjà utilisé. Merci d'en "
-"choisir un autre"
 
 #: wpf-includes/class-members.php:166
 msgid "<strong>ERROR</strong>: Sorry, that username is not allowed."
-msgstr "<strong>ERREUR</strong> : Désolé, ce nom d'utilisateur est interdit."
+msgstr ""
 
 #: wpf-includes/class-members.php:170
 msgid "<strong>ERROR</strong>: Please type your email address."
-msgstr "<strong>ERREUR</strong> : Tapez votre adresse mail."
+msgstr ""
 
 #: wpf-includes/class-members.php:174
 msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
-msgstr "<strong>ERREUR</strong> : Cet email n'est pas valide"
+msgstr ""
 
 #: wpf-includes/class-members.php:179
 msgid ""
 "<strong>ERROR</strong>: This email is already registered, please choose "
 "another one."
 msgstr ""
-"<strong>ERREUR </strong>: Cet email est déjà enregistré, merci d'en choisir "
-"un autre."
 
 #: wpf-includes/class-members.php:1098
 msgid "What should be done with wpForo content owned by this user?"
-msgstr "Que faire avec le contenu wpForo appartenant à cet utilisateur?"
+msgstr ""
 
 #: wpf-includes/class-members.php:1100
 msgid "What should be done with wpForo content owned by these users?"
-msgstr "Que faire avec le contenu wpForo appartenant à ces utilisateurs?"
+msgstr ""
 
 #: wpf-includes/class-members.php:1104
 msgid "Delete all wpForo content."
-msgstr "Supprimer tout le contenu wpForo."
+msgstr ""
 
 #: wpf-includes/class-members.php:1106
 msgid "Attribute all content to:"
-msgstr "Attribuez tout le contenu à :"
+msgstr ""
 
 #: wpf-includes/class-notices.php:131 wpf-includes/wpf-phrases.php:69
 msgid "Dismiss this notice."
-msgstr "Ne pas tenir compte de cet avertissement."
+msgstr ""
+"\n"
+"Ne pas tenir compte de cet avertissement."
 
 #: wpf-includes/class-permissions.php:116 wpf-includes/wpf-phrases.php:420
 #, php-format
@@ -1406,11 +1322,11 @@ msgstr "Forum"
 
 #: wpf-includes/functions-installation.php:54
 msgid "Discussion Board"
-msgstr "Forum de discussion"
+msgstr ""
 
 #: wpf-includes/functions-installation.php:84
 msgid "You are not permitted to view this attachment"
-msgstr "Vous n'êtes pas autorisé à afficher cette pièce-jointe"
+msgstr ""
 
 #: wpf-includes/functions-template.php:7
 msgid "wpForo Menu"
@@ -1469,11 +1385,11 @@ msgstr "Afficher tous les forums"
 
 #: wpf-includes/functions.php:337 wpf-includes/wpf-phrases.php:350
 msgid "filter by group"
-msgstr "filtrer par groupe"
+msgstr ""
 
 #: wpf-includes/functions.php:350
 msgid "filter by status"
-msgstr "filtrer par statut"
+msgstr ""
 
 #: wpf-includes/functions.php:370 wpf-includes/functions.php:554
 #: wpf-includes/wpf-phrases.php:385
@@ -1495,19 +1411,19 @@ msgstr "Editer le profil"
 
 #: wpf-includes/functions.php:485
 msgid "unban user"
-msgstr "Débannir l'utilisateur"
+msgstr ""
 
 #: wpf-includes/functions.php:485
 msgid "ban user"
-msgstr "Bannir l'utilisateur"
+msgstr ""
 
 #: wpf-includes/functions.php:485
 msgid "Are you sure, you want to unban this user?"
-msgstr "Etes-vous sûr de vouloir débannir cet utilisateur?"
+msgstr ""
 
 #: wpf-includes/functions.php:485
 msgid "Are you sure, you want to ban this user?"
-msgstr "Etes-vous sûr, vous voulez bannir cet utilisateur?"
+msgstr ""
 
 #: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:67
@@ -1564,23 +1480,21 @@ msgstr "Bouger"
 
 #: wpf-includes/wpf-hooks.php:1043
 msgid "Clear"
-msgstr "Effacer"
+msgstr ""
 
 #: wpf-includes/wpf-hooks.php:1043
 msgid "Default"
-msgstr "Défaut"
+msgstr ""
 
 #: wpf-includes/wpf-hooks.php:1043
 msgid "Select Color"
-msgstr "Sélectionner une couleur"
+msgstr ""
 
 #: wpf-includes/wpf-hooks.php:1066
 msgid ""
 "IMPORTANT: wpForo can't work with default permalink, please change permalink "
 "structure"
 msgstr ""
-"IMPORTANT: wpForo ne peut pas fonctionner avec permalink par défaut, s'il "
-"vous plaît changer la structure permalink"
 
 #: wpf-includes/wpf-hooks.php:1087 wpf-includes/wpf-phrases.php:412
 msgid "wpForo Usergroup"
@@ -1926,8 +1840,6 @@ msgid ""
 "You have been banned. Please contact to forum administrators for more "
 "information."
 msgstr ""
-"Vous avez été banni. Veuillez contacter les administrateurs du forum pour "
-"plus d'informations."
 
 #: wpf-includes/wpf-phrases.php:182
 msgid "Messages"
@@ -2235,9 +2147,6 @@ msgid ""
 "WorPress, and the only forum software which comes with Multi-layout template "
 "system. The \"Extended"
 msgstr ""
-"Merci d'utiliser wpForo! WpForo est un forum professionnel pour WordPress, "
-"et le seul logiciel de forum qui est livré avec le système de modèle multi-"
-"disposition."
 
 #: wpf-includes/wpf-phrases.php:321
 msgid ""
@@ -3215,23 +3124,23 @@ msgstr "Résolu."
 
 #: wpf-includes/wpf-phrases.php:595
 msgid "Unsolved"
-msgstr "Non résolu"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:603
 msgid "Can make topic solved"
-msgstr "Peut résoudre le sujet"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:604
 msgid "Can make own topic solved"
-msgstr "Peut mettre à résolu son sujet"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:605
 msgid "Old password is wrong"
-msgstr "Ancien mot de passe éronné"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:606
 msgid "New Passwords do not match"
-msgstr "Les mots de passe ne correspondent pas"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:610
 msgid ""
@@ -3240,19 +3149,14 @@ msgid ""
 "close this page. If you got 500 Server Error please don't worry, the data "
 "updating process is still working in MySQL server."
 msgstr ""
-"Ce processus peut prendre quelques secondes ou des dizaines de minutes, cela "
-"dépend de la taille du forum de la base de données et des ressources du "
-"serveur. Soyez patient et ne fermez pas cette page. Si vous avez 500 Server "
-"Error s'il vous plaît ne vous inquiétez pas, le processus de mise à jour des "
-"données fonctionne toujours dans le serveur MySQL."
 
 #: wpf-includes/wpf-phrases.php:614
 msgid "Updated Successfully!"
-msgstr "Mise à jour effectuée !"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:615
 msgid "Deleted Successfully!"
-msgstr "Suppression effectuée !"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:616
 msgid "Closed"
@@ -3260,92 +3164,90 @@ msgstr "Fermé"
 
 #: wpf-includes/wpf-phrases.php:617
 msgid "Forum Members List"
-msgstr "Liste des membres du forum"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:618
 msgid "are you sure you want to delete?"
-msgstr "êtes-vous sûr de vouloir supprimer ?"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:620
 msgid "Moderator"
-msgstr "Modérateur"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:622
 msgid "Customer"
-msgstr "Utilisateur"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:623
 msgid "No access"
-msgstr "Aucun accès"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:624
 msgid "Read only access"
-msgstr "Accès en lecture seule"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:625
 msgid "Standard access"
-msgstr "Accès standard"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:626
 msgid "Moderator access"
-msgstr "Accès modérateur"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:627
 msgid "Full access"
-msgstr "Accès total"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:628
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:630
 msgid "Incorrect file format. Allowed formats: jpeg, jpg, png, gif."
-msgstr "Format de fichier incorrect. Formats autorisés: jpeg, jpg, png, gif."
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:633
 msgid "User registration is disabled"
-msgstr "Inscription déscativée"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:637
 msgid "Attachment removed"
-msgstr "Pièce-jointe retiré"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:638
 msgid "Forum Posts"
-msgstr "Messages du forum"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:639
 msgid "Blog Posts"
-msgstr "Messages blog"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:640
 msgid "Blog Comments"
-msgstr "Commentaires du blog"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:641
 #, php-format
 msgid "Welcome back %s!"
-msgstr "Heureux de vous retrouver %s !"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:642
 msgid "Member Profile"
-msgstr "Profil du membre"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:643
 msgid "Member"
-msgstr "Membre"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:644
 msgid "You have not permission to this page"
-msgstr "Vous n'avez pas l'autorisation à cette page"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:646
 msgid ""
 "This option will disable WordPress on front-end. Only forum pages will be "
 "available. wpForo will look like as a stand-alone forum."
 msgstr ""
-"Cette option désactivera WordPress sur front-end. Seules les pages du forum "
-"seront disponibles. WpForo ressemblera à un forum autonome."
 
 #. Plugin Name of the plugin/theme
 msgid "Forum - wpForo"
@@ -3371,7 +3273,7 @@ msgstr "Equipe gVectors (A. Chakhoyan, R. Hovhannisyan)"
 
 #. Author URI of the plugin/theme
 msgid "http://gvectors.com/"
-msgstr "http://gvectors.com/"
+msgstr ""
 
 #~ msgid "Dismiss"
 #~ msgstr "Rejeter"

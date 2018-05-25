@@ -3,16 +3,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Forum - wpForo\n"
-"POT-Creation-Date: 2017-02-28 15:41+0200\n"
-"PO-Revision-Date: 2017-02-28 15:50+0200\n"
-"Last-Translator: Gal Zilberman\n"
+"POT-Creation-Date: 2016-12-02 16:56+0400\n"
+"PO-Revision-Date: 2016-12-02 16:56+0400\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wpforo.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,16 +20,25 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: Downloads\n"
-"X-Poedit-SearchPath-2: wpforo/pre 1/wpforo-he_IL.po\n"
-"X-Poedit-SearchPath-3: wpforo/pre 1/wpforo-he_IL.mo\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: wpf-admin/addons.php:14 wpf-admin/addons.php:22
+#: wpf-admin/addons.php:7
+msgid ""
+"Adds an advanced file attachment system to forum topics and posts. AJAX "
+"powered media uploading and displaying system with user specific library."
+msgstr ""
+
+#: wpf-admin/addons.php:8
+msgid ""
+"Allows to embed hundreds of video, social network, audio and photo content "
+"providers in forum topics and posts."
+msgstr ""
+
+#: wpf-admin/addons.php:16 wpf-admin/addons.php:24
 msgid "wpForo Addons"
 msgstr ""
 
-#: wpf-admin/addons.php:28
+#: wpf-admin/addons.php:30
 msgid ""
 "All wpForo addons are being developed by wpForo developers at gVectors Team. "
 "Addon prices also include a small donation to the hard work wpForo "
@@ -43,32 +52,32 @@ msgid ""
 "with new free functions and features even faster than before."
 msgstr ""
 
-#: wpf-admin/addons.php:51
+#: wpf-admin/addons.php:53
 msgid "Installed"
 msgstr ""
 
-#: wpf-admin/addons.php:55
+#: wpf-admin/addons.php:57
 msgid "Version"
 msgstr ""
 
-#: wpf-admin/addons.php:56
-msgid "at least"
-msgstr "לפחות"
-
 #: wpf-admin/addons.php:58
+msgid "at least"
+msgstr ""
+
+#: wpf-admin/addons.php:60
 msgid "Details | Buy"
 msgstr ""
 
-#: wpf-admin/addons.php:64
+#: wpf-admin/addons.php:66
 msgid "More information about"
-msgstr "עוד פרטים אודות"
+msgstr ""
 
 #: wpf-admin/admin.php:15 wpf-admin/admin.php:16
-#: wpf-includes/wpf-phrases.php:598
+#: wpf-includes/wpf-phrases.php:597
 msgid "Dashboard"
 msgstr "לוח בקרה"
 
-#: wpf-admin/admin.php:15 wpf-admin/admin.php:17 wpf-admin/dashboard.php:138
+#: wpf-admin/admin.php:15 wpf-admin/admin.php:17 wpf-admin/dashboard.php:136
 #: wpf-admin/options-tabs/styles.php:16 wpf-admin/options.php:15
 #: wpf-includes/wpf-phrases.php:123
 msgid "Forums"
@@ -78,7 +87,7 @@ msgstr "פורומים"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: wpf-admin/admin.php:19 wpf-admin/dashboard.php:150 wpf-admin/member.php:10
+#: wpf-admin/admin.php:19 wpf-admin/dashboard.php:148 wpf-admin/member.php:10
 #: wpf-admin/options.php:18 wpf-includes/wpf-phrases.php:177
 msgid "Members"
 msgstr "משתמשים"
@@ -87,18 +96,18 @@ msgstr "משתמשים"
 msgid "Usergroups"
 msgstr "קבוצות משתמשים"
 
-#: wpf-admin/admin.php:21 wpf-includes/wpf-phrases.php:599
+#: wpf-admin/admin.php:21 wpf-includes/wpf-phrases.php:598
 msgid "Phrases"
 msgstr "ביטויים"
 
-#: wpf-admin/admin.php:22 wpf-includes/wpf-phrases.php:600
+#: wpf-admin/admin.php:22 wpf-includes/wpf-phrases.php:599
 msgid "Themes"
 msgstr "ערכות נושא"
 
 #: wpf-admin/admin.php:23 wpf-admin/options.php:23
 #: wpf-includes/wpf-phrases.php:25
 msgid "Addons"
-msgstr "הרחבות"
+msgstr ""
 
 #: wpf-admin/dashboard.php:9 wpf-includes/wpf-phrases.php:408
 msgid "wpForo Dashboard"
@@ -157,76 +166,76 @@ msgstr "זמין"
 msgid "Not available"
 msgstr "לא זמין"
 
-#: wpf-admin/dashboard.php:132 wpf-includes/wpf-phrases.php:49
+#: wpf-admin/dashboard.php:130 wpf-includes/wpf-phrases.php:49
 msgid "Board Statistic"
 msgstr "סטטיסטיקות"
 
-#: wpf-admin/dashboard.php:142 wpf-admin/options-tabs/styles.php:22
+#: wpf-admin/dashboard.php:140 wpf-admin/options-tabs/styles.php:22
 #: wpf-includes/class-forums.php:547 wpf-includes/wpf-phrases.php:338
 msgid "Topics"
 msgstr "נושאים"
 
-#: wpf-admin/dashboard.php:146 wpf-includes/class-forums.php:547
+#: wpf-admin/dashboard.php:144 wpf-includes/class-forums.php:547
 #: wpf-includes/wpf-phrases.php:232
 msgid "Posts"
 msgstr "שרשורים"
 
-#: wpf-admin/dashboard.php:154 wpf-includes/wpf-phrases.php:178
+#: wpf-admin/dashboard.php:152 wpf-includes/wpf-phrases.php:178
 msgid "Members Online"
 msgstr "משתמשים זמינים"
 
-#: wpf-admin/dashboard.php:164
+#: wpf-admin/dashboard.php:161
 msgid "Avatars Size"
 msgstr ""
 
-#: wpf-admin/dashboard.php:168
+#: wpf-admin/dashboard.php:165
 msgid "Default Attachments Size"
 msgstr ""
 
-#: wpf-admin/dashboard.php:174
+#: wpf-admin/dashboard.php:171
 msgid "Advanced Attachments"
 msgstr ""
 
-#: wpf-admin/dashboard.php:175
+#: wpf-admin/dashboard.php:172
 msgid "file(s)"
-msgstr "קבצים"
+msgstr ""
 
-#: wpf-admin/dashboard.php:178
+#: wpf-admin/dashboard.php:175
 msgid "Advanced Attachments Size"
 msgstr ""
 
-#: wpf-admin/dashboard.php:183
+#: wpf-admin/dashboard.php:180
 msgid "Total Size"
-msgstr "סה\"כ גודל"
+msgstr ""
 
-#: wpf-admin/dashboard.php:191 wpf-includes/wpf-phrases.php:610
+#: wpf-admin/dashboard.php:188 wpf-includes/wpf-phrases.php:609
 msgid "Forum Maintenance"
 msgstr ""
 
-#: wpf-admin/dashboard.php:193
+#: wpf-admin/dashboard.php:190
 msgid ""
 "This process may take a few seconds or dozens of minutes, please be patient "
 "and don't close this page. If you got 500 Server Error please don't worry, "
 "the data updating process is still working in MySQL server."
 msgstr ""
 
-#: wpf-admin/dashboard.php:201 wpf-includes/wpf-phrases.php:612
+#: wpf-admin/dashboard.php:198 wpf-includes/wpf-phrases.php:611
 msgid "Update Forums Statistic"
 msgstr ""
 
-#: wpf-admin/dashboard.php:202 wpf-includes/wpf-phrases.php:613
+#: wpf-admin/dashboard.php:199 wpf-includes/wpf-phrases.php:612
 msgid "Update Users Statistic"
 msgstr ""
 
-#: wpf-admin/dashboard.php:203 wpf-includes/wpf-phrases.php:614
+#: wpf-admin/dashboard.php:200 wpf-includes/wpf-phrases.php:613
 msgid "Delete Phrase Cache"
 msgstr ""
 
-#: wpf-admin/dashboard.php:204 wpf-includes/wpf-phrases.php:635
+#: wpf-admin/dashboard.php:201 wpf-includes/wpf-phrases.php:634
 msgid "Delete User Cache"
 msgstr ""
 
-#: wpf-admin/forum.php:13 wpf-includes/functions.php:662
+#: wpf-admin/forum.php:13 wpf-includes/functions.php:627
 #: wpf-includes/wpf-phrases.php:301
 msgid "Show on screen"
 msgstr "הצג/י על המסך"
@@ -242,11 +251,11 @@ msgstr "הרשאות"
 
 #: wpf-admin/forum.php:17 wpf-includes/wpf-phrases.php:306
 msgid "Slug"
-msgstr "מזהה לכתובת"
+msgstr "סלאג"
 
 #: wpf-admin/forum.php:18 wpf-includes/wpf-phrases.php:112
 msgid "Forum Meta"
-msgstr "מידע מטא של הפורום"
+msgstr ""
 
 #: wpf-admin/forum.php:21 wpf-includes/wpf-phrases.php:273
 msgid "Screen Layout"
@@ -256,7 +265,7 @@ msgstr "תצוגת מסך"
 msgid "Number of Columns"
 msgstr "מספר עמודות"
 
-#: wpf-admin/forum.php:32 wpf-includes/functions.php:676
+#: wpf-admin/forum.php:32 wpf-includes/functions.php:641
 #: wpf-includes/wpf-phrases.php:274
 msgid "Screen Options"
 msgstr "הגדרות תצוגה"
@@ -341,7 +350,7 @@ msgid "Are you sure you want to delete this forum?"
 msgstr ""
 
 #: wpf-admin/forum.php:153 wpf-admin/themes.php:73 wpf-admin/usergroup.php:37
-#: wpf-admin/usergroup.php:133 wpf-includes/wpf-hooks.php:1026
+#: wpf-admin/usergroup.php:133 wpf-includes/wpf-hooks.php:1009
 #: wpf-includes/wpf-phrases.php:66
 msgid "Delete"
 msgstr "מחיקה"
@@ -353,7 +362,7 @@ msgstr "הצגה"
 
 #: wpf-admin/forum.php:224 wpf-includes/wpf-phrases.php:118
 msgid "Forum Slug"
-msgstr "מזהה כתובת לפורום"
+msgstr ""
 
 #: wpf-admin/forum.php:227 wpf-includes/wpf-phrases.php:322
 msgid ""
@@ -361,47 +370,25 @@ msgid ""
 "lowercase and contains only letters, numbers, and hyphens."
 msgstr ""
 
-#: wpf-admin/forum.php:233
-msgid "Forum Icon"
-msgstr ""
-
-#: wpf-admin/forum.php:236
-msgid "Font-awesome Icon"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid "You can find all icons"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid "here"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid ""
-"Make sure you insert a class of font-awesome icon, it should start with fa- "
-"prefix like &quot;fa-comments&quot;."
-msgstr ""
-
-#: wpf-admin/forum.php:245 wpf-includes/wpf-phrases.php:116
+#: wpf-admin/forum.php:233 wpf-includes/wpf-phrases.php:116
 msgid "Forum SEO"
 msgstr ""
 
-#: wpf-admin/forum.php:248 wpf-includes/wpf-phrases.php:183
+#: wpf-admin/forum.php:236 wpf-includes/wpf-phrases.php:183
 msgid "Meta Description"
-msgstr "תיאור מטא"
+msgstr ""
 
-#: wpf-admin/forum.php:277 wpf-includes/wpf-phrases.php:328
+#: wpf-admin/forum.php:265 wpf-includes/wpf-phrases.php:328
 msgid "This action will also delete all sub-forums, topics and replies."
 msgstr ""
 
-#: wpf-admin/forum.php:285 wpf-includes/wpf-phrases.php:137
+#: wpf-admin/forum.php:273 wpf-includes/wpf-phrases.php:137
 msgid ""
 "If you want to delete this forum and keep its sub-forums, topics and "
 "replies, please select a new target forum in dropdown below"
 msgstr ""
 
-#: wpf-admin/forum.php:294 wpf-includes/wpf-phrases.php:26
+#: wpf-admin/forum.php:282 wpf-includes/wpf-phrases.php:26
 msgid ""
 "All sub-forums, topics and replies will be attached to selected forum. "
 "Layout will be inherited from this forum."
@@ -423,24 +410,24 @@ msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:26
 msgid "Guests"
-msgstr "אורחים"
+msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:26
 #: wpf-admin/options-tabs/accesses.php:27
 #: wpf-admin/options-tabs/accesses.php:28
 msgid "usergroup"
-msgstr "קבוצת משתמשים"
+msgstr ""
 
-#: wpf-admin/options-tabs/accesses.php:27 wpf-includes/wpf-phrases.php:622
+#: wpf-admin/options-tabs/accesses.php:27 wpf-includes/wpf-phrases.php:621
 msgid "Registered"
 msgstr "רשום"
 
-#: wpf-admin/options-tabs/accesses.php:28 wpf-includes/wpf-phrases.php:620
+#: wpf-admin/options-tabs/accesses.php:28 wpf-includes/wpf-phrases.php:619
 msgid "Admin"
 msgstr "מנהל"
 
 #: wpf-admin/options-tabs/accesses.php:32 wpf-includes/class-forums.php:549
-#: wpf-includes/functions.php:504 wpf-includes/wpf-phrases.php:381
+#: wpf-includes/functions.php:475 wpf-includes/wpf-phrases.php:381
 msgid "edit"
 msgstr "עריכה"
 
@@ -451,7 +438,7 @@ msgid ""
 msgstr ""
 
 #: wpf-admin/options-tabs/accesses.php:34 wpf-includes/class-forums.php:551
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:380
 msgid "delete"
 msgstr "מחיקה"
@@ -468,17 +455,17 @@ msgstr "שמירה"
 msgid "Update"
 msgstr "עדכון"
 
-#: wpf-admin/options-tabs/emails.php:13
-msgid "FROM Name"
+#: wpf-admin/options-tabs/emails.php:13 wpf-includes/wpf-phrases.php:126
+msgid "From Name"
 msgstr ""
 
-#: wpf-admin/options-tabs/emails.php:17
-msgid "FROM Email Address"
-msgstr ""
+#: wpf-admin/options-tabs/emails.php:17 wpf-includes/wpf-phrases.php:125
+msgid "From Email Address"
+msgstr "כתובת מאת"
 
-#: wpf-admin/options-tabs/emails.php:22
-msgid "Forum Admins email addresses"
-msgstr ""
+#: wpf-admin/options-tabs/emails.php:22 wpf-includes/wpf-phrases.php:106
+msgid "Forum Admin Email Addresses"
+msgstr "כתובות מייל למנהל"
 
 #: wpf-admin/options-tabs/emails.php:23 wpf-includes/wpf-phrases.php:57
 msgid ""
@@ -487,13 +474,13 @@ msgid ""
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:29
-msgid "Notify Admins via email on new Topic"
+msgid "Notify via email on New Topic"
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:30
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
-"administrators when a new Topic is created."
+"administrators when a  new Topic is created."
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:34 wpf-admin/options-tabs/emails.php:46
@@ -507,13 +494,13 @@ msgid "No"
 msgstr "לא"
 
 #: wpf-admin/options-tabs/emails.php:41
-msgid "Notify Admins via email on new Post"
+msgid "Notify via email on New Post"
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:42
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
-"administrators when a new Reply is created."
+"administrators when a  new Reply is created."
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:53 wpf-includes/wpf-phrases.php:317
@@ -603,11 +590,11 @@ msgstr ""
 msgid "Replace Comment Author Link to Forum Profile"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:632
+#: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:631
 msgid "Enable User Registration"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:633
+#: wpf-admin/options-tabs/features.php:17 wpf-includes/wpf-phrases.php:632
 msgid ""
 "This option is not synced with WordPress \"Anyone can register\" option in "
 "Dashboard > Settings > General admin page. If this option is enabled new "
@@ -687,17 +674,17 @@ msgstr ""
 msgid "Enable WordPress Date/Time Format"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:32 wpf-includes/wpf-phrases.php:597
+#: wpf-admin/options-tabs/features.php:32 wpf-includes/wpf-phrases.php:596
 msgid ""
 "You can manage WordPress date and time format in WordPress Settings > "
 "General admin page."
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:608
+#: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:607
 msgid "Enable Subscription Confirmation"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:609
+#: wpf-admin/options-tabs/features.php:33 wpf-includes/wpf-phrases.php:608
 msgid "Forum and Topic subscription with double opt-in/confirmation system."
 msgstr ""
 
@@ -721,21 +708,21 @@ msgid ""
 "by default."
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:636
+#: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:635
 msgid "Insert Forum Attachments to Media Library"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:637
+#: wpf-admin/options-tabs/features.php:36 wpf-includes/wpf-phrases.php:636
 msgid ""
 "Enable this option to be able manage forum attachments in Dashboard > Media "
 "> Library admin page."
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:37 wpf-includes/wpf-phrases.php:601
+#: wpf-admin/options-tabs/features.php:37 wpf-includes/wpf-phrases.php:600
 msgid "Enable Debug Mode"
 msgstr ""
 
-#: wpf-admin/options-tabs/features.php:37 wpf-includes/wpf-phrases.php:602
+#: wpf-admin/options-tabs/features.php:37 wpf-includes/wpf-phrases.php:601
 msgid ""
 "If you got some issue with wpForo, please enable this option before asking "
 "for support, this outputs hidden important information to help us debug your "
@@ -758,7 +745,7 @@ msgstr ""
 msgid "Forum Base URL"
 msgstr "כתובת בסיס לפורום"
 
-#: wpf-admin/options-tabs/general.php:24 wpf-includes/wpf-phrases.php:646
+#: wpf-admin/options-tabs/general.php:24 wpf-includes/wpf-phrases.php:645
 msgid "Turn WordPress to wpForo"
 msgstr ""
 
@@ -779,7 +766,7 @@ msgstr ""
 
 #: wpf-admin/options-tabs/general.php:38
 msgid "Visit Forum"
-msgstr "בקר בפורום"
+msgstr ""
 
 #: wpf-admin/options-tabs/general.php:41
 msgid ""
@@ -885,7 +872,7 @@ msgstr ""
 
 #: wpf-admin/options-tabs/members.php:57 wpf-includes/wpf-phrases.php:247
 msgid "Rating Level"
-msgstr "רמת דירוג"
+msgstr ""
 
 #: wpf-admin/options-tabs/members.php:58 wpf-includes/wpf-phrases.php:184
 msgid "Min Number of Posts"
@@ -893,7 +880,7 @@ msgstr "מס' שרשורים מינימלי"
 
 #: wpf-admin/options-tabs/members.php:59 wpf-includes/wpf-phrases.php:175
 msgid "Member Title"
-msgstr "כותרת משתמש"
+msgstr ""
 
 #: wpf-admin/options-tabs/members.php:60 wpf-includes/wpf-phrases.php:293
 msgid "Short Badge"
@@ -925,7 +912,7 @@ msgstr "מספר הודעות"
 
 #: wpf-admin/options-tabs/members.php:70 wpf-includes/wpf-phrases.php:63
 msgid "Custom Title"
-msgstr "כותרת מותאמת אישית"
+msgstr ""
 
 #: wpf-admin/options-tabs/members.php:73 wpf-includes/wpf-phrases.php:56
 msgid "Color"
@@ -1016,12 +1003,12 @@ msgid "Server \"post_max_size\" is "
 msgstr ""
 
 #: wpf-admin/options-tabs/posts.php:56
-msgid "Attachment click - message for non-permitted users"
+msgid "Attachment click - message for non permited users"
 msgstr ""
 
 #: wpf-admin/options-tabs/posts.php:57
 msgid ""
-"This message will be displayed when a non-permitted forum member clicks on "
+"This message will been displayed when a non permited forum member clicks on "
 "attached file link in topic and posts."
 msgstr ""
 
@@ -1091,7 +1078,7 @@ msgstr ""
 
 #: wpf-admin/themes.php:68 wpf-includes/wpf-phrases.php:17
 msgid "Activate"
-msgstr "הפעל"
+msgstr ""
 
 #: wpf-admin/themes.php:69 wpf-includes/wpf-phrases.php:124
 msgid "Fresh Installation"
@@ -1183,57 +1170,53 @@ msgstr ""
 msgid "Add a new Forum in this Category"
 msgstr ""
 
-#: wpf-includes/class-members.php:156
+#: wpf-includes/class-members.php:149
 msgid "<strong>ERROR</strong>: Please enter a username."
-msgstr "<strong>שגיאה</strong>: אנא הזן שם משתמש."
+msgstr ""
 
-#: wpf-includes/class-members.php:160
+#: wpf-includes/class-members.php:153
 msgid ""
 "<strong>ERROR</strong>: This username is invalid because it uses illegal "
 "characters. Please enter a valid username."
 msgstr ""
-"<strong>שגיאה</strong>: שם משתמש זה אינו חוקי מכיוון שהוא משתמש בתווים לא "
-"חוקיים. הזן שם משתמש חוקי."
 
-#: wpf-includes/class-members.php:169
+#: wpf-includes/class-members.php:162
 msgid ""
 "<strong>ERROR</strong>: This username is already registered. Please choose "
 "another one."
-msgstr "<strong>שגיאה</strong>: שם המשתמש קיים במערכת, בחר בשם משתמש אחר."
+msgstr ""
 
-#: wpf-includes/class-members.php:173
+#: wpf-includes/class-members.php:166
 msgid "<strong>ERROR</strong>: Sorry, that username is not allowed."
-msgstr "<strong>שגיאה</strong>: סליחה, שם המשתמש הזה איננו מורשה."
+msgstr ""
 
-#: wpf-includes/class-members.php:177
+#: wpf-includes/class-members.php:170
 msgid "<strong>ERROR</strong>: Please type your email address."
-msgstr "<strong>שגיאה</strong>: אנא הקלד את כתובת הדוא\"ל שלך."
+msgstr ""
 
-#: wpf-includes/class-members.php:181
+#: wpf-includes/class-members.php:174
 msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
-msgstr "<strong>שגיאה</strong>:  כתובת הדוא\"ל שגויה."
+msgstr ""
 
-#: wpf-includes/class-members.php:186
+#: wpf-includes/class-members.php:179
 msgid ""
 "<strong>ERROR</strong>: This email is already registered, please choose "
 "another one."
 msgstr ""
-"<strong>שגיאה</strong>: כתובת הדוא\"ל הזאת כבר קיימת במערכת, אנא בחר/י כתובת "
-"אחרת."
 
-#: wpf-includes/class-members.php:1112
+#: wpf-includes/class-members.php:1098
 msgid "What should be done with wpForo content owned by this user?"
 msgstr ""
 
-#: wpf-includes/class-members.php:1114
+#: wpf-includes/class-members.php:1100
 msgid "What should be done with wpForo content owned by these users?"
 msgstr ""
 
-#: wpf-includes/class-members.php:1118
+#: wpf-includes/class-members.php:1104
 msgid "Delete all wpForo content."
 msgstr ""
 
-#: wpf-includes/class-members.php:1120
+#: wpf-includes/class-members.php:1106
 msgid "Attribute all content to:"
 msgstr ""
 
@@ -1241,33 +1224,21 @@ msgstr ""
 msgid "Dismiss this notice."
 msgstr "סגור הודעה זו."
 
-#: wpf-includes/class-notices.php:147
-msgid "New Addons for Your Forum!"
-msgstr ""
-
-#: wpf-includes/class-notices.php:147
-msgid "Extend your forum with wpForo addons"
-msgstr ""
-
-#: wpf-includes/class-notices.php:160
-msgid "View all Addons"
-msgstr ""
-
-#: wpf-includes/class-permissions.php:127 wpf-includes/wpf-phrases.php:420
+#: wpf-includes/class-permissions.php:116 wpf-includes/wpf-phrases.php:420
 #, php-format
 msgid "%s access successfully added"
 msgstr "%s גישה הוספה בהצלחה"
 
-#: wpf-includes/class-permissions.php:152 wpf-includes/wpf-phrases.php:421
+#: wpf-includes/class-permissions.php:141 wpf-includes/wpf-phrases.php:421
 #, php-format
 msgid "%s access successfully edited"
 msgstr "%s גישה נערכה בהצלחה"
 
-#: wpf-includes/class-phrases.php:172 wpf-includes/wpf-phrases.php:7
+#: wpf-includes/class-phrases.php:166 wpf-includes/wpf-phrases.php:7
 msgid " Forum"
 msgstr "פורום"
 
-#: wpf-includes/class-phrases.php:173 wpf-includes/wpf-phrases.php:6
+#: wpf-includes/class-phrases.php:167 wpf-includes/wpf-phrases.php:6
 msgid " Discussion Board"
 msgstr "דיון"
 
@@ -1277,13 +1248,13 @@ msgstr "הכנס קישור"
 
 #: wpf-includes/class-template.php:33
 msgid "Link Text"
-msgstr "טקסט קישור"
+msgstr ""
 
 #: wpf-includes/class-template.php:34
 msgid "Open link in a new tab"
-msgstr "פתח קישור בלשונית חדשה"
+msgstr ""
 
-#: wpf-includes/class-template.php:1060 wpf-includes/wpf-phrases.php:327
+#: wpf-includes/class-template.php:922 wpf-includes/wpf-phrases.php:327
 msgid "Theme file not readable"
 msgstr ""
 
@@ -1297,7 +1268,7 @@ msgstr ""
 
 #: wpf-includes/functions-installation.php:84
 msgid "You are not permitted to view this attachment"
-msgstr "אין לך הרשאות לצפות בקובץ המצורף"
+msgstr ""
 
 #: wpf-includes/functions-template.php:7
 msgid "wpForo Menu"
@@ -1317,113 +1288,109 @@ msgstr ""
 #: wpf-includes/functions-template.php:303
 #: wpf-includes/functions-template.php:366
 #: wpf-includes/functions-template.php:442
-#: wpf-includes/functions-template.php:520
-#: wpf-includes/functions-template.php:567 wpf-includes/wpf-phrases.php:334
+#: wpf-includes/functions-template.php:519
+#: wpf-includes/functions-template.php:566 wpf-includes/wpf-phrases.php:334
 msgid "Title"
 msgstr "כותרת"
 
 #: wpf-includes/functions-template.php:369
 #: wpf-includes/functions-template.php:445
-#: wpf-includes/functions-template.php:523 wpf-includes/wpf-phrases.php:210
+#: wpf-includes/functions-template.php:522 wpf-includes/wpf-phrases.php:210
 msgid "Number of Items"
-msgstr "מספר פריטים"
+msgstr ""
 
 #: wpf-includes/functions-template.php:374 wpf-includes/wpf-phrases.php:70
 msgid "Display Avatars"
 msgstr ""
 
 #: wpf-includes/functions-template.php:449
-#: wpf-includes/functions-template.php:527 wpf-includes/wpf-phrases.php:72
+#: wpf-includes/functions-template.php:526 wpf-includes/wpf-phrases.php:72
 msgid "Display with Avatars"
 msgstr ""
 
-#: wpf-includes/functions.php:324 wpf-includes/functions.php:581
+#: wpf-includes/functions.php:310 wpf-includes/functions.php:546
 #: wpf-includes/wpf-phrases.php:50
 msgid "Bulk Actions"
 msgstr ""
 
-#: wpf-includes/functions.php:329 wpf-includes/functions.php:667
+#: wpf-includes/functions.php:315 wpf-includes/functions.php:632
 #: wpf-includes/wpf-phrases.php:36
 msgid "Apply"
 msgstr "החל"
 
-#: wpf-includes/functions.php:338 wpf-includes/wpf-phrases.php:300
+#: wpf-includes/functions.php:324 wpf-includes/wpf-phrases.php:300
 msgid "Show all forums"
 msgstr "הצג את כל הפורומים"
 
-#: wpf-includes/functions.php:351 wpf-includes/wpf-phrases.php:350
+#: wpf-includes/functions.php:337 wpf-includes/wpf-phrases.php:350
 msgid "filter by group"
-msgstr "סינון לפי קבוצה"
-
-#: wpf-includes/functions.php:363
-msgid "filter by status"
-msgstr "סינון לפי סטאטוס"
-
-#: wpf-includes/functions.php:379
-msgid "filter by package"
 msgstr ""
 
-#: wpf-includes/functions.php:399 wpf-includes/functions.php:589
+#: wpf-includes/functions.php:350
+msgid "filter by status"
+msgstr ""
+
+#: wpf-includes/functions.php:370 wpf-includes/functions.php:554
 #: wpf-includes/wpf-phrases.php:385
 msgid "item"
 msgstr "פריט"
 
-#: wpf-includes/functions.php:432 wpf-includes/functions.php:448
+#: wpf-includes/functions.php:403 wpf-includes/functions.php:419
 #: wpf-includes/wpf-phrases.php:284
 msgid "Select All"
 msgstr "בחר את כל"
 
-#: wpf-includes/functions.php:508 wpf-includes/wpf-phrases.php:383
+#: wpf-includes/functions.php:478 wpf-includes/wpf-phrases.php:383
 msgid "edit user"
 msgstr "עריכת משתמש"
 
-#: wpf-includes/functions.php:512 wpf-includes/wpf-phrases.php:382
+#: wpf-includes/functions.php:481 wpf-includes/wpf-phrases.php:382
 msgid "edit profile"
 msgstr "עריכת פרופיל"
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "unban user"
-msgstr "ביטול חסימת משתמש"
+msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "ban user"
-msgstr "חסום משתמש"
+msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "Are you sure, you want to unban this user?"
-msgstr "האם אתה בטוח, שאתה רוצה לבטל את חסימת המשתמש הזה?"
+msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "Are you sure, you want to ban this user?"
-msgstr "האם אתה בטוח, שאתה רוצה לחסום את המשתמש הזה?"
+msgstr ""
 
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:67
 msgid "Delete this item"
 msgstr "מחק פריט זה"
 
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:41
 msgid "Are you sure you whant to DELETE this item?"
 msgstr "האם את/ה בטוח/ה שאת/ה רוצה למחוק את הפריט הזה?"
 
-#: wpf-includes/functions.php:541 wpf-includes/functions.php:542
+#: wpf-includes/functions.php:506 wpf-includes/functions.php:507
 #: wpf-includes/wpf-phrases.php:404
 msgid "view"
 msgstr "הצגה"
 
-#: wpf-includes/functions.php:573 wpf-includes/wpf-phrases.php:200
+#: wpf-includes/functions.php:538 wpf-includes/wpf-phrases.php:200
 msgid "No items found"
 msgstr "לא נמצאו פריטים"
 
-#: wpf-includes/functions.php:666 wpf-includes/wpf-phrases.php:141
+#: wpf-includes/functions.php:631 wpf-includes/wpf-phrases.php:141
 msgid "Items"
 msgstr "פריטים"
 
-#: wpf-includes/functions.php:937
+#: wpf-includes/functions.php:901
 #, php-format
 msgid "Could not write file %s"
-msgstr "לא היה ניתן לשמור את קובץ %s"
+msgstr ""
 
 #: wpf-includes/wpf-hooks.php:20 wpf-includes/wpf-phrases.php:136
 msgid ""
@@ -1439,33 +1406,33 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: wpf-includes/wpf-hooks.php:1025 wpf-includes/wpf-phrases.php:187
+#: wpf-includes/wpf-hooks.php:1008 wpf-includes/wpf-phrases.php:187
 msgid "Move"
 msgstr "העברה"
 
-#: wpf-includes/wpf-hooks.php:1060
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Clear"
-msgstr "נקה"
+msgstr ""
 
-#: wpf-includes/wpf-hooks.php:1060
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Default"
 msgstr "ברירת מחדל"
 
-#: wpf-includes/wpf-hooks.php:1060
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Select Color"
 msgstr "בחר צבע"
 
-#: wpf-includes/wpf-hooks.php:1083
+#: wpf-includes/wpf-hooks.php:1066
 msgid ""
 "IMPORTANT: wpForo can't work with default permalink, please change permalink "
 "structure"
 msgstr ""
 
-#: wpf-includes/wpf-hooks.php:1104 wpf-includes/wpf-phrases.php:412
+#: wpf-includes/wpf-hooks.php:1087 wpf-includes/wpf-phrases.php:412
 msgid "wpForo Usergroup"
 msgstr ""
 
-#: wpf-includes/wpf-hooks.php:1112 wpf-includes/wpf-phrases.php:411
+#: wpf-includes/wpf-hooks.php:1095 wpf-includes/wpf-phrases.php:411
 msgid "wpForo User Timezone"
 msgstr ""
 
@@ -1557,8 +1524,8 @@ msgstr "שנה סיסמא"
 msgid "Choose target forum"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:55 wpf-themes/classic/functions.php:44
-#: wpf-themes/classic/functions.php:65 wpf-themes/classic/functions.php:94
+#: wpf-includes/wpf-phrases.php:55 wpf-themes/classic/functions.php:39
+#: wpf-themes/classic/functions.php:60 wpf-themes/classic/functions.php:89
 msgid "Collapsed"
 msgstr ""
 
@@ -1594,24 +1561,24 @@ msgstr "דוא\"ל"
 msgid "Enter title here"
 msgstr "הכנס כותרת כאן"
 
-#: wpf-includes/wpf-phrases.php:89 wpf-themes/classic/functions.php:43
-#: wpf-themes/classic/functions.php:64 wpf-themes/classic/functions.php:93
+#: wpf-includes/wpf-phrases.php:89 wpf-themes/classic/functions.php:38
+#: wpf-themes/classic/functions.php:59 wpf-themes/classic/functions.php:88
 msgid "Expanded"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:90 wpf-themes/classic/functions.php:90
+#: wpf-includes/wpf-phrases.php:90 wpf-themes/classic/functions.php:85
 msgid "Extended Layout - Intro posts"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:91 wpf-themes/classic/functions.php:40
+#: wpf-includes/wpf-phrases.php:91 wpf-themes/classic/functions.php:35
 msgid "Extended Layout - Intro topics"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:92 wpf-themes/classic/functions.php:100
+#: wpf-includes/wpf-phrases.php:92 wpf-themes/classic/functions.php:95
 msgid "Extended Layout - Number of intro posts"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:93 wpf-themes/classic/functions.php:49
+#: wpf-includes/wpf-phrases.php:93 wpf-themes/classic/functions.php:44
 msgid "Extended Layout - Number of intro topics"
 msgstr ""
 
@@ -1651,10 +1618,6 @@ msgstr "פורום - עמוד לא נמצא"
 msgid "Forum - Registration"
 msgstr "פורום - רישום"
 
-#: wpf-includes/wpf-phrases.php:106
-msgid "Forum Admin Email Addresses"
-msgstr "כתובות מייל למנהל"
-
 #: wpf-includes/wpf-phrases.php:109
 msgid "Forum Home"
 msgstr "פורומים ראשי"
@@ -1679,20 +1642,12 @@ msgstr "סטטיסטיקת פורום"
 msgid "Forum is empty"
 msgstr "הפורום ריק"
 
-#: wpf-includes/wpf-phrases.php:125
-msgid "From Email Address"
-msgstr "כתובת מאת"
-
-#: wpf-includes/wpf-phrases.php:126
-msgid "From Name"
-msgstr "שם מאת"
-
 #: wpf-includes/wpf-phrases.php:131
 msgid "Group"
 msgstr "קבוצה"
 
 #: wpf-includes/wpf-phrases.php:132
-msgid "Google+"
+msgid "Gtalk"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:135
@@ -1802,7 +1757,7 @@ msgstr "דרוג משתמש"
 
 #: wpf-includes/wpf-phrases.php:173
 msgid "Member Rating Badge"
-msgstr "תגי דירוג למשתמש"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:176
 msgid "Member information"
@@ -1816,7 +1771,7 @@ msgstr "משתמש לא נמצא"
 msgid ""
 "You have been banned. Please contact to forum administrators for more "
 "information."
-msgstr "נחסמת. אנא פנה למנהלי הפורום לקבלת מידע נוסף."
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:182
 msgid "Messages"
@@ -1915,11 +1870,11 @@ msgstr "פורסם ע\"י"
 msgid "Powered by"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:235 wpf-themes/classic/functions.php:70
+#: wpf-includes/wpf-phrases.php:235 wpf-themes/classic/functions.php:65
 msgid "Q&A Layout - Number of intro topics"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:236 wpf-themes/classic/functions.php:61
+#: wpf-includes/wpf-phrases.php:236 wpf-themes/classic/functions.php:56
 msgid "Q&A layout - Intro topics"
 msgstr ""
 
@@ -2059,7 +2014,7 @@ msgstr "שלח דו\"ח"
 msgid "Set Topic Sticky"
 msgstr "נעץ נושא"
 
-#: wpf-includes/wpf-phrases.php:291 wpf-themes/classic/functions.php:101
+#: wpf-includes/wpf-phrases.php:291 wpf-themes/classic/functions.php:96
 msgid ""
 "Set this option value 0 if you want to show all posts under topic intro area."
 msgstr ""
@@ -2362,7 +2317,7 @@ msgstr "עדכון"
 
 #: wpf-includes/wpf-phrases.php:405
 msgid "view all posts"
-msgstr "הצג את כל השרשורים"
+msgstr "הצג את כל הפרסומים"
 
 #: wpf-includes/wpf-phrases.php:406
 msgid "view all questions"
@@ -2458,7 +2413,7 @@ msgstr "אין אפשרות לעדכן את נתוני ההודעה"
 
 #: wpf-includes/wpf-phrases.php:438
 msgid "Could not be unsubscribe from this item"
-msgstr "לא ניתן להסיר רישום מנושא זה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:439
 msgid "Email address exists. Please insert another."
@@ -2530,11 +2485,11 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:456
 msgid "General options successfully updated"
-msgstr "אפשרויות כלליות עודכנו בהצלחה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:457
 msgid "Illegal character in username."
-msgstr "אות לא חוקית בשם המשתמש"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:458
 msgid "Insert your Email address."
@@ -2550,7 +2505,7 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:461
 msgid "Member options successfully updated"
-msgstr "אפשרויות משתמש עודכנו בהצלחה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:462
 msgid "Member options successfully updated, but previous value not changed"
@@ -2558,7 +2513,7 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:463
 msgid "Message has been sent"
-msgstr "הודעה נשלחה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:464
 msgid ""
@@ -2571,7 +2526,7 @@ msgstr "לא נמצאו שרשורים לעדכון"
 
 #: wpf-includes/wpf-phrases.php:466
 msgid "Password length must be between 6 characters and 20 characters."
-msgstr "אורך הסיסמא חייב להיות בין 6 ל20 תווים"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:467
 msgid "Password mismatch."
@@ -2619,7 +2574,7 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:478
 msgid "Please insert required fields!"
-msgstr "נא למלא את שדות חובה!"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:479
 msgid "Post delete error"
@@ -2635,7 +2590,7 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:483
 msgid "Registration Error"
-msgstr "שגיאת רישום"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:484
 msgid "Reply request error"
@@ -2643,7 +2598,7 @@ msgstr ""
 
 #: wpf-includes/wpf-phrases.php:485
 msgid "Something wrong with profile data."
-msgstr "יש משהו שגוי בנתוני הפרופיל"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:486
 msgid "Subscribe options successfully updated"
@@ -2651,7 +2606,7 @@ msgstr "אפשרויות מנוי עודכנו בהצלחה"
 
 #: wpf-includes/wpf-phrases.php:487
 msgid "Subscribe options successfully updated, but previous value not changed"
-msgstr "אפשרויות מנוי עודכנו בהצלחה, אבל הערך הקודם לא השתנה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:488
 msgid "Success! Thank you Dear Friend"
@@ -2791,23 +2746,23 @@ msgstr "אין לך הרשאה לערוך נושא זה"
 
 #: wpf-includes/wpf-phrases.php:521
 msgid "You haven't permission to create post into this forum"
-msgstr "אין לך הרשאה ליצור שרשור בפורום זה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:522
 msgid "You haven't permission to create topic into this forum"
-msgstr "אין לך הרשאה ליצור נושא בפורום זה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:523
 msgid "You haven't permission to delete post from this forum"
-msgstr "אין לך הרשאה למחוק שרשור מהפורום הזה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:524
 msgid "You haven't permission to delete topic from this forum"
-msgstr "אין לך הרשאה למחוק נושא מהפורום הזה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:525
 msgid "You haven't permission to edit post from this forum"
-msgstr "אין לך הרשאה לערוך שרשור מהפורום הזה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:526
 msgid "You successfully replied"
@@ -2827,38 +2782,38 @@ msgstr "הפרופיל שלך עודכן בהצלחה"
 
 #: wpf-includes/wpf-phrases.php:530
 msgid "Your subscription for this item could not be confirmed"
-msgstr "לא ניתן לוודא את רישומך לעניין זה"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:531
 msgid "Your topic successfully added"
 msgstr "הנושא הוסף בהצלחה"
 
 #: wpf-includes/wpf-phrases.php:533
-msgid "Dashboard - Can create forum"
+msgid "Dahsboard - Can create forum"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:534
-msgid "Dashboard - Can edit forum"
+msgid "Dahsboard - Can edit forum"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:535
-msgid "Dashboard - Can delete forum"
+msgid "Dahsboard - Can delete forum"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:536
-msgid "Dashboard - Members Menu"
+msgid "Dahsboard - Members Menu"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:537
-msgid "Dashboard - Can edit member"
+msgid "Dahsboard - Can edit member"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:538
-msgid "Dashboard - Can delete member"
+msgid "Dahsboard - Can delete member"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:539
-msgid "Dashboard - Usergroup Menu"
+msgid "Dahsboard - Usergroup Menu"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:540
@@ -3006,106 +2961,102 @@ msgid "Can report"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:576
-msgid "Can set topic sticky"
+msgid "Can make topic sticky"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:577 wpf-includes/wpf-phrases.php:650
-msgid "Can set topic private"
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:578
+#: wpf-includes/wpf-phrases.php:577
 msgid "Can vote"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:579
+#: wpf-includes/wpf-phrases.php:578
 msgid "Can Attach File"
 msgstr ""
 
+#: wpf-includes/wpf-phrases.php:579
+msgid "Can make topic answered"
+msgstr ""
+
 #: wpf-includes/wpf-phrases.php:580
-msgid "Can set topic answered"
+msgid "Can make own topic answered"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:581
-msgid "Can set own topic answered"
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:582
 msgid "Can close topic"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:583
+#: wpf-includes/wpf-phrases.php:582
 msgid "Can move topic"
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:584
+#: wpf-includes/wpf-phrases.php:583
 msgid "like"
 msgstr "אהבתי"
 
-#: wpf-includes/wpf-phrases.php:585
+#: wpf-includes/wpf-phrases.php:584
 msgid "unlike"
 msgstr "הסר אהבתי"
 
-#: wpf-includes/wpf-phrases.php:586
+#: wpf-includes/wpf-phrases.php:585
 msgid "sticky"
 msgstr "נעוץ"
 
-#: wpf-includes/wpf-phrases.php:587
+#: wpf-includes/wpf-phrases.php:586
 msgid "unsticky"
 msgstr "הסרת נעיצה"
 
-#: wpf-includes/wpf-phrases.php:588
+#: wpf-includes/wpf-phrases.php:587
 msgid "close"
 msgstr "סגירה"
 
-#: wpf-includes/wpf-phrases.php:589
+#: wpf-includes/wpf-phrases.php:588
 msgid "open"
 msgstr "פתיחה"
 
-#: wpf-includes/wpf-phrases.php:590
+#: wpf-includes/wpf-phrases.php:589
 msgid "Topic Icons"
 msgstr "סמלי נושא"
 
-#: wpf-includes/wpf-phrases.php:591
+#: wpf-includes/wpf-phrases.php:590
 msgid "New"
 msgstr "חדש"
 
-#: wpf-includes/wpf-phrases.php:592
+#: wpf-includes/wpf-phrases.php:591
 msgid "Replied"
 msgstr "נענה"
 
-#: wpf-includes/wpf-phrases.php:593
+#: wpf-includes/wpf-phrases.php:592
 msgid "Active"
 msgstr "פעיל"
 
-#: wpf-includes/wpf-phrases.php:594
+#: wpf-includes/wpf-phrases.php:593
 msgid "Hot"
 msgstr "חם"
 
-#: wpf-includes/wpf-phrases.php:595
+#: wpf-includes/wpf-phrases.php:594
 msgid "Solved"
 msgstr "נפתר"
 
-#: wpf-includes/wpf-phrases.php:596
+#: wpf-includes/wpf-phrases.php:595
 msgid "Unsolved"
 msgstr "לא נפתר"
 
+#: wpf-includes/wpf-phrases.php:603
+msgid "Can make topic solved"
+msgstr ""
+
 #: wpf-includes/wpf-phrases.php:604
-msgid "Can set topic solved"
+msgid "Can make own topic solved"
 msgstr ""
 
 #: wpf-includes/wpf-phrases.php:605
-msgid "Can set own topic solved"
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:606
 msgid "Old password is wrong"
 msgstr "הסיסמא הישנה שגויה"
 
-#: wpf-includes/wpf-phrases.php:607
+#: wpf-includes/wpf-phrases.php:606
 msgid "New Passwords do not match"
 msgstr "הסיסמאות החדשות אינן תואמות"
 
-#: wpf-includes/wpf-phrases.php:611
+#: wpf-includes/wpf-phrases.php:610
 msgid ""
 "This process may take a few seconds or dozens of minutes, it depends on "
 "database forum size and on server resources. Please be patient and don't "
@@ -3113,157 +3064,103 @@ msgid ""
 "updating process is still working in MySQL server."
 msgstr ""
 
-#: wpf-includes/wpf-phrases.php:615
+#: wpf-includes/wpf-phrases.php:614
 msgid "Updated Successfully!"
 msgstr "עודכן בהצלחה!"
 
-#: wpf-includes/wpf-phrases.php:616
+#: wpf-includes/wpf-phrases.php:615
 msgid "Deleted Successfully!"
 msgstr "נמחק בהצלחה!"
 
-#: wpf-includes/wpf-phrases.php:617
+#: wpf-includes/wpf-phrases.php:616
 msgid "Closed"
 msgstr "סגור"
 
-#: wpf-includes/wpf-phrases.php:618
+#: wpf-includes/wpf-phrases.php:617
 msgid "Forum Members List"
 msgstr "רשימת חברים בפורום"
 
-#: wpf-includes/wpf-phrases.php:619
+#: wpf-includes/wpf-phrases.php:618
 msgid "are you sure you want to delete?"
 msgstr "האם את/ה בטוח/ה שאת/ה רוצה למחוק?"
 
-#: wpf-includes/wpf-phrases.php:621
+#: wpf-includes/wpf-phrases.php:620
 msgid "Moderator"
 msgstr "מפקח"
 
-#: wpf-includes/wpf-phrases.php:623
+#: wpf-includes/wpf-phrases.php:622
 msgid "Customer"
 msgstr "לקוח"
 
-#: wpf-includes/wpf-phrases.php:624
+#: wpf-includes/wpf-phrases.php:623
 msgid "No access"
 msgstr "ללא גישה"
 
-#: wpf-includes/wpf-phrases.php:625
+#: wpf-includes/wpf-phrases.php:624
 msgid "Read only access"
 msgstr "קריאה בלבד"
 
-#: wpf-includes/wpf-phrases.php:626
+#: wpf-includes/wpf-phrases.php:625
 msgid "Standard access"
 msgstr "גישה רגילה"
 
-#: wpf-includes/wpf-phrases.php:627
+#: wpf-includes/wpf-phrases.php:626
 msgid "Moderator access"
 msgstr "גישת מפקח"
 
-#: wpf-includes/wpf-phrases.php:628
+#: wpf-includes/wpf-phrases.php:627
 msgid "Full access"
 msgstr "גישה מלאה"
 
-#: wpf-includes/wpf-phrases.php:629
+#: wpf-includes/wpf-phrases.php:628
 msgid "Profile"
 msgstr "פרופיל"
 
-#: wpf-includes/wpf-phrases.php:631
+#: wpf-includes/wpf-phrases.php:630
 msgid "Incorrect file format. Allowed formats: jpeg, jpg, png, gif."
-msgstr "סוג קובץ שגוי. מותר פורמטים: jpeg, jpg, png, gif."
+msgstr ""
 
-#: wpf-includes/wpf-phrases.php:634
+#: wpf-includes/wpf-phrases.php:633
 msgid "User registration is disabled"
-msgstr "רישום משתמשים לא זמין"
+msgstr ""
+
+#: wpf-includes/wpf-phrases.php:637
+msgid "Attachment removed"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:638
-msgid "Attachment removed"
-msgstr "קבצים מצורפים נמחקו"
+msgid "Forum Posts"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:639
-msgid "Forum Posts"
-msgstr "הודעות בפורום"
+msgid "Blog Posts"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:640
-msgid "Blog Posts"
-msgstr "פוסטים בבלוג"
+msgid "Blog Comments"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:641
-msgid "Blog Comments"
-msgstr "תגובות בבלוג"
-
-#: wpf-includes/wpf-phrases.php:642
 #, php-format
 msgid "Welcome back %s!"
-msgstr "ברוך שובך, %s!"
+msgstr ""
+
+#: wpf-includes/wpf-phrases.php:642
+msgid "Member Profile"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:643
-msgid "Member Profile"
-msgstr "פרופיל משתמש"
+msgid "Member"
+msgstr ""
 
 #: wpf-includes/wpf-phrases.php:644
-msgid "Member"
-msgstr "משתמש"
-
-#: wpf-includes/wpf-phrases.php:645
 msgid "You have not permission to this page"
-msgstr "אין לך הרשאות לצפות בעמוד זה"
+msgstr ""
 
-#: wpf-includes/wpf-phrases.php:647
+#: wpf-includes/wpf-phrases.php:646
 msgid ""
 "This option will disable WordPress on front-end. Only forum pages will be "
 "available. wpForo will look like as a stand-alone forum."
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:651
-msgid "Can set own topic private"
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:652
-msgid "Can view private topic"
-msgstr ""
-
-#: wpf-includes/wpf-phrases.php:653
-msgid "Private"
-msgstr "פרטי"
-
-#: wpf-includes/wpf-phrases.php:654
-msgid "Public"
-msgstr "ציבורי"
-
-#: wpf-includes/wpf-phrases.php:655
-msgid "Private Topic"
-msgstr "נושא פרטי"
-
-#: wpf-includes/wpf-phrases.php:656
-msgid "Only Admins and Moderators can see your private topics."
-msgstr "רק מנהלים וצוות המעדכנים יכולים לראות את הנושאים הפרטיים שלך"
-
-#: wpf-includes/wpf-phrases.php:657
-msgid "Forum ID is not detected"
-msgstr "מזהה הפורום לא זוהה"
-
-#: wpf-includes/wpf-phrases.php:658
-msgid "You are not permitted to subscribe here"
-msgstr "אין לך הרשאות להרשם כאן"
-
-#: wpf-includes/wpf-phrases.php:659
-msgid "Subscribe to this topic"
-msgstr "הרשמה לנושא זה"
-
-#: wpforo.php:345
-msgid ""
-"Provides a safe way to communicate directly with other members. Messages are "
-"private and can only be viewed by conversation participants."
-msgstr ""
-
-#: wpforo.php:346
-msgid ""
-"Adds an advanced file attachment system to forum topics and posts. AJAX "
-"powered media uploading and displaying system with user specific library."
-msgstr ""
-
-#: wpforo.php:347
-msgid ""
-"Allows to embed hundreds of video, social network, audio and photo content "
-"providers in forum topics and posts."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -3289,11 +3186,8 @@ msgstr ""
 msgid "http://gvectors.com/"
 msgstr ""
 
-#~ msgid "private"
-#~ msgstr "פרטי"
-
-#~ msgid "public"
-#~ msgstr "ציבורי"
-
 #~ msgid "Dismiss"
 #~ msgstr "בטל"
+
+#~ msgid "ago"
+#~ msgstr "לפני"

@@ -14,7 +14,7 @@
 </script>
 <div class="wpforo-profile-account wpfbg-7">
     <?php if( $ID == $wpforo->current_userid || 
-				( $wpforo->perm->usergroup_can('em') && 
+				( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'em' ) && 
 					$wpforo->perm->user_can_manage_user( $wpforo->current_userid, $ID ) ) ) : ?>   		
         <form action="" enctype="multipart/form-data" method="POST">
           <?php wp_nonce_field( 'wpforo_verify_form', 'wpforo_form' ); ?>
@@ -43,7 +43,7 @@
                 <div class="wpforo-profile-label wpforo-th wpfbg-7"><label for="user_email"><?php wpforo_phrase('Email') ?>:</label></div>
                 <div class="wpforo-profile-field wpforo-td wpfbg-9"><input autocomplete="off" id="user_email" required="TRUE" type="text" value="<?php echo esc_attr($user_email) ?>" name="member[user_email]" maxlength="50" /></div>
               </div>
-            	<?php if( $wpforo->perm->usergroup_can('em') ) : ?>
+            	<?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'em' ) ) : ?>
 	              <div class="wpforo-tr">
 	                <div class="wpforo-profile-label wpforo-th wpfbg-7"><label for="title"><?php wpforo_phrase('Title') ?>:</label></div>
 	                <div class="wpforo-profile-field wpforo-td wpfbg-9"><input autocomplete="off" id="title" type="text" value="<?php wpforo_phrase($title) ?>" name="member[title]" maxlength="50" /></div>
@@ -88,7 +88,7 @@
                         <div class="wpforo-td" style="width:20%"><label for="twitter"><?php wpforo_phrase('Twitter') ?>:</label></div><div class="wpforo-td" style="width:30%"><input autocomplete="off" id="twitter" type="text" value="<?php echo esc_attr($twitter) ?>" name="member[twitter]" maxlength="255" /></div>
                       </div>
                       <div class="wpforo-tr">
-                        <div class="wpforo-td"><label for="gtalk"><?php wpforo_phrase('Google+') ?>:</label></div><div class="wpforo-td"><input autocomplete="off" id="gtalk" type="text" value="<?php echo esc_attr($gtalk) ?>" name="member[gtalk]" maxlength="55" /></div>
+                        <div class="wpforo-td"><label for="gtalk"><?php wpforo_phrase('Gtalk') ?>:</label></div><div class="wpforo-td"><input autocomplete="off" id="gtalk" type="text" value="<?php echo esc_attr($gtalk) ?>" name="member[gtalk]" maxlength="55" /></div>
                         <div class="wpforo-td"><label for="yahoo"><?php wpforo_phrase('Yahoo') ?>:</label></div><div class="wpforo-td"><input autocomplete="off" id="yahoo" type="text" value="<?php echo esc_attr($yahoo) ?>" name="member[yahoo]" maxlength="55" /></div>
                       </div>
                       <div class="wpforo-tr">

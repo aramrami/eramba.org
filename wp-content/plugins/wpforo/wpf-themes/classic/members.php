@@ -4,7 +4,7 @@
 ?>
 <h2 id="wpforo-title"><?php wpforo_phrase('Forum Members') ?></h2>
 <div class="wpforo-members-wrap">
-	<?php if( $wpforo->perm->usergroup_can('vmem') ): ?>
+	<?php if($wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmem')): ?>
 	    <div class="wpforo-members-search"> 
 	        <form action="<?php echo WPFORO_BASE_URL . "members/"  ?>" method="get">
 	            <input placeholder="<?php wpforo_phrase('Insert member name or email') ?>" required="TRUE" type="text" name="wpfms" class="wpf-member-search-field wpfw-40" value="<?php echo esc_attr($wpfms) ?>" />
@@ -33,17 +33,10 @@
 	                        <a href="<?php echo esc_url($wpforo->member->profile_url($member)) ?>" class="wpf-member-name" title="<?php $wpforo->member->show_online_indicator($member['ID'], FALSE) ?>">
 	                            <?php $wpforo->member->show_online_indicator($member['ID']) ?>&nbsp;
 	                            <?php echo  $member['display_name'] ? esc_html($member['display_name']) : esc_html(urldecode($member['user_nicename'])) ?>
-	                        </a>
-	                        
-	                        <?php do_action('wpforo_after_member_badge', $member) ?>
-	                        
-	                        <br />
+	                        </a><br />
 	                        <?php $enabled_for_usergroup = ( isset($wpforo->member_options['rating_badge_ug'][$member['groupid']]) && $wpforo->member_options['rating_badge_ug'][$member['groupid']] ) ? true : false ; ?>
-	                        <span class="wpf-member-info wpfcl-1"> <i class="fa fa-users" title="<?php wpforo_phrase('Usergroup') ?>"></i>&nbsp; <?php wpforo_phrase($member['groupname']) ?> | <?php if( wpforo_feature('rating', $wpforo) && $enabled_for_usergroup ): ?><i class="fa fa-star" title="<?php wpforo_phrase('Rating') ?>"></i>&nbsp;<?php echo $wpforo->member->rating_level( $member['posts'], FALSE ) ?>/10  |<?php endif; ?> <?php wpforo_phrase('Posts') ?>: <?php echo intval($member['posts']) ?></span>
-	                    	| <div class="wpf-member-profile-buttons" style="display:inline-block;">
-                                <?php $wpforo->tpl->member_buttons($member) ?>
-                            </div>
-                        </td>
+	                        <span class="wpf-member-info wpfcl-1"> <i class="fa fa-users" title="<?php wpforo_phrase('Group') ?>"></i>&nbsp; <?php wpforo_phrase($member['groupname']) ?> | <?php if( wpforo_feature('rating', $wpforo) && $enabled_for_usergroup ): ?><i class="fa fa-star" title="<?php wpforo_phrase('Rating') ?>"></i>&nbsp;<?php echo $wpforo->member->rating_level( $member['posts'], FALSE ) ?>/10  |<?php endif; ?> <?php wpforo_phrase('Posts') ?>: <?php echo intval($member['posts']) ?></span>
+	                    </td>
 	                    <td class="wpf-members-regdate wpfcl-1"><?php wpforo_date($member['user_registered'], 'F j, Y') ?></td>
 	                  </tr>
 	                    

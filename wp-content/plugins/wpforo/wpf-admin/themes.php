@@ -5,7 +5,7 @@
 ?>
 
 <div id="wpf-admin-wrap" class="wrap wpforo-themes">
-	<h2 style="padding:20px 0px 0px 0px;line-height: 20px;  margin-bottom:15px;">
+	<h2 style="padding:20px 0px 0px 0px;line-height: 20px;">
 		<?php _e('Forum Themes', 'wpforo'); ?>
 		<a href="<?php echo admin_url( 'admin.php?page=wpforo-themes&action=add' ) ?>" class="add-new-h2" style="margin-left:10px; display:none;"><?php _e('Add New', 'wpforo'); ?></a>
 	</h2>
@@ -58,7 +58,7 @@
 						<div class="wpf-theme-info">
 							<h3 style="margin-top:5px; margin-bottom:10px;"><?php echo esc_html(wpforo_text( $theme['name']['value'], 30, false )) ?> | <?php echo ($theme['version']['value']) ? 'version ' . esc_html($theme['version']['value']) : ''; ?></h3>
 							<p style="font-size:14px;" title="<?php echo esc_attr($theme['author']['value']) ?>"><?php echo ($theme['author']['value']) ? '<strong>Author:</strong>&nbsp; ' . esc_html(wpforo_text( $theme['author']['value'], 30, false )) : ''; ?></p>
-							<p style="font-size:14px;" title="<?php echo esc_attr($theme['theme_url']['value']) ?>"><?php echo ($theme['theme_url']['value']) ? '<strong>URI:</strong>&nbsp; <a href="'.esc_url($theme['theme_url']['value']).'" target="_blank">' . mb_substr( $theme['theme_url']['value'], 0, 30 ) . '</a>' : ''; ?></p>
+							<p style="font-size:14px;" title="<?php echo esc_attr($theme['theme_url']['value']) ?>"><?php echo ($theme['theme_url']['value']) ? '<strong>URI:</strong>&nbsp; <a href="'.esc_url($theme['theme_url']['value']).'" target="_blank">' . esc_html(wpforo_text( $theme['theme_url']['value'], 30, false )) .'</a>' : ''; ?></p>
 							<p style="margin-top:5px;"><?php echo ($theme['description']['value']) ? esc_html(wpforo_text($theme['description']['value'], 200, false)) : ''; ?></p>
 						</div>
 						<div class="wpf-theme-actions">

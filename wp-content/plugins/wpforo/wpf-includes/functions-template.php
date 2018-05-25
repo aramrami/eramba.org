@@ -38,7 +38,7 @@ function wpforo_lostpass_url(){
 		$wp_lostpass_url = trim(get_bloginfo('url') , '/') . '/' . ltrim($wpforo->member_options['lost_password_url'] , '/');
 	}
 	else{
-		$wp_lostpass_url = wp_lostpassword_url( wpforo_get_request_uri() );
+		$wp_lostpass_url = wp_lostpassword_url( wpforo_full_url() );
 	}
 	return esc_url($wp_lostpass_url);
 }
@@ -46,7 +46,7 @@ function wpforo_lostpass_url(){
 
 function wpforo_menu_filter( $items, $menu ) {
     global $wpforo;
-	if ( !wpforo_is_admin() ) {
+	if ( !is_admin() ) {
 		foreach ( $items as $key => $item ) {
 			if(isset($item->url)){
 				if( strpos($item->url, '%wpforo-') !== FALSE ){
@@ -280,7 +280,7 @@ class wpForo_Widget_login_form extends WP_Widget {
 			            <p class="wpf-extra wpfcl-1">
 			            <input type="checkbox" value="1" name="rememberme" id="wpf-login-remember"> 
 			            <label for="wpf-login-remember"><?php wpforo_phrase('Remember Me') ?> |</label>
-			            <a href="<?php echo esc_url(wp_lostpassword_url(wpforo_get_request_uri())); ?>" class="wpf-forgot-pass"><?php wpforo_phrase('Lost your password?') ?></a> 
+			            <a href="<?php echo esc_url(wp_lostpassword_url(wpforo_full_url())); ?>" class="wpf-forgot-pass"><?php wpforo_phrase('Lost your password?') ?></a> 
 			            <a href="<?php echo esc_url(WPFORO_BASE_URL) ?>?wpforo=register"><?php wpforo_phrase('register') ?></a>
 			            </p>
 			            <input type="submit" name="wpforologin" value="<?php wpforo_phrase('Sign In') ?>" />
@@ -478,10 +478,9 @@ class wpForo_Widget_recent_replies extends WP_Widget {
 		}
 		// widget content from front end
 		$posts_args = array( 
-		  'orderby'		=> 'created',
-		  'order'		=> 'DESC',
-		  'row_count'	=> $instance['count'],
-		  'check_private' => true
+		  'orderby'		=> 'created', 	// forumid, order, parentid
+		  'order'		=> 'DESC', 		// ASC DESC
+		  'row_count'	=> $instance['count'] 		// 4 or 1 ...
 		);
 		$recent_posts = $wpforo->post->get_posts($posts_args);
 		echo '<div class="wpforo-widget-content"><ul>';
@@ -661,7 +660,7 @@ function wpforo_validate_gravatar( $email ) {
 	}
 }
 
-function wpforo_member_title( $member = array(), $echo = true, $usergroup = true ){
+function wpforo_member_title( $member = array(), $echo = true ){
 	global $wpforo;
 	if(empty($member) || !$member['groupid']) return;
 	$enabled_for_usergroup = ( isset($wpforo->member_options['rating_title_ug'][$member['groupid']]) && $wpforo->member_options['rating_title_ug'][$member['groupid']] ) ? true : false ;
@@ -689,20 +688,6 @@ function wpforo_member_badge( $member = array(), $sep = '', $type = 'full' ){
             <?php echo $wpforo->member->rating_badge($member['stat']['rating'], $type); ?>
         </div><?php if($sep): ?><span class="author-rating-sep"><?php echo esc_html($sep); ?></span><?php endif; ?>
     <?php endif;
-    
-    do_action('wpforo_after_member_badge', $member);
-}
-
-add_filter( 'body_class', 'wpforo_page_class', 1, 10 );
-function wpforo_page_class( $classes ) {
-	if(!empty($classes)){
-    	if( function_exists('is_wpforo_page') ){
-			if ( is_wpforo_page() ) {
-				return array_merge( $classes, array( 'wpforo' ) );
-			}
-		}
-	}
-	return (array)$classes;
 }
 
 ?>

@@ -3,9 +3,6 @@ body {
 	text-align: center;
 	font-size: 18px;
 }
-body.pdfprnt_print.rtl {
-	direction: rtl;
-}
 p, td, th, li {
 	font-size: 1em;
 	line-height: 1.5em;
@@ -29,7 +26,7 @@ img {
 	margin: 5px 10px;
 }
 table {
-	border-collapse: collapse;
+	border-collapse: collapse; 
 	border-spacing: 0;
 }
 table,th,td {
@@ -40,7 +37,7 @@ th,td {
 	text-align: center;
 }
 blockquote {
-	color: #666;
+	color: #666; 
 	margin: 0 0 18px 18px;
 	font-style: italic;
 }
@@ -91,7 +88,7 @@ ul {
 	list-style-type: square;
 }
 ol {
-	margin-left: 25px;
+	margin-left: 25px;	
 }
 strong {
 	font-weight: bold;

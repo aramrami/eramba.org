@@ -48,7 +48,7 @@
 	
 	<!-- Forum Hierarchy -->
 	<?php if( !isset($_GET['action'])) : ?>
-		<?php if($wpforo->perm->usergroup_can('ef')): ?>
+		<?php if($wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'ef')): ?>
 			
             <div class="wpf-info-bar" style="line-height: 1em; clear:both; padding: 5px 30px; font-size:15px; display:block; box-shadow:none; margin: 20px 0 10px 0; font-style: italic; background: #FFFFC6; width:90%;">
             	<ul style="list-style-type: disc; line-height:18px;">
@@ -85,8 +85,8 @@
 	<br style="clear: both;"/>
 	<!-- Forum Add || Edit -->
 	<?php if( ( isset($_GET['action']) && $_GET['action'] == 'add' ) || ( isset($_GET['action']) && $_GET['action'] == 'edit' ) ) : ?>
-		<?php if($wpforo->perm->usergroup_can('cf')): ?>
-			<?php if(isset($_GET['id'])) $data = $wpforo->forum->get_forum( array('forumid' => $_GET['id']) ); ?>
+		<?php if($wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'cf')): ?>
+			<?php if(isset($_GET['id'])) $data = $wpforo->forum->get_forum( array('forumid' => $_GET['id']) );?>
 			<div id="poststuff">
 				<form name="forum" action="" method="post">
                 	<?php wp_nonce_field( 'wpforo-forum-addedit' ); ?>
@@ -228,18 +228,6 @@
 									</div>
 								</div>
 								
-                                <div id="forum_icon" class="postbox  hide-if-js" style="display: block; ">
-									<div class="handlediv" title="Click to toggle"><br></div>
-									<h3 class="hndle"><span><?php _e('Forum Icon', 'wpforo'); ?></span></h3>
-									<div class="inside" style="padding-top:10px;">
-										<div class="form-field">
-											<label for="tag-icon" style="display:block; padding-bottom:5px;"><?php _e('Font-awesome Icon', 'wpforo'); ?>:</label>
-											<input name="forum[icon]" value="<?php echo (isset($data['icon']) && $data['icon']) ? esc_attr($data['icon']) : 'fa-comments'; ?>" type="text"/>
-                                            <p style="margin-bottom:0px; margin-top:5px;"><?php _e('You can find all icons', 'wpforo'); ?> <a href="http://fontawesome.io/icons/" target="_blank"><?php _e('here', 'wpforo'); ?>.</a> <?php _e('Make sure you insert a class of font-awesome icon, it should start with fa- prefix like &quot;fa-comments&quot;.', '') ?></p>
-										</div>
-									</div>
-								</div>
-                                
 								<div id="forum_meta" class="postbox  hide-if-js" style="display: block; ">
 									<div class="handlediv" title="Click to toggle"><br></div>
 									<h3 class="hndle"><span><?php _e('Forum SEO', 'wpforo'); ?></span></h3>

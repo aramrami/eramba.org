@@ -51,11 +51,9 @@
 		  `type` TINYINT NOT NULL DEFAULT 0,
 		  `closed` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
 		  `has_attach` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
-		  `private` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
 		  PRIMARY KEY (`topicid`),
   		  UNIQUE KEY `UNIQUE SLUG` (`slug`(191)),
-  		  FULLTEXT KEY `title` (`title`),
-		  KEY `own_private` (`userid`,`private`)
+  		  FULLTEXT KEY `title` (`title`)
 		) ENGINE=$engine $charset_collate;",
 		"CREATE TABLE IF NOT EXISTS `{$wpforo->db->prefix}wpforo_posts`(  
 		  `postid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -125,9 +123,8 @@
 		"CREATE TABLE IF NOT EXISTS `{$wpforo->db->prefix}wpforo_phrases` (
 		  `phraseid` INT UNSIGNED NOT NULL AUTO_INCREMENT,
 		  `langid` INT UNSIGNED NOT NULL,
-		  `phrase_key` VARCHAR(255) NOT NULL,
+		  `phrase_key` varchar(255) NOT NULL,
 		  `phrase_value` text NOT NULL,
-		  `package` VARCHAR(255) NOT NULL DEFAULT 'wpforo',
 		  PRIMARY KEY (`phraseid`),
 		  KEY `langid` (`langid`),
 		  KEY `phrase_key` (`phrase_key`(191)),
@@ -145,9 +142,8 @@
 		  `vid` INT UNSIGNED NOT NULL AUTO_INCREMENT,
 		  `userid` INT UNSIGNED NOT NULL,
 		  `topicid`  INT UNSIGNED NOT NULL,
-		  `created` INT UNSIGNED NOT NULL,
-		  PRIMARY KEY (`vid`),
-		  KEY `user_topic` (`userid`,`topicid`)
+		  `created` TIMESTAMP NOT NULL,
+		  PRIMARY KEY (`vid`)
 		) ENGINE=$engine $charset_collate;",
 		"CREATE TABLE IF NOT EXISTS `{$wpforo->db->prefix}wpforo_votes`(  
 		  `voteid` INT UNSIGNED NOT NULL AUTO_INCREMENT,

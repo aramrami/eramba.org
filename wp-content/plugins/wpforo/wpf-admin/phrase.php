@@ -7,13 +7,13 @@
 <div id="wpf-admin-wrap" class="wrap" style="margin-top: 0px">
 	<?php wpforo_screen_option() ?>
 	<div id="icon-users" class="icon32"><br></div>
-	<h2 style="padding:30px 0px 0px 0px;line-height: 20px; margin-bottom:15px;"><?php _e('Front-end Phrases', 'wpforo'); ?> &nbsp;<a href="<?php echo admin_url( 'admin.php?page=wpforo-phrases&action=add' ) ?>" class="add-new-h2"><?php wpforo_phrase('add_new') ?></a></h2>
+	<h2 style="padding:30px 0px 0px 0px;line-height: 20px;"><?php _e('Front-end Phrases', 'wpforo'); ?> &nbsp;<a href="<?php echo admin_url( 'admin.php?page=wpforo-phrases&action=add' ) ?>" class="add-new-h2"><?php wpforo_phrase('add_new') ?></a></h2>
 	<?php $wpforo->notice->show(FALSE) ?>
 	<?php
-		if( !((isset($_GET['action']) && $_GET['action'] != '-1') || (isset($_GET['action2']) && $_GET['action2'] != '-1')) ){
-			$fields = array( 'phrase_key', 'phrase_value', 'package' );
+		if(!isset($_GET['action']) && !isset($_GET['action2'])){
+			$fields = array( 'phrase_key', 'phrase_value' );
 			$search_fields = array( 'phrase_key', 'phrase_value' );
-			$filter_fields = array( 'langid', 'package' );
+			$filter_fields = array( 'langid' );
 			wpforo_create_form_table( 'phrase', 'phraseid', $fields, $search_fields, $filter_fields, array('edit'), array('edit')); 
 		}
 	?>
@@ -31,7 +31,7 @@
 								<span class="description">(<?php echo esc_html($data['phrase_key']); ?>)</span></label>
 							 </th>
 							<td>
-                            	<textarea name="phrase[data][<?php echo intval($phraseid) ?>][title]" id="phrase" required style="width:80%; height:29px;"><?php wpfo($data['phrase_value'], true, 'esc_textarea'); ?></textarea>
+                            	<textarea name="phrase[data][<?php echo intval($phraseid) ?>][title]" id="phrase" required style="width:80%; height:150px;"><?php wpfo($data['phrase_value'], true, 'esc_textarea'); ?></textarea>
                             </td>
 						</tr>
 						<?php endforeach; ?>

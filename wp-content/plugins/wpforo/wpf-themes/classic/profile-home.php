@@ -5,7 +5,7 @@
 
 <div class="wpforo-profile-home">
     
-	<?php if( $wpforo->perm->usergroup_can('vmr') ): ?>
+	<?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmr' ) ): ?>
         <div class="wpf-profile-section wpf-ma-section">
             <div class="wpf-profile-section-head">
             	<i class="fa fa-bar-chart"></i>
@@ -93,7 +93,7 @@
             <?php wpforo_phrase('Member Information'); ?>
         </div>
      	<div class="wpforo-table">
-           <?php if( $wpforo->perm->usergroup_can('vmam') ): ?>
+           <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmam' ) ): ?>
                 <?php if($about) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><strong><?php wpforo_phrase('About Me') ?></strong></div>
@@ -101,7 +101,7 @@
                   </div>
                 <?php endif ?>
             <?php endif ?>
-            <?php if( $wpforo->perm->usergroup_can('vmw') ): ?>
+            <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmw' ) ): ?>
                 <?php if($site) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Website') ?></div>
@@ -110,7 +110,7 @@
                 <?php endif ?>
             <?php endif ?>
             <?php if( $facebook | $twitter | $gtalk | $yahoo | $aim | $icq | $msn | $skype ) : ?>
-                <?php $social_access = ( $wpforo->perm->usergroup_can('vmsn') ?  TRUE : FALSE ) ?>
+                <?php $social_access = ( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmsn' ) ?  TRUE : FALSE ) ?>
               <div class="wpforo-tr">
                 <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Social Networks') ?></div>
                 <div class="wpforo-profile-field wpforo-td wpfbg-9">
@@ -127,7 +127,7 @@
                       </div>
                       <div class="wpforo-tr">
                         <?php if($gtalk) : ?>
-                            <div class="wpforo-td"><?php wpforo_phrase('Google+') ?>:</div><div class="wpforo-td"><?php echo ( $social_access  ? '<a href="'.esc_url($gtalk).'" target="_blank">'.esc_html($gtalk).'</a>' : ''  ) ?></div>
+                            <div class="wpforo-td"><?php wpforo_phrase('Gtalk') ?>:</div><div class="wpforo-td"><?php echo ( $social_access  ? '<a href="'.esc_url($gtalk).'" target="_blank">'.esc_html($gtalk).'</a>' : ''  ) ?></div>
                         <?php endif ?>
                       </div>
                       <div class="wpforo-tr">
@@ -159,7 +159,7 @@
                 </div>
               </div>
             <?php endif ?>
-            <?php if( $wpforo->perm->usergroup_can('vmlad') ): ?>
+            <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmlad' ) ): ?>
                 <?php if($last_login) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Last Active') ?></div>
@@ -167,7 +167,7 @@
                   </div>
                 <?php endif ?>
              <?php endif ?>
-            <?php if( $wpforo->perm->usergroup_can('vml') ): ?>
+            <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vml' ) ): ?>
                 <?php if($location) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Location') ?></div>
@@ -181,7 +181,7 @@
                   </div>
                 <?php endif ?>
             <?php endif ?>
-            <?php if( $wpforo->perm->usergroup_can('vmo') ): ?>
+            <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vmo' ) ): ?>
               <?php if($occupation) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Occupation') ?></div>
@@ -189,7 +189,7 @@
                   </div>
                 <?php endif ?>
             <?php endif ?>
-            <?php if( $wpforo->perm->usergroup_can('vms') ): ?>
+            <?php if( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'vms' ) ): ?>
                 <?php if($signature) : ?>
                   <div class="wpforo-tr">
                     <div class="wpforo-profile-label wpforo-th wpfbg-7"><?php wpforo_phrase('Signature') ?></div>

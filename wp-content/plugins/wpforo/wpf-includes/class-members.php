@@ -12,10 +12,6 @@ class wpForoMember{
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
 		add_action('delete_user_form', array(&$this, 'show_delete_form'), 10, 2);
 	}
-	
-	public function send_new_user_notifications($user_id, $notify = 'admin'){
-		wp_send_new_user_notifications( $user_id, $notify );
-	}
  
  	private function add_profile($args){
  		if(empty($args)) return FALSE;
@@ -141,9 +137,6 @@ class wpForoMember{
 			return FALSE;
 		}
 		if( !empty($args) && is_array($args) && !empty($args['user_pass1']) ){
-			remove_action('register_new_user', 'wp_send_new_user_notifications');
-			add_action('register_new_user', array($this, 'send_new_user_notifications'));
-			
 			$errors = new WP_Error();
 			
 			extract($args, EXTR_OVERWRITE);
@@ -304,12 +297,6 @@ class wpForoMember{
 			$error = sanitize_text_field($_FILES['avatar']['error']); //0
 			$size = intval($_FILES['avatar']['size']); //6112
 			
-			if( $size > 2*1048576 ){
-				$this->wpforo->notice->clear();
-				$this->wpforo->notice->add('Avatar image is too big maximum allowed size is 2MB', 'error');
-				return FALSE;
-			}
-			
 			if( $error ){
 				$error = wpforo_file_upload_error($error);
 				$this->wpforo->notice->clear();
@@ -346,7 +333,7 @@ class wpForoMember{
 						$image->resize( 150, 150, true );
 						$image->save( $avatar_path );
 					}
-					$blog_url = preg_replace('#^https?\:#is', '', $upload_dir['baseurl']);
+					$blog_url = preg_replace('|^https?\:|is', '', $upload_dir['baseurl']);
 					$this->wpforo->db->update($this->wpforo->db->prefix.'wpforo_profiles', array('avatar' => $blog_url . "/wpforo/avatars/" . $avatar_fname), array('userid' => intval($userid)), array('%s'), array('%d'));
 					$this->reset($userid);
 				}
@@ -517,7 +504,7 @@ class wpForoMember{
 		}
 	}
 	
-	function search($needle, $fields = array(), $limit = NULL){
+	function search($needle, $fields = array()){
 		
 		if($needle != ''){
 			$needle = sanitize_text_field($needle);
@@ -540,9 +527,12 @@ class wpForoMember{
 			
 			if(!empty($wheres)){
 				$sql .= " WHERE " . implode($wheres, " OR ");
-				if( $limit ) $sql .= " LIMIT " . intval($limit);
-				
-				return $this->wpforo->db->get_col($sql);
+				$results = $this->wpforo->db->get_results($sql, ARRAY_A);
+				$userids = array();
+				foreach($results as $result){
+					$userids[] = $result['ID'];
+				}
+				return $userids;
 			}else{
 				return array();
 			}
@@ -553,11 +543,7 @@ class wpForoMember{
 	}
 	
 	function ban($userid){
-		if( $userid == $this->wpforo->current_userid ){
-			$this->wpforo->notice->add('You can\'t make yourself banned user', 'error');
-			return FALSE;
-		}
-		if( !$this->wpforo->perm->usergroup_can('bm') || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
+		if( !$this->wpforo->perm->usergroup_can( $this->wpforo->current_user_groupid , 'bm' ) || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
 			$this->wpforo->notice->add('Permission denied for this action', 'error');
 			return FALSE;
 		}
@@ -579,7 +565,7 @@ class wpForoMember{
 	}
 	
 	function unban($userid){
-		if( !$this->wpforo->perm->usergroup_can('bm') || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
+		if( !$this->wpforo->perm->usergroup_can( $this->wpforo->current_user_groupid , 'bm' ) || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
 			$this->wpforo->notice->add('Permission denied for this action', 'error');
 			return FALSE;
 		}
@@ -609,7 +595,7 @@ class wpForoMember{
 	*/
 	public function delete( $userid, $reassign = NULL ){
 		if( !($userid = intval($userid)) ) return FALSE;
-		if( !$this->wpforo->perm->usergroup_can('dm') || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
+		if( !$this->wpforo->perm->usergroup_can( $this->wpforo->current_user_groupid , 'dm' ) || !$this->wpforo->perm->user_can_manage_user( $this->wpforo->current_userid, intval( $userid ) )){
 			$this->wpforo->notice->add('Permission denied for this action', 'error');
 			return FALSE;
 		}
@@ -1132,55 +1118,6 @@ class wpForoMember{
 				});
 			</script>
 		<?php endif;
-	}
-	
-	
-	
-	public function autoban($userid){
-		if( !$this->wpforo->perm->usergroup_can( 'em' ) ){
-			$this->wpforo->db->update(
-				$this->wpforo->db->prefix.'wpforo_profiles',
-				array('status' => 'banned'),
-				array('userid' => intval( $userid )),
-				array('%s'),
-				array('%d')
-			);
-		}
-	}
-	
-	public function member_approved_posts( $member = array() ){
-		if(is_numeric($member)){
-			if( isset($this->wpforo->current_user['posts']) && $this->wpforo->current_user['posts'] && $member == $this->wpforo->current_userid ){
-				return $this->wpforo->current_user['posts'];
-			}
-			else{
-				return $this->wpforo->db->get_var( "SELECT COUNT(*) as posts FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `status` = 0 AND `userid` = " . intval($member) );
-			}
-		}
-		elseif(is_array($member) && !empty($member)){
-			return intval($member['posts']);
-		}
-		else{
-			return 0;
-		}
-	}
-	
-	public function current_user_is_new(){
-		if( $this->wpforo->perm->usergroup_can( 'em' ) ){
-			//This is an admin or moderator. The number of posts doesn't matter.
-			return false;
-		}
-		else{
-			$posts = $this->member_approved_posts( $this->wpforo->current_userid );
-			if ( $posts < $this->wpforo->tools_antispam['new_user_max_posts'] ) {
-				return true;
-			}
-		}
-	}
-	
-	function banned_count(){
-		$count = $this->wpforo->db->get_var("SELECT count(*) FROM `".$this->wpforo->db->prefix."wpforo_profiles` WHERE `status` = 'banned' " );
-		return $count;
 	}
 	
 }

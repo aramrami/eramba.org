@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Forum - wpForo\n"
-"POT-Creation-Date: 2017-01-03 11:02+0300\n"
-"PO-Revision-Date: 2017-01-03 11:03+0300\n"
-"Last-Translator: gVectors Team <info@gvectors.com>\n"
+"POT-Creation-Date: 2016-12-02 16:57+0400\n"
+"PO-Revision-Date: 2016-12-02 16:57+0400\n"
+"Last-Translator: Ger Metselaar i.o.v. Parma multimedia BV <info@parma.be>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,23 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: wpf-admin/addons.php:14 wpf-admin/addons.php:22
+#: wpf-admin/addons.php:7
+msgid ""
+"Adds an advanced file attachment system to forum topics and posts. AJAX "
+"powered media uploading and displaying system with user specific library."
+msgstr ""
+
+#: wpf-admin/addons.php:8
+msgid ""
+"Allows to embed hundreds of video, social network, audio and photo content "
+"providers in forum topics and posts."
+msgstr ""
+
+#: wpf-admin/addons.php:16 wpf-admin/addons.php:24
 msgid "wpForo Addons"
 msgstr ""
 
-#: wpf-admin/addons.php:28
+#: wpf-admin/addons.php:30
 msgid ""
 "All wpForo addons are being developed by wpForo developers at gVectors Team. "
 "Addon prices also include a small donation to the hard work wpForo "
@@ -40,23 +52,23 @@ msgid ""
 "with new free functions and features even faster than before."
 msgstr ""
 
-#: wpf-admin/addons.php:51
+#: wpf-admin/addons.php:53
 msgid "Installed"
 msgstr ""
 
-#: wpf-admin/addons.php:55
+#: wpf-admin/addons.php:57
 msgid "Version"
 msgstr ""
 
-#: wpf-admin/addons.php:56
+#: wpf-admin/addons.php:58
 msgid "at least"
 msgstr ""
 
-#: wpf-admin/addons.php:58
+#: wpf-admin/addons.php:60
 msgid "Details | Buy"
 msgstr ""
 
-#: wpf-admin/addons.php:64
+#: wpf-admin/addons.php:66
 msgid "More information about"
 msgstr ""
 
@@ -226,7 +238,7 @@ msgstr "Verwijder zinnencache"
 msgid "Delete User Cache"
 msgstr "Verwijder gebruikercache"
 
-#: wpf-admin/forum.php:13 wpf-includes/functions.php:662
+#: wpf-admin/forum.php:13 wpf-includes/functions.php:627
 #: wpf-includes/wpf-phrases.php:301
 msgid "Show on screen"
 msgstr "Toon op het scherm"
@@ -256,7 +268,7 @@ msgstr "Scherm layout"
 msgid "Number of Columns"
 msgstr "Aantal kolommen"
 
-#: wpf-admin/forum.php:32 wpf-includes/functions.php:676
+#: wpf-admin/forum.php:32 wpf-includes/functions.php:641
 #: wpf-includes/wpf-phrases.php:274
 msgid "Screen Options"
 msgstr "Scherm opties"
@@ -343,7 +355,7 @@ msgid "Are you sure you want to delete this forum?"
 msgstr "Weet u zeker dat u dit forum wilt verwijderen?"
 
 #: wpf-admin/forum.php:153 wpf-admin/themes.php:73 wpf-admin/usergroup.php:37
-#: wpf-admin/usergroup.php:133 wpf-includes/wpf-hooks.php:987
+#: wpf-admin/usergroup.php:133 wpf-includes/wpf-hooks.php:1009
 #: wpf-includes/wpf-phrases.php:66
 msgid "Delete"
 msgstr "Verwijder"
@@ -365,41 +377,19 @@ msgstr ""
 "De \"slug\" is de URL-vriendelijke versie van de naam. Het zijn meestal "
 "alleen kleine letters en het bevat alleen letters, cijfers en streepjes."
 
-#: wpf-admin/forum.php:233
-msgid "Forum Icon"
-msgstr ""
-
-#: wpf-admin/forum.php:236
-msgid "Font-awesome Icon"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid "You can find all icons"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid "here"
-msgstr ""
-
-#: wpf-admin/forum.php:238
-msgid ""
-"Make sure you insert a class of font-awesome icon, it should start with fa- "
-"prefix like &quot;fa-comments&quot;."
-msgstr ""
-
-#: wpf-admin/forum.php:245 wpf-includes/wpf-phrases.php:116
+#: wpf-admin/forum.php:233 wpf-includes/wpf-phrases.php:116
 msgid "Forum SEO"
 msgstr "Forum SEO"
 
-#: wpf-admin/forum.php:248 wpf-includes/wpf-phrases.php:183
+#: wpf-admin/forum.php:236 wpf-includes/wpf-phrases.php:183
 msgid "Meta Description"
 msgstr "Meta beschrijving"
 
-#: wpf-admin/forum.php:277 wpf-includes/wpf-phrases.php:328
+#: wpf-admin/forum.php:265 wpf-includes/wpf-phrases.php:328
 msgid "This action will also delete all sub-forums, topics and replies."
 msgstr "Deze actie wist ook alle sub-forums, onderwerpen en antwoorden."
 
-#: wpf-admin/forum.php:285 wpf-includes/wpf-phrases.php:137
+#: wpf-admin/forum.php:273 wpf-includes/wpf-phrases.php:137
 msgid ""
 "If you want to delete this forum and keep its sub-forums, topics and "
 "replies, please select a new target forum in dropdown below"
@@ -407,7 +397,7 @@ msgstr ""
 "Als u dit forum wilt verwijderen en de sub-forums, onderwerpen en antwoorden "
 "wilt behouden, selecteer dan een nieuw doel forum in de dropdown hieronder."
 
-#: wpf-admin/forum.php:294 wpf-includes/wpf-phrases.php:26
+#: wpf-admin/forum.php:282 wpf-includes/wpf-phrases.php:26
 msgid ""
 "All sub-forums, topics and replies will be attached to selected forum. "
 "Layout will be inherited from this forum."
@@ -448,7 +438,7 @@ msgid "Admin"
 msgstr "Beheerder"
 
 #: wpf-admin/options-tabs/accesses.php:32 wpf-includes/class-forums.php:549
-#: wpf-includes/functions.php:504 wpf-includes/wpf-phrases.php:381
+#: wpf-includes/functions.php:475 wpf-includes/wpf-phrases.php:381
 msgid "edit"
 msgstr "bewerk"
 
@@ -461,7 +451,7 @@ msgstr ""
 "aan deze toegang zijn gekoppeld verliezen alle permissies."
 
 #: wpf-admin/options-tabs/accesses.php:34 wpf-includes/class-forums.php:551
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:380
 msgid "delete"
 msgstr "verwijder"
@@ -478,17 +468,17 @@ msgstr "Opslaan"
 msgid "Update"
 msgstr "Bijwerken"
 
-#: wpf-admin/options-tabs/emails.php:13
-msgid "FROM Name"
-msgstr ""
+#: wpf-admin/options-tabs/emails.php:13 wpf-includes/wpf-phrases.php:126
+msgid "From Name"
+msgstr "Naam afzender"
 
-#: wpf-admin/options-tabs/emails.php:17
-msgid "FROM Email Address"
-msgstr ""
+#: wpf-admin/options-tabs/emails.php:17 wpf-includes/wpf-phrases.php:125
+msgid "From Email Address"
+msgstr "email adres va de afzender"
 
-#: wpf-admin/options-tabs/emails.php:22
-msgid "Forum Admins email addresses"
-msgstr ""
+#: wpf-admin/options-tabs/emails.php:22 wpf-includes/wpf-phrases.php:106
+msgid "Forum Admin Email Addresses"
+msgstr "Email adres van de forumbeheerder"
 
 #: wpf-admin/options-tabs/emails.php:23 wpf-includes/wpf-phrases.php:57
 msgid ""
@@ -499,13 +489,13 @@ msgstr ""
 "meldingen te verkrijgen. Bijvoorbeeld rapportberichten."
 
 #: wpf-admin/options-tabs/emails.php:29
-msgid "Notify Admins via email on new Topic"
+msgid "Notify via email on New Topic"
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:30
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
-"administrators when a new Topic is created."
+"administrators when a  new Topic is created."
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:34 wpf-admin/options-tabs/emails.php:46
@@ -519,13 +509,13 @@ msgid "No"
 msgstr "Nee"
 
 #: wpf-admin/options-tabs/emails.php:41
-msgid "Notify Admins via email on new Post"
+msgid "Notify via email on New Post"
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:42
 msgid ""
 "Send Notification emails to all email addresses (comma separated ) of forum "
-"administrators when a new Reply is created."
+"administrators when a  new Reply is created."
 msgstr ""
 
 #: wpf-admin/options-tabs/emails.php:53 wpf-includes/wpf-phrases.php:317
@@ -1074,12 +1064,12 @@ msgid "Server \"post_max_size\" is "
 msgstr "Server \"post_max_size\" is"
 
 #: wpf-admin/options-tabs/posts.php:56
-msgid "Attachment click - message for non-permitted users"
+msgid "Attachment click - message for non permited users"
 msgstr ""
 
 #: wpf-admin/options-tabs/posts.php:57
 msgid ""
-"This message will be displayed when a non-permitted forum member clicks on "
+"This message will been displayed when a non permited forum member clicks on "
 "attached file link in topic and posts."
 msgstr ""
 
@@ -1245,71 +1235,59 @@ msgstr ""
 msgid "Add a new Forum in this Category"
 msgstr ""
 
-#: wpf-includes/class-members.php:156
+#: wpf-includes/class-members.php:149
 msgid "<strong>ERROR</strong>: Please enter a username."
 msgstr ""
 
-#: wpf-includes/class-members.php:160
+#: wpf-includes/class-members.php:153
 msgid ""
 "<strong>ERROR</strong>: This username is invalid because it uses illegal "
 "characters. Please enter a valid username."
 msgstr ""
 
-#: wpf-includes/class-members.php:169
+#: wpf-includes/class-members.php:162
 msgid ""
 "<strong>ERROR</strong>: This username is already registered. Please choose "
 "another one."
 msgstr ""
 
-#: wpf-includes/class-members.php:173
+#: wpf-includes/class-members.php:166
 msgid "<strong>ERROR</strong>: Sorry, that username is not allowed."
 msgstr ""
 
-#: wpf-includes/class-members.php:177
+#: wpf-includes/class-members.php:170
 msgid "<strong>ERROR</strong>: Please type your email address."
 msgstr ""
 
-#: wpf-includes/class-members.php:181
+#: wpf-includes/class-members.php:174
 msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
 msgstr ""
 
-#: wpf-includes/class-members.php:186
+#: wpf-includes/class-members.php:179
 msgid ""
 "<strong>ERROR</strong>: This email is already registered, please choose "
 "another one."
 msgstr ""
 
-#: wpf-includes/class-members.php:1109
+#: wpf-includes/class-members.php:1098
 msgid "What should be done with wpForo content owned by this user?"
 msgstr ""
 
-#: wpf-includes/class-members.php:1111
+#: wpf-includes/class-members.php:1100
 msgid "What should be done with wpForo content owned by these users?"
 msgstr ""
 
-#: wpf-includes/class-members.php:1115
+#: wpf-includes/class-members.php:1104
 msgid "Delete all wpForo content."
 msgstr ""
 
-#: wpf-includes/class-members.php:1117
+#: wpf-includes/class-members.php:1106
 msgid "Attribute all content to:"
 msgstr ""
 
 #: wpf-includes/class-notices.php:131 wpf-includes/wpf-phrases.php:69
 msgid "Dismiss this notice."
 msgstr "Deze melding negeren."
-
-#: wpf-includes/class-notices.php:147
-msgid "New Addons for Your Forum!"
-msgstr ""
-
-#: wpf-includes/class-notices.php:147
-msgid "Extend your forum with wpForo addons"
-msgstr ""
-
-#: wpf-includes/class-notices.php:160
-msgid "View all Addons"
-msgstr ""
 
 #: wpf-includes/class-permissions.php:116 wpf-includes/wpf-phrases.php:420
 #, php-format
@@ -1321,11 +1299,11 @@ msgstr "%s toegang toegevoegd"
 msgid "%s access successfully edited"
 msgstr "%s toegang gewijzigd"
 
-#: wpf-includes/class-phrases.php:169 wpf-includes/wpf-phrases.php:7
+#: wpf-includes/class-phrases.php:166 wpf-includes/wpf-phrases.php:7
 msgid " Forum"
 msgstr " Forum"
 
-#: wpf-includes/class-phrases.php:170 wpf-includes/wpf-phrases.php:6
+#: wpf-includes/class-phrases.php:167 wpf-includes/wpf-phrases.php:6
 msgid " Discussion Board"
 msgstr " Discussie forum"
 
@@ -1341,7 +1319,7 @@ msgstr "Koppelingstekst"
 msgid "Open link in a new tab"
 msgstr "Koppeling in nieuw tabblad openen"
 
-#: wpf-includes/class-template.php:924 wpf-includes/wpf-phrases.php:327
+#: wpf-includes/class-template.php:922 wpf-includes/wpf-phrases.php:327
 msgid "Theme file not readable"
 msgstr "Thema-bestand niet leesbaar"
 
@@ -1398,90 +1376,86 @@ msgstr "Avatars weergeven"
 msgid "Display with Avatars"
 msgstr "Met avatars weergeven"
 
-#: wpf-includes/functions.php:324 wpf-includes/functions.php:581
+#: wpf-includes/functions.php:310 wpf-includes/functions.php:546
 #: wpf-includes/wpf-phrases.php:50
 msgid "Bulk Actions"
 msgstr "Bulk acties"
 
-#: wpf-includes/functions.php:329 wpf-includes/functions.php:667
+#: wpf-includes/functions.php:315 wpf-includes/functions.php:632
 #: wpf-includes/wpf-phrases.php:36
 msgid "Apply"
 msgstr "Toepassen"
 
-#: wpf-includes/functions.php:338 wpf-includes/wpf-phrases.php:300
+#: wpf-includes/functions.php:324 wpf-includes/wpf-phrases.php:300
 msgid "Show all forums"
 msgstr "Toon alle forums"
 
-#: wpf-includes/functions.php:351 wpf-includes/wpf-phrases.php:350
+#: wpf-includes/functions.php:337 wpf-includes/wpf-phrases.php:350
 msgid "filter by group"
 msgstr ""
 
-#: wpf-includes/functions.php:363
+#: wpf-includes/functions.php:350
 msgid "filter by status"
 msgstr ""
 
-#: wpf-includes/functions.php:379
-msgid "filter by package"
-msgstr ""
-
-#: wpf-includes/functions.php:399 wpf-includes/functions.php:589
+#: wpf-includes/functions.php:370 wpf-includes/functions.php:554
 #: wpf-includes/wpf-phrases.php:385
 msgid "item"
 msgstr "item"
 
-#: wpf-includes/functions.php:432 wpf-includes/functions.php:448
+#: wpf-includes/functions.php:403 wpf-includes/functions.php:419
 #: wpf-includes/wpf-phrases.php:284
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: wpf-includes/functions.php:508 wpf-includes/wpf-phrases.php:383
+#: wpf-includes/functions.php:478 wpf-includes/wpf-phrases.php:383
 msgid "edit user"
 msgstr "gebruiker aanpassen"
 
-#: wpf-includes/functions.php:512 wpf-includes/wpf-phrases.php:382
+#: wpf-includes/functions.php:481 wpf-includes/wpf-phrases.php:382
 msgid "edit profile"
 msgstr "profiel aanpassen"
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "unban user"
 msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "ban user"
 msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "Are you sure, you want to unban this user?"
 msgstr ""
 
-#: wpf-includes/functions.php:517
+#: wpf-includes/functions.php:485
 msgid "Are you sure, you want to ban this user?"
 msgstr ""
 
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:67
 msgid "Delete this item"
 msgstr "Verwijder dit item"
 
-#: wpf-includes/functions.php:522 wpf-includes/functions.php:527
+#: wpf-includes/functions.php:489 wpf-includes/functions.php:493
 #: wpf-includes/wpf-phrases.php:41
 msgid "Are you sure you whant to DELETE this item?"
 msgstr "Weet u zeker dat u dit item wilt VERWIJDEREN?"
 
-#: wpf-includes/functions.php:541 wpf-includes/functions.php:542
+#: wpf-includes/functions.php:506 wpf-includes/functions.php:507
 #: wpf-includes/wpf-phrases.php:404
 msgid "view"
 msgstr "toon"
 
-#: wpf-includes/functions.php:573 wpf-includes/wpf-phrases.php:200
+#: wpf-includes/functions.php:538 wpf-includes/wpf-phrases.php:200
 msgid "No items found"
 msgstr "Geen items gevonden"
 
-#: wpf-includes/functions.php:666 wpf-includes/wpf-phrases.php:141
+#: wpf-includes/functions.php:631 wpf-includes/wpf-phrases.php:141
 msgid "Items"
 msgstr "Items"
 
-#: wpf-includes/functions.php:936
+#: wpf-includes/functions.php:901
 #, php-format
 msgid "Could not write file %s"
 msgstr "Kon het bestand %s niet schrijven"
@@ -1508,23 +1482,23 @@ msgstr ""
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: wpf-includes/wpf-hooks.php:986 wpf-includes/wpf-phrases.php:187
+#: wpf-includes/wpf-hooks.php:1008 wpf-includes/wpf-phrases.php:187
 msgid "Move"
 msgstr "Verplaats"
 
-#: wpf-includes/wpf-hooks.php:1021
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Clear"
 msgstr "Wis"
 
-#: wpf-includes/wpf-hooks.php:1021
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Default"
 msgstr "Standaard"
 
-#: wpf-includes/wpf-hooks.php:1021
+#: wpf-includes/wpf-hooks.php:1043
 msgid "Select Color"
 msgstr "Selecteer kleur"
 
-#: wpf-includes/wpf-hooks.php:1044
+#: wpf-includes/wpf-hooks.php:1066
 msgid ""
 "IMPORTANT: wpForo can't work with default permalink, please change permalink "
 "structure"
@@ -1532,11 +1506,11 @@ msgstr ""
 "BELANGRIJK: wpForo kan niet werken met de standaard permalink, verander svp "
 "de permalink structuur"
 
-#: wpf-includes/wpf-hooks.php:1065 wpf-includes/wpf-phrases.php:412
+#: wpf-includes/wpf-hooks.php:1087 wpf-includes/wpf-phrases.php:412
 msgid "wpForo Usergroup"
 msgstr "wpForo Gebruikersgroep"
 
-#: wpf-includes/wpf-hooks.php:1073 wpf-includes/wpf-phrases.php:411
+#: wpf-includes/wpf-hooks.php:1095 wpf-includes/wpf-phrases.php:411
 msgid "wpForo User Timezone"
 msgstr "wpForo Gebruiker Tijdzone"
 
@@ -1722,10 +1696,6 @@ msgstr "Forum - Pagina niet gevonden"
 msgid "Forum - Registration"
 msgstr "Forum - Registratie"
 
-#: wpf-includes/wpf-phrases.php:106
-msgid "Forum Admin Email Addresses"
-msgstr "Email adres van de forumbeheerder"
-
 #: wpf-includes/wpf-phrases.php:109
 msgid "Forum Home"
 msgstr "Forum home"
@@ -1749,14 +1719,6 @@ msgstr "Forum statistieken"
 #: wpf-includes/wpf-phrases.php:122
 msgid "Forum is empty"
 msgstr "Het forum is leeg"
-
-#: wpf-includes/wpf-phrases.php:125
-msgid "From Email Address"
-msgstr "email adres va de afzender"
-
-#: wpf-includes/wpf-phrases.php:126
-msgid "From Name"
-msgstr "Naam afzender"
 
 #: wpf-includes/wpf-phrases.php:131
 msgid "Group"
@@ -2923,31 +2885,31 @@ msgid "Your topic successfully added"
 msgstr "Uw onderwerp is toegevoegd"
 
 #: wpf-includes/wpf-phrases.php:533
-msgid "Dashboard - Can create forum"
+msgid "Dahsboard - Can create forum"
 msgstr "Dashboard - kan forum maken"
 
 #: wpf-includes/wpf-phrases.php:534
-msgid "Dashboard - Can edit forum"
+msgid "Dahsboard - Can edit forum"
 msgstr "Dashboard - kan forum wijzigen"
 
 #: wpf-includes/wpf-phrases.php:535
-msgid "Dashboard - Can delete forum"
+msgid "Dahsboard - Can delete forum"
 msgstr "Dashboard - kan forum verwijderen"
 
 #: wpf-includes/wpf-phrases.php:536
-msgid "Dashboard - Members Menu"
+msgid "Dahsboard - Members Menu"
 msgstr "Dashboard - toegang tot het leden menu"
 
 #: wpf-includes/wpf-phrases.php:537
-msgid "Dashboard - Can edit member"
+msgid "Dahsboard - Can edit member"
 msgstr "Dashboard - kan lid wijzigen"
 
 #: wpf-includes/wpf-phrases.php:538
-msgid "Dashboard - Can delete member"
+msgid "Dahsboard - Can delete member"
 msgstr "Dashboard - kan lid verwijderen"
 
 #: wpf-includes/wpf-phrases.php:539
-msgid "Dashboard - Usergroup Menu"
+msgid "Dahsboard - Usergroup Menu"
 msgstr "Dashboard - toegang tot het gebruikersgroep menu"
 
 #: wpf-includes/wpf-phrases.php:540
@@ -3302,18 +3264,6 @@ msgstr ""
 "Deze optie zal WordPress op het front-end te schakelen. Alleen forum "
 "pagina's worden getoond. wpForo zal er uit zien als een stand-alone forum."
 
-#: wpforo.php:344
-msgid ""
-"Adds an advanced file attachment system to forum topics and posts. AJAX "
-"powered media uploading and displaying system with user specific library."
-msgstr ""
-
-#: wpforo.php:345
-msgid ""
-"Allows to embed hundreds of video, social network, audio and photo content "
-"providers in forum topics and posts."
-msgstr ""
-
 #. Plugin Name of the plugin/theme
 msgid "Forum - wpForo"
 msgstr "Forum - wpForo"
@@ -3339,27 +3289,6 @@ msgstr "gVectors Team (A. Chakhoyan, R. Hovhannisyan)"
 #. Author URI of the plugin/theme
 msgid "http://gvectors.com/"
 msgstr "http://gvectors.com/"
-
-#~ msgid "Dahsboard - Can create forum"
-#~ msgstr "Dashboard - kan forum maken"
-
-#~ msgid "Dahsboard - Can edit forum"
-#~ msgstr "Dashboard - kan forum wijzigen"
-
-#~ msgid "Dahsboard - Can delete forum"
-#~ msgstr "Dashboard - kan forum verwijderen"
-
-#~ msgid "Dahsboard - Members Menu"
-#~ msgstr "Dashboard - toegang tot het leden menu"
-
-#~ msgid "Dahsboard - Can edit member"
-#~ msgstr "Dashboard - kan lid wijzigen"
-
-#~ msgid "Dahsboard - Can delete member"
-#~ msgstr "Dashboard - kan lid verwijderen"
-
-#~ msgid "Dahsboard - Usergroup Menu"
-#~ msgstr "Dashboard - toegang tot het gebruikersgroep menu"
 
 #~ msgid "It looks like forum page ID is incorrect, please read this"
 #~ msgstr "Het lijkt er op dat de forumpagina onjuist is, lees svp dit eerst"

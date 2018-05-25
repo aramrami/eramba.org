@@ -3,8 +3,10 @@
 	if( !defined( 'ABSPATH' ) ) exit;
 	if( !current_user_can('administrator') ) exit;
 	
-	$wpforo->notice->refreshAddonPage(); $wpforo->notice->dismissAddonNoteOnPage();
-	
+	$addons = array(
+            'attachments' => array('version' => '1.0.0', 'requires' => '1.1.0', 'class' => 'wpForoAttachments', 'title' => 'Advanced Attachments', 'thumb' => WPFORO_URL . '/wpf-assets/addons/' . 'attachments' . '/header.png', 'desc' => __('Adds an advanced file attachment system to forum topics and posts. AJAX powered media uploading and displaying system with user specific library.', 'wpforo'), 'url' => 'http://gvectors.com/product/wpforo-advanced-attachments/'),
+			'embeds' => array('version' => '1.0.0', 'requires' => '1.1.0', 'class' => 'wpForoEmbeds', 'title' => 'Embeds', 'thumb' => WPFORO_URL . '/wpf-assets/addons/' . 'embeds' . '/header.png', 'desc' => __('Allows to embed hundreds of video, social network, audio and photo content providers in forum topics and posts.', 'wpforo'), 'url' => 'http://gvectors.com/product/wpforo-embeds/'),
+    );
 ?>
 
 <div id="wpf-admin-wrap" class="wrap wpforo-addons">
@@ -38,7 +40,7 @@
     <br style="clear:both">
     <div class="wpforo-addons-wrapper">
         <?php
-        foreach ($wpforo->addons as $key => $addon) {
+        foreach ($addons as $key => $addon) {
             $installed = (class_exists($addon['class'])) ? true : false;
             ?>
             <div class="wpforo-addon-block">
@@ -73,4 +75,5 @@
     <div style="clear:both;"></div>
     <h3>&nbsp;</h3>
     <hr />
+	
 </div>

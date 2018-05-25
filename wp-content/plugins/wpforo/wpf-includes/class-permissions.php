@@ -10,14 +10,6 @@ class wpForoPermissions{
 	
 	function __construct( $wpForo ){
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
-		if( isset( $this->wpforo->post_options['lang'] ) && $this->wpforo->post_options['lang'] ){
-			$accesses = $this->get_accesses();
-			if(!empty($accesses)){
-				foreach( $accesses as $access ){
-					$this->wpforo->access[$access['access']] = $access;
-				}
-			}
-		}
 	}
  	
  	/**
@@ -28,13 +20,8 @@ class wpForoPermissions{
 	 */
  	function get_access($access){
 		$access = sanitize_text_field($access);
-		if( isset($this->wpforo->access[$access]) && !empty($this->wpforo->access[$access]) ){
-			return $this->wpforo->access[$access];
-		}
-		else{
-			$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_accesses` WHERE `access` = '" . esc_sql($access) . "'";
-			return $this->wpforo->db->get_row($sql, ARRAY_A);
-		}
+		$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_accesses` WHERE `access` = '" . esc_sql($access) . "'";
+		return $this->wpforo->db->get_row($sql, ARRAY_A);
 	}
 	
 	
@@ -177,24 +164,16 @@ class wpForoPermissions{
 		return FALSE;
 	}
 	
-	function forum_can( $do, $forumid = NULL, $groupid = NULL ){
-		
+	function forum_can( $do, $forumid = NULL ){
 		$can = 0;
-		if( !$this->wpforo->current_user_groupid ) return 0;
-		
-		if( is_null($forumid) && isset($this->wpforo->current_object['forumid']) ) {
-			$forumid = $this->wpforo->current_object['forumid'];
-		}
+		if( is_null($forumid) && isset($this->wpforo->current_object['forumid']) ) 
+			$forumid = intval($this->wpforo->current_object['forumid']);
 		$forumid = intval($forumid);
-		
-		if( is_null($groupid) ) {
-			$groupid = $this->wpforo->current_user_groupid;
-		}
-		
+		if( !$this->wpforo->current_user_groupid ) return 0;
 		if( $forum = $this->wpforo->forum->get_forum($forumid, true) ){
 			$permissions = unserialize($forum['permissions']);
-			if( isset($permissions[$groupid]) ){
-				$access = $permissions[$groupid];
+			if( isset($permissions[$this->wpforo->current_user_groupid]) ){
+				$access = $permissions[$this->wpforo->current_user_groupid];
 				$access_arr = $this->get_access($access);
 				$cans = unserialize($access_arr['cans']);
 				$can = ( isset($cans[$do]) ? $cans[$do] : 0 );
@@ -203,8 +182,7 @@ class wpForoPermissions{
 		return $can;
 	}
 	
-	function usergroup_can( $do, $usergroupid = NULL ){
-		if( is_null($usergroupid) ) $usergroupid = $this->wpforo->current_user_groupid;
+	function usergroup_can( $usergroupid, $do ){
 		$usergroupid = intval($usergroupid);
 		$usergroup = $this->wpforo->usergroup->get_usergroup( $usergroupid );
 		$cans = unserialize($usergroup['cans']);
@@ -233,8 +211,8 @@ class wpForoPermissions{
 		elseif( (int)$user_level == (int)$managing_user_level ){
 			$member = $this->wpforo->member->get_member( $user_id );
 			$managing_member = $this->wpforo->member->get_member( $managing_user_id );
-			$user_wpforo_can = $this->usergroup_can( 'em', $member['groupid'] );
-			$managing_user_wpforo_can = $this->usergroup_can( 'em', $managing_member['groupid'] );
+			$user_wpforo_can = $this->usergroup_can( $member['groupid'], 'em' );
+			$managing_user_wpforo_can = $this->usergroup_can( $managing_member['groupid'], 'em' );
 			if( $user_wpforo_can && !$managing_user_wpforo_can ){
 				return true;
 			}
@@ -269,51 +247,6 @@ class wpForoPermissions{
 		return $level;
 	}
 	
-	
-	
-	public function can_link(){
-		if( !$this->wpforo->perm->usergroup_can( 'em' ) ){
-			$posts = $this->wpforo->member->member_approved_posts( $this->wpforo->current_userid );
-			$posts = intval($posts);
-			if( isset($this->wpforo->tools_antispam['min_number_post_to_link']) ){
-				$min_posts = intval($this->wpforo->tools_antispam['min_number_post_to_link']);
-				if( $min_posts != 0 ){
-					if ( $posts <= $min_posts ) {
-						return false;
-					}
-				}
-			}
-		}
-		return true;
-	}
-	
-	public function can_attach(){
-		if( !$this->wpforo->perm->usergroup_can( 'em' ) ){
-			$posts = $this->wpforo->member->member_approved_posts( $this->wpforo->current_userid );
-			$posts = intval($posts);
-			if( isset($this->wpforo->tools_antispam['min_number_post_to_attach']) ){
-				$min_posts = intval($this->wpforo->tools_antispam['min_number_post_to_attach']);
-				if( $min_posts != 0 ){
-					if ( $posts <= $min_posts  ) {
-						return false;
-					}
-				}
-			}
-		}
-		return true;
-	}
-	
-	public function can_attach_file_type( $ext = '' ){
-		if( !$this->wpforo->perm->usergroup_can( 'em' ) ){
-			if( isset($this->wpforo->tools_antispam['limited_file_ext']) && $this->wpforo->member->current_user_is_new() ){
-				$expld = explode('|', $this->wpforo->tools_antispam['limited_file_ext'] );
-				if( in_array($ext, $expld) ){
-					return false;
-				}
-			}
-		}
-		return true;
-	}
 	
 }
 

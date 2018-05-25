@@ -30,24 +30,14 @@
                     <div class="author-posts"><?php wpforo_phrase('Posts') ?>: <?php echo intval($member['posts']) ?></div>
 	            </div>
                 <div class="wpf-clear"></div>
-                <div id="wpforo-memberinfo-toggle-<?php echo intval($post['postid']) ?>" class="wpforo-membertoggle" title="<?php wpforo_phrase('More') ?>">
-                	<i class="fa fa-caret-down" aria-hidden="true"></i>
-                </div>
-            	<div id="wpforo-memberinfo-<?php echo intval($post['postid']) ?>" class="wpforo-memberinfo">
-                	<div class="wpf-member-profile-buttons">
-                        <?php $wpforo->tpl->member_buttons($member) ?> 
-                        <?php $wpforo->tpl->member_social_buttons($member) ?>
-                    </div>
-                </div>
 	        </div><!-- left -->
 	        <div class="wpf-right">
 	            <div class="wpforo-post-content-top">
-	                <?php if($post['status']): ?><span class="wpf-mod-message"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php wpforo_phrase('Awaiting moderation') ?></span><?php endif; ?> <span><?php wpforo_date($post['created'], 'd/m/Y g:i a'); ?></span> &nbsp; <a href="<?php echo esc_url($wpforo->post->get_post_url($post['postid'])) ?>"><i class="fa fa-link fa-0x"></i></a>
+	                <span><?php wpforo_date($post['created'], 'd/m/Y g:i a'); ?></span> &nbsp; <a href="<?php echo esc_url($wpforo->post->get_post_url($post['postid'])) ?>"><i class="fa fa-link fa-0x"></i></a>
 	            </div><!-- wpforo-post-content-top -->
 	            <div class="wpforo-post-content">
-					<?php echo wpforo_content_filter( wpforo_kses($post['body'], 'post') ) ?>
+					 <?php echo wpforo_content_filter( wpforo_kses($post['body'], 'post') ) ?>
 	            </div>
-	            <?php do_action( 'wpforo_tpl_post_loop_after_content', $post, $member ) ?>
                 <?php wpforo_post_edited($post); ?>
                 <?php if( wpforo_feature('signature', $wpforo) ): ?>
 	            	<?php if($member['signature']): ?><div class="wpforo-post-signature"><?php echo wpautop(wpforo_kses(stripslashes($member['signature']), 'user_description')) ?></div><?php endif; ?>
@@ -60,11 +50,11 @@
 				</div>
 	            <div class="bright">
 	            	<?php if( $post['is_first_post'] ){
-	            		$buttons = array( 'reply', 'quote',	'like', 'solved', 'sticky', 'private', 'close', 'report', 'move', 'edit', 'delete' );
-						$wpforo->tpl->buttons( $buttons, $forum, $topic, $post, TRUE );  
+	            		$buttons = array( 'reply', 'quote',	'like', 'solved', 'sticky', 'close', 'report', 'move', 'edit', 'delete' );
+						$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'], TRUE );  
 					}else{
 						$buttons = array( 'reply', 'quote', 'like', 'report', 'edit', 'delete' );
-						$wpforo->tpl->buttons( $buttons, $forum, $topic, $post );  
+						$wpforo->tpl->buttons( $buttons, $forum['forumid'], $topic['topicid'], $post['postid'] );  
 					} ?>
 				</div>
 	            <div class="wpf-clear"></div>

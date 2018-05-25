@@ -10,22 +10,20 @@ class wpForoPhrase{
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
 	}
 	
-	function add( $args = array() ){
-		if( empty($args) && empty($_REQUEST['phrase']) ) return FALSE;
-		if( empty($args) && !empty($_REQUEST['phrase']) ) $args = $_REQUEST['phrase'];
-		extract($args);
-		
-		if( empty($package) ) $package = 'wpforo';
+	function add(){
+		if(!isset($_POST['phrase']) || empty($_POST['phrase'])){
+			$this->wpforo->notice->add('Phrase adding error', 'error');
+			return FALSE;
+		}
+		$phrase_key = esc_html($_POST['phrase']['key']);
+		$phrase_value = esc_html($_POST['phrase']['value']);
 		$sql = $this->wpforo->db->prepare( "INSERT IGNORE INTO `".$this->wpforo->db->prefix."wpforo_phrases` 
-												(`langid`, `phrase_key`, `phrase_value`, `package`) 
-													VALUES (%d, %s, %s, %s)", 
-														$this->wpforo->general_options['lang'], 
-														stripslashes(esc_html($key)), 
-														stripslashes(esc_html($value)), 
-														stripslashes(esc_html($package)) );
+												(`langid`, `phrase_key`, `phrase_value`) 
+													VALUES (".$this->wpforo->general_options['lang'].", %s, %s)", 
+														stripslashes($phrase_key), stripslashes($phrase_value) );
 		if($this->wpforo->db->query( $sql )){
 			$this->wpforo->notice->add('Phrase successfully added', 'success');
-			$this->clear_cache();
+			$this->wpforo->db->query("DELETE FROM `".$this->wpforo->db->prefix."options` WHERE `option_name` LIKE '%_wpforo_get_phrases_%'");
 			return $this->wpforo->db->insert_id;
 		}
 		$this->wpforo->notice->add('Phrase add error', 'error');
@@ -44,7 +42,7 @@ class wpForoPhrase{
 				);
 				
 			}
-			$this->clear_cache();
+			$this->wpforo->db->query("DELETE FROM `".$this->wpforo->db->prefix."options` WHERE `option_name` LIKE '%_wpforo_get_phrases_%'");
 			$this->wpforo->notice->add('Phrase successfully updates', 'success');
 			return TRUE;
 		}
@@ -54,7 +52,7 @@ class wpForoPhrase{
 	}
 	
 	function get_wpforo_phrase($phraseid){
-		$sql = 'SELECT * FROM '.$this->wpforo->db->prefix.'wpforo_phrases WHERE `phraseid` ='.intval($phraseid);
+		$sql = 'SELECT `langid`, `phrase_key`, `phrase_value` FROM '.$this->wpforo->db->prefix.'wpforo_phrases WHERE `phraseid` ='.intval($phraseid);
 		return $this->wpforo->db->get_row($sql, ARRAY_A);
 	}
 	
@@ -63,7 +61,6 @@ class wpForoPhrase{
 		  'include' => array(), 		// array( 2, 10, 25 )
 		  'exclude' => array(),  		// array( 2, 10, 25 )
 		  'langid' => $this->wpforo->general_options['lang'],
-		  'package' => array(),
 		  
 		  'orderby'		=> 'phraseid', 
 		  'order'		=> 'ASC', 		// ASC DESC
@@ -78,13 +75,11 @@ class wpForoPhrase{
 			
 			extract($args, EXTR_OVERWRITE);
 			
-			$package = wpforo_parse_args( $package );
 			$include = wpforo_parse_args( $include );
 			$exclude = wpforo_parse_args( $exclude );
 			
 			$wheres = array();
 			
-			if(!empty($package))        $wheres[] = "`package` IN('" . implode("','", array_map('esc_sql', array_map('sanitize_text_field', $package))  ) . "')";
 			if(!empty($include))        $wheres[] = "`phraseid` IN(" . implode(', ', array_map('intval', $include)) . ")";
 			if(!empty($exclude))        $wheres[] = "`phraseid` NOT IN(" . implode(', ', array_map('intval', $exclude)) . ")";
 			if($langid != NULL) $wheres[] = "`langid` = " . intval($langid);
@@ -158,11 +153,10 @@ class wpForoPhrase{
 						foreach($vals as $val){
 							if( isset($val['tag']) && $val['tag'] == 'PHRASE' && isset($val['attributes']['NAME']) && trim($val['attributes']['NAME']) && isset($val['value']) && trim($val['value']) ){
 								$sql = "INSERT IGNORE INTO `".$this->wpforo->db->prefix."wpforo_phrases` 
-									(`phraseid`, `langid`, `phrase_key`, `phrase_value`)
 									VALUES( NULL, 
 									  '".esc_sql(trim($langid))."', 
 									  '".esc_sql(trim($val['attributes']['NAME']))."', 
-									  '".esc_sql(trim($val['value']))."')";
+									  '".esc_sql(trim($val['value']))."' )";
 								$this->wpforo->db->query($sql);
 							}
 						}
@@ -231,10 +225,6 @@ class wpForoPhrase{
 				<?php 
 			endforeach;
 		}
-	}
-	
-	function clear_cache(){
-		$this->wpforo->db->query("DELETE FROM " . $this->wpforo->db->prefix . "options WHERE `option_name` LIKE '%_wpforo_get_phrases_%'");
 	}
 	
 }

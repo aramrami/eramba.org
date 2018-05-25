@@ -116,8 +116,6 @@
                             </div>
                         </div><!-- widget / postbox -->
                         
-                        <?php do_action( 'wpforo_dashboard_widgets_col1', $wpforo ); ?>
-                        
                     </div><!-- normal-sortables -->
                 </div><!-- wpforo_postbox_container -->
                 
@@ -155,7 +153,6 @@
                                             <td class="wpf-dw-td-value"><?php echo intval($statistic['online_members_count']) ?></td>
                                         </tr>
 										<?php 
-										$size_da = 0; $size_aa = 0;
                                         $upload_dir = wp_upload_dir();
                                         if( is_dir(  $upload_dir['basedir'] .  '/wpforo/avatars/') ) $size_avatar = wpforo_dir_size( $upload_dir['basedir'] .  '/wpforo/avatars' ); 
                                         if( is_dir(  $upload_dir['basedir'] .  '/wpforo/default_attachments/') ) $size_da = wpforo_dir_size( $upload_dir['basedir'] .  '/wpforo/default_attachments' ); 
@@ -211,8 +208,6 @@
                             </div>
                         </div><!-- widget / postbox -->
                         
-                        <?php do_action( 'wpforo_dashboard_widgets_col2', $wpforo ); ?>
-                        
                     </div><!-- normal-sortables -->
                 </div><!-- wpforo_postbox_container -->
 			<?php endif; ?>
@@ -220,7 +215,7 @@
             <div class="postbox-container" id="postbox-container-3">
                 <div class="meta-box-sortables ui-sortable" id="normal-sortables">
                     
-                    <?php do_action( 'wpforo_dashboard_widgets_col3', $wpforo ); ?>
+                    
                     
                 </div><!-- normal-sortables -->
             </div><!-- wpforo_postbox_container -->

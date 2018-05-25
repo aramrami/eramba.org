@@ -37,7 +37,7 @@ function wpforo_user_admin_bar(){
 add_action('init', 'wpforo_user_admin_bar');
 
 function wpforo_admin_notice__menu_help(){
-	if(strpos(wpforo_get_request_uri(), 'nav-menus.php') !== FALSE){
+	if(strpos(wpforo_full_url(), 'nav-menus.php') !== FALSE){
 		global $wpforo;
 		
 		$message = 'wpForo Menu Shortcodes<hr/><table>';
@@ -127,13 +127,13 @@ function wpftpl( $filename ){
 
 function wpforo_init_template(){
 	global $wpforo;
-	if(wpforo_is_admin()) return;
+	if(is_admin()) return;
 	include_once( wpftpl('index.php') );
 }
 
 add_shortcode( 'wpforo', 'wpforo_load' );
 function wpforo_load( $atts ){
-	if(wpforo_is_admin()) return;
+	if(is_admin()) return;
 	global $wpforo, $post;
 	
 	if( is_wpforo_shortcode_page() ){
@@ -308,7 +308,7 @@ function wpforo_add_meta_tags(){
 		$template = '';
 		$description = '';
 		$udata = array();
-		$canonical = wpforo_get_request_uri();
+		$canonical = wpforo_full_url();
 		$paged = ( $wpforo->current_object['paged'] > 1 ) ? wpforo_phrase( 'page', false) . ' ' . $wpforo->current_object['paged'] .' | ' : '';
 		if(isset($wpforo->current_object['template'])) $template = $wpforo->current_object['template'];
 		if(!empty($wpforo->current_object['forum'])) $forum = $wpforo->current_object['forum'];
@@ -355,7 +355,7 @@ function wpf_like(){
 	global $wpforo;
 	$response = array('stat' => 0, 'likers' => '', 'notice' => $wpforo->notice->get_notices());
 	if(!is_user_logged_in()){
-		$wpforo->notice->add( sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '" rel="nofollow">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '" rel="nofollow">'.wpforo_phrase('Register', FALSE).'</a>' ) );
+		$wpforo->notice->add( sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '">'.wpforo_phrase('Register', FALSE).'</a>' ) );
 		$response['notice'] = $wpforo->notice->get_notices();
 		echo json_encode($response);
 		exit();
@@ -388,7 +388,6 @@ function wpf_like(){
 			), 
 			array('%d','%d','%d')
 		) ){
-			do_action('wpforo_like', $post, $wpforo->current_userid);
 			$wpforo->notice->add('done', 'success');
 			$response['stat'] = 1;
 			$response['notice'] = $wpforo->notice->get_notices();
@@ -402,7 +401,6 @@ function wpf_like(){
 			), 
 			array('%d','%d')
 		) ){
-			do_action('wpforo_dislike', $post, $wpforo->current_userid);
 			$wpforo->notice->add('done', 'success');
 			$response['stat'] = 1;
 			$response['notice'] = $wpforo->notice->get_notices();
@@ -467,7 +465,6 @@ function wpf_vote(){
 		}
 		
 		if($incr !== FALSE && $incr2 !== FALSE){
-			do_action('wpforo_vote', $reaction, $post, $wpforo->current_userid );
 			$wpforo->notice->add('Successfully voted', 'success');
 			echo json_encode(array('stat' => 1, 'notice' => $wpforo->notice->get_notices()));
 			exit();
@@ -484,7 +481,7 @@ function wpf_answer(){
 	global $wpforo;
 	$response = array('stat' => 0, 'notice' => $wpforo->notice->get_notices());
 	if(!is_user_logged_in()){
-		$wpforo->notice->add( sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '" rel="nofollow">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '" rel="nofollow">'.wpforo_phrase('Register', FALSE).'</a>' ) );
+		$wpforo->notice->add( sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '">'.wpforo_phrase('Register', FALSE).'</a>' ) );
 		$response['notice'] = $wpforo->notice->get_notices();
 		echo json_encode($response);
 		exit();
@@ -514,7 +511,6 @@ function wpf_answer(){
 		exit();
 	}
 	if( FALSE !== $wpforo->db->query( "UPDATE ".$wpforo->db->prefix ."wpforo_posts SET is_answer = ".intval($_POST['answerstatus'])." WHERE postid = " . intval($postid) ) ){
-		do_action('wpforo_answer', intval($_POST['answerstatus']), $post);
 		$wpforo->notice->add('done', 'success');
 		$response['stat'] = 1;
 		$response['notice'] = $wpforo->notice->get_notices();
@@ -544,7 +540,7 @@ function wpf_report(){
 	global $wpforo;
 	
 	if( !isset($_POST['reportmsg']) || !$_POST['reportmsg'] || !isset($_POST['postid']) || !$_POST['postid'] ){
-		$wpforo->notice->add('Error: please insert some text to report.', 'error');
+		$wpforo->notice->add('Error: please inset some text to report.', 'error');
 		echo json_encode( $wpforo->notice->get_notices() );
 		exit();
 	}
@@ -600,23 +596,6 @@ function wpf_sticky(){
 		$wpforo->db->query( $sql );
 	}elseif( $_POST['status'] == 'unsticky' ){
 		$sql = "UPDATE ".$wpforo->db->prefix ."wpforo_topics SET type = 0 WHERE topicid = " . intval($p_id);
-		$wpforo->db->query( $sql );
-	}
-	echo 1;
-	exit();
-}
-
-add_action('wp_ajax_wpforo_private_ajax', 'wpf_private');
-function wpf_private(){
-	if(!is_user_logged_in()) return;
-	
-	if( !isset($_POST['postid']) || !( $p_id = intval($_POST['postid']) ) ){ echo 0; exit(); }
-	global $wpforo;
-	if( $_POST['status'] == 'private' ){
-		$sql = "UPDATE " . $wpforo->db->prefix . "wpforo_topics SET private = 1 WHERE topicid = " . intval($p_id);
-		$wpforo->db->query( $sql );
-	}elseif( $_POST['status'] == 'public' ){
-		$sql = "UPDATE ".$wpforo->db->prefix ."wpforo_topics SET private = 0 WHERE topicid = " . intval($p_id);
 		$wpforo->db->query( $sql );
 	}
 	echo 1;
@@ -723,26 +702,6 @@ function wpf_subscribe(){
 	
 	if(isset($_POST['status']) && $_POST['status'] == 'subscribe'){
 		
-		if($_POST['type'] == 'forum'){
-			$forum = $wpforo->forum->get_forum(intval($_POST['itemid']));
-			if( isset($forum['forumid']) && $forum['forumid'] ){
-				if( !$wpforo->perm->forum_can('vf', $forum['forumid']) ){
-					$wpforo->notice->add('You are not permitted to subscribe here', 'error');
-					$return = 0;
-				}
-			}
-		}elseif($_POST['type'] == 'topic'){
-			$topic  = $wpforo->topic->get_topic(intval($_POST['itemid']));
-			if( isset($topic['forumid']) && $topic['forumid'] ){
-				if( isset($topic['private']) && $topic['private'] && !wpforo_is_owner($topic['userid']) ){
-					if( !$wpforo->perm->forum_can('vp', $topic['forumid']) ){
-						$wpforo->notice->add('You are not permitted to subscribe here', 'error');
-						$return = 0;
-					}
-				}
-			}
-		}
-		
 		$args['confirmkey'] = $wpforo->sbscrb->get_confirm_key();
 		
 		if( wpforo_feature('subscribe_conf', $wpforo) ){	
@@ -750,8 +709,10 @@ function wpf_subscribe(){
 			$confirmlink = $wpforo->sbscrb->get_confirm_link($args);
 			$member_name = (isset($wpforo->current_user_display_name) && $wpforo->current_user_display_name) ? $wpforo->current_user_display_name : urldecode($wpforo->current_user['user_nicename']);
 			if($_POST['type'] == 'forum'){
+				$forum = $wpforo->forum->get_forum(intval($_POST['itemid']));
 				$item_title = $forum['title'];
 			}elseif($_POST['type'] == 'topic'){
+				$topic  = $wpforo->topic->get_topic(intval($_POST['itemid']));
 				$item_title = $topic['title'];
 			}
 			$subject = $wpforo->subscribe_options['confirmation_email_subject']; 
@@ -865,7 +826,6 @@ function wpforo_admin_mail_headers($from_name = '', $from_email = '', $cc = arra
 	}
 	return $H;
 }
-
 ############### Sending Email end  ##############
 
 function wpforo_frontend_enqueue(){
@@ -878,12 +838,8 @@ function wpforo_frontend_enqueue(){
 		wp_register_script( 'wpforo-frontend-js', WPFORO_URL . '/wpf-assets/js/frontend.js', array('jquery'), WPFORO_VERSION, false );
 		wp_enqueue_script('wpforo-frontend-js');
 		if( wpforo_feature( 'font-awesome', $wpforo) ){
-			wp_register_style('wpforo-font-awesome', WPFORO_URL . '/wpf-assets/css/font-awesome/css/font-awesome.min.css', false, '4.7' );
+			wp_register_style('wpforo-font-awesome', WPFORO_URL . '/wpf-assets/css/font-awesome/css/font-awesome.min.css', false, '4.6.3' );
 			wp_enqueue_style('wpforo-font-awesome');
-			if (is_rtl()) {
-				wp_register_style('wpforo-font-awesome-rtl', WPFORO_URL . '/wpf-assets/css/font-awesome/font-awesome-rtl.css', false, WPFORO_VERSION );
-				wp_enqueue_style('wpforo-font-awesome-rtl');
-			}
 		}
 		if(is_user_logged_in()){
 			wp_register_script('wpforo-ajax', WPFORO_URL . '/wpf-assets/js/ajax.js', array('jquery'), WPFORO_VERSION, false);
@@ -897,6 +853,10 @@ function wpforo_frontend_enqueue(){
 		else{
 			wp_register_style('wpforo-style', WPFORO_TEMPLATE_URL . '/style.css', false, WPFORO_VERSION );
 			wp_enqueue_style('wpforo-style');
+		}
+		if( file_exists(WPFORO_TEMPLATE_DIR . '/colors.css') ){
+			wp_register_style( 'wpforo-dynamic-style', WPFORO_TEMPLATE_URL . '/colors.css', false, WPFORO_VERSION );
+			wp_enqueue_style('wpforo-dynamic-style');
 		}
 	}
 	
@@ -922,7 +882,7 @@ function wpforo_add_into_wp_head(){
 					$("#wpf-msg-box").hide();
 					$('#wpforo-load').visible();
 					$("#wpf-msg-box p.wpf-msg-box-triangle-right").removeClass("error").removeClass("success");
-					$("#wpf-msg-box p.wpf-msg-box-triangle-right").html("<span><?php echo addslashes( ( is_user_logged_in() ? $wpforo->post_options['attach_cant_view_msg'] : sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '" rel="nofollow">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '" rel="nofollow">'.wpforo_phrase('Register', FALSE).'</a>' ) ) )  ?></span>");
+					$("#wpf-msg-box p.wpf-msg-box-triangle-right").html("<span><?php echo addslashes( ( is_user_logged_in() ? $wpforo->post_options['attach_cant_view_msg'] : sprintf( wpforo_phrase('Please %s or %s', FALSE), '<a href="' . wpforo_login_url() . '">'.wpforo_phrase('Login', FALSE).'</a>', '<a href="' . wpforo_register_url() . '">'.wpforo_phrase('Register', FALSE).'</a>' ) ) )  ?></span>");
 					$("#wpf-msg-box").show(150).delay(1000);
 					$('#wpforo-load').invisible();
 				});
@@ -1190,25 +1150,9 @@ add_filter( 'get_avatar' , 'wpforo_avatar' , 10, 5 );
 
 function wpforo_topic_auto_subscribe($item){
 	if(!is_user_logged_in()) return FALSE;
-	if(!isset($_POST['wpforo_topic_subs']) || !$_POST['wpforo_topic_subs'] ) return FALSE;
+	if( !isset($_POST['wpforo_topic_subs']) || !$_POST['wpforo_topic_subs'] ) return FALSE;
 	
 	global $wpforo;
-	
-	if( isset($item['forumid']) && $item['forumid'] ){
-		if( isset($item['private']) && $item['private'] && !wpforo_is_owner($item['userid']) ){
-			if( !$wpforo->perm->forum_can('vp', $item['forumid']) ){
-				$wpforo->notice->add('You are not permitted to subscribe here', 'error');
-		 		return FALSE;
-			}
-		}
-		else{
-			//This is not a Private Topic or Current User is the owner. 
-		}
-	}
-	else{
-		 $wpforo->notice->add('Forum ID is not detected', 'error');
-		 return FALSE;
-	}
 	
 	$args = array(
 		'itemid' => intval($item['topicid']),
@@ -1252,7 +1196,6 @@ add_action( 'wpforo_after_add_topic', 'wpforo_topic_auto_subscribe', 10, 1 );
 add_action( 'wpforo_after_add_post', 'wpforo_topic_auto_subscribe', 10, 1 );
 
 function wpforo_forum_subscribers_mail_sender( $topic ){
-	
 	global $wpforo;
 	
 	$subscribers = $wpforo->sbscrb->get_subscribes( array( 'itemid' => $topic['forumid'], 'type' => 'forum' ) );
@@ -1261,7 +1204,6 @@ function wpforo_forum_subscribers_mail_sender( $topic ){
 		foreach( $admin_emails as $admin_email ) $subscribers[] = sanitize_email( $admin_email );
 	}
 	foreach($subscribers as $subscriber){
-		
 		if( is_array($subscriber) ){
 			$member = $wpforo->member->get_member( $subscriber['userid'] );
 			$unsubscribe_link = $wpforo->sbscrb->get_unsubscribe_link($subscriber['confirmkey']);
@@ -1270,37 +1212,12 @@ function wpforo_forum_subscribers_mail_sender( $topic ){
 			$unsubscribe_link = '#';
 		}
 		
-		if( isset($topic['forumid']) && $topic['forumid'] ){
-			if( isset($topic['private']) && $topic['private'] && $topic['userid'] != $subscriber['userid'] ){
-				$subscriber_goupid = ( isset($member['groupid']) && $member['groupid'] ) ? $member['groupid'] : $wpforo->usergroup->get_groupid_by_userid($subscriber['userid']);
-				if( !$wpforo->perm->forum_can('vp', $topic['forumid'], $subscriber_goupid) ){
-					continue;
-				}
-			}
-			if( isset($topic['status']) && $topic['status'] == 1 ){
-				$subscriber_goupid = ( isset($member['groupid']) && $member['groupid'] ) ? $member['groupid'] : $wpforo->usergroup->get_groupid_by_userid($subscriber['userid']);
-				if( !$wpforo->perm->forum_can('au', $topic['forumid'], $subscriber_goupid) ){
-					continue;
-				}
-			}
-		}
-		
 		$owner = $wpforo->member->get_member( $topic['userid'] );
-		
 		if($owner['user_email'] == $member['user_email']) continue;
 		
 		$forum  = $wpforo->forum->get_forum( $topic['forumid'] );
 		
 		############### Sending Email  ##################
-			
-			if( isset($topic['status']) && $topic['status'] ){
-				$subject_prefix = __('Please Moderate: ', 'wpforo');
-				$mod_text = '<br /><br /><p style="color:#DD0000">' . __('This topic is currently unapproved. You can approve topics in Dashboard &raquo; Forums &raquo; Moderation admin page.', 'wpforo') . '</p>';
-			}
-			else{
-				$subject_prefix = '';
-				$mod_text = '';
-			}
 			
 			$subject = $wpforo->subscribe_options['new_topic_notification_email_subject']; 
 		 	$message = $wpforo->subscribe_options['new_topic_notification_email_message']; 
@@ -1317,8 +1234,6 @@ function wpforo_forum_subscribers_mail_sender( $topic ){
 			
 			add_filter( 'wp_mail_content_type', 'wpforo_set_html_content_type' );
 			$headers = wpforo_mail_headers();
-			$subject = $subject_prefix . $subject;
-			$message = $message . $mod_text;
 	 		$email_status = wp_mail( $member['user_email'] , $subject, $message, $headers );
 	 		remove_filter( 'wp_mail_content_type', 'wpforo_set_html_content_type' );
 	 		
@@ -1338,11 +1253,7 @@ function wpforo_topic_subscribers_mail_sender( $post ){
 		$admin_emails = explode(',', $wpforo->subscribe_options['admin_emails']);
 		foreach( $admin_emails as $admin_email ) $subscribers[] = sanitize_email( $admin_email );
 	}
-	
-	$topic  = $wpforo->topic->get_topic( $post['topicid'] );
-	
 	foreach($subscribers as $subscriber){
-		
 		if( is_array($subscriber) ){
 			$member = $wpforo->member->get_member( $subscriber['userid'] );
 			$unsubscribe_link = $wpforo->sbscrb->get_unsubscribe_link($subscriber['confirmkey']);
@@ -1354,32 +1265,9 @@ function wpforo_topic_subscribers_mail_sender( $post ){
 		$owner = $wpforo->member->get_member( $post['userid'] );
 		if($owner['user_email'] == $member['user_email']) continue;
 		
-		
-		if( isset($topic['forumid']) && $topic['forumid'] ){
-			if( isset($topic['private']) && $topic['private'] && $topic['userid'] != $subscriber['userid'] ){
-				$subscriber_goupid = ( isset($member['groupid']) && $member['groupid'] ) ? $member['groupid'] : $wpforo->usergroup->get_groupid_by_userid($subscriber['userid']);
-				if( !$wpforo->perm->forum_can('vp', $topic['forumid'], $subscriber_goupid) ){
-					continue;
-				}
-			}
-			if( isset($topic['status']) && $topic['status'] == 1 ){
-				$subscriber_goupid = ( isset($member['groupid']) && $member['groupid'] ) ? $member['groupid'] : $wpforo->usergroup->get_groupid_by_userid($subscriber['userid']);
-				if( !$wpforo->perm->forum_can('au', $topic['forumid'], $subscriber_goupid) ){
-					continue;
-				}
-			}
-		}
+		$topic  = $wpforo->topic->get_topic( $post['topicid'] );
 		
 		############### Sending Email  ##################
-			
-			if( isset($post['status']) && $post['status'] ){
-				$subject_prefix = __('Please Moderate: ', 'wpforo');
-				$mod_text = '<br /><br /><p style="color:#DD0000">' . __('This post is currently unapproved. You can approve posts in Dashboard &raquo; Forums &raquo; Moderation admin page.', 'wpforo') . '</p>';
-			}
-			else{
-				$subject_prefix = '';
-				$mod_text = '';
-			}
 			
 			$subject = $wpforo->subscribe_options['new_post_notification_email_subject']; 
 		 	$message = $wpforo->subscribe_options['new_post_notification_email_message']; 
@@ -1396,8 +1284,6 @@ function wpforo_topic_subscribers_mail_sender( $post ){
 			
 			add_filter( 'wp_mail_content_type', 'wpforo_set_html_content_type' );
 			$headers = wpforo_mail_headers();
-			$subject = $subject_prefix . $subject;
-			$message = $message . $mod_text;
 	 		$email_status = wp_mail( $member['user_email'] , $subject, $message, $headers );
 	 		remove_filter( 'wp_mail_content_type', 'wpforo_set_html_content_type' );
 	 		
@@ -1411,81 +1297,76 @@ add_action( 'wpforo_after_add_post', 'wpforo_topic_subscribers_mail_sender', 13,
 function wpforo_add_default_attachment($args){
 	if( !empty($_FILES['attachfile']) && !empty($_FILES['attachfile']['name']) ){
 		global $wpforo;
-		if( $wpforo->perm->can_attach() ){
-			$name = sanitize_file_name($_FILES['attachfile']['name']); //myimg.png
-			$type = sanitize_mime_type($_FILES['attachfile']['type']); //image/png
-			$tmp_name = sanitize_text_field($_FILES['attachfile']['tmp_name']); //D:\wamp\tmp\php986B.tmp
-			$error = intval($_FILES['attachfile']['error']); //0
-			$size = intval($_FILES['attachfile']['size']); //6112
-			
-			$phpFileUploadErrors = array(
-				0 => 'There is no error, the file uploaded with success',
-				1 => 'The uploaded file size is too big',
-				2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
-				3 => 'The uploaded file was only partially uploaded',
-				4 => 'No file was uploaded',
-				6 => 'Missing a temporary folder',
-				7 => 'Failed to write file to disk.',
-				8 => 'A PHP extension stopped the file upload.',
-			);
-			
-			if( $error ){
-				$wpforo->notice->add($phpFileUploadErrors[$error], 'error');
-				return $args;
-			}elseif( $size > $wpforo->post_options['max_upload_size'] ){
-				$wpforo->notice->add('The uploaded file size is too big', 'error');
-				return $args;
+		
+		$name = sanitize_file_name($_FILES['attachfile']['name']); //myimg.png
+		$type = sanitize_mime_type($_FILES['attachfile']['type']); //image/png
+		$tmp_name = sanitize_text_field($_FILES['attachfile']['tmp_name']); //D:\wamp\tmp\php986B.tmp
+		$error = intval($_FILES['attachfile']['error']); //0
+		$size = intval($_FILES['attachfile']['size']); //6112
+		
+		$phpFileUploadErrors = array(
+		    0 => 'There is no error, the file uploaded with success',
+		    1 => 'The uploaded file size is too big',
+		    2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+		    3 => 'The uploaded file was only partially uploaded',
+		    4 => 'No file was uploaded',
+		    6 => 'Missing a temporary folder',
+		    7 => 'Failed to write file to disk.',
+		    8 => 'A PHP extension stopped the file upload.',
+		);
+		
+		if( $error ){
+			$wpforo->notice->add($phpFileUploadErrors[$error], 'error');
+			return FALSE;
+		}elseif( $size > $wpforo->post_options['max_upload_size'] ){
+			$wpforo->notice->add('The uploaded file size is too big', 'error');
+			return FALSE;
+		}
+		
+		if(function_exists('pathinfo')){
+			$ext = pathinfo($name, PATHINFO_EXTENSION);
+		}
+		else{
+			$ext = substr(strrchr($name, '.'), 1);
+		}
+		$ext = strtolower($ext);
+		$mime_types = get_allowed_mime_types();
+		$mime_types = array_flip($mime_types);
+		if(!empty($mime_types)){
+			$allowed_types = implode('|', $mime_types);
+			$expld = explode('|', $allowed_types);
+			if( !in_array($ext, $expld) ){
+				$wpforo->notice->add('File type is not allowed', 'error');
+				return FALSE;
 			}
-			
-			if(function_exists('pathinfo')){
-				$ext = pathinfo($name, PATHINFO_EXTENSION);
-			}
-			else{
-				$ext = substr(strrchr($name, '.'), 1);
-			}
-			$ext = strtolower($ext);
-			$mime_types = get_allowed_mime_types();
-			$mime_types = array_flip($mime_types);
-			if(!empty($mime_types)){
-				$allowed_types = implode('|', $mime_types);
-				$expld = explode('|', $allowed_types);
-				if( !in_array($ext, $expld) ){
-					$wpforo->notice->add('File type is not allowed', 'error');
-					return $args;
-				}
-				if( !$wpforo->perm->can_attach_file_type($ext) ){
-					 $wpforo->notice->add('You are not allowed to attach this file type', 'error');
-					 return $args;
-				}
-			}
-			
-			$wp_upload_dir = wp_upload_dir();
-			$uplds_dir = $wp_upload_dir['basedir']."/wpforo";
-			$attach_dir = $wp_upload_dir['basedir']."/wpforo/default_attachments";
-			$attach_url = preg_replace('#^https?\:#is', '', $wp_upload_dir['baseurl'])."/wpforo/default_attachments";
-			if(!is_dir($uplds_dir)) wp_mkdir_p($uplds_dir);
-			if(!is_dir($attach_dir)) wp_mkdir_p($attach_dir);
-			
-			$fnm = pathinfo($name, PATHINFO_FILENAME);
-			$fnm = str_replace(' ', '-', $fnm);
-			while(strpos($fnm, '--') !== FALSE) $fnm = str_replace('--', '-', $fnm);
-			$fnm = preg_replace("/[^-a-zA-Z0-9]/", "", $fnm);
-			$fnm = trim($fnm, "-");
-			$fnm_empty = ( $fnm ? FALSE : TRUE );
-			
-			$file_name = $fnm . "." . $ext;
-			
-			$attach_fname = current_time( 'timestamp', 1 ).( !$fnm_empty ? '-' : '' ) . $file_name;
-			$attach_path = $attach_dir . "/" . $attach_fname;
-			
-			if( is_dir($attach_dir) && move_uploaded_file($tmp_name, $attach_path) ){
-				$attach_id = wpforo_insert_to_media_library( $attach_path, $fnm );
-				$args['body'] .= "\r\n" . '<div id="wpfa-' . $attach_id . '" class="wpforo-attached-file"><a class="wpforo-default-attachment" href="' . esc_url($attach_url.'/'.$attach_fname) . '" target="_blank"><i class="fa fa-paperclip"></i>' . esc_html(basename($name)) . '</a></div>';
-				$args['has_attach'] = 1;
-			}else{
-				$wpforo->notice->add('Can`t upload file', 'error');
-				return $args;
-			}
+		}
+		
+		$wp_upload_dir = wp_upload_dir();
+		$uplds_dir = $wp_upload_dir['basedir']."/wpforo";
+		$attach_dir = $wp_upload_dir['basedir']."/wpforo/default_attachments";
+		$attach_url = $wp_upload_dir['baseurl']."/wpforo/default_attachments";
+		if(!is_dir($uplds_dir)) wp_mkdir_p($uplds_dir);
+		if(!is_dir($attach_dir)) wp_mkdir_p($attach_dir);
+		
+        $fnm = pathinfo($name, PATHINFO_FILENAME);
+        $fnm = str_replace(' ', '-', $fnm);
+        while(strpos($fnm, '--') !== FALSE) $fnm = str_replace('--', '-', $fnm);
+        $fnm = preg_replace("/[^-a-zA-Z0-9]/", "", $fnm);
+        $fnm = trim($fnm, "-");
+        $fnm_empty = ( $fnm ? FALSE : TRUE );
+        
+        $file_name = $fnm . "." . $ext;
+		
+		$attach_fname = current_time( 'timestamp', 1 ).( !$fnm_empty ? '-' : '' ) . $file_name;
+		$attach_path = $attach_dir . "/" . $attach_fname;
+		
+		if( is_dir($attach_dir) && move_uploaded_file($tmp_name, $attach_path) ){
+			$attach_id = wpforo_insert_to_media_library( $attach_path, $fnm );
+			$args['body'] .= "\r\n" . '<div id="wpfa-' . $attach_id . '" class="wpforo-attached-file"><a class="wpforo-default-attachment" href="' . esc_url($attach_url.'/'.$attach_fname) . '" target="_blank"><i class="fa fa-paperclip"></i>' . esc_html(basename($name)) . '</a></div>';
+			$args['has_attach'] = 1;
+		}else{
+			$wpforo->notice->add('Can`t upload file', 'error');
+			return FALSE;
 		}
 	}
 	return $args;
@@ -1506,14 +1387,14 @@ function wpforo_delete_attachment( $attach_post_id ){
 function wpforo_default_attachments_filter($text){
 	global $wpforo;
 	
-	if( preg_match_all('#<a[^<>]*class=[\'"]wpforo-default-attachment[\'"][^<>]*href=[\'"]([^\'"]+)[\'"][^<>]*>[\r\n\t\s\0]*(?:<i[^<>]*>[\r\n\t\s\0]*</i>[\r\n\t\s\0]*)?([^<>]*)</a>#isu', $text, $matches, PREG_SET_ORDER) ){
+	if( preg_match_all('#<a[^<>]*class=[\'"]wpforo-default-attachment[\'"][^<>]*href=[\'"]([^\'"]+)[\'"][^<>]*>[\r\n\t\s\0]*<i[^<>]*>[\r\n\t\s\0]*</i>[\r\n\t\s\0]*([^<>]*)</a>#isu', $text, $matches, PREG_SET_ORDER) ){
 		foreach( $matches as $match ){
 			$attach_html = '';
-			$fileurl = preg_replace('#^https?\:#is', '', $match[1]);
+			$fileurl = $match[1];
 			$filename = $match[2];
 			
 			$upload_array = wp_upload_dir();
-			$filedir = preg_replace('#^https?\:#is', '', str_replace( preg_replace('#^https?\:#is', '', $upload_array['baseurl']), $upload_array['basedir'], $fileurl ) );
+			$filedir = str_replace( $upload_array['baseurl'], $upload_array['basedir'], $fileurl );
 			$filedir = str_replace( basename($filedir), urldecode( basename($filedir) ), $filedir );
 			
 			if(file_exists($filedir)){
@@ -1541,7 +1422,30 @@ if( !defined('WPFOROATTACH_BASENAME') ){
 	add_filter('wpforo_body_text_filter', 'wpforo_default_attachments_filter');
 }
 
-if( !class_exists('wpForoSmiles') ){
-	add_filter('wpforo_body_text_filter', 'wp_encode_emoji', 9);
-	add_filter('wpforo_body_text_filter', 'convert_smilies');
+add_filter('wpforo_body_text_filter', 'wp_encode_emoji', 9);
+add_filter('wpforo_body_text_filter', 'convert_smilies');
+
+function wpforo_akismet_check(){
+	global $wpforo;
+	$post = array();
+	$post['user_ip']      = ( isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : null );
+	$post['user_agent']   = ( isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : null );
+	$post['referrer']     = ( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : null );
+	$post['blog']         = get_option( 'home' );
+	$post['blog_lang']    = get_locale();
+	$post['blog_charset'] = get_option('blog_charset');
+	$post['permalink']    = $wpforo->topic->get_topic_url(5);
+	$post['comment_type'] = 'forum-post';
+	$post['comment_author'] = 'viagra34567';
+	$post['comment_author_email'] = 'test@example.com';
+	$post['comment_author_url'] = $wpforo->member->get_profile_url(4);
+	$post['comment_post_modified_gmt'] = '2016-09-26 23:22:14';
+	$post['comment_content'] = 'comment content';
+	$post['is_test'] = 'true';
+	
+	$response = Akismet::http_post( Akismet::build_query( $post ), 'comment-check' );
+	var_dump($response);
 }
+//add_action('init', 'wpforo_akismet_check');
+
+?>

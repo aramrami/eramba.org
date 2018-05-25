@@ -6,7 +6,6 @@
 class wpForoSubscribe{
 	
 	private $wpforo;
-	private static $cache = array( 'subscribe' => array() );
 	
 	function __construct( $wpForo ){
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
@@ -92,12 +91,14 @@ class wpForoSubscribe{
 		return FALSE;
 	}
 	
-	function get_subscribe( $args = array(), $cache = true ){
+	function get_subscribe( $args = array() ){
 		if( is_string($args) ) $args = array("confirmkey" => sanitize_text_field($args));
 		if( empty($args) && !empty($_REQUEST['sbscrb']) ) $args = $_REQUEST['sbscrb']; 
 		if( empty($args) ) return FALSE;
+		
 		extract( $args, EXTR_OVERWRITE );
 		if( (!isset($itemid) || !$itemid || !isset($userid) || !$userid || !isset($type) || !$type) && (!isset($confirmkey) || !$confirmkey) ) return FALSE;
+		
 		if( isset($confirmkey) && $confirmkey){
 			$where = " `confirmkey` = '".esc_sql(sanitize_text_field($confirmkey))."'";
 		}elseif( isset($itemid) && $itemid && isset($userid) && $userid && isset($type) && $type ){
@@ -105,15 +106,9 @@ class wpForoSubscribe{
 		}else{
 			return FALSE;
 		}
-		if( $cache && isset(self::$cache['subscribe'][$itemid][$userid][$type]) ){
-			return self::$cache['subscribe'][$itemid][$userid][$type];
-		}
+		
 		$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_subscribes` WHERE " . $where;
-		$subscribe = $this->wpforo->db->get_row($sql, ARRAY_A);
-		if($cache && !empty($subscribe)){
-			self::$cache['subscribe'][$itemid][$userid][$type] = $subscribe;
-		}
-		return $subscribe;
+		return $this->wpforo->db->get_row($sql, ARRAY_A);
 	}
 	
 	function get_subscribes( $args = array(), &$items_count = 0 ){

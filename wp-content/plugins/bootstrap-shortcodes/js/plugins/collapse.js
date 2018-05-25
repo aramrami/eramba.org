@@ -12,11 +12,6 @@
                         name: 'itemnum',
                         value: '3',
                         label: 'Number of items'
-                    },{
-                        type: 'checkbox',
-                        name: 'isopen',
-                        checked: false,
-                        label: 'Start open?'
                     }],
                     onsubmit: function(e) {
                         // Insert content when the window form is submitted
@@ -26,12 +21,7 @@
                         for (i = 0; i < num; i++) {
                             var id = guid();
                             var title = 'Collapsible Group Item ' + (i + 1);
-                            shortcode += '[bs_citem';
-                            shortcode += ' title="' + title + '"';
-                            shortcode += ' id="citem_' + id + '"';
-                            shortcode += ' parent="collapse_' + uID + '"';
-                            shortcode += (e.data.isopen? ' open="true"': '');
-                            shortcode += ']<br class="nc"/>';
+                            shortcode += '[bs_citem title="' + title + '" id="citem_' + id + '" parent="collapse_' + uID + '"]<br class="nc"/>';
                             shortcode += 'Collapse content goes here....<br class="nc"/>';
                             shortcode += '[/bs_citem]<br class="nc"/>';
                         }

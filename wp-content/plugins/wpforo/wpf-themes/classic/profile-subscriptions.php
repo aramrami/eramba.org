@@ -15,7 +15,6 @@
                     $item = $wpforo->topic->get_topic($subscribe['itemid']);
                     $item_url = $wpforo->topic->get_topic_url($item['topicid']);
                 }
-				if(empty($item)) continue;
             ?>
           <tr<?php echo ( $bg ? ' class="wpfbg-9"' : '' ) ?>>
             <td class="sbn-icon"><i class="fa fa-1x <?php echo ($subscribe['type'] == 'forum') ? 'fa-comments-o' : 'fa-file-text-o' ; ?>"></i></td>

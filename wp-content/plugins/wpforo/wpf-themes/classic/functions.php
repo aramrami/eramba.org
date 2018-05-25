@@ -15,11 +15,6 @@ function wpforo_classic_wpforo_frontend_enqueue(){
 	   if(is_wpforo_page()){
 			wp_register_style( 'wpforo-uidialog-style', WPFORO_URL . '/wpf-assets/css/jquery-ui.css', false, WPFORO_VERSION );
 			wp_enqueue_style('wpforo-uidialog-style');
-			
-			if( file_exists(WPFORO_TEMPLATE_DIR . '/colors.css') ){
-				wp_register_style( 'wpforo-dynamic-style', WPFORO_TEMPLATE_URL . '/colors.css', false, WPFORO_VERSION );
-				wp_enqueue_style('wpforo-dynamic-style');
-			}
 	   }
 	}
 	elseif ( !is_front_page() && !is_home() ) {
@@ -27,7 +22,7 @@ function wpforo_classic_wpforo_frontend_enqueue(){
 		wp_enqueue_style('wpforo-uidialog-style');
 	}
 }
-add_action('wp_enqueue_scripts', 'wpforo_classic_wpforo_frontend_enqueue', 11);
+add_action('wp_enqueue_scripts', 'wpforo_classic_wpforo_frontend_enqueue');
 
 function wpforo_classic_forum_options($wpforo){
 	?>

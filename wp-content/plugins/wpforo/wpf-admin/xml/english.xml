@@ -82,7 +82,7 @@
 	<phrase name="Forums"><![CDATA[Forums]]></phrase>
 	<phrase name="General options successfully updated"><![CDATA[General options successfully updated]]></phrase>
 	<phrase name="Group"><![CDATA[Group]]></phrase>
-	<phrase name="Google+"><![CDATA[Google+]]></phrase>
+	<phrase name="Gtalk"><![CDATA[Gtalk]]></phrase>
 	<phrase name="Guest"><![CDATA[Guest]]></phrase>
 	<phrase name="ICQ"><![CDATA[ICQ]]></phrase>
 	<phrase name="Illegal character in username."><![CDATA[Illegal character in username.]]></phrase>
@@ -364,20 +364,4 @@
 	<phrase name="Welcome back %s!"><![CDATA[Welcome back %s!]]></phrase>
 	<phrase name="Member Profile"><![CDATA[Member Profile]]></phrase>
 	<phrase name="Member"><![CDATA[Member]]></phrase>
-	<phrase name="private"><![CDATA[private]]></phrase>
-	<phrase name="public"><![CDATA[public]]></phrase>
-	<phrase name="Private Topic"><![CDATA[Private Topic]]></phrase>
-	<phrase name="Only Admins and Moderators can see your private topics."><![CDATA[Only Admins and Moderators can see your private topics.]]></phrase>
-	<phrase name="Forum ID is not detected"><![CDATA[Forum ID is not detected]]></phrase>
-	<phrase name="You are not permitted to subscribe here"><![CDATA[You are not permitted to subscribe here]]></phrase>
-	<phrase name="Subscribe to this topic"><![CDATA[Subscribe to this topic]]></phrase>
-	<phrase name="Awaiting moderation"><![CDATA[Awaiting moderation]]></phrase>
-	<phrase name="Topic first post not found."><![CDATA[Topic first post not found.]]></phrase>
-	<phrase name="Topic first post data not found."><![CDATA[Topic first post data not found.]]></phrase>
-	<phrase name="Done!"><![CDATA[Done!]]></phrase>
-	<phrase name="unapproved"><![CDATA[unapproved]]></phrase>
-	<phrase name="You are not allowed to attach this file type"><![CDATA[You are not allowed to attach this file type]]></phrase>
-	<phrase name="Post is empty"><![CDATA[Post is empty]]></phrase>
-	<phrase name="removed link"><![CDATA[removed link]]></phrase>
-	<phrase name="Submit"><![CDATA[Submit]]></phrase>
 </language>

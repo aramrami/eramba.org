@@ -5,17 +5,14 @@
 class wpForoPost{
 	
 	private $wpforo;
-	private static $cache = array( 'post' => array(), 'topic_slug' => array(), 'forum_slug' => array(), 'post_url' => array() );
 	
 	function __construct( $wpForo ){
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
 	}
 	
 	public function add( $args = array() ){
-		
 		if( empty($args) && empty($_REQUEST['post']) ){ $this->wpforo->notice->add('Reply request error', 'error'); return FALSE; }
 		if( empty($args) && !empty($_REQUEST['post']) ){ $args = $_REQUEST['post']; $args['body'] = $_REQUEST['postbody']; }
-		if( !isset($args['body']) || !$args['body'] ){ $this->wpforo->notice->add('Post is empty', 'error'); return FALSE; }
 		
 		extract($args, EXTR_OVERWRITE);
 		
@@ -33,10 +30,7 @@ class wpForoPost{
 			return FALSE;
 		}
 		
-		do_action( 'wpforo_start_add_post', $args );
-		
 		$post = $args;
-		$post['forumid'] = $forumid = (isset($topic['forumid']) ? intval($topic['forumid']) : 0);
 		$post['parentid'] = $parentid = (isset($parentid) ? intval($parentid) : 0);
 		$post['title'] = $title = (isset($title) ? wpforo_text( trim($title), 250, false ) : '');
 		$post['body'] = $body = ( isset($body) ? preg_replace('#</pre>[\r\n\t\s\0]*<pre>#isu', "\r\n", $body) : '' );
@@ -44,7 +38,6 @@ class wpForoPost{
 		$post['userid'] = $userid = ( isset($userid) ? intval($userid) : $this->wpforo->current_userid );
 		
 		$post = apply_filters('wpforo_add_post_data_filter', $post);
-		
 		if(empty($post)) return FALSE;
 		
 		extract($post, EXTR_OVERWRITE);
@@ -56,7 +49,6 @@ class wpForoPost{
 		if(isset($created)) $created = sanitize_text_field($created);
 		if(isset($userid)) $userid = intval($userid);
 		if(isset($body)) $body = wpforo_kses(trim($body), 'post');
-		if(isset($status)) $status = intval($status);
 		
 		do_action( 'wpforo_before_add_post', $post );
 		
@@ -64,17 +56,16 @@ class wpForoPost{
 			$this->wpforo->db->insert( 
 				$this->wpforo->db->prefix . 'wpforo_posts', 
 				array( 
-					'forumid'	=> $forumid, 
+					'forumid'	=> (isset($topic['forumid']) ? intval($topic['forumid']) : 0), 
 					'topicid'	=> $topicid, 
 					'parentid'	=> $parentid,
 					'userid' 	=> $userid,
 					'title'     => stripslashes($title), 
 					'body'      => stripslashes($body), 
 					'created'	=> $created,
-					'modified'	=> $created,
-					'status'	=> (isset($status) ? $status : 0),
+					'modified'	=> $created
 				), 
-				array('%d','%d','%d','%d','%s','%s','%s','%s', '%d')
+				array('%d','%d','%d','%d','%s','%s','%s','%s')
 			)
 		){
 			$postid = $this->wpforo->db->insert_id;
@@ -96,7 +87,7 @@ class wpForoPost{
 			$post['postid'] = $postid;
 			$post['posturl'] = $this->get_post_url($postid);
 			
-			do_action( 'wpforo_after_add_post', $post, $topic );
+			do_action( 'wpforo_after_add_post', $post );
 			
 			$this->wpforo->member->reset($userid);
 			$this->wpforo->notice->add('You successfully replied', 'success');
@@ -108,26 +99,22 @@ class wpForoPost{
 	}
 	
 	public function edit( $args = array() ){
-		
 		if( empty($args) && (!isset($_REQUEST['post']) || empty($_REQUEST['post'])) ) return FALSE;
 		if( empty($args) && !empty($_REQUEST['post']) ){ $args = $_REQUEST['post']; $args['body'] = $_REQUEST['postbody']; }
-		
-		do_action( 'wpforo_start_edit_post', $args );
-		
-		if( !isset($args['postid']) || !$args['postid'] || !is_numeric($args['postid']) ){
-			$this->wpforo->notice->add('Cannot update post data', 'error');
-			return FALSE;
-		}
-		$args['postid'] = intval($args['postid']);
-		if( !$post = $this->get_post($args['postid']) ){ $this->wpforo->notice->add('No Posts found for update', 'error'); return FALSE; }
-		
-		$args['userid'] = $post['userid'];
-		$args['status'] = $post['status'];
 		
 		$args = apply_filters('wpforo_edit_post_data_filter', $args);
 		if(empty($args)) return FALSE;
 		
 		extract($args, EXTR_OVERWRITE);
+		
+		if( !isset($postid) || !$postid || !is_numeric($postid) ){
+			$this->wpforo->notice->add('Cannot update post data', 'error');
+			return FALSE;
+		}
+		
+		$postid = intval($postid);
+		
+		if( !$post = $this->get_post($postid) ){ $this->wpforo->notice->add('No Posts found for update', 'error'); return FALSE; }
 		
 		$diff = current_time( 'timestamp', 1 ) - strtotime($post['created']);
 		if( !($this->wpforo->perm->forum_can('er', $post['forumid']) || ($this->wpforo->current_userid == $post['userid'] && $this->wpforo->perm->forum_can('eor', $post['forumid']) && $diff < $this->wpforo->post_options['eor_durr'])) ){
@@ -146,23 +133,19 @@ class wpForoPost{
 		if(isset($created)) $created = sanitize_text_field($created);
 		if(isset($userid)) $userid = intval($userid);
 		if(isset($body)) $body = wpforo_kses(trim($body), 'post');
-		if(isset($status)) $status = intval($status);
 		
 		if( FALSE !== $this->wpforo->db->update(
 				$this->wpforo->db->prefix."wpforo_posts",
 				array( 
-					'title'     => ( isset($title) ? stripslashes($title) : stripslashes($post['title']) ),
-					'body'      => ( (isset($body) && $body) ? stripslashes($body) : stripslashes($post['body']) ),
-					'modified'	=> current_time( 'mysql', 1 ),
-					'status'  => ( isset($status) ? $status : intval($post['status']) ),
+					'title'      => stripslashes($title), 
+					'body'      => stripslashes($body),
+					'modified'	=> current_time( 'mysql', 1 )
 				), 
 				array('postid' => $postid),
-				array('%s','%s','%s','%d'), 
+				array('%s','%s','%s'), 
 				array('%d') 
 			)
 		){
-			do_action( 'wpforo_after_edit_post', array( 'postid' => $postid, 'topicid' => $topicid, 'title' => $title, 'body' => $body, 'status' => $status ) );
-			
 			$this->wpforo->notice->add('This post successfully edited', 'success');
 			return $postid;
 		}
@@ -173,7 +156,7 @@ class wpForoPost{
 	
 	#################################################################################
 	/**
-	 * Delete post from DB
+	 * Delete topic from DB
 	 * 
 	 * Returns true if successfully deleted or false.
 	 *
@@ -186,19 +169,13 @@ class wpForoPost{
 		
 		$postid = intval($postid);
 		
-		if( !$post = $this->get_post($postid) ) return true;
-		if( $post['is_first_post'] ) return $this->wpforo->topic->delete($post['topicid']);
-
+		$post = $this->get_post($postid);
 		$diff = current_time( 'timestamp', 1 ) - strtotime($post['created']);
 		if( !($this->wpforo->perm->forum_can('dr', $post['forumid']) || ($this->wpforo->current_userid == $post['userid'] && $this->wpforo->perm->forum_can('dor', $post['forumid']) && $diff < $this->wpforo->post_options['dor_durr'])) ){
 			$this->wpforo->notice->add('You haven\'t permission to delete post from this forum', 'error');
 			return FALSE;
 		}
 		
-		//Find and delete default atatchments before deleting post
-		$this->delete_attachments( $postid );
-		
-		//Delete post
 		if( $this->wpforo->db->delete($this->wpforo->db->prefix . 'wpforo_posts',  array( 'postid' => intval($postid) ), array( '%d' )) ){
 			$last_post = $this->get_posts( array('topicid' => intval($post['topicid']), 'order' => 'DESC', 'row_count' => 1) );
 			if(is_array($last_post) && !empty($last_post)){
@@ -225,8 +202,6 @@ class wpForoPost{
 				}
 			}
 			
-			do_action('wpforo_after_delete_post', $post);
-			
 			if($this->wpforo->db->query( "UPDATE IGNORE " . $this->wpforo->db->prefix . "wpforo_topics SET `last_post` = " . intval($last_post['postid']) . ", `posts` = IF( (`posts` - 1) < 0, 0, `posts` - 1 ) $answ_incr WHERE `topicid` = " . intval( $post['topicid'] ))){
 				if( $this->wpforo->db->query( "UPDATE IGNORE `" . $this->wpforo->db->prefix . "wpforo_forums` SET `last_post_date` = '" . esc_sql($last_post['created']) . "', `last_userid` = " . intval($last_post['userid']) . ", `last_postid` = " . intval($last_post['postid']) . ", `posts` = IF( (`posts` - 1) < 0, 0, `posts` - 1 ) WHERE `forumid` = " . intval( $post['forumid'] ))){
 					if( $this->wpforo->db->query( "UPDATE IGNORE `"  . $this->wpforo->db->prefix . "wpforo_profiles` SET `posts` = IF( (`posts` - 1) < 0, 0, `posts` - 1 ) $answ_incr $comm_incr WHERE `userid` = " . intval($post['userid']) ) ){
@@ -238,13 +213,8 @@ class wpForoPost{
 			}
 		}
 		
-		if( isset($_GET['page']) && $_GET['page'] == 'wpforo-moderations' ){
-			//Don't check errors
-		}
-		else{
-			$this->wpforo->notice->add('Post delete error', 'error');
-			return FALSE;
-		}
+		$this->wpforo->notice->add('Post delete error', 'error');
+		return FALSE;
 	}
 	
 	#################################################################################
@@ -259,28 +229,12 @@ class wpForoPost{
 	 *
 	 * @return	array	
 	 */
-	function get_post($postid, $cache = true){
+	function get_post($postid){
 		
 		$post = array();
-		
-		if( $cache && isset(self::$cache['post'][$postid]) ){
-			return self::$cache['post'][$postid];
-		}
-		
 		$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `postid` = ".intval($postid);
 		$post = $this->wpforo->db->get_row($sql, ARRAY_A);
 		if(!empty($post)) $post['userid'] = intval($post['userid']);
-		
-		if( isset($post['status']) && $post['status'] && !wpforo_is_owner($post['userid'])){
-			if( isset($post['forumid']) && $post['forumid'] && !$this->wpforo->perm->forum_can('au', $post['forumid']) ){
-				return array();
-			}
-		}
-		
-		if($cache && isset($postid)){
-			self::$cache['post'][$postid] = $post;
-		}
-		
 		$post = apply_filters('wpforo_get_post', $post);
 		return $post;
 	}
@@ -306,10 +260,7 @@ class wpForoPost{
 		  'orderby'		=> 'postid', 	// forumid, order, parentid
 		  'order'		=> 'ASC', 		// ASC DESC
 		  'offset' 		=> NULL,		// this use when you give row_count
-		  'row_count'	=> NULL, 		// 4 or 1 ...
-		  'status'		=> NULL, 		    // 0 or 1 ...
-		  		  
-		  'check_private' => FALSE
+		  'row_count'	=> NULL 		// 4 or 1 ...
 		);
 		
 		$args = wpforo_parse_args( $args, $default );
@@ -323,48 +274,22 @@ class wpForoPost{
 			$exclude = wpforo_parse_args( $exclude );
 			
 			$wheres = array();
-			$table_as_prefix = '`'.$this->wpforo->db->prefix.'wpforo_posts`.';
 			
-			if(!empty($include)) $wheres[] = $table_as_prefix . "`postid` IN(" . implode(', ', array_map('intval', $include)) . ")";
-			if(!empty($exclude)) $wheres[] = $table_as_prefix . "`postid` NOT IN(" . implode(', ', array_map('intval', $exclude)) . ")";
+			if(!empty($include)) $wheres[] = "`postid` IN(" . implode(', ', array_map('intval', $include)) . ")";
+			if(!empty($exclude)) $wheres[] = "`postid` NOT IN(" . implode(', ', array_map('intval', $exclude)) . ")";
 			
-			if(!is_null($topicid)) $wheres[] = $table_as_prefix . "`topicid` = " . intval($topicid);
-			if($parentid != -1) $wheres[]  = $table_as_prefix . "`parentid` = " . intval($parentid);
-			if(!is_null($userid)) $wheres[]  = $table_as_prefix . "`userid` = " . intval($userid);
-			if(!is_null($status)) $wheres[]  = $table_as_prefix . "`status` = " . intval($status);
-			
-			if( isset($forumid) && $forumid ){
-				if( $this->wpforo->perm->forum_can('au', $forumid) ){
-					if(!is_null($status)) $wheres[] = $table_as_prefix . " `status` = " . intval($status);
-				}
-				elseif( isset($this->wpforo->current_userid) && $this->wpforo->current_userid ){
-					$wheres[] = " ( " . $table_as_prefix .  "`status` = 0 OR (" . $table_as_prefix .  "`status` = 1 AND " . $table_as_prefix .  "`userid` = " .intval($this->wpforo->current_userid). ") )";
-				}
-				else{
-					$wheres[] = " " . $table_as_prefix .  "`status` = 0";
-				}
+			if($topicid != NULL) $wheres[] = "`topicid` = " . intval($topicid);
+			if($parentid != -1) $wheres[]  = "`parentid` = " . intval($parentid);
+			if($userid != NULL) $wheres[]  = "`userid` = " . intval($userid);
+		
+			$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_posts`";
+			if(!empty($wheres)){
+				$sql .= " WHERE " . implode(" AND ", $wheres);
 			}
 			
-			if( $check_private ){
-				$sql = "SELECT DISTINCT `".$this->wpforo->db->prefix."wpforo_posts`.*, `".$this->wpforo->db->prefix."wpforo_topics`.`private` FROM `".$this->wpforo->db->prefix."wpforo_posts`, `".$this->wpforo->db->prefix."wpforo_topics`";
-				if(!empty($wheres)){
-					$sql .= " WHERE `".$this->wpforo->db->prefix."wpforo_posts`.`topicid` = `".$this->wpforo->db->prefix."wpforo_topics`.`topicid` " . ((!empty($wheres)) ? 'AND' : '') . " " . implode(" AND ", $wheres);
-				}
-				else{
-					$sql .= " WHERE `".$this->wpforo->db->prefix."wpforo_posts`.`topicid` = `".$this->wpforo->db->prefix."wpforo_topics`.`topicid` ";
-				}
-				$sql .= " ORDER BY " .$table_as_prefix . "`$orderby` " . $order;
-				$item_count_sql = preg_replace('#SELECT.+?FROM#isu', 'SELECT count(*) FROM', $sql);
-			}
-			else{
-				$sql = "SELECT * FROM `".$this->wpforo->db->prefix."wpforo_posts`";
-				if(!empty($wheres)){
-					$sql .= " WHERE " . implode(" AND ", $wheres);
-				}
-				$sql .= " ORDER BY `$orderby` " . $order;
-				$item_count_sql = preg_replace('#SELECT.+?FROM#isu', 'SELECT count(*) FROM', $sql);
-			}
+			$sql .= " ORDER BY `$orderby` " . $order;
 			
+			$item_count_sql = preg_replace('#SELECT.+?FROM#isu', 'SELECT count(*) FROM', $sql);
 			if( $item_count_sql ) $items_count = $this->wpforo->db->get_var($item_count_sql);
 			
 			if($row_count != NULL){
@@ -378,22 +303,6 @@ class wpForoPost{
 			$posts = $this->wpforo->db->get_results($sql, ARRAY_A);
 			
 			$posts = apply_filters('wpforo_get_posts', $posts);
-			
-			if( $check_private ){
-				foreach($posts as $key => $post){
-					if( isset($post['forumid']) && isset($post['private']) && $post['private'] && !wpforo_is_owner($post['userid']) ){
-						if( !$this->wpforo->perm->forum_can('vp', $post['forumid']) ){
-							unset($posts[$key]);
-						}
-					}
-					if( isset($post['forumid']) && isset($post['status']) && $post['status'] && !wpforo_is_owner($post['userid']) ){
-						if( !$this->wpforo->perm->forum_can('au', $post['forumid']) ){
-							unset($posts[$key]);
-						}
-					}
-				}
-			}
-			
 			return $posts;
 			
 		}
@@ -421,7 +330,7 @@ class wpForoPost{
 			
 			$date_period = intval($date_period);
 			
-			$selects = array('p.`postid`', 't.`topicid`', 't.`private`', 't.`status`', 't.`forumid`', 'p.`userid`', 't.`title`', 'p.`created`', 'p.`body`' );
+			$selects = array('p.`postid`', 't.`topicid`', 't.`forumid`', 'p.`userid`', 't.`title`', 'p.`created`', 'p.`body`' );
 			$innerjoins = array('INNER JOIN `'.$this->wpforo->db->prefix.'wpforo_topics` t ON t.`topicid` = p.`topicid`');
 			$wheres = array();
 			$orders = array();
@@ -477,14 +386,8 @@ class wpForoPost{
 					$sql .= esc_sql(" LIMIT $row_count");
 				}
 			}
-
-			$posts = $this->wpforo->db->get_results($sql, ARRAY_A);
-			foreach($posts as $key => $post){
-				if( !$this->wpforo->perm->forum_can( 'vf', $post['forumid'] ) ) unset($posts[$key]);
-				if( $post['private'] && !$this->wpforo->perm->forum_can( 'vp', $post['forumid'] ) ) unset($posts[$key]);
-				if( $post['status'] && !$this->wpforo->perm->forum_can( 'au', $post['forumid'] ) ) unset($posts[$key]);
-			}
-			return $posts;
+			
+			return $this->wpforo->db->get_results($sql, ARRAY_A);
 		}else{
 			return array();
 		}
@@ -570,18 +473,8 @@ class wpForoPost{
 	 * @return	string or false
 	 */
 	 
-	function get_forumslug_byid($postid, $cache = true){
-		
-		if( $cache && isset(self::$cache['forum_slug'][$postid]) ){
-			return self::$cache['forum_slug'][$postid];
-		}
-		
+	function get_forumslug_byid($postid){
 		$slug = $this->wpforo->db->get_var("SELECT `slug` FROM ".$this->wpforo->db->prefix."wpforo_forums WHERE `forumid` =(SELECT forumid FROM `".$this->wpforo->db->prefix."wpforo_topics` WHERE `topicid` =(SELECT `topicid` FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE postid = ".intval($postid)."))");
-		
-		if($cache && isset($postid)){
-			self::$cache['forum_slug'][$postid] = $slug;
-		}
-		
 		if($slug){
 			return $slug;
 		}else{
@@ -602,18 +495,8 @@ class wpForoPost{
 	 * @return	string or false
 	 */
 	 
-	function get_topicslug_byid( $postid, $cache = true ){
-		
-		if( $cache && isset(self::$cache['topic_slug'][$postid]) ){
-			return self::$cache['topic_slug'][$postid];
-		}
-		
+	function get_topicslug_byid($postid){
 		$slug = $this->wpforo->db->get_var("SELECT `slug` FROM ".$this->wpforo->db->prefix."wpforo_topics WHERE `topicid` =(SELECT `topicid` FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE postid = ".intval($postid).")");
-		
-		if($cache && isset($postid)){
-			self::$cache['topic_slug'][$postid] = $slug;
-		}
-		
 		if($slug){
 			return $slug;
 		}else{
@@ -630,9 +513,7 @@ class wpForoPost{
 	* 
 	* @return string $url
 	*/
-	function get_post_url( $arg, $cache = true ){
-		
-		$position = array();
+	function get_post_url( $arg ){
 		
 		if( isset($arg) && !is_array($arg) ){
 			$postid = intval($arg);
@@ -644,15 +525,9 @@ class wpForoPost{
 		}
 		
 		if( is_array($post) && !empty($post) ){
-			if( $cache && isset(self::$cache['post_url'][$post['topicid']][$post['postid']]) ){
-				$position = self::$cache['post_url'][$post['topicid']][$post['postid']];
-			}
 			$url = WPFORO_BASE_URL . $this->get_forumslug_byid($postid) . '/' . $this->get_topicslug_byid($postid);
 			if( $post['topicid'] ){
-				if( !$position ) $position = $this->wpforo->db->get_var("SELECT COUNT(`postid`) FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `topicid` = ".intval($post['topicid'])." AND `postid` <= " . ($post['parentid'] ? intval($post['parentid']) : intval($postid) ) . " ORDER BY `postid`");
-				if($cache && isset($position)){
-					self::$cache['post_url'][$post['topicid']][$post['postid']] = $position;
-				}
+				$position = $this->wpforo->db->get_var("SELECT COUNT(`postid`) FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `topicid` = ".intval($post['topicid'])." AND `postid` <= " . ($post['parentid'] ? intval($post['parentid']) : intval($postid) ) . " ORDER BY `postid`");
 				if( $position <= $this->wpforo->post_options['posts_per_page'] ) return $url . "/#post-" . intval($postid);
 				$paged = ceil( $position/$this->wpforo->post_options['posts_per_page'] );
 				return $url . "/paged/".$paged."/#post-" . intval($postid);
@@ -688,58 +563,5 @@ class wpForoPost{
 	function get_count(){
 		return $this->wpforo->db->get_var( "SELECT COUNT(`postid`) FROM `".$this->wpforo->db->prefix."wpforo_posts`" );
 	}
-	
-	function unapproved_count(){
-		return $this->wpforo->db->get_var( "SELECT COUNT(*) FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `status` = 1" );
-	}
-	
-	function get_attachment_id( $filename ){
-		$attach_id =  $this->wpforo->db->get_var( "SELECT `post_id` FROM `".$this->wpforo->db->prefix."postmeta` WHERE `meta_key` = '_wp_attached_file' AND `meta_value` LIKE '%" . esc_sql($filename) . "' LIMIT 1");
-		return $attach_id;
-	}
-	
-	function delete_attachments( $postid ){
-		$post = $this->get_post($postid);
-		if( isset($post['body']) && $post['body'] ){
-			if( preg_match_all('|\/wpforo\/default_attachments\/([^\s\"\]]+)|is', $post['body'], $attachments, PREG_SET_ORDER) ){
-				$upload_dir = wp_upload_dir();
-                $default_attachments_dir = $upload_dir['basedir'] . '/wpforo/default_attachments/';
-				foreach( $attachments as $attachment ){
-					$filename = trim($attachment[1]);
-					$file = $default_attachments_dir . $filename;
-					if( file_exists($file) ){
-						$posts = $this->wpforo->db->get_var( "SELECT COUNT(*) as posts FROM `".$this->wpforo->db->prefix."wpforo_posts` WHERE `body` LIKE '%" . esc_sql( $attachment[0] ) . "%'" );
-						if( is_numeric($posts) && $posts == 1 ){
-							$attachmentid = $this->get_attachment_id( '/' . $filename  );
-							if ( !wp_delete_attachment( $attachmentid ) ){
-								@unlink($file); 
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	public function status( $postid, $status ){
-        if( !$postid = wpforo_bigintval($postid) ) return false;
-        if( !$post = $this->get_post($postid) ) return false;
-
-        if( $post['is_first_post'] ) return $this->wpforo->topic->status($post['topicid'], $status);
-
-        if( false !== $this->wpforo->db->update(
-            $this->wpforo->db->prefix."wpforo_posts",
-            array( 'status' => intval($status) ),
-            array( 'postid' => $postid ),
-            array( '%d' ),
-            array( '%d' )
-        )){
-            $this->wpforo->notice->add('Done!', 'success');
-            return true;
-        }
-
-        $this->wpforo->notice->add('error: Change Status action', 'error');
-        return false;
-    }
 }
 ?>

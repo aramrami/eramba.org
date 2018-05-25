@@ -10,8 +10,8 @@ class wpForoFeed{
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
 	}
 	
-	function rss2_url($echo = true){
-		$url = wpforo_get_request_uri();
+	function rss2_url(){
+		$url = wpforo_full_url( $echo = true );
 		if(isset($this->wpforo->current_object['forumid'])){ $forumid = $this->wpforo->current_object['forumid']; }
 		if(isset($this->wpforo->current_object['topicid'])){ $topicid = $this->wpforo->current_object['topicid']; }
 		if(isset($forumid) && isset($topicid)){

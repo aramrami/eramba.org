@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
 	$(document).on('click','.wpforo-like', function(){
 		$("#wpf-msg-box").hide();  $('#wpforo-load').visible();
 		var postid_value = $(this).attr('id');
-		var postid = postid_value.replace("wpflike", "");
+		var postid = postid_value.replace("wpf", "");
 	   $.ajax({
 	   		type: 'POST',
 	   		url: wpf_ajax_obj.url,
@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
 			}
 	   		if( response.stat == 1 ){
 				$("#" + postid_value).removeClass('wpforo-like').addClass('wpforo-unlike');
-		   		$("#likeicon" + postid).removeClass('fa-thumbs-o-up').addClass('fa-thumbs-o-down');
+		   		$("#like" + postid).removeClass('fa-thumbs-o-up').addClass('fa-thumbs-o-down');
 		   		$("#liketext" + postid).text(' ' + wpf_ajax_obj.phrases['unlike']);
 		   		$("#post-" + postid + " .bleft").html(response.likers);
 			}
@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 	$(document).on('click','.wpforo-unlike', function(){
 		$("#wpf-msg-box").hide();  $('#wpforo-load').visible();
 		var postid_value = $(this).attr('id');
-		var postid = postid_value.replace("wpflike", "");
+		var postid = postid_value.replace("wpf", "");
 		
 	   $.ajax({
 	   		type: 'POST',
@@ -50,7 +50,7 @@ jQuery(document).ready(function($){
 			}
 	   		if( response.stat == 1 ){
 				$("#" + postid_value).removeClass('wpforo-unlike').addClass('wpforo-like');
-		   		$("#likeicon" + postid).removeClass('fa-thumbs-o-down').addClass('fa-thumbs-o-up');
+		   		$("#like" + postid).removeClass('fa-thumbs-o-down').addClass('fa-thumbs-o-up');
 		   		$("#liketext" + postid).text(' ' + wpf_ajax_obj.phrases['like']);
 		   		$("#post-" + postid + " .bleft").html(response.likers);
 			}
@@ -314,55 +314,6 @@ jQuery(document).ready(function($){
 	   		if(response != 0){
 		   		$("#" + postid_value).removeClass('wpforo-unsticky').addClass('wpforo-sticky');
 		   		$("#stickytext" + postid).text(' ' + wpf_ajax_obj.phrases.sticky);
-		   	}
-	   		$('#wpforo-load').invisible();
-	   	});
-	});
-	
-//	Private
-	$(document).on('click','.wpforo-private', function(){
-		$("#wpf-msg-box").hide();  $('#wpforo-load').visible();
-		var status_value = 'private';
-		var postid_value = $(this).attr('id');
-		var postid = postid_value.replace("wpfprivate", "");
-		
-	   $.ajax({
-	   		type: 'POST',
-	   		url: wpf_ajax_obj.url,
-	   		data:{
-	   			postid: postid,
-	   			status: status_value,
-	   			action: 'wpforo_private_ajax'
-	   		}
-	   	}).done(function(response){
-	   		if(response != 0){
-		   		$("#" + postid_value).removeClass('wpforo-private').addClass('wpforo-public');
-				$("#privateicon" + postid).removeClass('fa-eye-slash').addClass('fa-eye');
-		   		$("#privatetext" + postid).text(' ' + wpf_ajax_obj.phrases.public);
-		   	}
-	   		$('#wpforo-load').invisible();
-	   	});
-	});
-	
-	$(document).on('click','.wpforo-public', function(){
-		$("#wpf-msg-box").hide();  $('#wpforo-load').visible();
-		var status_value = 'public';
-		var postid_value = $(this).attr('id');
-		var postid = postid_value.replace("wpfprivate", "");
-		
-	   $.ajax({
-	   		type: 'POST',
-	   		url: wpf_ajax_obj.url,
-	   		data:{
-	   			postid: postid,
-	   			status: status_value,
-	   			action: 'wpforo_private_ajax'
-	   		}
-	   	}).done(function(response){
-	   		if(response != 0){
-		   		$("#" + postid_value).removeClass('wpforo-public').addClass('wpforo-private');
-				$("#privateicon" + postid).removeClass('fa-eye').addClass('fa-eye-slash');
-		   		$("#privatetext" + postid).text(' ' + wpf_ajax_obj.phrases.private);
 		   	}
 	   		$('#wpforo-load').invisible();
 	   	});

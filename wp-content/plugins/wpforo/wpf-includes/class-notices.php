@@ -135,69 +135,6 @@ class wpForoNotices{
 		$this->clear();
 	}
 	
-	
-	public function addonNote() {
-		global $wpforo;
-        $lastHash = get_option('wpforo-addon-note-dismissed');
-        $lastHashArray = explode(',', $lastHash);
-        $currentHash = $this->addonHash();
-        if ($lastHash != $currentHash) {
-            ?>
-            <div class="updated notice wpforo_addon_note is-dismissible" style="margin-top:10px;">
-                <p style="font-weight:normal; font-size:15px; border-bottom:1px dotted #DCDCDC; padding-bottom:10px; width:95%;"><strong><?php _e('New Addons for Your Forum!', 'wpforo'); ?></strong><br><span style="font-size:14px;"><?php _e('Extend your forum with wpForo addons', 'wpforo'); ?></span></p>
-                <div style="font-size:14px;">
-                    <?php
-                    foreach ($wpforo->addons as $key => $addon) {
-                        if (in_array($addon['title'], $lastHashArray))
-                            continue;
-                        ?>
-                        <div style="display:inline-block; min-width:27%; padding-right:10px; margin-bottom:1px;border-bottom:1px dotted #DCDCDC; border-right:1px dotted #DCDCDC; padding-bottom:10px;"><img src="<?php echo $addon['thumb'] ?>" style="height:40px; width:auto; vertical-align:middle; margin:0px 10px; text-decoration:none;" />  <a href="<?php echo $addon['url'] ?>" style="text-decoration:none;" target="_blank">wpForo <?php echo $addon['title']; ?></a></div>
-                        <?php
-                    }
-                    ?>
-                    <div style="clear:both;"></div>
-                </div>
-                <p>&nbsp;&nbsp;&nbsp;<a href="<?php echo admin_url('admin.php?page=wpforo-addons') ?>"><?php _e('View all Addons', 'wpforo'); ?> &raquo;</a></p>
-            </div>
-            <script>jQuery(document).on( 'click', '.wpforo_addon_note .notice-dismiss', function() {jQuery.ajax({url: ajaxurl, data: { action: 'dismiss_wpforo_addon_note'}})})</script>
-            <?php
-        }
-    }
-
-    public function dismissAddonNote() {
-        $hash = $this->addonHash();
-        update_option('wpforo-addon-note-dismissed', $hash);
-        exit();
-    }
-
-    public function dismissAddonNoteOnPage() {
-        $hash = $this->addonHash();
-        update_option('wpforo-addon-note-dismissed', $hash);
-    }
-
-    public function addonHash() {
-        global $wpforo; $viewed = '';
-        foreach ($wpforo->addons as $key => $addon) {
-            $viewed .= $addon['title'] . ',';
-        }
-        $hash = $viewed;
-        return $hash;
-    }
-
-    public function refreshAddonPage() {
-        $lastHash = get_option('wpforo-addon-note-dismissed');
-        $currentHash = $this->addonHash();
-        if ($lastHash != $currentHash) {
-            ?>
-            <script language="javascript">jQuery(document).ready(function () {
-                    location.reload();
-                });</script>
-            <?php
-        }
-    }
-	
-	
-	
 }
 
 ?>

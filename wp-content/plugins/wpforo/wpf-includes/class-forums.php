@@ -6,7 +6,7 @@
 class wpForoForum{
 	
 	private $wpforo;
-	private static $cache = array( 'forum' => array() );
+	private static $cache = array();
 	
 	function __construct( $wpForo ){
 		if(!isset($this->wpforo)) $this->wpforo = $wpForo;
@@ -29,7 +29,7 @@ class wpForoForum{
 	}
  	
  	public function add( $args = array(), $checkperm = TRUE ){
- 		if( $checkperm && !$this->wpforo->perm->usergroup_can('cf') ){
+ 		if( $checkperm && !$this->wpforo->perm->usergroup_can(  $this->wpforo->current_user_groupid, 'cf') ){
 			$this->wpforo->notice->add('Permission denied for add forum', 'error');
 			return FALSE;
 		}
@@ -97,7 +97,7 @@ class wpForoForum{
 	}
  
  	public function edit( $args = array() ){
- 		if( !$this->wpforo->perm->usergroup_can('ef') ){
+ 		if( !$this->wpforo->perm->usergroup_can(  $this->wpforo->current_user_groupid, 'ef') ){
 			$this->wpforo->notice->add('Permission denied for edit forum', 'error');
 			return FALSE;
 		}
@@ -177,7 +177,7 @@ class wpForoForum{
 	}
 	
 	function delete(){
-		if( !$this->wpforo->perm->usergroup_can('df') ){
+		if( !$this->wpforo->perm->usergroup_can( $this->wpforo->current_user_groupid, 'df') ){
 			$this->wpforo->notice->add('Permission denied for delete forum', 'error');
 			return FALSE;
 		}
@@ -276,7 +276,7 @@ class wpForoForum{
 														WHERE `forumid` = ".intval($forumid) );
 	}
 	
-	function get_forum( $args, $cache = true){
+	function get_forum( $args, $cache = false){
 		if(is_array($args)){
 			$default = array(
 			  'forumid' => NULL, // forumid
@@ -547,7 +547,7 @@ class wpForoForum{
                             	<span class="wpforo-cat-layout"><?php echo ( $depth != 0 ? __('Topics', 'wpforo') . '&nbsp;(' . intval($cur_forum['topics']) . ')&nbsp;,&nbsp;' . __('Posts', 'wpforo') . '&nbsp;(' . intval($cur_forum['posts']) . ')&nbsp; | &nbsp;' : '' ) ?><?php echo ( $depth == 0 ? '(&nbsp;<i>' . esc_html($cat_layout_name) . '</i>&nbsp;)&nbsp; | &nbsp;' : '' ); ?></span>
 								<span class="menu_add"><a href="<?php echo admin_url( 'admin.php?page=wpforo-forums&action=add&parentid=' . intval($forumid) ) ?>" > <img src="<?php echo WPFORO_URL ?>/wpf-assets/images/icons/plus<?php echo ((!$depth) ? '-dark' : ''); ?>.png" title="<?php if( $depth ) : _e('Add a new SubForum', 'wpforo'); else: _e('Add a new Forum in this Category', 'wpforo'); endif; ?>"/></a></span> &nbsp;|&nbsp;
                                 <span class="menu_edit"><a href="<?php echo admin_url( 'admin.php?page=wpforo-forums&id=' . intval($forumid) . '&action=edit' ) ?>"><img src="<?php echo WPFORO_URL ?>/wpf-assets/images/icons/pencil<?php echo ((!$depth) ? '-dark' : ''); ?>.png" title="<?php _e('edit', 'wpforo') ?>"/></a></span>&nbsp;|&nbsp;
-                                <?php if( $this->wpforo->perm->usergroup_can('df') ): ?>
+                                <?php if( $this->wpforo->perm->usergroup_can(  $this->wpforo->current_user_groupid, 'df') ): ?>
                                     <span class="menu_delete"><a href="<?php echo admin_url( 'admin.php?page=wpforo-forums&id=' . intval($forumid) . '&action=del' ) ?>"><img src="<?php echo WPFORO_URL ?>/wpf-assets/images/icons/trash<?php echo ((!$depth) ? '-dark' : ''); ?>.png" title="<?php _e('delete', 'wpforo') ?>"/></a></span>&nbsp;|&nbsp;
                                 <?php endif; ?>
 								<span class="menu_view"><a href="<?php echo esc_url($this->get_forum_url($forumid)) ?>" > <img src="<?php echo WPFORO_URL ?>/wpf-assets/images/icons/eye<?php echo ((!$depth) ? '-dark' : ''); ?>.png" title="<?php _e('View', 'wpforo') ?>"/> </a> </span>
@@ -602,7 +602,7 @@ class wpForoForum{
 		elseif( isset($_GET['page']) && $_GET['page'] == 'wpforo-topics' ){
 			if( isset($_GET['id'])) return $this->wpforo->db->get_var( "SELECT `forumid` FROM `".$this->wpforo->db->prefix."wpforo_topics` WHERE `topicid` = ".intval($_GET['id']));	
 		}else{
-			if( $topicid ) return $this->wpforo->db->get_var( "SELECT `forumid` FROM `".$this->wpforo->db->prefix."wpforo_topics` WHERE `topicid` = ".intval($topicid));	
+			if( isset($topicid)) return $this->wpforo->db->get_var( "SELECT `forumid` FROM `".$this->wpforo->db->prefix."wpforo_topics` WHERE `topicid` = ".intval($topicid));	
 		}
 	}
 	

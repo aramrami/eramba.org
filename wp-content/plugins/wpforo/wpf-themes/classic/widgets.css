@@ -35,7 +35,7 @@
 #wpf-widget-recent-replies .wpforo-list-item-right p.postuser{font-size:12px; padding:0px; margin:0px; line-height:16px;}
 #wpf-widget-recent-replies .wpforo-list-item-right p.postdate{font-size:12px; padding:0px; margin:0px; line-height:16px;}
 #wpf-widget-online-users .wpforo-widget-content a.onlineuser{ padding:3px 7px; border:1px solid #ededed; display:inline-block; margin:0px 3px 5px 2px; line-height:18px; font-size:13px;}
-#wpf-widget-online-users .wpforo-widget-content a.onlineavatar{ padding:1px; border:1px solid #ededed; display:inline-block; margin:0px 3px 5px 2px; width:20%;max-width: 64px;}
+#wpf-widget-online-users .wpforo-widget-content a.onlineavatar{ padding:1px; border:1px solid #ededed; display:inline-block; margin:0px 3px 5px 2px; width:20%;}
 #wpf-widget-search input[type="text"]{ font-size:14px; line-height:16px; padding:2px 5px; display:inline-block; margin:0px; height:28px;}
 #wpf-widget-search input[type="submit"]{ font-size:14px; line-height:16px; padding:2px 5px; display:inline-block; margin:0px; height:28px;}
 #wpf-widget-forums .wpforo-widget-content .wpf-dl-item{ padding-top:2px; display:block;}

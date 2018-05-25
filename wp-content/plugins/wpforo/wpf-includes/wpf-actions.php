@@ -27,13 +27,13 @@ function wpforo_actions(){
 			}
 			(int)$wpf_login_times++;
 			update_user_meta( $user->ID, '_wpf_login_times', $wpf_login_times );
-			wp_redirect( preg_replace('#\?.*$#is', '', wpforo_get_request_uri()) );
+			wp_redirect( preg_replace('#\?.*$#is', '', wpforo_full_url()) );
 			exit();
 		}else{
 			$args = array();
 			foreach($user->errors as $u_err) $args[] = $u_err[0];
 			$wpforo->notice->add($args, 'error');
-			wp_redirect( wpforo_get_request_uri() );
+			wp_redirect( wpforo_full_url() );
 			exit();
 		}
 	}
@@ -50,10 +50,10 @@ function wpforo_actions(){
 			wpforo_verify_form();
 			
 			if( !( intval($_POST['member']['userid']) == $wpforo->current_userid || 
-				( $wpforo->perm->usergroup_can('em') && $wpforo->perm->user_can_manage_user( $wpforo->current_userid, intval($_POST['member']['userid']) )) ) ){
+				( $wpforo->perm->usergroup_can( $wpforo->current_user_groupid, 'em' ) && $wpforo->perm->user_can_manage_user( $wpforo->current_userid, intval($_POST['member']['userid']) )) ) ){
 				$wpforo->notice->clear();
 				$wpforo->notice->add('Permission denied', 'error');
-				wp_redirect(wpforo_get_request_uri());
+				wp_redirect(wpforo_full_url());
 				exit();
 			}
 			
@@ -87,7 +87,7 @@ function wpforo_actions(){
 				exit();
 			}
 		}
-		wp_redirect(wpforo_get_request_uri());
+		wp_redirect(wpforo_full_url());
 		exit();
 	}
 
@@ -95,19 +95,17 @@ function wpforo_actions(){
 		if( $_REQUEST['topic']['action'] == 'add' ){
 			wpforo_verify_form();
 			if( $topicid = $wpforo->topic->add() ){
-				wpforo_clean_cache();
 				wp_redirect( $wpforo->topic->get_topic_url($topicid) );
 				exit();
 			}
 		}elseif( $_REQUEST['topic']['action'] == 'edit' ){
 			wpforo_verify_form();
 			if( $topicid = $wpforo->topic->edit() ){
-				wpforo_clean_cache();
 				wp_redirect( $wpforo->topic->get_topic_url($topicid) );
 				exit();
 			}
 		}
-		wp_redirect( wpforo_get_request_uri() );
+		wp_redirect( wpforo_full_url() );
 		exit();
 	}
 	
@@ -116,14 +114,12 @@ function wpforo_actions(){
 			if($_REQUEST['post']['action'] == 'add'){
 				wpforo_verify_form();
 				if( $postid = $wpforo->post->add() ){
-					wpforo_clean_cache();
 					wp_redirect( $wpforo->post->get_post_url( $postid ) );
 					exit();
 				}
 			}elseif($_REQUEST['post']['action'] == 'edit'){
 				wpforo_verify_form();
 				if( $postid = $wpforo->post->edit() ){
-					wpforo_clean_cache();
 					wp_redirect( $wpforo->post->get_post_url( $postid ) );
 					exit();
 				}
@@ -135,12 +131,11 @@ function wpforo_actions(){
 			$move_topicid = intval($_POST['movetopicid']);
 			$move_forumid = intval($_POST['topic']['forumid']);
 			$wpforo->topic->move( $move_topicid, $move_forumid );
-			wpforo_clean_cache();
-			wp_redirect( wpforo_get_request_uri() );
+			wp_redirect( wpforo_full_url() );
 			exit();
 		}
 		
-		wp_redirect( wpforo_get_request_uri() );
+		wp_redirect( wpforo_full_url() );
 		exit();
 	}
 	
@@ -152,7 +147,7 @@ function wpforo_actions(){
 		}else{
 			$wpforo->sbscrb->delete($sbs_key);
 		}
-		wp_redirect( preg_replace('#\?.*$#is', '', wpforo_get_request_uri()) );
+		wp_redirect( preg_replace('#\?.*$#is', '', wpforo_full_url()) );
 		exit();
 	}
 	
@@ -160,15 +155,7 @@ function wpforo_actions(){
 	if( isset($_GET['wpforo']) && $_GET['wpforo'] == 'solved' && $_GET['tid'] ){
 		$topicid = intval($_GET['tid']);
 		
-		wp_redirect( preg_replace('#\?.*$#is', '', wpforo_get_request_uri()) );
-		exit();
-	}
-	
-	## Private
-	if( isset($_GET['wpforo']) && $_GET['wpforo'] == 'private' && $_GET['tid'] ){
-		$topicid = intval($_GET['tid']);
-		
-		wp_redirect( preg_replace('#\?.*$#is', '', wpforo_get_request_uri()) );
+		wp_redirect( preg_replace('#\?.*$#is', '', wpforo_full_url()) );
 		exit();
 	}
 	
@@ -180,12 +167,12 @@ function wpforo_actions(){
 	*/
 	
 	##Settings action
-	if( wpforo_is_admin() && isset($_POST['wpforo_screen_option']['value']) ){
+	if( is_admin() && isset($_POST['wpforo_screen_option']['value']) ){
 		if(!current_user_can('administrator')) return;
 		update_option('wpforo_count_per_page', $_POST['wpforo_screen_option']['value']);
 	}
 	
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-community' && isset($_GET['action']) && $_GET['action'] ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-community' && isset($_GET['action']) && $_GET['action'] ){
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
 			wp_redirect(admin_url());
@@ -218,7 +205,7 @@ function wpforo_actions(){
 			}
 		}
 		if( $_GET['action'] == 'reset_phrase_cache' && check_admin_referer( 'wpforo_reset_phrase_cache' ) ){
-			$wpforo->phrase->clear_cache();
+			$wpforo->db->query("DELETE FROM " . $wpforo->db->prefix . "options WHERE `option_name` LIKE '%_transient_wpforo_get_phrases_%' OR `option_name` LIKE '%_transient_timeout_wpforo_get_phrases_%'");
 			$wpforo->notice->add('Deleted Successfully!', 'success');
 		}
 		if( $_GET['action'] == 'reset_user_cache' && check_admin_referer( 'wpforo_reset_user_cache' ) ){
@@ -227,7 +214,7 @@ function wpforo_actions(){
 		}
 	}
 	
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-settings' ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-settings' ){
 		
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
@@ -356,7 +343,7 @@ function wpforo_actions(){
 	}
 	
 	### forum action ###
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-forums' ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-forums' ){
 		
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
@@ -377,7 +364,7 @@ function wpforo_actions(){
 			if( isset($forumid) && $forumid ){
 				wp_redirect( admin_url( 'admin.php?page=wpforo-forums&id=' . intval($forumid) . '&action=edit' ) );
 			}else{
-				wp_redirect( wpforo_get_request_uri() );
+				wp_redirect( wpforo_full_url() );
 			}
 			exit();
 		}
@@ -397,80 +384,22 @@ function wpforo_actions(){
 		}
 	}
 	
-	##Moderation
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-moderations' ){
-		
-		if(!$wpforo->perm->usergroup_can('aum')){
-			$wpforo->notice->add('Permission denied', 'error');
-			wp_redirect(admin_url());
-			exit();
-		}
-
-        $u_action = '';
-        if( !empty($_GET['action']) && $_GET['action'] != '-1' ){
-            $u_action = $_GET['action'];
-        }elseif( !empty($_GET['action2']) && $_GET['action2'] != '-1' ){
-            $u_action = $_GET['action2'];
-        }
-        $bulk = FALSE;
-        $pids = array();
-        if( !empty($_GET['id']) && ($pid = wpforo_bigintval($_GET['id'])) ){
-            $pids = (array) $pid;
-        }elseif( !empty($_GET['ids']) && ($ids = trim($_GET['ids'])) ){
-            $bulk = TRUE;
-            $ids = explode(',', urldecode($ids));
-            $pids = array_map('wpforo_bigintval', array_filter($ids));
-        }
-        $pids = array_diff($pids, (array) $wpforo->current_userid);
-
-        if( $u_action && !empty($pids) ) {
-            if ($u_action == 'del') {
-                if( $bulk ){
-                    !check_admin_referer( 'bulk_action_moderation' );
-                }else{
-                    !check_admin_referer( 'wpforo_admin_table_action_delete' );
-                }
-                foreach ($pids as $pid) $wpforo->post->delete($pid);
-                wp_redirect(admin_url('admin.php?page=wpforo-moderations'));
-                exit();
-            } elseif ($u_action == 'approve') {
-                if( $bulk ){
-                    !check_admin_referer( 'bulk_action_moderation' );
-                }else{
-                    !check_admin_referer( 'wpforo_admin_table_action_approve' );
-                }
-                foreach ($pids as $pid) $wpforo->moderation->post_approve($pid);
-                wp_redirect(admin_url('admin.php?page=wpforo-moderations'));
-                exit();
-            } elseif ($u_action == 'unapprove') {
-                if( $bulk ){
-                    !check_admin_referer( 'bulk_action_moderation' );
-                }else{
-                    !check_admin_referer( 'wpforo_admin_table_action_approve' );
-                }
-                foreach ($pids as $pid) $wpforo->moderation->post_unapprove($pid);
-                wp_redirect(admin_url('admin.php?page=wpforo-moderations'));
-                exit();
-            }
-        }
-    }
-
 	##Phrases
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-phrases' ){
-
-		if(!current_user_can('administrator')){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-phrases' ){
+		
+		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
 			wp_redirect(admin_url());
 			exit();
 		}
-
+		
 		if(isset($_POST['phrase']['save'])){
 			check_admin_referer( 'wpforo-phrases-edit' );
 			$wpforo->phrase->edit();
 			wp_redirect( admin_url( 'admin.php?page=wpforo-phrases' ) );
 			exit();
 		}
-
+		
 		if( isset($_POST['phrase']['add']) && !empty($_POST['phrase']['value']) ){
 			check_admin_referer( 'wpforo-phrase-add' );
 			$wpforo->phrase->add();
@@ -481,7 +410,7 @@ function wpforo_actions(){
 	
 	
 	##Members
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-members' ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-members' ){
 		$u_action = '';
 		if( !empty($_GET['action']) && $_GET['action'] != '-1' ){
 			$u_action = $_GET['action'];
@@ -529,7 +458,7 @@ function wpforo_actions(){
 	
 	
 	##Usergroups
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-usergroups' ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-usergroups' ){
 		
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
@@ -563,7 +492,7 @@ function wpforo_actions(){
 	}
 	
 	##### Admin Accesses action ######
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-settings' && isset($_GET['tab']) && $_GET['tab'] == 'accesses' ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-settings' && isset($_GET['tab']) && $_GET['tab'] == 'accesses' ){
 		
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
@@ -584,7 +513,7 @@ function wpforo_actions(){
 			$insert_access_key = sanitize_text_field($_POST['access']['key']);
 			$insert_access_name = sanitize_text_field($_POST['access']['name']);
 			$wpforo->perm->edit( $insert_access_name, $cans, $insert_access_key );
-			wp_redirect( wpforo_get_request_uri() );
+			wp_redirect( wpforo_full_url() );
 			exit();
 		}elseif( isset($_GET['action']) && $_GET['action'] == 'del' && isset($_GET['accessid']) ){
 			
@@ -602,7 +531,7 @@ function wpforo_actions(){
 	}
 	
 	##Themes
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-themes' && isset($_GET['theme']) ){
+	if( is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-themes' && isset($_GET['theme']) ){
 		
 		if(!current_user_can('administrator')){ 
 			$wpforo->notice->add('Permission denied', 'error');
@@ -651,7 +580,7 @@ function wpforo_actions(){
 			$topicid = intval($_GET['topic']);
 			$topic = $wpforo->topic->get_topic($topicid);
 			$topic['topicurl'] = $wpforo->topic->get_topic_url($topicid);
-			$posts = $wpforo->post->get_posts( array( 'topicid' => $topicid, 'row_count' => 10, 'orderby' => 'created', 'order' => 'DESC', 'check_private' => true ) );
+			$posts = $wpforo->post->get_posts( array( 'topicid' => $topicid, 'row_count' => 10, 'orderby' => 'created', 'order' => 'DESC' ) );
 			foreach($posts as $key => $post){
 				$member = $wpforo->member->get_member($post['userid']);
 				$posts[$key]['description'] = wpforo_text( trim(strip_tags($post['body'])), 190, false );
@@ -676,75 +605,6 @@ function wpforo_actions(){
 		exit();
 	}
 	
-	##Tools
-	if( wpforo_is_admin() && isset($_GET['page']) && $_GET['page'] == 'wpforo-tools' ){
-		
-		if(!current_user_can('administrator')){ 
-			$wpforo->notice->add('Permission denied', 'error');
-			wp_redirect(admin_url());
-			exit();
-		}
-		
-		if( isset($_POST['wpforo_tools_antispam']) ){
-			check_admin_referer( 'wpforo-tools-antispam' );
-			if( update_option('wpforo_tools_antispam', $_POST['wpforo_tools_antispam']) ){
-				$wpforo->notice->add('Settings successfully updated', 'success');
-			}
-			wp_redirect( admin_url( 'admin.php?page=wpforo-tools&tab=antispam' ) );
-			exit();
-		}
-		
-		if(isset($_GET['action']) && $_GET['action']=='delete-spam-file' && isset($_GET['sfname']) && $_GET['sfname']){
-			$filename = sanitize_file_name($_GET['sfname']);
-			if(check_admin_referer( 'wpforo_tools_antispam_files')){
-				if(!empty($filename)){
-					$filename = str_replace( array('../', './', '/'), '', $filename );
-					$filename = urldecode( $filename );
-					$upload_dir = wp_upload_dir();
-                	$default_attachments_dir =  $upload_dir['basedir'] . '/wpforo/default_attachments/';
-					$file = $default_attachments_dir . $filename;
-					$attachmentid = $wpforo->post->get_attachment_id( '/' . $filename );
-					if ( !wp_delete_attachment( $attachmentid ) ){
-						@unlink($file); 
-					}
-					$wpforo->notice->add( 'Deleted', 'success' );
-					wp_redirect( admin_url( 'admin.php?page=wpforo-tools&tab=antispam' ) );
-					exit();
-				}
-			}
-			wp_redirect( admin_url( 'admin.php?page=wpforo-tools&tab=antispam' ) );
-			exit();
-		}
-		
-		if(isset($_GET['action']) && $_GET['action']=='delete-all' && isset($_GET['level']) && $_GET['level']){
-			if(check_admin_referer( 'wpforo_tools_antispam_files')){
-				$delete_level = intval($_GET['level']);
-				$upload_dir = wp_upload_dir();
-                $default_attachments_dir =  $upload_dir['basedir'] . '/wpforo/default_attachments/';
-				if(is_dir($default_attachments_dir)){
-					if ($handle = opendir($default_attachments_dir)){
-						while (false !== ($filename = readdir($handle))){
-							$level = 0;
-							if( $filename == '.' ||  $filename == '..') continue;
-							if( !$level = $wpforo->moderation->spam_file($filename) ) continue;
-							if( $delete_level == $level ){
-								$attachmentid = $wpforo->post->get_attachment_id( '/' . $filename );
-								if ( !wp_delete_attachment( $attachmentid ) ){
-									$file = $default_attachments_dir . $filename; @unlink($file); 
-								}
-							}
-						}
-						closedir($handle);
-						$wpforo->notice->add( 'Deleted', 'success' );
-						wp_redirect( admin_url( 'admin.php?page=wpforo-tools&tab=antispam' ) );
-						exit();
-					}
-				}
-			}
-			wp_redirect( admin_url( 'admin.php?page=wpforo-tools&tab=antispam' ) );
-			exit();
-		}
-	}
 	
 	do_action( 'wpforo_actions_end' );
 	

@@ -6,49 +6,31 @@ class wfIssues {
 	//Properties that are serialized on sleep:
 	private $updateCalled = false;
 	private $issuesTable = '';
-	private $pendingIssuesTable = '';
-	private $maxIssues = 0;
 	private $newIssues = array();
 	public $totalIssues = 0;
 	public $totalCriticalIssues = 0;
 	public $totalWarningIssues = 0;
 	public function __sleep(){ //Same order here as vars above
-		return array('updateCalled', 'issuesTable', 'pendingIssuesTable', 'maxIssues', 'newIssues', 'totalIssues', 'totalCriticalIssues', 'totalWarningIssues');
+		return array('updateCalled', 'issuesTable', 'newIssues', 'totalIssues', 'totalCriticalIssues', 'totalWarningIssues');
 	}
 	public function __construct(){
 		global $wpdb;
 		$this->issuesTable = $wpdb->base_prefix . 'wfIssues';
-		$this->pendingIssuesTable = $wpdb->base_prefix . 'wfPendingIssues';
-		$this->maxIssues = wfConfig::get('scan_maxIssues', 0);
 	}
 	public function __wakeup(){
 		$this->db = new wfDB();
 	}
-	public function addIssue($type, $severity,  $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData, $alreadyHashed = false) {
-		$this->_addIssue('issue', $type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData, $alreadyHashed);
-	}
-	public function addPendingIssue($type, $severity,  $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData) {
-		$this->_addIssue('pending', $type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData);
-	}
-	private function _addIssue($group, $type, $severity,
+	public function addIssue($type, $severity, 
+		
 		$ignoreP, /* some piece of data used for md5 for permanent ignores */ 
 		$ignoreC, /* some piece of data used for md5 for ignoring until something changes */
-		$shortMsg, $longMsg, $templateData, $alreadyHashed = false
+		$shortMsg, $longMsg, $templateData
 		){
-		
-		if ($group == 'pending') {
-			$table = $this->pendingIssuesTable;
-		}
-		else {
-			$table = $this->issuesTable;
-		}
-		
-		if (!$alreadyHashed) {
-			$ignoreP = md5($ignoreP);
-			$ignoreC = md5($ignoreC);
-		}
-		
-		$rec = $this->getDB()->querySingleRec("select status, ignoreP, ignoreC from {$this->issuesTable} where (ignoreP = '%s' OR ignoreC = '%s')", $ignoreP, $ignoreC);
+
+
+		$ignoreP = md5($ignoreP);
+		$ignoreC = md5($ignoreC);
+		$rec = $this->getDB()->querySingleRec("select status, ignoreP, ignoreC from " . $this->issuesTable . " where (ignoreP='%s' OR ignoreC='%s')", $ignoreP, $ignoreC);
 		if($rec){
 			if($rec['status'] == 'new' && ($rec['ignoreC'] == $ignoreC || $rec['ignoreP'] == $ignoreP)){ 
 				if($type != 'file' && $type != 'database'){ //Filter out duplicate new issues but not infected files because we want to see all infections even if file contents are identical
@@ -59,30 +41,24 @@ class wfIssues {
 			if($rec['status'] == 'ignoreC' && $rec['ignoreC'] == $ignoreC){ return false; }
 			if($rec['status'] == 'ignoreP' && $rec['ignoreP'] == $ignoreP){ return false; }
 		}
-		
-		if ($group != 'pending') {
-			if ($severity == 1) {
-				$this->totalCriticalIssues++;
-			}
-			else if ($severity == 2) {
-				$this->totalWarningIssues++;
-			}
-			$this->totalIssues++;
-			if (empty($this->maxIssues) || $this->totalIssues <= $this->maxIssues)
-			{
-				$this->newIssues[] = array(
-					'type' => $type,
-					'severity' => $severity,
-					'ignoreP' => $ignoreP,
-					'ignoreC' => $ignoreC,
-					'shortMsg' => $shortMsg,
-					'longMsg' => $longMsg,
-					'tmplData' => $templateData
-					);
-			}
+
+		if($severity == 1){
+			$this->totalCriticalIssues++;
+		} else if($severity == 2){
+			$this->totalWarningIssues++;
 		}
+		$this->totalIssues++;
+		$this->newIssues[] = array(
+			'type' => $type,
+			'severity' => $severity,
+			'ignoreP' => $ignoreP,
+			'ignoreC' => $ignoreC,
+			'shortMsg' => $shortMsg,
+			'longMsg' => $longMsg,
+			'tmplData' => $templateData
+			);
 			
-		$this->getDB()->queryWrite("insert into {$table} (time, status, type, severity, ignoreP, ignoreC, shortMsg, longMsg, data) values (unix_timestamp(), '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s')",
+		$this->getDB()->queryWrite("insert into " . $this->issuesTable . " (time, status, type, severity, ignoreP, ignoreC, shortMsg, longMsg, data) values (unix_timestamp(), '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s')",
 			'new',
 			$type,
 			$severity,
@@ -103,7 +79,7 @@ class wfIssues {
 	public function ignoreAllNew(){
 		$this->getDB()->queryWrite("update " . $this->issuesTable . " set status='ignoreC' where status='new'");
 	}
-	public function emailNewIssues($timeLimitReached = false){
+	public function emailNewIssues(){
 		$level = wfConfig::getAlertLevel();
 		$emails = wfConfig::getAlertEmails();
 		$shortSiteURL = preg_replace('/^https?:\/\//i', '', site_url());
@@ -117,7 +93,6 @@ class wfIssues {
 		if(! is_array($emailedIssues)){
 			$emailedIssues = array();
 		}
-		$overflowCount = $this->totalIssues - count($this->newIssues);
 		$finalIssues = array();
 		foreach($this->newIssues as $newIssue){
 			$alreadyEmailed = false;
@@ -130,14 +105,8 @@ class wfIssues {
 			if(! $alreadyEmailed){
 				$finalIssues[] = $newIssue;
 			}
-			else {
-				$overflowCount--;
-			}
 		}
 		if(sizeof($finalIssues) < 1){ return; }
-		
-		$this->newIssues = array();
-		$this->totalIssues = 0;
 
 		$totalWarningIssues = 0;
 		$totalCriticalIssues = 0;
@@ -157,10 +126,7 @@ class wfIssues {
 			'issues' => $finalIssues,
 			'totalCriticalIssues' => $totalCriticalIssues,
 			'totalWarningIssues' => $totalWarningIssues,
-			'level' => $level,
-			'issuesNotShown' => $overflowCount,
-			'adminURL' => get_admin_url(),
-			'timeLimitReached' => $timeLimitReached,
+			'level' => $level
 			));
 		
 		wp_mail(implode(',', $emails), $subject, $content, 'Content-type: text/html');
@@ -180,15 +146,14 @@ class wfIssues {
 		$rec['data'] = unserialize($rec['data']);
 		return $rec;
 	}
-	public function getIssues($offset = 0, $limit = 100){
+	public function getIssues(){
 		/** @var wpdb $wpdb */
 		global $wpdb;
 		$ret = array(
 			'new' => array(),
 			'ignored' => array()
 			);
-		$userIni = ini_get('user_ini.filename');
-		$q1 = $this->getDB()->querySelect("select * from " . $this->issuesTable . " order by time desc LIMIT %d,%d", $offset, $limit);
+		$q1 = $this->getDB()->querySelect("select * from " . $this->issuesTable . " order by time desc");
 		foreach($q1 as $i){
 			$i['data'] = unserialize($i['data']);
 			$i['timeAgo'] = wfUtils::makeTimeAgo(time() - $i['time']);
@@ -204,15 +169,8 @@ class wfIssues {
 		}
 		foreach($ret as $status => &$issueList){
 			for($i = 0; $i < sizeof($issueList); $i++){
-				if ($issueList[$i]['type'] == 'file' || $issueList[$i]['type'] == 'knownfile') {
-					$localFile = $issueList[$i]['data']['file'];
-					if ($localFile != '.htaccess' && $localFile != $userIni) {
-						$localFile = ABSPATH . '/' . preg_replace('/^[\.\/]+/', '', $localFile);
-					}
-					else {
-						$localFile = ABSPATH . '/' . $localFile;
-					}
-					
+				if($issueList[$i]['type'] == 'file'){
+					$localFile = ABSPATH . '/' . preg_replace('/^[\.\/]+/', '', $issueList[$i]['data']['file']);
 					if(file_exists($localFile)){
 						$issueList[$i]['data']['fileExists'] = true;
 					} else {
@@ -220,86 +178,13 @@ class wfIssues {
 					}
 				}
 				if ($issueList[$i]['type'] == 'database') {
-					$issueList[$i]['data']['optionExists'] = false;
-					if (!empty($issueList[$i]['data']['site_id'])) {
-						$prefix = $wpdb->get_blog_prefix($issueList[$i]['data']['site_id']);
-						$issueList[$i]['data']['optionExists'] = $wpdb->get_var($wpdb->prepare("SELECT count(*) FROM {$prefix}options WHERE option_name = %s", $issueList[$i]['data']['option_name'])) > 0;
-					}
+					$prefix = $wpdb->get_blog_prefix($issueList[$i]['data']['site_id']);
+					$issueList[$i]['data']['optionExists'] = $wpdb->get_var($wpdb->prepare("SELECT count(*) FROM {$prefix}options WHERE option_name = %s", $issueList[$i]['data']['option_name'])) > 0;
 				}
 				$issueList[$i]['issueIDX'] = $i;
 			}
 		}
 		return $ret; //array of lists of issues by status
-	}
-	public function getPendingIssues($offset = 0, $limit = 100){
-		/** @var wpdb $wpdb */
-		global $wpdb;
-		$issues = $this->getDB()->querySelect("SELECT * FROM {$this->pendingIssuesTable} ORDER BY id ASC LIMIT %d,%d", $offset, $limit);
-		foreach($issues as &$i){
-			$i['data'] = unserialize($i['data']);
-		}
-		return $issues;
-	}
-	public function getIssueCount() {
-		return (int) $this->getDB()->querySingle("select COUNT(*) from " . $this->issuesTable . " WHERE status = 'new'");
-	}
-	public function getPendingIssueCount() {
-		return (int) $this->getDB()->querySingle("select COUNT(*) from " . $this->pendingIssuesTable . " WHERE status = 'new'");
-	}
-	public function reconcileUpgradeIssues($report = null, $useCachedValued = false) {
-		if ($report === null) {
-			$report = new wfActivityReport();
-		}
-		
-		$updatesNeeded = $report->getUpdatesNeeded($useCachedValued);
-		if ($updatesNeeded) {
-			if (!$updatesNeeded['core']) {
-				$this->getDB()->queryWrite("DELETE FROM {$this->issuesTable} WHERE status = 'new' AND type = 'wfUpgrade'");
-			}
-			
-			if ($updatesNeeded['plugins']) {
-				$upgradeNames = array();
-				foreach ($updatesNeeded['plugins'] as $p) {
-					$name = $p['Name'];
-					$upgradeNames[$name] = 1;
-				}
-				$upgradeIssues = $this->getDB()->querySelect("SELECT * FROM {$this->issuesTable} WHERE status = 'new' AND type = 'wfPluginUpgrade'");
-				foreach ($upgradeIssues as $issue) {
-					$data = unserialize($issue['data']);
-					$name = $data['Name'];
-					if (!isset($upgradeNames[$name])) { //Some plugins don't have a slug associated with them, so we anchor on the name
-						$this->deleteIssue($issue['id']);
-					}
-				}
-			}
-			else {
-				$this->getDB()->queryWrite("DELETE FROM {$this->issuesTable} WHERE status = 'new' AND type = 'wfPluginUpgrade'");
-			}
-			
-			if ($updatesNeeded['themes']) {
-				$upgradeNames = array();
-				foreach ($updatesNeeded['themes'] as $t) {
-					$name = $t['Name'];
-					$upgradeNames[$name] = 1;
-				}
-				$upgradeIssues = $this->getDB()->querySelect("SELECT * FROM {$this->issuesTable} WHERE status = 'new' AND type = 'wfThemeUpgrade'");
-				foreach ($upgradeIssues as $issue) {
-					$data = unserialize($issue['data']);
-					$name = $data['Name'];
-					if (!isset($upgradeNames[$name])) { //Some themes don't have a slug associated with them, so we anchor on the name
-						$this->deleteIssue($issue['id']);
-					}
-				}
-			}
-			else {
-				$this->getDB()->queryWrite("DELETE FROM {$this->issuesTable} WHERE status = 'new' AND type = 'wfThemeUpgrade'");
-			}
-		}
-		else {
-			$this->getDB()->queryWrite("DELETE FROM {$this->issuesTable} WHERE status = 'new' AND (type = 'wfUpgrade' OR type = 'wfPluginUpgrade' OR type = 'wfThemeUpgrade')");
-		}
-		
-		wfScanEngine::refreshScanNotification($this);
 	}
 	public function updateSummaryItem($key, $val){
 		$arr = wfConfig::get_ser('wf_summaryItems', array());
