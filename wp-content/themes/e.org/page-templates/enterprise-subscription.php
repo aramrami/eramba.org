@@ -102,7 +102,9 @@ get_header();
             <div class="doc-box doc-box-alt align-col">
                 <div class="doc-box-content">
                     <div class="box-jumbo margin-top-40 margin-bottom-40">
-                        <strong>2500 EUR</strong> / Year
+                        <strong>2500 EUR / Year</strong> or
+	<br>
+                        <strong>3000 USD / Year</strong>
                     </div>
                     <a href="http://www.eramba.org/resources/bugs-features/" class="btn btn-blue width-90">Get a Quote</a>
                 </div>

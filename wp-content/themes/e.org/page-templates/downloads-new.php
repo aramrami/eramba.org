@@ -18,7 +18,7 @@ if (empty($_SESSION['download-form-submitted']) || ($_SESSION['download-form-sub
 				<?php endwhile; ?>
 
 				<?php
-				echo do_shortcode('[contact-form-7 id="' . CONTACT_FORM_DOWNLOAD_ID .  '" title="Download"]');
+				//echo do_shortcode('[contact-form-7 id="' . CONTACT_FORM_DOWNLOAD_ID .  '" title="Download"]');
 				?>
 
 			</div>

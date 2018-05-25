@@ -236,7 +236,7 @@ class WP_Widget_Video extends WP_Widget {
 			'id_base' => 'video-widget'
 		);
 		
-		@$this->WP_Widget( 'video-widget', 'Eramba: ' . __( 'Video', 'eramba' ), $widget_ops, $control_ops );
+		$this->WP_Widget( 'video-widget', 'Eramba: ' . __( 'Video', 'eramba' ), $widget_ops, $control_ops );
 	}
 	
 	function form($instance) {

@@ -26,7 +26,7 @@
 									<span class="bold">Username:</span> admin
 								</div>
 								<div class="my-col">
-									<span class="bold">Password:</span> admin
+									<span class="bold">Password:</span> alphanumeric1
 								</div>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 								</div>
 							</div>
 							<div class="bottom-text">
-								Our enterprise release (or subscriptors edition) is updated every week and has the latest patches and features. Once a year we pass (most) of this to the community release.
+								Our enterprise release (or subscriptors edition) is updated every month and has the latest patches and features. Once a year we pass (most) of this to the community release.
 							</div>
 						</div>
 					</div>
@@ -123,7 +123,7 @@
 		<div class="row">
 			<div class="col-xs-12 text-center">
 				<p>We keep an updated list of diffferences in between releases</p>
-				<a href="https://docs.google.com/spreadsheets/d/1v1t8Ilu-6hORS1eYDcC_1Ov78ylND7J2tK0iU1Ignos/edit?usp=sharing" class="btn btn-default"><?php _e('See the comparison', 'eramba'); ?></a>
+				<a href="http://www.eramba.org/resources/documentation/" class="btn btn-default"><?php _e('See the comparison', 'eramba'); ?></a>
 			</div>
 		</div>
 	</div>
