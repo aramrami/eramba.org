@@ -931,7 +931,7 @@ add_action('after_setup_theme', 'handle_download_routes');
  */
 function custom_url_redirects() {
 	$customRedirects = array(
-		'license' => 'https://docs.google.com/document/d/1-3vbjQx9h2yupox3FVMbWuS7W07GE5CC1wa70hI-sJM/',
+		'license' => 'https://docs.google.com/document/d/1dPycAlAIoCgJg1r2Mxv4U4D2Pl6gG3D4NqWRyZ5sx4w/',
 		'tc' => 'https://docs.google.com/document/d/1DzJWu9kH5gllFlFV9LLstuI4eGbhBwhXHhZ4KqGAI70/',
 		'payments' => 'https://docs.google.com/document/d/1VkTCCD2hh3l9sgk-5VIrbuAbCEtl3BSXSG2uiJEgeP8/',
 		'tc_saas_enterprise' => 'https://docs.google.com/document/d/1OwimW4_coRaFMQFmYU2Xy23uZ4qlwHdVMCg8Dpl7zws/',
