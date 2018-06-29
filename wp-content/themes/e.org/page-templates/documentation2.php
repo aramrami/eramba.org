@@ -11,7 +11,7 @@ get_header();
 		<strong>Start Here</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Not sure how to start? Watch this introductory video and the follow the documentation without missing a step!</span>
+		<span>Follow the documentation from top to down, DONT MISS a step and you will learn all there is to GRC and eramba.</span>
 	</h4>
 
 	<div class="text-center">
@@ -42,10 +42,10 @@ get_header();
 
 <div class="container">
 	<h3 class="text-center margin-top-20">
-		<strong>Step One - Install &amp; Configuration</strong>
+		<strong>Step One - Install &amp; Configuration (30-40 Minutes)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Follow these guides to install and configure eramba</span>
+		<span>Install from source or use our pre-installed VM and then understand basic access management features.</span>
 	</h4>
 
 	<div class="row align-row">
@@ -72,7 +72,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Pre-Installed Virtual Machine</h4>
-					<p>If you are not interested in installing eramba you can use our VMs</p>
+					<p>If you are not interested in installing eramba you can use our pre-installed VMs</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/140b6lGd3QpFvZjT927KFDz_Yd62Jjb84-PXMaioHlSw/edit#">Doc</a></li>
 					</ul>
@@ -100,7 +100,7 @@ get_header();
 				</div>
 				<div class="doc-box-content">
 					<h4>Configuration & Access Management</h4>
-					<p>Setup email, ldap, groups and access lists for each portal.</p>
+					<p>Understand how accounts, groups, access, visualisations, portals, email, ldap, Etc operate.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1D39uXCRfbTMvyVMFsGRyIcob8cSccAn1NWIdREodpms/edit#">Doc</a></li>
 						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/a1KFzgFZ9Hs?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -162,10 +162,10 @@ get_header();
 
 <div id="features" class="container">
 	<h3 class="text-center margin-top-20">
-		<strong>Step Two - Learn the Basics</strong>
+		<strong>Step Two - Learn the Basics (40-60 Minutes)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>These guides cover basic features and concepts used across the system, is really important you get familiarised with them before you start using eramba!</span>
+		<span>These guides cover basic features and concepts used across the system, is really important you get familiarised with them before you start using eramba. Follow the arrows to make sure you cover the entire curricula.</span>
 	</h4>
 
 	<div>
@@ -178,7 +178,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Filters</h4>
-						<p>Search, export and report over email data from eramba.</p>
+						<p>Core feature to query GRC data and export it as exports.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1wxeXwEz8sSm-nW9iXXx3uOR_D17tT9LgFeRBmNB4GCU/edit">Doc</a></li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/o52eg9b_RoU?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -282,7 +282,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>REST APIs</h4>
-						<p>APIs can be used to push, pull or list elements from eramba.</p>
+						<p>Add,Update,Delete and List items (Risks, Controls, Etc) using Rest APIs.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1AzTUqrs8RJ84VhYjLbVIbw6f2vzSQfzTNiD01JF8qbM/edit">Doc</a></li>
 						</ul>
@@ -326,7 +326,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Custom<br />Fields</h4>
-						<p>Include custom fields on any of our forms (while creating a risk, control, etc).</p>
+						<p>Customize forms to your needs by adding additional fields.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -343,10 +343,10 @@ get_header();
 
 <div id="core-functions" class="container">
 	<h3 class="text-center margin-top-20">
-		<strong>Step Three - Core Functionalities</strong>
+		<strong>Step Three - Core Functionalities (5-6 Hours)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Follow every step of the guide to ensure you learn how eramba works!</span>
+		<span>Follow every step of the guide to ensure you learn how eramba works! These guides are critical to understand how eramba works at its very core, dont miss any guide if you want to understand how eramba is used.</span>
 	</h4>
 	
 	<div>
@@ -381,7 +381,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Controls & Audits</h4>
-						<p>Register your internal controls, their internal audits, where they are used.</p>
+						<p>Register your internal controls, their audits / testing, collect evidence, understand where they are used, Etc.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/10Hq0HTCT_4NYXw3I1EJBfWI4OaWTBqlXZqDrQCg99E0/edit">Doc</a> </li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/zihFlcsFmPw?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -429,7 +429,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Data Flow Analysis<br>EU GDPR</h4>
-						<p>Document each data flow, their controls, policies and people involved.</p>
+						<p>Document each data flow, their controls, policies and people involved. Understand where your data is nad how is protected.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1Srt4a2vfjuEVfGONvxjd5_yO-ojoeLkLcLTsqc7v2NM/edit">Doc</a> </li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/k0hAZ6Y8TTM?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -473,7 +473,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Compliance Management</h4>
-						<p>NIST, ISO, PCI - link controls and policies to your compliance requirements.</p>
+						<p>Upload any standard or regulation in CSV format and demonstrate how compliant your organisation is.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1Rk85gMkTbkpud2LKk7jg2agBlwaSH2yOq6y9Z3KNzXo/edit">Doc</a> </li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rnu9-wZQels?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -500,7 +500,7 @@ get_header();
 					</div>
 					<div class="doc-box-content">
 						<h4>Incident Management</h4>
-						<p>Record and manage your incidents and asociate them with Risks when possible.</p>
+						<p>Record and manage incidents systematically and link them to affected risks, assets, controls, Etc.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1I9oQ2mrw65pS6OVoKMCEeC6rx5ftz8ji-RO2Ws4luMY/edit?usp=sharing">Doc</a></li>
 						</ul>
@@ -515,10 +515,10 @@ get_header();
 
 <div class="container ">
 	<h3 class="text-center margin-top-20">
-		<strong>Standalone Features</strong>
+		<strong>Standalone Features (2 to 3 Hs)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>These features do not hold dependencies with other modules so you can use them straight away</span>
+		<span>Additional tools brought in to facilitate the work of a Security professional.</span>
 	</h4>
 
 	<div class="row align-row">
