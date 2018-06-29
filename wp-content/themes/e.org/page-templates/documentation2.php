@@ -351,7 +351,32 @@ get_header();
 	
 	<div>
 		<div class="row align-row">
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>workflows.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Basic GRC Relationships</h4>
+						<p>Understand the basic relationships in between controls, risks, compliance, Etc.</p>
+						<ul>
+							<li><a href="">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="">Video</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div class="row arrow-row">
+			<div class="col-sm-12">
+				<div class="arrow-down">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row align-row">
 			<div class="col-sm-3">
 				<div class="doc-box align-col">
 					<div class="doc-box-img">

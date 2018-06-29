@@ -2654,20 +2654,25 @@ a.no-text-effect:focus {
 	right: 12.5%;
 }
 
-#core-functions .row:nth-child(1) .arrow-right,
-#core-functions .row:nth-child(1) .arrow-left {
-	margin-top: 103px;
-}
 #core-functions .row:nth-child(3) .arrow-right,
 #core-functions .row:nth-child(3) .arrow-left {
+	margin-top: 103px;
+}
+#core-functions .row:nth-child(5) .arrow-right,
+#core-functions .row:nth-child(5) .arrow-left {
 	margin-top: 132px;
 }
 #core-functions .arrow-row:nth-child(2) .arrow-down {
 	position: absolute;
 	top: -2px;
-	right: 12.5%;
+	left: 12.5%;
 }
 #core-functions .arrow-row:nth-child(4) .arrow-down {
+	position: absolute;
+	top: -2px;
+	right: 12.5%;
+}
+#core-functions .arrow-row:nth-child(6) .arrow-down {
 	position: absolute;
 	top: -2px;
 	left: 12.5%;
