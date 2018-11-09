@@ -103,7 +103,7 @@
 							<img src="<?php echo $icons; ?>consulting.png" alt="" />
 						</td>
 						<td>
-							<h3>Training</h3>
+							<h3>Online Q&A</h3>
 							<p>
 							 	On top of our documentation (which includes videos, etc) we deliver one to one and one to many webcasts.	
 							</p>

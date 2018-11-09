@@ -48,7 +48,7 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/installation.png" alt="">
                 </div>
                 <div class="doc-box-content">
-                    <h4>Help to Install</h4>
+                    <h4>Install Assistance</h4>
                     <p>
 			If Linux is not your thing - as an enterprise customer you will get remote assistance to install and update eramba.
                     </p>
@@ -62,9 +62,9 @@ get_header();
                     <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/training.png" alt="">
                 </div>
                 <div class="doc-box-content">
-                    <h4>Online Trainings</h4>
+                    <h4>Online Q&A</h4>
                     <p>
-			On top of our documentation, every month or so we run online, instructor led training that will help you and/or your team(s) understand the system in detail.
+			We expect customers to learn eramba using our detailed documentation and on top of it every month or so we run online, instructor led Q&A sessions aimed at helping clarify any outstanding issue, question or problem.
                     </p>
                 </div>
             </div>

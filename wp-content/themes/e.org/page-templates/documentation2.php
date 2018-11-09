@@ -360,8 +360,7 @@ get_header();
 						<h4>Basic GRC Relationships</h4>
 						<p>Understand the basic relationships in between controls, risks, compliance, Etc.</p>
 						<ul>
-							<li><a href="">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1yifTFz6LV72B_op08l0Y1xkW295cYGrEBbJEvcUnVpQ/edit#">Doc</a></li>
 						</ul>
 					</div>
 				</div>
