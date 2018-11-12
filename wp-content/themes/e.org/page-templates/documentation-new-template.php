@@ -102,7 +102,7 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Step 5<br>Notifications</h4>
+						<h4>Step 4<br>Notifications</h4>
 						<p>Automate email notifications, reports, reminders and more.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1gbyw5fXrV02q-uxOXTMcgFCqjPJPWLL-CRyg1Bhx0R0/edit?usp=sharing">Doc</a></li>
