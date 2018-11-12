@@ -7,12 +7,6 @@ get_header();
 ?>
 
 <div class="container">
-	<h3 class="text-center margin-top-20">
-		<strong>New Start Here</strong>
-	</h3>
-	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>Follow the documentation from top to down, DONT MISS a step and you will learn all there is to GRC and eramba.</span>
-	</h4>
 
 	<div class="text-center">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/rblNnWnp_YM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -34,10 +28,10 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>workflows.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Basic GRC Relationships</h4>
+					<h4>Step 1<br>Basic GRC Relationships</h4>
 					<p>Understand the basic relationships in between controls, risks, compliance, Etc.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1yifTFz6LV72B_op08l0Y1xkW295cYGrEBbJEvcUnVpQ/edit#">Doc</a></li>
+						<li><a href="https://docs.google.com/document/d/1iPB-fdJHo_6emr_U9Yu6zVDNkd-eBdHQNG0PCk7KvPQ/edit?usp=sharing">Doc</a></li>
 					</ul>
 				</div>
 			</div>
@@ -62,14 +56,13 @@ get_header();
 			<div class="col-sm-3">
 				<div class="doc-box align-col">
 					<div class="doc-box-img">
-						<img src="<?php echo do_shortcode('[img]'); ?>home/increase-collaboration.png" alt="">
+						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/box.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Access Managment</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h4>Step 2<br>General Layout</h4>
+						<p>Basic features arrengements.</p>
 						<ul>
-							<li><a href="#">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1RAUlatkQZFS0z8G_f4BgcDdbpd6_QJfbK0jLhZOi2Xs/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -87,11 +80,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>filters.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Filters</h4>
+						<h4>Step 3<br>Filters</h4>
 						<p>Core feature to query GRC data and export it as exports.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1wxeXwEz8sSm-nW9iXXx3uOR_D17tT9LgFeRBmNB4GCU/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/o52eg9b_RoU?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1OS3Py1hxzT8a3OMShgksDDPzZOb9TFfbaClKD6gVo4Y/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -110,11 +102,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Notifications</h4>
+						<h4>Step 5<br>Notifications</h4>
 						<p>Automate email notifications, reports, reminders and more.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1WraftiquqtQ7csmppaZgTuptg3rHYONO5DkwbpOLFyo/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/fVBQscefrYQ?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1gbyw5fXrV02q-uxOXTMcgFCqjPJPWLL-CRyg1Bhx0R0/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -135,11 +126,11 @@ get_header();
 			<div class="col-sm-3">
 				<div class="doc-box align-col">
 					<div class="doc-box-img">
-						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/downgrades.png" alt="" style="margin-top:5px;">
+						<img src="<?php echo do_shortcode('[img]'); ?>home/increase-collaboration.png" alt="" style="margin-top:5px;">
 					</div>
 					<div class="doc-box-content">
-						<h4>CSV Imports</h4>
-						<p>Import controls, policies and more using preformated CSV files.</p>
+						<h4>Access Management</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -161,8 +152,8 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Custom<br />Fields</h4>
-						<p>Customize forms to your needs by adding additional fields.</p>
+						<h4>Dashboards</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
 							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Video</a></li>
@@ -204,6 +195,51 @@ get_header();
 		</div>
 
 		<div class="row align-row">
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
+					</div>
+					<div class="doc-box-content">
+						<h4>Custom<br />Fields</h4>
+						<p>Customize forms to your needs by adding additional fields.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Video</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="doc-box align-col">
+					<div class="doc-box-img">
+						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/downgrades.png" alt="" style="margin-top:5px;">
+					</div>
+					<div class="doc-box-content">
+						<h4>CSV Imports</h4>
+						<p>Import controls, policies and more using preformated CSV files.</p>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Video</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1-5 text-center">
+				<div class="arrow-right">
+					<div class="arrow-head"></div>
+				</div>
+			</div>
 
 			<div class="col-sm-3">
 				<div class="doc-box align-col">
@@ -453,7 +489,7 @@ get_header();
 					<img src="<?php echo do_shortcode('[img_doc]'); ?>suitcase.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Vendor Assessments</h4>
+					<h4>Online Assessments</h4>
 					<p>Upload your questions and send them out so your suppliers can log in remotely and provide feedback.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1pT25V1lQdc7LPjDfmal0fctT1NY72-f2pMbi7UvaSok/edit?usp=sharing">Doc</a></li>

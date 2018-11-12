@@ -2662,6 +2662,10 @@ a.no-text-effect:focus {
 #features-new .row:nth-child(3) .arrow-left {
 	margin-top: 92px;
 }
+#features-new .row:nth-child(5) .arrow-right,
+#features-new .row:nth-child(5) .arrow-left {
+	margin-top: 84px;
+}
 #features-new .arrow-row:nth-child(2) .arrow-down {
 	position: absolute;
 	top: -2px;
