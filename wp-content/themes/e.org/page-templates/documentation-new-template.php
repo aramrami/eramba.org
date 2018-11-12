@@ -132,8 +132,8 @@ get_header();
 						<h4>Access Management</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="#">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -155,8 +155,8 @@ get_header();
 						<h4>Dashboards</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="#">Doc</a></li>
+							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
 						</ul>
 					</div>
 				</div>
