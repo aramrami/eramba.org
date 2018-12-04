@@ -513,47 +513,8 @@ get_header();
 	</h4>
 
 	<div class="row align-row">
-		<div class="col-sm-4">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img]'); ?>iso.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>ISO 27001 Guide</h4>
-					<!-- <p></p>
-					<ul>
-						<li><a href="#"></a> </li>
-						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
-					</ul> -->
-					<p>Quick introduction on how eramba can help you with the popular ISO standard</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1hAzr3KR3jqp45fzDd7f_SPWI1D2lVmUPA0cH6Sqze5E/edit?usp=sharing">Doc</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
 
-		<div class="col-sm-4">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img]'); ?>pci.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>PCI-DSS Guide</h4>
-					<p>Discover how eramba helps with PCI-DSS</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/15XISbYUQvx98bWNuY5CTb2guywYLjRER8sTtElwaT94/edit?usp=sharing">Doc</a></li>
-					</ul>
-					<!-- <p></p>
-					<ul>
-						<li><a href="#"></a> </li>
-						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
-					</ul> -->
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-4">
+		<div class="col-sm-4 col-sm-offset-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>training.png" alt="">
@@ -572,25 +533,7 @@ get_header();
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-4">
-			<div class="doc-box align-col">
-				<div class="doc-box-img">
-					<img src="<?php echo do_shortcode('[img]'); ?>sox.png" alt="">
-				</div>
-				<div class="doc-box-content">
-					<h4>Sarbanes Oxley Guide</h4>
-					<p>Large companies subject to SOX have successfully used eramba to mantain their compliance requirements, learn how.</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1V8jkoYBjMAAqbexLuDB7ueK_RMLcW7rOY_bUd2Qn6Tg/edit?usp=sharing">Doc</a></li>
-					</ul>
-					<!-- <p></p>
-					<ul>
-						<li><a href="#"></a> </li>
-						<li><a class="fancybox fancybox.iframe" href="#"></a></li>
-					</ul> -->
-				</div>
-			</div>
-		</div>
+
 	</div>
 </div>
 
