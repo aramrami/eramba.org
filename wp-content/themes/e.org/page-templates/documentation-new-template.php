@@ -59,7 +59,7 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/box.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Step 2<br>General Layout</h4>
+						<h4>Step 1<br>General Layout</h4>
 						<p>Basic features arrengements.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1RAUlatkQZFS0z8G_f4BgcDdbpd6_QJfbK0jLhZOi2Xs/edit?usp=sharing">Doc</a></li>
@@ -80,7 +80,7 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>filters.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Step 3<br>Filters</h4>
+						<h4>Step 2<br>Filters</h4>
 						<p>Core feature to query GRC data and export it as exports.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1OS3Py1hxzT8a3OMShgksDDPzZOb9TFfbaClKD6gVo4Y/edit?usp=sharing">Doc</a></li>
@@ -102,7 +102,7 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>notifications.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Step 4<br>Notifications</h4>
+						<h4>Step 3<br>Notifications</h4>
 						<p>Automate email notifications, reports, reminders and more.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1gbyw5fXrV02q-uxOXTMcgFCqjPJPWLL-CRyg1Bhx0R0/edit?usp=sharing">Doc</a></li>
@@ -129,11 +129,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>home/increase-collaboration.png" alt="" style="margin-top:5px;">
 					</div>
 					<div class="doc-box-content">
-						<h4>Access Management</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h4>Step 6<br>KPI Dashboards</h4>
+						<p>Store and visualise GRC KPI metrics.</p>
 						<ul>
-							<li><a href="#">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/13SSejawc0V3leJrAlkYXQNFMOTZLLxtq5acsfgwcrRA/edit?usp=sharing#">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -147,16 +146,14 @@ get_header();
 
 			<div class="col-sm-3">
 				<div class="doc-box align-col">
-					<img src="<?php echo do_shortcode('[img]'); ?>enterprise-ribbon.png" class="enterprise-ribbon" />
 					<div class="doc-box-img">
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>interface.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Dashboards</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h4>Step 5<br>Graphical Reports</h4>
+						<p>Define your own graphical report templates.</p>
 						<ul>
-							<li><a href="#">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1EuL9IzUpJgA36cNAMj1OKU6ahseEuhOJ-aZZXviqMvY/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -174,11 +171,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>icons/reports-dashboards.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Reports</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h4>Step 4<br>Access Mgt</h4>
+						<p>Control who can access eramba and what they can see.</p>
 						<ul>
-							<li><a href="#">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1JcrsSP-hRJvPbnpqtCnirZ50DJ19XiHO90nNE36ipaM/edit#">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -203,11 +199,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Custom<br />Fields</h4>
+						<h4>Step 7<br>Custom<br />Fields</h4>
 						<p>Customize forms to your needs by adding additional fields.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1QxaBV1WnqkBi-VVujrWVMAaLkdpU7oO0emtjUasIV0Y/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/BiRufl5OJLg?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/142ui7cTvtK6JCHT7lYzMnl_w4RXJ6mbVexNa758fqGE/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -225,11 +220,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/downgrades.png" alt="" style="margin-top:5px;">
 					</div>
 					<div class="doc-box-content">
-						<h4>CSV Imports</h4>
+						<h4>Step 8<br>CSV Imports</h4>
 						<p>Import controls, policies and more using preformated CSV files.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1A7xG-jf_4lDcS8OCe8OX_0INip3yIbucYkPUbkOQgOg/edit">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/PB7D_OCZUnQ?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1SLQMZz0MCXYzMD4-kIPWFPQyvYCA6JZOMIBB11-UUV0/edit#">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -248,10 +242,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/cost-saas.png" alt="" style="margin-top:5px;">
 					</div>
 					<div class="doc-box-content">
-						<h4>REST APIs</h4>
+						<h4>Step 9<br>REST APIs</h4>
 						<p>Add,Update,Delete and List items (Risks, Controls, Etc) using Rest APIs.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1AzTUqrs8RJ84VhYjLbVIbw6f2vzSQfzTNiD01JF8qbM/edit">Doc</a></li>
+							<li><a href="https://docs.google.com/document/d/1q6i417-N3cYUxDdX0FLi__T9l-RZ0gpuVQbJA5VgDxc/edit">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -279,11 +273,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>document.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Policy Management</h4>
+						<h4>Step 1<br>Policy Management</h4>
 						<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1A4drPS0cMBPyj-eL1KuhzsA3slVnaUa3fZ7KvNMRMc4/edit?usp=sharing">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/A3NptyqM3hY?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1sGfNiA3z7rwe748IqCY1wNKSGCV4gfeykE6FZl2VEkc/edit?usp=sharing">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -301,11 +294,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>controls.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Controls & Audits</h4>
+						<h4>Step 2<br>Controls & Audits</h4>
 						<p>Register your internal controls, their audits / testing, collect evidence, understand where they are used, Etc.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/10Hq0HTCT_4NYXw3I1EJBfWI4OaWTBqlXZqDrQCg99E0/edit">Doc</a> </li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/zihFlcsFmPw?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/16jbpdiVJYFIFu-Soz6DS_ZEaYeg-ZGbIzEuARFvcdGc/edit?usp=sharing">Doc</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -323,10 +315,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>list.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Exception Management</h4>
+						<h4>Step 3<br>Exception Management</h4>
 						<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1GzNfjcYmxYKzJVEIw8MSduvqVCMIX2--nIt4W7HT5Bk/edit">Doc</a> </li>
+							<li><a href="https://docs.google.com/document/d/1LvPlpKjl8ZyIdq31v4nHEqkh63oufcl_K0NMaRZjU1A/edit?usp=sharing">Doc</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -349,11 +341,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>flow1.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Data Flow Analysis<br>EU GDPR</h4>
+						<h4>Step 6<br>Data Flow Analysis - GDPR</h4>
 						<p>Document each data flow, their controls, policies and people involved. Understand where your data is nad how is protected.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1Srt4a2vfjuEVfGONvxjd5_yO-ojoeLkLcLTsqc7v2NM/edit">Doc</a> </li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/k0hAZ6Y8TTM?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1lPigWosUTyYyYana71Y1YxkhdPu2tGq6JK_YBJmk9LU/edit">Doc</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -371,11 +362,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>risk.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Risk Management</h4>
+						<h4>Step 5<br>Risk Management</h4>
 						<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation.</.p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1sGaUiS6fR_oYun6mt7FktSQOdOJ0huXshMBBMOr_4N0/edit?usp=sharing">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/aIaY8_h_n5g?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1hZ-IVSkad_ohaFcxrM-qN2hDxUrhdHvUX17H4HzRih8/edit">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -393,11 +383,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>calendar.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Compliance Management</h4>
+						<h4>Step 4<br>Compliance Management</h4>
 						<p>Upload any standard or regulation in CSV format and demonstrate how compliant your organisation is.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1Rk85gMkTbkpud2LKk7jg2agBlwaSH2yOq6y9Z3KNzXo/edit">Doc</a> </li>
-							<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/rnu9-wZQels?enablejsapi=1&wmode=opaque">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1N9DehnWjlCW4azkYhrLwSbWOAhgktj06PRrs3-ehYfk/edit">Doc</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -420,10 +409,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img_doc]'); ?>incident.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Incident Management</h4>
+						<h4>Step 7<br>Incident Management</h4>
 						<p>Record and manage incidents systematically and link them to affected risks, assets, controls, Etc.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1I9oQ2mrw65pS6OVoKMCEeC6rx5ftz8ji-RO2Ws4luMY/edit?usp=sharing">Doc</a></li>
+							<li><a href="https://docs.google.com/document/d/15n-a2efGV8LLCKpPR9LmMnGEr1V1aiLk90HSYQrme0g/edit">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -441,11 +430,10 @@ get_header();
 						<img src="<?php echo do_shortcode('[img]'); ?>strong.png" alt="">
 					</div>
 					<div class="doc-box-content">
-						<h4>Projects</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h4>Step 9<br>Project Mgt</h4>
+						<p>Define and follow up on all projects that build and improve your GRC program.</p>
 						<ul>
-							<li><a href="#">Doc</a></li>
-							<li><a class="fancybox fancybox.iframe" href="#">Video</a></li>
+							<li><a href="https://docs.google.com/document/d/1WHmhJ1KBHjgAKcbRPjbD8hmclfr15wQklyYcAQtYhZM/edit">Doc</a></li>
 						</ul>
 					</div>
 				</div>
@@ -475,8 +463,7 @@ get_header();
 					<h4>Security Awareness</h4>
 					<p>Create multiple, Active Directory related awareness trainings with videos, multiple choices and more.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1ktGs1MasrS7FL9GUOV6TpxiLfLlQgOxe4hSKkbFMqWE/edit">Doc</a> </li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/POuSzuFxa_w?enablejsapi=1&wmode=opaque">Video</a></li>
+						<li><a href="https://docs.google.com/document/d/18jJkhsQNKvXucs_Q7EQroUpm3NXFSJi8cOmpfvh8z38/edit#">Doc</a> </li>
 					</ul>
 				</div>
 			</div>
@@ -492,8 +479,7 @@ get_header();
 					<h4>Online Assessments</h4>
 					<p>Upload your questions and send them out so your suppliers can log in remotely and provide feedback.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1pT25V1lQdc7LPjDfmal0fctT1NY72-f2pMbi7UvaSok/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/eB5_Eue03uw?enablejsapi=1&wmode=opaque">Video</a></li>
+						<li><a href="https://docs.google.com/document/d/1eV2EGZptrpVVY-Aeu5mbZFNZxxkvL4PQ3QHCJo6d1MI/edit">Doc</a></li>
 					</ul>
 				</div>
 			</div>
@@ -508,8 +494,7 @@ get_header();
 					<h4>Automated Account Reviews</h4>
 					<p>Automate the process of reviewing user and roles accounts.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1yqpdu631gkBuea1KDiUm4HDpYC6P8p3WiYfV1NpmTlA/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/Z3eNMmNbGcg?enablejsapi=1&wmode=opaque">Video</a></li>
+						<li><a href="https://docs.google.com/document/d/1Dy9jjpvgZep7Nr1tIpAcaN1Vt7O2175rGPfci8KrNSg/edit">Doc</a></li>
 					</ul>
 				</div>
 			</div>
@@ -578,7 +563,6 @@ get_header();
 					<p>Ready to import controls and polices for Compliance Management.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1UCA-e7_NSYEmsxdyODUOU7k5b_YGeByx0edZPpNQYJ0/edit#/edit?usp=sharing">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/v70JqOdQNg0?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 					<!-- <p></p>
 					<ul>
