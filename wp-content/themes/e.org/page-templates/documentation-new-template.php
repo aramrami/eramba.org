@@ -548,7 +548,7 @@ get_header();
 	</h4>
 
 	<div class="row align-row">
-		<div class="col-sm-4 col-sm-offset-2">
+		<div class="col-sm-4 col-sm-offset-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>icons/download-circle.png" alt="">
@@ -564,7 +564,7 @@ get_header();
 			</div>
 		</div>
 
-		<div class="col-sm-4">
+		<!-- <div class="col-sm-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
 					<img src="<?php echo do_shortcode('[img]'); ?>icons/download-computer.png" alt="">
@@ -577,10 +577,10 @@ get_header();
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
-	<div class="row arrow-row arrow-row-install">
+	<!-- <div class="row arrow-row arrow-row-install">
 		<div class="col-sm-12">
 			<div class="arrow-down">
 				<div class="arrow-head"></div>
@@ -589,9 +589,9 @@ get_header();
 				<div class="arrow-head"></div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="row align-row">
+	<!-- <div class="row align-row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<div class="doc-box align-col">
 				<div class="doc-box-img">
@@ -608,7 +608,7 @@ get_header();
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 </div>
 
 <script src="http://www.youtube.com/player_api"></script>
