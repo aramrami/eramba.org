@@ -1,4 +1,4 @@
-<?php // Template Name: Documentation New Template ?>
+<?php // Template Name: New Template ?>
 <?php
 get_header();
 
@@ -557,8 +557,7 @@ get_header();
 					<h4>Install from Source Code</h4>
 					<p>Download our code and install the application on your Linux system using the source code.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1vxh1knFcB6_ZVPUF4hy9i5XafIR3BijoZffCL_vjRVU/edit">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/0QALe2RX-yI?enablejsapi=1&wmode=opaque">Video</a></li>
+						<li><a href="https://docs.google.com/document/d/1_w38Jb-qiWoDAkOSSgHlrr__bhOHrvoZWu9yinvAEjA/edit">Doc</a></li>
 					</ul>
 				</div>
 			</div>
