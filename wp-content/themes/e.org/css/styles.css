@@ -2076,7 +2076,7 @@ ul.doc-list ul {
 }
 
 #main-boxes {
-	padding-bottom: 80px;
+	padding-bottom: 50px;
 }
 
 .main-box {
@@ -2085,9 +2085,6 @@ ul.doc-list ul {
 	border-radius: 3px;
 	box-shadow: 0px 0px 50px #5a978e;
 	height: 410px;
-}
-.main-box.video {
-	background: url(../img/bgs/box-video.jpg) no-repeat center center;
 }
 .main-box.video {
 	background: url(../img/bgs/box-video.jpg) no-repeat center center;
@@ -2152,6 +2149,9 @@ ul.doc-list ul {
 	/*padding: 0 20px 5px 20px;*/
 	height: 280px;
 	margin-bottom: 10px;
+}
+.main-box.metrics .main-box-inner {
+	height: auto;
 }
 .main-box-inner .nano-pane {
 	right: 5px;
@@ -2775,4 +2775,23 @@ a.no-text-effect:focus {
 	border-bottom: 6px solid transparent;
 	border-right: 10px solid #4f5a65;
 }
-
+.metrics {
+	margin-top: 30px;
+}
+.metrics .main-box-header {
+	padding: 25px 0 0 0;
+}
+.metrics-content {
+	padding: 20px 0;
+}
+.metrics-content h4 {
+	color: #282c30;
+	font-size: 14px;
+}
+.metrics-content .metrics-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2e784f;
+    margin-bottom: 5px;
+    display: block;
+}

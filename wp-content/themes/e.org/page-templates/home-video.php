@@ -10,7 +10,6 @@ function new_excerpt_length($length) {
 add_filter('excerpt_length', 'new_excerpt_length');
 
 ?>
-
 	<div id="main" class="home">
 
 		<div class="page-heading-wrapper dark">
@@ -32,6 +31,9 @@ add_filter('excerpt_length', 'new_excerpt_length');
 		<div id="main-boxes">
 			<div class="container">
 				<div class="row">
+
+					
+
 					<?php
 					$cat1 = 'home-column-1';
 					$cat1Data = get_category_by_slug($cat1);
@@ -166,6 +168,67 @@ add_filter('excerpt_length', 'new_excerpt_length');
 							</div>
 						</a>
 					</div>
+
+					<div class="col-xs-12">
+						<div class="metrics">
+							<div class="main-box-header">
+								<h2><strong>Key Project Metrics</strong></h2>
+								<hr>
+							</div>
+							<div class="metrics-content">
+								<div class="row">
+									<div class="col-sm-3">
+										<h4>
+											<strong>Downloads</strong>
+										</h4>
+										<span class="metrics-value">
+											<?php
+											$date1 = strtotime(date('Y', strtotime('-1 year')) . '-01-01');
+											$date2 = strtotime(date('Y', strtotime('+0 year')) . '-01-01');
+											$date3 = strtotime(date('Y', strtotime('+1 year')) . '-01-01');
+											
+											$communityPrevYear = $wpdb->get_results("SELECT count(*) as count FROM {$wpdb->prefix}cf7dbplugin_submits WHERE form_name IN ('2018 Community Download', 'Download new') AND field_name LIKE 'Submitted From' AND submit_time > {$date1} AND submit_time < {$date2}", object);
+
+											$communityThisYear = $wpdb->get_results("SELECT count(*) as count FROM {$wpdb->prefix}cf7dbplugin_submits WHERE form_name IN ('2018 Community Download', 'Download new') AND field_name LIKE 'Submitted From' AND submit_time > {$date2} AND submit_time < {$date3}", object);
+
+											if (!empty($communityPrevYear) && !empty($communityPrevYear[0]->count)) {
+												echo $communityPrevYear[0]->count . ' (' . date('Y', strtotime('-1 year')) . ')';
+											}
+											if (!empty($communityThisYear) && !empty($communityThisYear[0]->count)) {
+												echo ' - ' . $communityThisYear[0]->count . ' (' . date('Y') . ')';
+											}
+											?>
+										</span>
+									</div>
+									<div class="col-sm-3">
+										<h4>
+											<strong>Enterprise Customers</strong>
+										</h4>
+										<span class="metrics-value">
+											456
+										</span>
+									</div>
+									<div class="col-sm-3">
+										<h4>
+											<strong>Last Enterprise Release</strong>
+										</h4>
+										<span class="metrics-value">
+											5th Jan 2018
+										</span>
+									</div>
+									<div class="col-sm-3">
+										<h4>
+											<strong>Last Community Release</strong>
+										</h4>
+										<span class="metrics-value">
+											23th May 2017
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
