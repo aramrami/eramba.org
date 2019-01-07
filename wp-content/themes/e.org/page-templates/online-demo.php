@@ -119,14 +119,6 @@
 		</div>
 	</div>
 
-	<div class="more-info">
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<p>We keep an updated list of diffferences in between releases</p>
-				<a href="http://www.eramba.org/resources/documentation/" class="btn btn-default"><?php _e('See the comparison', 'eramba'); ?></a>
-			</div>
-		</div>
-	</div>
 
 </div>
 

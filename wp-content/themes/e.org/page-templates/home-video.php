@@ -172,7 +172,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 					<div class="col-xs-12">
 						<div class="metrics">
 							<div class="main-box-header">
-								<h2><strong>Key Project Metrics</strong></h2>
+								<h2><strong>Project Metrics</strong></h2>
 								<hr>
 							</div>
 							<div class="metrics-content">
@@ -205,7 +205,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 											<strong>Enterprise Customers</strong>
 										</h4>
 										<span class="metrics-value">
-											456
+											185	
 										</span>
 									</div>
 									<div class="col-sm-3">
@@ -213,7 +213,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 											<strong>Last Enterprise Release</strong>
 										</h4>
 										<span class="metrics-value">
-											5th Jan 2018
+											<a href="http://www.eramba.org/enterprise-update-68/">24th Oct 2018</a>
 										</span>
 									</div>
 									<div class="col-sm-3">
@@ -221,7 +221,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 											<strong>Last Community Release</strong>
 										</h4>
 										<span class="metrics-value">
-											23th May 2017
+											<a href="http://www.eramba.org/2018-community-made-public/">20th March 2018</a>
 										</span>
 									</div>
 								</div>
