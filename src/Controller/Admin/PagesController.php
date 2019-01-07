@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
