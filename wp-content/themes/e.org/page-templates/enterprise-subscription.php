@@ -24,7 +24,7 @@ get_header();
 	</div>
 </div>
 <div class="container">
-    <h2 class="margin-top-40 margin-bottom-40">
+    <h2 class="text-center margin-top-40 margin-bottom-40">
         <strong>Enterprise Subscription Package</strong>
     </h2>
     <div class="row align-row">
@@ -69,7 +69,8 @@ get_header();
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row align-row">
         <div class="col-sm-4">
             <div class="doc-box doc-box-alt doc-box-partnerships doc-box-plus align-col">
                 <div class="doc-box-img">
@@ -101,11 +102,52 @@ get_header();
         <div class="col-sm-4">
             <div class="doc-box doc-box-alt align-col">
                 <div class="doc-box-content">
-                    <div class="box-jumbo margin-top-40 margin-bottom-40">
+                    <div class="box-jumbo margin-top-10 margin-bottom-20">
                         <strong>2500 EUR</strong> or
                         <strong>3000 USD / Year</strong>
                     </div>
                     <a href="http://www.eramba.org/resources/bugs-features/" class="btn btn-blue width-90">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2 class="text-center margin-top-20 margin-bottom-40">
+        <strong>Optional Services</strong>
+    </h2>
+    <div class="row align-row">
+        <div class="col-sm-offset-2 col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>enterprise-icons/upgrades.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Starters Assistance</h4>
+                    <p>
+                        We help you get started with eramba - we create risk, controls, policies together until you feel confortable to go alone. We bill this service per hour at our standard consulting rate. See our <a href="https://docs.google.com/document/d/1FTAG1vMDhNXJXySLBgvore60zhcObKhAievBk3rCOdA/edit#heading=h.qfjnzpxbfenq">FAQ</a>
+                    </p>
+                    <br>
+                    <h2><b>80 EUR / Hour</b></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="doc-box doc-box-alt doc-box-partnerships align-col">
+                <div class="doc-box-img">
+                    <img src="<?php echo do_shortcode('[img]'); ?>blackboard.png" alt="">
+                </div>
+                <div class="doc-box-content">
+                    <h4>Onsite Workshops</h4>
+                    <p>
+                        We travel to your offices for four days tailor made workshop to training and configure your eramba instance. Travel expenses are billed separately. See our <a href="https://docs.google.com/document/d/1FTAG1vMDhNXJXySLBgvore60zhcObKhAievBk3rCOdA/edit#heading=h.ovs2krb4amke">FAQ</a>
+                    </p>
+                    <br>
+                    <h2><b>Starts at 3000 EUR</b></h2>
                 </div>
             </div>
         </div>
