@@ -23,12 +23,12 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" id="eramba-main-css" href="http://<?= $_SERVER['HTTP_HOST'] ?>/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
+	<link rel="stylesheet" id="eramba-main-css" href="//<?= $_SERVER['HTTP_HOST'] ?>/wp-content/themes/e.org/css/styles.css?ver=<?= (new \DateTime())->getTimestamp() ?>" type="text/css" media="all">
 
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
