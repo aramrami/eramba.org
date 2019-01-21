@@ -117,7 +117,7 @@ get_header();
 
 <div class="container">
     <h2 class="text-center margin-top-20 margin-bottom-40">
-        <strong>Optional Services</strong>
+        <strong>Recommended Additional Services</strong>
     </h2>
     <div class="row align-row">
         <div class="col-sm-offset-2 col-sm-4">
@@ -144,7 +144,7 @@ get_header();
                 <div class="doc-box-content">
                     <h4>Onsite Workshops</h4>
                     <p>
-                        We travel to your offices for four days tailor made workshop to training and configure your eramba instance. Travel expenses are billed separately. See our <a href="https://docs.google.com/document/d/1FTAG1vMDhNXJXySLBgvore60zhcObKhAievBk3rCOdA/edit#heading=h.ovs2krb4amke">FAQ</a>
+                        We travel to your offices for four days and deliver a tailor made workshop to training and configure your eramba instance. Travel expenses are billed separately. See our <a href="https://docs.google.com/document/d/1FTAG1vMDhNXJXySLBgvore60zhcObKhAievBk3rCOdA/edit#heading=h.ovs2krb4amke">FAQ</a> for more details.
                     </p>
                     <br>
                     <h2><b>Starts at 3000 EUR</b></h2>

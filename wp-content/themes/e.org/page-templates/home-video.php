@@ -213,7 +213,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 											<strong>Last Enterprise Release</strong>
 										</h4>
 										<span class="metrics-value">
-											<a href="http://www.eramba.org/enterprise-update-68/">24th Oct 2018</a>
+											<a href="https://www.eramba.org/enterprise-update-69/">4th Jan 2019</a>
 										</span>
 									</div>
 									<div class="col-sm-3">

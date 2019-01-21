@@ -31,7 +31,8 @@ get_header();
 					<h4>Step 1<br>Basic GRC Relationships</h4>
 					<p>Understand the basic relationships in between controls, risks, compliance, Etc.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1iPB-fdJHo_6emr_U9Yu6zVDNkd-eBdHQNG0PCk7KvPQ/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1iPB-fdJHo_6emr_U9Yu6zVDNkd-eBdHQNG0PCk7KvPQ/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/NPwH8NRgW2I?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,7 +45,7 @@ get_header();
 
 <div id="features-new" class="container">
 	<h3 class="text-center margin-top-20">
-		<strong>Learn the Basics (40-60 Minutes)</strong>
+		<strong>Learn the Basics (1 Hour)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
 		<span>These guides cover basic features and concepts used across the system, is really important you get familiarised with them before you start using eramba. Follow the arrows to make sure you cover the entire curricula.</span>
@@ -63,6 +64,7 @@ get_header();
 						<p>Basic features arrengements.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1RAUlatkQZFS0z8G_f4BgcDdbpd6_QJfbK0jLhZOi2Xs/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/rTRJ6IJq0Ds?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -83,7 +85,8 @@ get_header();
 						<h4>Step 2<br>Filters</h4>
 						<p>Core feature to query GRC data and export it as exports.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1OS3Py1hxzT8a3OMShgksDDPzZOb9TFfbaClKD6gVo4Y/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1OS3Py1hxzT8a3OMShgksDDPzZOb9TFfbaClKD6gVo4Y/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/_wpzvnJPGrs?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -105,7 +108,8 @@ get_header();
 						<h4>Step 3<br>Notifications</h4>
 						<p>Automate email notifications, reports, reminders and more.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1gbyw5fXrV02q-uxOXTMcgFCqjPJPWLL-CRyg1Bhx0R0/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1gbyw5fXrV02q-uxOXTMcgFCqjPJPWLL-CRyg1Bhx0R0/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/UV5beDccO6A?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -133,6 +137,7 @@ get_header();
 						<p>Store and visualise GRC KPI metrics.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/13SSejawc0V3leJrAlkYXQNFMOTZLLxtq5acsfgwcrRA/edit?usp=sharing#">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/rE8fKyBssUg?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -153,7 +158,8 @@ get_header();
 						<h4>Step 5<br>Graphical Reports</h4>
 						<p>Define your own graphical report templates.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1EuL9IzUpJgA36cNAMj1OKU6ahseEuhOJ-aZZXviqMvY/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1EuL9IzUpJgA36cNAMj1OKU6ahseEuhOJ-aZZXviqMvY/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/CexM-kYGnoI?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -174,7 +180,8 @@ get_header();
 						<h4>Step 4<br>Access Mgt</h4>
 						<p>Control who can access eramba and what they can see.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1JcrsSP-hRJvPbnpqtCnirZ50DJ19XiHO90nNE36ipaM/edit#">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1JcrsSP-hRJvPbnpqtCnirZ50DJ19XiHO90nNE36ipaM/edit#">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/UHzOA5NexS0?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -202,7 +209,8 @@ get_header();
 						<h4>Step 7<br>Custom<br />Fields</h4>
 						<p>Customize forms to your needs by adding additional fields.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/142ui7cTvtK6JCHT7lYzMnl_w4RXJ6mbVexNa758fqGE/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/142ui7cTvtK6JCHT7lYzMnl_w4RXJ6mbVexNa758fqGE/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/l05ItM2DKx4?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -223,7 +231,8 @@ get_header();
 						<h4>Step 8<br>CSV Imports</h4>
 						<p>Import controls, policies and more using preformated CSV files.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1SLQMZz0MCXYzMD4-kIPWFPQyvYCA6JZOMIBB11-UUV0/edit#">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1SLQMZz0MCXYzMD4-kIPWFPQyvYCA6JZOMIBB11-UUV0/edit#">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/EtSHCGf9N_o?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -259,7 +268,7 @@ get_header();
 
 <div id="core-functions-new" class="container">
 	<h3 class="text-center margin-top-20">
-		<strong>Core Functionalities (5-6 Hours)</strong>
+		<strong>Core Functionalities (2 Hours)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
 		<span>Follow every step of the guide to ensure you learn how eramba works! These guides are critical to understand how eramba works at its very core, dont miss any guide if you want to understand how eramba is used.</span>
@@ -276,7 +285,8 @@ get_header();
 						<h4>Step 1<br>Policy Management</h4>
 						<p>Document your policies, ensure they get review, publish them on a single portal, Etc.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1sGfNiA3z7rwe748IqCY1wNKSGCV4gfeykE6FZl2VEkc/edit?usp=sharing">Doc</a></li>
+<li><a href="https://docs.google.com/document/d/1sGfNiA3z7rwe748IqCY1wNKSGCV4gfeykE6FZl2VEkc/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/ROV0OSKXa-c?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -297,7 +307,8 @@ get_header();
 						<h4>Step 2<br>Controls & Audits</h4>
 						<p>Register your internal controls, their audits / testing, collect evidence, understand where they are used, Etc.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/16jbpdiVJYFIFu-Soz6DS_ZEaYeg-ZGbIzEuARFvcdGc/edit?usp=sharing">Doc</a> </li>
+<li><a href="https://docs.google.com/document/d/16jbpdiVJYFIFu-Soz6DS_ZEaYeg-ZGbIzEuARFvcdGc/edit?usp=sharing">Doc</a> </li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/rpRrsOd6mlQ?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -318,7 +329,8 @@ get_header();
 						<h4>Step 3<br>Exception Management</h4>
 						<p>Keep record of every approval you give away and trigger notifications when they expire.</p>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/1LvPlpKjl8ZyIdq31v4nHEqkh63oufcl_K0NMaRZjU1A/edit?usp=sharing">Doc</a> </li>
+<li><a href="https://docs.google.com/document/d/1LvPlpKjl8ZyIdq31v4nHEqkh63oufcl_K0NMaRZjU1A/edit?usp=sharing">Doc</a> </li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/BySFYpe2hfc?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -345,6 +357,7 @@ get_header();
 						<p>Document each data flow, their controls, policies and people involved. Understand where your data is nad how is protected.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1lPigWosUTyYyYana71Y1YxkhdPu2tGq6JK_YBJmk9LU/edit">Doc</a> </li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/flTzDpNW5qY?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -366,6 +379,7 @@ get_header();
 						<p>Simplify Risk Management and its reviews to ensure it brings real value to your organisation.</.p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1hZ-IVSkad_ohaFcxrM-qN2hDxUrhdHvUX17H4HzRih8/edit">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/2LjDKu9GxAs?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -387,6 +401,7 @@ get_header();
 						<p>Upload any standard or regulation in CSV format and demonstrate how compliant your organisation is.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1N9DehnWjlCW4azkYhrLwSbWOAhgktj06PRrs3-ehYfk/edit">Doc</a> </li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/RmrD8nYGwfs?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -413,6 +428,7 @@ get_header();
 						<p>Record and manage incidents systematically and link them to affected risks, assets, controls, Etc.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/15n-a2efGV8LLCKpPR9LmMnGEr1V1aiLk90HSYQrme0g/edit">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/dXZgDofTcBk?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -434,6 +450,7 @@ get_header();
 						<p>Define and follow up on all projects that build and improve your GRC program.</p>
 						<ul>
 							<li><a href="https://docs.google.com/document/d/1WHmhJ1KBHjgAKcbRPjbD8hmclfr15wQklyYcAQtYhZM/edit">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/V901pbkaHFo?enablejsapi=1&wmode=opaque">Video</a></li>
 						</ul>
 					</div>
 				</div>
@@ -446,7 +463,7 @@ get_header();
 
 <div class="container ">
 	<h3 class="text-center margin-top-20">
-		<strong>Standalone Features (2 to 3 Hs)</strong>
+		<strong>Standalone Features (1 Hour)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
 		<span>Additional tools brought in to facilitate the work of a Security professional.</span>
@@ -464,6 +481,7 @@ get_header();
 					<p>Create multiple, Active Directory related awareness trainings with videos, multiple choices and more.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/18jJkhsQNKvXucs_Q7EQroUpm3NXFSJi8cOmpfvh8z38/edit#">Doc</a> </li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/vVyAgbO8i1c?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 				</div>
 			</div>
@@ -480,6 +498,7 @@ get_header();
 					<p>Upload your questions and send them out so your suppliers can log in remotely and provide feedback.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1eV2EGZptrpVVY-Aeu5mbZFNZxxkvL4PQ3QHCJo6d1MI/edit">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/5qHgCtmhyZY?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 				</div>
 			</div>
@@ -506,10 +525,10 @@ get_header();
 
 <div class="container ">
 	<h3 class="text-center margin-top-20">
-		<strong>Resources</strong>
+		<strong>Implementation Guides (1-2 Hours)</strong>
 	</h3>
 	<h4 class="doc-subtitle text-center margin-bottom-40">
-		<span>These documents will help you understand how eramba works in certain use cases</span>
+		<span>These guides will help you understand how we typically implement eramba at customers</span>
 	</h4>
 
 	<div class="row align-row">
@@ -520,10 +539,11 @@ get_header();
 					<img src="<?php echo do_shortcode('[img]'); ?>training.png" alt="">
 				</div>
 				<div class="doc-box-content">
-					<h4>Controls & Policies Templates</h4>
-					<p>Ready to import controls and polices for Compliance Management.</p>
+					<h4>Compliance Management</h4>
+					<p>Describes how we implement and monitor a compliance program.</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1UCA-e7_NSYEmsxdyODUOU7k5b_YGeByx0edZPpNQYJ0/edit#/edit?usp=sharing">Doc</a></li>
+						<li><a href="https://docs.google.com/document/d/1v5GiU9lckxV2CXNPVO6Y-G2Ahv-IQK6nPJiOu85OR44/edit?usp=sharing">Doc</a></li>
+<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/vihBL99PX38?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 					<!-- <p></p>
 					<ul>
@@ -601,7 +621,7 @@ get_header();
 					<p>Understand how accounts, groups, access, visualisations, portals, email, ldap, Etc operate.</p>
 					<ul>
 						<li><a href="https://docs.google.com/document/d/1D39uXCRfbTMvyVMFsGRyIcob8cSccAn1NWIdREodpms/edit#">Doc</a></li>
-						<li><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/a1KFzgFZ9Hs?enablejsapi=1&wmode=opaque">Video</a></li>
+						<li><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/a1KFzgFZ9Hs?enablejsapi=1&wmode=opaque">Video</a></li>
 					</ul>
 				</div>
 			</div>
@@ -610,7 +630,7 @@ get_header();
 	</div> -->
 </div>
 
-<script src="http://www.youtube.com/player_api"></script>
+<script src="https://www.youtube.com/player_api"></script>
 <style>
 .fancybox-wrap {
 	height: 480px !important;
